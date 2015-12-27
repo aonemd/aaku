@@ -2,3 +2,8 @@
 
 - link:
     ~/.aaku: ''
+
+- shell:
+    -
+      - "git submodule update --init --recursive --remote"
+      - "Installing submodules ..."
