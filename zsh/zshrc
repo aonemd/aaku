@@ -1,0 +1,26 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   aasare <asalehmoh@gmail.com>
+#
+
+# Support 256-color terminals
+export TERM=screen-256color
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+# My workspace env variable
+export WK=~/workspace/
+
+# Go
+export GOPATH="$HOME/workspace/go"
+export PATH=$PATH:/usr/local/go/bin
+
+# Ruby rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
