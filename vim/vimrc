@@ -1,0 +1,221 @@
+"Plugins
+set nocompatible              "choose no compatibility with legacy vi
+filetype off
+"set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+
+"keep Plugin commands between vundle#begin/end.
+    Plugin 'bling/vim-airline'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'kien/ctrlp.vim'
+    Plugin 'rking/ag.vim'
+    Plugin 'majutsushi/tagbar'
+    Plugin 'ervandew/supertab'
+    Plugin 'myusuf3/numbers.vim'
+    Plugin 'christoomey/vim-system-copy'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'tomtom/tcomment_vim'
+    Plugin 'tpope/vim-surround'
+    Plugin 'godlygeek/tabular'
+    Plugin 'junegunn/goyo.vim'
+    Plugin 'junegunn/limelight.vim'
+    Plugin 'tpope/vim-rails'
+    Plugin 'fatih/vim-go'
+    Plugin 'mattn/emmet-vim'
+    Plugin 'kchmck/vim-coffee-script'
+    Plugin 'plasticboy/vim-markdown'
+    Plugin 'powerline/fonts'
+    Plugin 'vim-scripts/colorsupport.vim'
+    Plugin 'whatyouhide/vim-gotham'
+    Plugin 'w0ng/vim-hybrid'
+    Plugin 'dfxyz/CandyPaper.vim'
+    Plugin 'croaky/vim-colors-github'
+   call vundle#end()
+
+
+"Indentation
+filetype plugin indent on
+set autoindent                  "always set autoindenting on
+set copyindent                  "copy the previous indentation on autoindenting
+"set indentation according to filetype
+autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
+autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+
+"General Settings
+set ttimeout
+set ttimeoutlen=50
+syntax enable
+set encoding=utf-8
+set showcmd                     "display incomplete commands
+set noshowmode                  "disable the label for the current mode
+set hidden                      "hide buffers instead of closing them
+set history=1000                "remember more commands and search history
+set undolevels=1000             "use many muchos levels of undo
+set number                      "enable line numbers
+set nobackup                    "no backup files
+set noswapfile                  "no swap files
+set nowrap                      "disable soft wrap for lines
+
+"Search
+set hlsearch                    "highlight search
+set incsearch                   "incremental searching
+set ignorecase                  "searches are case insensitive...
+set smartcase                   " ..unless they contain at least one capital letter
+"let ag.vim start searching from the project root instead of the cwd
+let g:ag_working_path_mode="r"
+
+"Tabs
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab                   "use spaces, not tabs
+set shiftround                  "use multiple of shiftwidth when indenting with '<' and '>'
+set smarttab                    "insert tabs on the start of a line according to shiftwidth, not tabstop
+set backspace=indent,eol,start  "backspace through everything in insert mode
+
+
+"Eyecandy
+set t_Co=256                    "enable 256 colors
+set term=screen-256color
+set cursorline                  "higlight current line
+set background=dark
+colorscheme CandyPaper
+
+
+"Plugin settings
+"vim-airline
+set laststatus=2                                    "always display the status bar
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'term'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 1        "enable tabline extension to show buffers on top
+let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
+
+"NerdTree settings
+let NERDTreeShowHidden=1            "show hidden files in NerdTree
+let NERDTreeChDirMode=2             "set nerdtree dir to current working dir
+autocmd VimEnter * wincmd w         "place the cursor on the opened file directly
+
+"Markdown
+let g:vim_markdown_folding_disabled=1
+
+"Limelight
+"Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+"Goyo
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+
+"Key bindings
+"leader key
+let mapleader = ","
+
+"remap visual block mode
+nnoremap <c-b> <c-v>
+
+"toggle NERDTree using ctrl+n
+map <leader>k :NERDTreeToggle<CR>
+
+" map Silver Searcher
+map <leader>a :Ag!<space>
+
+"override file systems by typing :w!!
+cmap w!! %!sudo tee > /dev/null %
+
+"clear search highlight
+nmap <silent> ,/ :nohlsearch<CR>
+
+"easy window navigation and splits
+map <silent> <C-h> :call WinMove('h')<cr>
+map <silent> <C-j> :call WinMove('j')<cr>
+map <silent> <C-k> :call WinMove('k')<cr>
+map <silent> <C-l> :call WinMove('l')<cr>
+
+"open a new empty buffer
+nmap <leader>T :enew<cr>
+"move to the next buffer
+nmap <leader>l :bnext<CR>
+"move to the previous buffer
+nmap <leader>h :bprevious<CR>
+"close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+"toggle colorcolumn leader-c-c
+nnoremap <silent> <leader>cc :call g:ToggleColorColumn()<CR>
+
+"toggle to paste text from another app
+set pastetoggle=<F2>
+
+"TagBar
+nmap <F8> :TagbarToggle<CR>
+
+"toggle colorscheme between dark and light
+map <silent> <Leader>bg :call ToggleColorScheme()<CR>
+
+
+"Functions
+"toggle colorcolumn
+function! g:ToggleColorColumn()
+  if &colorcolumn != ''
+    setlocal colorcolumn&
+  else
+    setlocal colorcolumn=80
+    highlight ColorColumn ctermbg=88
+  endif
+endfunction
+
+"Goyo
+function! s:goyo_enter()
+  silent !tmux set status off
+  set noshowcmd
+  NumbersToggle
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  silent !tmux set status on
+  set showcmd
+  colorscheme CandyPaper
+  Limelight!
+endfunction
+
+"move to the window in the direction shown, or create a new window
+function! WinMove(key)
+  let t:curwin = winnr()
+  exec "wincmd ".a:key
+  if (t:curwin == winnr())
+    if (match(a:key,'[jk]'))
+      wincmd v
+    else
+      wincmd s
+    endif
+    exec "wincmd ".a:key
+  endif
+endfunction
+
+"toggle colorscheme between dark and light
+function! ToggleColorScheme()
+  if &background == 'dark'
+    set background=light
+    ColorScheme github
+    AirlineTheme papercolor
+  elseif &background == 'light'
+    set background=dark
+    ColorScheme CandyPaper
+    AirlineTheme term
+  endif
+endfunction

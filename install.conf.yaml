@@ -2,8 +2,16 @@
 
 - link:
     ~/.aaku: ''
+    ~/.vim: vim/vim/
+    ~/.vimrc: vim/vimrc
 
 - shell:
     -
       - "git submodule update --init --recursive --remote"
       - "Installing submodules ..."
+    -
+      - "echo | vim +PluginInstall +qall"
+      - "Installing Vim plugins ..."
+    -
+      - "~/.vim/bundle/fonts/install.sh"
+      - "Installing patched fonts ..."
