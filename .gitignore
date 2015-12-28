@@ -1,2 +1,5 @@
 # Ignore Vim plugins
 vim/vim/*
+
+# Ignore Tmux plugins
+tmux/tmux/*

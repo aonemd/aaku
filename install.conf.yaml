@@ -11,6 +11,8 @@
     ~/.zshenv: zsh/zshenv
     ~/.zlogin: zsh/zlogin
     ~/.zlogout: zsh/zlogout
+    ~/.tmux: tmux/tmux/
+    ~/.tmux.conf: tmux/tmux.conf
 
 - shell:
     -
@@ -19,6 +21,9 @@
     -
       - "echo | vim +PluginInstall +qall"
       - "Installing Vim plugins ..."
+    -
+      - "~/.tmux/plugins/tpm/bin/install_plugins"
+      - "Installing Tmux plugins ..."
     -
       - "~/.vim/bundle/fonts/install.sh"
       - "Installing patched fonts ..."
