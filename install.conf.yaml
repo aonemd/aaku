@@ -17,6 +17,9 @@
 
 - shell:
     -
+      - "./requirements"
+      - "Running requirements ..."
+    -
       - "git submodule update --init --recursive --remote"
       - "Installing submodules ..."
     -

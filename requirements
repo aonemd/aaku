@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+# Debian-based systems
+echo "Installing required packages ..."
+sudo apt-get install -y \
+  zsh \
+  vim \
+  tmux \
+  git \
+  curl \
+  silversearcher-ag \
+  xsel
+
+echo "Changing default shell to Zsh"
+chsh -s $(which zsh)
