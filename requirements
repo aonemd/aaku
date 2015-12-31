@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Debian-based systems
-echo "Installing required packages ..."
+# Ubuntu based systems
+echo "Installing required packages"
 sudo apt-get install -y \
   zsh \
   vim \
@@ -9,7 +9,12 @@ sudo apt-get install -y \
   git \
   curl \
   silversearcher-ag \
-  xsel
+  xsel \
+  cmus \
+  weechat
 
 echo "Changing default shell to Zsh"
 chsh -s $(which zsh)
+
+echo "Installing Rbenv"
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
