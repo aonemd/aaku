@@ -13,7 +13,7 @@
     ~/.zlogout: zsh/zlogout
     ~/.tmux: tmux/tmux/
     ~/.tmux.conf: tmux/tmux.conf
-    ~/.gitconfig: gitconfig
+    ~/.gitconfig: git/gitconfig
 
 - shell:
     -
