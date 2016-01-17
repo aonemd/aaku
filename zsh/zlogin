@@ -2,7 +2,7 @@
 # Executes commands at login post-zshrc.
 #
 # Authors:
-#   aasare <asalehmoh@gmail.com>
+#   aasare <aasarekode@gmail.com>
 #
 
 # Execute code that does not affect the current session in the background.
