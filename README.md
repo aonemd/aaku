@@ -8,6 +8,7 @@ aaku
 - Vim
 - Tmux
 - Zsh (Prezto)
+- Git
 
 ### Installation
 
@@ -16,6 +17,9 @@ aaku
 
 ### Usage
 
+- I use [Dotbot](https://github.com/anishathalye/dotbot) to bootrap the files
+together. It requires Python to be installed which comes with most of Linux
+distributions.
 - Running the installation script will run antoher script `requirements`. This is
 the script that installs the required packages. It currently works for Ubuntu based
 systems. To use it with another system, you'll need to install each package manually
