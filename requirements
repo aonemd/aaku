@@ -8,6 +8,7 @@ sudo apt-get install -y \
   tmux \
   git \
   curl \
+  build-essential \
   silversearcher-ag \
   xsel \
   cmus \
