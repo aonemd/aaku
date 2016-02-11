@@ -8,9 +8,10 @@ call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
 
 "keep Plugin commands between vundle#begin/end.
-    Plugin 'bling/vim-airline'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'scrooloose/nerdtree'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'rking/ag.vim'
     Plugin 'majutsushi/tagbar'
     Plugin 'ervandew/supertab'
