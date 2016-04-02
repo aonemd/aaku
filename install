@@ -1,5 +1,9 @@
-BASEDIR=$PWD
+BASEDIR="$(cd "$(dirname "${ZSH_SOURCE[0]}")" && pwd)"
 
+echo "Updating submodules..."
+git submodule update --init --recursive --remote
+
+echo "Linking files..."
 ln -sf ${BASEDIR}/vim/vim/ ~/.vim
 ln -sf ${BASEDIR}/vim/vimrc ~/.vimrc
       
@@ -10,3 +14,9 @@ ln -sf ${BASEDIR}/zsh/zshrc ~/.zshrc
       
 ln -sf ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
 ln -sf ${BASEDIR}/git/gitconfig ~/.gitconfig
+
+echo "Installing Vim plugins ..."
+echo | vim +PluginInstall +qall
+
+echo "Source Zsh files"
+source ~/.zshrc
