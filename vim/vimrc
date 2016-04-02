@@ -16,6 +16,8 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'christoomey/vim-system-copy'
     Plugin 'w0ng/vim-hybrid'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'tpope/vim-rails'
     Plugin 'fatih/vim-go'
     Plugin 'mattn/emmet-vim'
@@ -28,6 +30,7 @@ set ttimeoutlen=50
 set number
 set nowrap                      "disable soft wrap for lines
 set showcmd                     "display incomplete commands
+set noshowmode                  "disable the label for the current mode
 set history=77
 set undolevels=77
 set nobackup
@@ -57,6 +60,19 @@ set colorcolumn=81
 set background=dark
 colorscheme hybrid
 
+" Plugin Settings
+" Airline
+set laststatus=2                                    "always display the status bar
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'term'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 1        "enable tabline extension to show buffers on top
+let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
+
+"let ag.vim start searching from the project root instead of the cwd
+let g:ag_working_path_mode="r"
+
 " Key Maps
 "leader key
 let mapleader = ","
@@ -76,6 +92,15 @@ cmap w!! %!sudo tee > /dev/null %
 " map Silver Searcher
 map <leader>a :Ag!<space>
 
+"open a new empty buffer
+nmap <leader>T :enew<cr>
+"move to the next buffer
+nmap <leader>l :bnext<CR>
+"move to the previous buffer
+nmap <leader>h :bprevious<CR>
+"close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bd #<CR>
+
 " Functions
 "move to the window in the direction shown, or create a new window
 function! WinMove(key)
@@ -90,7 +115,3 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
-
-" Plugin Settings
-"let ag.vim start searching from the project root instead of the cwd
-let g:ag_working_path_mode="r"
