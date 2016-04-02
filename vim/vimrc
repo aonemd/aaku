@@ -9,6 +9,7 @@ call vundle#begin()
 
 "keep Plugin commands between vundle#begin/end.
     Plugin 'rking/ag.vim'
+    Plugin 'scrooloose/nerdtree'
     Plugin 'myusuf3/numbers.vim'
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
@@ -73,6 +74,11 @@ let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 "let ag.vim start searching from the project root instead of the cwd
 let g:ag_working_path_mode="r"
 
+"NerdTree settings
+let NERDTreeShowHidden=1            "show hidden files in NerdTree
+let NERDTreeChDirMode=2             "set nerdtree dir to current working dir
+autocmd VimEnter * wincmd w         "place the cursor on the opened file directly
+
 " Key Maps
 "leader key
 let mapleader = ","
@@ -91,6 +97,9 @@ cmap w!! %!sudo tee > /dev/null %
 
 " map Silver Searcher
 map <leader>a :Ag!<space>
+
+"toggle NERDTree using ctrl+n
+map <leader>k :NERDTreeToggle<CR>
 
 "open a new empty buffer
 nmap <leader>T :enew<cr>
