@@ -4,13 +4,10 @@
     ~/.aaku: ''
     ~/.vim: vim/vim/
     ~/.vimrc: vim/vimrc
-    ~/.zprezto: zsh/prezto
-    ~/.zpreztorc: zsh/zpreztorc
+    ~/.zsh: zsh/zsh/
     ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
-    ~/.zshenv: zsh/zshenv
     ~/.zlogin: zsh/zlogin
-    ~/.zlogout: zsh/zlogout
     ~/.tmux: tmux/tmux/
     ~/.tmux.conf: tmux/tmux.conf
     ~/.gitconfig: git/gitconfig

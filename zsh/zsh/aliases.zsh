@@ -1,0 +1,35 @@
+# aliases
+alias v='vim'
+alias wk='cd $WK'
+alias myip="nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Git
+alias g='git'
+alias gcl='git clone'
+alias gs='git status --short'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gpu='git pull'
+alias gf='git fetch'
+alias gb='git branch'
+alias gco='git checkout'
+alias gr='git remote'
+alias gd='git diff'
+alias gl='git log --topo-order --pretty=format:"${git_log_normal_format}"'
+alias gls='git log --topo-order --pretty=format:"${git_log_simple_format}"'
+alias glg='git log --topo-order --all --graph --pretty=format:"${git_log_graph_format}"'
+alias gln='git shortlog --summary --numbered'
+
+# Ruby on Rails
+alias r='bundle exec rails'
+alias rs='bundle exec rails server'
+alias rc='bundle exec rails console'
+alias rg='bundle exec rails generate'
+alias rdc='bundle exec rake db:create'
+alias rdd='bundle exec rake db:drop'
+alias rdm='bundle exec rake db:migrate'
+alias rds='bundle exec rake db:seed'
