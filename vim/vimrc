@@ -8,6 +8,7 @@ call vundle#begin()
     Plugin 'gmarik/Vundle.vim'
 
 "keep Plugin commands between vundle#begin/end.
+    Plugin 'rking/ag.vim'
     Plugin 'myusuf3/numbers.vim'
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
@@ -72,6 +73,9 @@ map <silent> <C-l> :call WinMove('l')<cr>
 "override file systems by typing :w!!
 cmap w!! %!sudo tee > /dev/null %
 
+" map Silver Searcher
+map <leader>a :Ag!<space>
+
 " Functions
 "move to the window in the direction shown, or create a new window
 function! WinMove(key)
@@ -86,3 +90,7 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
+
+" Plugin Settings
+"let ag.vim start searching from the project root instead of the cwd
+let g:ag_working_path_mode="r"
