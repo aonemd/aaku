@@ -8,7 +8,6 @@
     ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
     ~/.zlogin: zsh/zlogin
-    ~/.tmux: tmux/tmux/
     ~/.tmux.conf: tmux/tmux.conf
     ~/.gitconfig: git/gitconfig
 
@@ -22,9 +21,6 @@
     -
       - "echo | vim +PluginInstall +qall"
       - "Installing Vim plugins ..."
-    -
-      - "~/.tmux/plugins/tpm/bin/install_plugins"
-      - "Installing Tmux plugins ..."
     -
       - "~/.vim/bundle/fonts/install.sh"
       - "Installing patched fonts ..."
