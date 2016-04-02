@@ -54,6 +54,7 @@ autocmd FileType c setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
 " EyeCandy
+syntax on
 set t_Co=256                    "enable 256 colors
 set term=screen-256color
 set cursorline                  "higlight current line
