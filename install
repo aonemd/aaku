@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 BASEDIR="$(cd "$(dirname "${ZSH_SOURCE[0]}")" && pwd)"
 
 echo "Updating submodules..."
