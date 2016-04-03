@@ -22,7 +22,7 @@ export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.zsh_history"
 setopt hist_ignore_all_dups 	# Ignore duplicate commands
 setopt hist_ignore_space 	# Ignore commands that start with a space
-setopt inc_append_history       # add commands as they are typed, don't wait until shell exit 
+setopt inc_append_history       # add commands as they are typed, don't wait until shell exit
 setopt share_history            # share hist between sessions
 # Complete Search history
 autoload -U up-line-or-beginning-search

@@ -10,9 +10,9 @@ export TERM=screen-256color
 
 export WK=~/workspace/
 
+# Ruby rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 # Go
 export GOPATH="$HOME/workspace/go"
 export PATH=$PATH:/usr/local/go/bin
-
-# Ruby rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
