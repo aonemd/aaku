@@ -1,2 +1,0 @@
-# Ruby rbenv init
-eval "$(rbenv init -)"

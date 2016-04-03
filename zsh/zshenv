@@ -1,0 +1,5 @@
+# In case a non-login shell is running
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN ]]; then
+  source "${ZDOTDIR:-$HOME}/.zshrc"
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
