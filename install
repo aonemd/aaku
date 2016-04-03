@@ -6,12 +6,12 @@ git submodule update --init --recursive --remote
 echo "Linking files..."
 ln -sf ${BASEDIR}/vim/vim/ ~/.vim
 ln -sf ${BASEDIR}/vim/vimrc ~/.vimrc
-      
+
 ln -sf ${BASEDIR}/zsh/zsh/ ~/.zsh
 ln -sf ${BASEDIR}/zsh/zprofile ~/.zprofile
 ln -sf ${BASEDIR}/zsh/zlogin ~/.zlogin
 ln -sf ${BASEDIR}/zsh/zshrc ~/.zshrc
-      
+
 ln -sf ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
 ln -sf ${BASEDIR}/git/gitconfig ~/.gitconfig
 
@@ -20,3 +20,6 @@ echo | vim +PluginInstall +qall
 
 echo "Source Zsh files"
 source ~/.zshrc
+
+echo "Installing Fonts..."
+git clone https://github.com/powerline/fonts.git ~/Downloads/fonts/ && ~/Downloads/fonts/install.sh
