@@ -10,6 +10,7 @@ call vundle#begin()
 "keep Plugin commands between vundle#begin/end.
     Plugin 'rking/ag.vim'
     Plugin 'scrooloose/nerdtree'
+    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'myusuf3/numbers.vim'
     Plugin 'tpope/vim-fugitive'
     Plugin 'airblade/vim-gitgutter'
@@ -63,7 +64,7 @@ set background=dark
 colorscheme hybrid
 
 " Plugin Settings
-" Airline
+"Airline
 set laststatus=2                                    "always display the status bar
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'term'
@@ -72,13 +73,21 @@ let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1        "enable tabline extension to show buffers on top
 let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 
-"let ag.vim start searching from the project root instead of the cwd
-let g:ag_working_path_mode="r"
-
 "NerdTree settings
 let NERDTreeShowHidden=1            "show hidden files in NerdTree
 let NERDTreeChDirMode=2             "set nerdtree dir to current working dir
 autocmd VimEnter * wincmd w         "place the cursor on the opened file directly
+
+"CtrlP & Ag
+"let ag.vim start searching from the project root instead of the cwd
+let g:ag_working_path_mode="r"
+
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_use_caching = 0 " no caching
+endif
 
 " Key Maps
 "leader key
@@ -96,8 +105,11 @@ map <silent> <C-l> :call WinMove('l')<cr>
 "override file systems by typing :w!!
 cmap w!! %!sudo tee > /dev/null %
 
-" map Silver Searcher
-map <leader>a :Ag!<space>
+"map Silver Searcher
+map \ :Ag!<space>
+
+"bind K to grep word under cursor
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "toggle NERDTree using ctrl+n
 map <leader>k :NERDTreeToggle<CR>
