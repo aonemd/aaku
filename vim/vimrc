@@ -33,6 +33,7 @@ set number
 set nowrap                      "disable soft wrap for lines
 set showcmd                     "display incomplete commands
 set noshowmode                  "disable the label for the current mode
+set hidden                      "hide buffers instead of closing them
 set history=77
 set undolevels=77
 set nobackup
