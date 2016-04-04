@@ -17,6 +17,8 @@ ln -sf ${BASEDIR}/zsh/zshrc ~/.zshrc
 ln -sf ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
 ln -sf ${BASEDIR}/git/gitconfig ~/.gitconfig
 
+ln -sf ${BASEDIR}/other/agignore ~/.agignore
+
 echo "Installing Vim plugins ..."
 echo | vim +PluginInstall +qall
 

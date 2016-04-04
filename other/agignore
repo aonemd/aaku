@@ -1,0 +1,4 @@
+.git/
+.hg/
+.svn/
+tmp/
