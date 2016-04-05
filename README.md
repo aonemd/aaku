@@ -12,13 +12,12 @@ aaku
 
 ### Installation
 
-1. Download the repo or use Git `git clone https://github.com/aasare/aaku`
+1. Download the repo or use Git `git clone https://gitlab.com/aasare/aaku.git`
 2. Run the installation script in the repo `cd aaku && ./install`
 
-### Notes
+### A note to myself:
 
-- [Dotfiles Are Meant to Be Forked](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
-- A note to myself: A Good Carpenter Doesn't Blame His Tools.
+A Good Carpenter Doesn't Blame His Tools.
 
 ### License
 
