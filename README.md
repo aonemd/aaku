@@ -21,4 +21,4 @@ A Good Carpenter Doesn't Blame His Tools.
 
 ### License
 
-See [LICENSE](https://github.com/aasare/aaku/blob/master/LICENSE).
+See [LICENSE](https://gitlab.com/aasare/aaku/blob/master/LICENSE).
