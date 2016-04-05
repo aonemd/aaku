@@ -8,6 +8,7 @@ git submodule update --init --recursive --remote
 echo "Linking files..."
 ln -sf ${BASEDIR}/vim/vim/ ~/.vim
 ln -sf ${BASEDIR}/vim/vimrc ~/.vimrc
+ln -sf ${BASEDIR}/vim/gvimrc ~/.gvimrc
 
 ln -sf ${BASEDIR}/zsh/zsh/ ~/.zsh
 ln -sf ${BASEDIR}/zsh/zprofile ~/.zprofile

@@ -1,0 +1,17 @@
+set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
+
+" Window size
+set lines=50
+set columns=90
+
+" Menus
+set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
+set guioptions-=L  "remove left-hand scroll bar
+
+" show console dialogs
+set guioptions+=c
+
+" Silent bell
+autocmd GUIEnter * set vb t_vb=
