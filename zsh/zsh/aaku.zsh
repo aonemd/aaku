@@ -11,7 +11,6 @@ setopt autocd
 
 # Autocompletion
 autoload -U compinit && compinit
-setopt completealiases
 setopt menu_complete
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
