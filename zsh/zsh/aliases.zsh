@@ -1,5 +1,6 @@
 # aliases
 alias v='vim'
+alias t='tmux'
 alias wk='cd $WK'
 alias myip="nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4"
 alias ll='ls -alF'
@@ -33,3 +34,16 @@ alias rdc='bundle exec rake db:create'
 alias rdd='bundle exec rake db:drop'
 alias rdm='bundle exec rake db:migrate'
 alias rds='bundle exec rake db:seed'
+alias rbi='bundle install'
+
+# Docker and Docker Compose
+alias d='docker'
+alias ds='docker start'
+alias dst='docker stop'
+alias dsk='docker kill'
+alias dac='docker ps -a'
+alias drac='docker rm -f `docker ps --no-trunc -aq`'
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcs='docker-compose start'
+alias dcst='docker-compose stop'
