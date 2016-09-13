@@ -27,4 +27,4 @@ echo "Source Zsh files"
 source ~/.zshrc
 
 echo "Installing Fonts..."
-git clone https://github.com/powerline/fonts.git ~/Downloads/fonts/ && ~/Downloads/fonts/install.sh
+git clone https://github.com/powerline/fonts.git ~/workspace/fonts/ && ~/workspace/fonts/install.sh
