@@ -18,6 +18,7 @@ call vundle#begin()
     Plugin 'tpope/vim-surround'
     Plugin 'christoomey/vim-system-copy'
     Plugin 'w0ng/vim-hybrid'
+    Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
     Plugin 'tpope/vim-rails'
