@@ -3,6 +3,7 @@ set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
 " Window size
 set lines=50
 set columns=90
+set guiheadroom=0
 
 " Menus
 set guioptions-=m  "remove menu bar
