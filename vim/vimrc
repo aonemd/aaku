@@ -125,6 +125,11 @@ nmap <leader>h :bprevious<CR>
 "close the current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 
+"Ctags
+map <leader>rt :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
+set tags+=.git/tags
+map <leader>. :CtrlPTag<cr>
+
 " Functions
 "move to the window in the direction shown, or create a new window
 function! WinMove(key)
