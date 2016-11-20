@@ -39,6 +39,7 @@ set history=77
 set undolevels=77
 set nobackup
 set noswapfile
+set scrolloff=2
 
 " Search
 set incsearch
