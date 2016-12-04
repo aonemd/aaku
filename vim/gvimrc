@@ -1,4 +1,4 @@
-set guifont=Meslo\ LG\ S\ for\ Powerline\ 10
+set guifont=Hack\ Regular\ 10
 
 " Window size
 set lines=50
