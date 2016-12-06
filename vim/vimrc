@@ -35,6 +35,7 @@ set t_Co=256                    "enable 256 colors
 set term=screen-256color
 set cursorline                  "higlight current line
 set colorcolumn=81
+set path+=**
 
 set background=dark
 colorscheme PaperColor
