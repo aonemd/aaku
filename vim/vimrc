@@ -13,11 +13,12 @@ call vundle#begin()
     Plugin 'airblade/vim-gitgutter'
     Plugin 'tomtom/tcomment_vim'
     Plugin 'tpope/vim-surround'
-    Plugin 'christoomey/vim-system-copy'
+    Plugin 'aaooki/vim-system-copy'
     Plugin 'w0ng/vim-hybrid'
     Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'tpope/vim-rails'
     Plugin 'fatih/vim-go'
+    Plugin 'leafgarland/typescript-vim'
     Plugin 'mattn/emmet-vim'
    call vundle#end()
 
