@@ -91,7 +91,7 @@ map <leader>. :CtrlPTag<cr>
 nmap <leader>p :CtrlP<cr>
 
 "search open buffers
-nmap <leader>bb :CtrlPBuffer<cr>
+nmap <leader>m :CtrlPBuffer<cr>
 "new empty buffer
 nmap <leader>T :enew<cr>
 "next buffer
