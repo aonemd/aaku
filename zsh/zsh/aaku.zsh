@@ -3,7 +3,7 @@ autoload -U promptinit && promptinit
 autoload -U colors && colors
 
 setopt prompt_subst
-setopt correctall
+setopt correct
 setopt extendedglob
 setopt glob_dots
 unsetopt beep
