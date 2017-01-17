@@ -101,14 +101,18 @@ nmap <leader>h :bprevious<CR>
 "close current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 
+"override file systems by typing :w!!
+cmap w!! %!sudo tee > /dev/null %
+
+"remove current line highlight in unfocused window
+au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter *  set cul
+au WinLeave,FocusLost,CmdwinLeave * set nocul
+
 "window navigation and splits
 map <silent> <C-h> :call WinMove('h')<cr>
 map <silent> <C-j> :call WinMove('j')<cr>
 map <silent> <C-k> :call WinMove('k')<cr>
 map <silent> <C-l> :call WinMove('l')<cr>
-
-"override file systems by typing :w!!
-cmap w!! %!sudo tee > /dev/null %
 
 "move to the window in the direction shown, or create a new window
 function! WinMove(key)
