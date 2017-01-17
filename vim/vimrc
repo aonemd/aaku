@@ -27,17 +27,20 @@ filetype plugin indent on
 
 set showcmd                     "display incomplete commands
 set laststatus=2                "always display the status bar
+set hidden                      "hide buffers instead of closing them
+set nowrap                      "disable soft wrap for lines
+set scrolloff=2
 set ruler
 set number
-set hidden                      "hide buffers instead of closing them
-set scrolloff=2
-set nowrap                      "disable soft wrap for lines
-set t_Co=256                    "enable 256 colors
-set term=screen-256color
 set cursorline                  "higlight current line
 set colorcolumn=81
 set path+=**
 
+set mouse=n
+set ttymouse=xterm2
+
+set t_Co=256                    "enable 256 colors
+set term=screen-256color
 set background=dark
 colorscheme PaperColor
 
