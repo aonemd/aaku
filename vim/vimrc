@@ -13,7 +13,7 @@ call vundle#begin()
     Plugin 'airblade/vim-gitgutter'
     Plugin 'tomtom/tcomment_vim'
     Plugin 'tpope/vim-surround'
-    Plugin 'aaooki/vim-system-copy'
+    Plugin 'christoomey/vim-system-copy'
     Plugin 'w0ng/vim-hybrid'
     Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'tpope/vim-rails'
