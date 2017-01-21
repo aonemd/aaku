@@ -18,6 +18,7 @@ call vundle#begin()
     Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'tpope/vim-rails'
     Plugin 'fatih/vim-go'
+    Plugin 'kchmck/vim-coffee-script'
     Plugin 'leafgarland/typescript-vim'
     Plugin 'mattn/emmet-vim'
    call vundle#end()
