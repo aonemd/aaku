@@ -113,6 +113,9 @@ au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter *  set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
 
 "window navigation and splits
+set splitbelow
+set splitright
+
 map <silent> <C-h> :call WinMove('h')<cr>
 map <silent> <C-j> :call WinMove('j')<cr>
 map <silent> <C-k> :call WinMove('k')<cr>
