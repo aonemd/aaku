@@ -21,7 +21,7 @@ ln -sf ${BASEDIR}/git/gitconfig ~/.gitconfig
 ln -sf ${BASEDIR}/other/agignore ~/.agignore
 
 echo "Installing Vim plugins ..."
-echo | vim +PluginInstall +qall
+echo | vim +PlugInstall +qall
 
 echo "Source Zsh files"
 source ~/.zshrc
