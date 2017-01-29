@@ -1,31 +1,24 @@
-"Plugins
 set nocompatible              "no compatibility with legacy vi
-filetype off
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-    Plugin 'gmarik/Vundle.vim'
 
-    Plugin 'rking/ag.vim'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'myusuf3/numbers.vim'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'tomtom/tcomment_vim'
-    Plugin 'tpope/vim-surround'
-    Plugin 'christoomey/vim-system-copy'
-    Plugin 'junegunn/goyo.vim'
-    Plugin 'w0ng/vim-hybrid'
-    Plugin 'NLKNguyen/papercolor-theme'
-    Plugin 'tpope/vim-rails'
-    Plugin 'fatih/vim-go'
-    Plugin 'kchmck/vim-coffee-script'
-    Plugin 'leafgarland/typescript-vim'
-    Plugin 'mattn/emmet-vim'
-   call vundle#end()
-
-syntax on
-filetype plugin indent on
+"Plugins
+call plug#begin('~/.vim/plugins')
+Plug 'rking/ag.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'myusuf3/numbers.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-system-copy'
+Plug 'junegunn/goyo.vim'
+Plug 'w0ng/vim-hybrid'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'tpope/vim-rails'
+Plug 'fatih/vim-go'
+Plug 'kchmck/vim-coffee-script'
+Plug 'leafgarland/typescript-vim'
+Plug 'mattn/emmet-vim'
+call plug#end()
 
 set showcmd                     "display incomplete commands
 set laststatus=2                "always display the status bar
