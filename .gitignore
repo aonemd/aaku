@@ -1,2 +1,3 @@
-!vim/vim/autoload/*     # Ignore everything except autoload
+vim/vim/plugins/**      # Ignore Vim plugins
+vim/vim/.netrwhist
 tmux/tmux/*           # Ignore Tmux plugins
