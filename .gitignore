@@ -1,3 +1,6 @@
-vim/vim/plugins/**      # Ignore Vim plugins
+# Ignore Vim plugins
+vim/vim/plugins/
 vim/vim/.netrwhist
-tmux/tmux/*           # Ignore Tmux plugins
+
+# Ignore Tmux plugins
+tmux/tmux/
