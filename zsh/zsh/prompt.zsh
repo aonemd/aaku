@@ -22,4 +22,4 @@ function hg_branch {
   hg branch 2> /dev/null | sed -e "s/\(.*\)/ $(hg_status)\1/"
 }
 
-PROMPT='%{$fg[blue]%}%1~$(git_branch)$(hg_branch) %{$reset_color%}➜ '
+PROMPT='%{$fg[blue]%}%1~$(git_branch)$(hg_branch) %{$fg[red]%}💜 %{$reset_color%}➜ '
