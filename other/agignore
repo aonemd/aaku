@@ -2,3 +2,4 @@
 .hg/
 .svn/
 tmp/
+bin/
