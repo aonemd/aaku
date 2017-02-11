@@ -20,6 +20,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mattn/emmet-vim'
 call plug#end()
 
+set lazyredraw
 set showcmd                     "display incomplete commands
 set wildmenu
 set laststatus=2                "always display the status bar
