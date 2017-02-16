@@ -4,7 +4,7 @@ set nocompatible              "no compatibility with legacy vi
 call plug#begin('~/.vim/plugins')
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'myusuf3/numbers.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
