@@ -21,6 +21,7 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 set lazyredraw
+set autoread                    "automatically read changes in the file
 set showcmd                     "display incomplete commands
 set wildmenu
 set laststatus=2                "always display the status bar
