@@ -76,7 +76,7 @@ if executable('ag')
 endif
 
 "The Leader
-let mapleader = ","
+let mapleader = "\<Space>"
 
 "map Silver Searcher
 map \ :Ag!<space>
@@ -85,21 +85,25 @@ map \ :Ag!<space>
 nnoremap K :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 "Ctags
-map <leader>rt :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 set tags+=.git/tags
-map <leader>. :CtrlPTag<cr>
+map <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
 
+"search tags
+map <leader>t :CtrlPTag<cr>
 "search files
 nmap <leader>p :CtrlP<cr>
-
 "search open buffers
-nmap <leader>m :CtrlPBuffer<cr>
+nmap <leader>r :CtrlPBuffer<cr>
+
+"cycle between last two open files
+nnoremap <leader><leader> <c-^>
+
 "new empty buffer
 nmap <leader>T :enew<cr>
 "next buffer
 nmap <leader>l :bnext<CR>
 "previous buffer
-nmap <leader>h :bprevious<CR>
+nmap <leader>k :bprevious<CR>
 "close current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 
