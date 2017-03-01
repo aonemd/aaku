@@ -11,9 +11,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
-Plug 'w0ng/vim-hybrid'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'jacoborus/tender.vim'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'kchmck/vim-coffee-script'
@@ -41,7 +39,7 @@ set ttymouse=xterm2
 set t_Co=256                    "enable 256 colors
 set term=screen-256color
 set background=dark
-colorscheme tender
+colorscheme PaperColor
 
 set encoding=utf-8
 set ttimeout
