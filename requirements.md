@@ -4,12 +4,12 @@
 - tmux
 - silversearcher-ag
 - xsel
-
 - cmus
 - weech
-- i3lock
 - albert
-
+- i3lock
+- imagemagick
+- scrot
 - rbenv
 - golang
 - docker
