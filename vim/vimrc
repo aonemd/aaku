@@ -101,9 +101,9 @@ nnoremap <leader><leader> <c-^>
 "new empty buffer
 nmap <leader>T :enew<cr>
 "next buffer
-nmap <leader>l :bnext<CR>
+nmap <Tab> :bnext<CR>
 "previous buffer
-nmap <leader>k :bprevious<CR>
+nmap <S-Tab> :bprevious<CR>
 "close current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
 
