@@ -16,6 +16,8 @@ scrot -z "$lockbg"
 convert "$lockbg" -scale 10% -scale 1000% -blur 0x8 "$lockbg"
 convert "$lockbg" \( "$lockfg" -scale 70% -gravity center \) -composite -matte "$lockbg"
 
+setxkbmap us  # change layout to us
+
 i3lock -u -n -e -i "$lockbg" >> /dev/null
 
 rm "$lockbg"
