@@ -1,6 +1,5 @@
 URxvt.font: xft:Hack:style=Regular:size=10
-XTerm*faceName: Hack:style=Regular
-XTerm*faceSize: 10
+XTerm*faceName: Hack:style=Regular:size=10
 
 *.scrollBar: false
 URxvt*saveLines: 10000
