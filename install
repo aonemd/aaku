@@ -6,23 +6,23 @@ echo "Updating submodules..."
 git submodule update --init --recursive --remote
 
 echo "Linking files..."
-ln -sf ${BASEDIR}/vim/vim/ ~/.vim
-ln -sf ${BASEDIR}/vim/vimrc ~/.vimrc
-ln -sf ${BASEDIR}/vim/gvimrc ~/.gvimrc
+ln -sfn ${BASEDIR}/vim/vim/ ~/.vim
+ln -sfn ${BASEDIR}/vim/vimrc ~/.vimrc
+ln -sfn ${BASEDIR}/vim/gvimrc ~/.gvimrc
 
-ln -sf ${BASEDIR}/zsh/zsh/ ~/.zsh
-ln -sf ${BASEDIR}/zsh/zprofile ~/.zprofile
-ln -sf ${BASEDIR}/zsh/zshenv ~/.zshenv
-ln -sf ${BASEDIR}/zsh/zshrc ~/.zshrc
+ln -sfn ${BASEDIR}/zsh/zsh/ ~/.zsh
+ln -sfn ${BASEDIR}/zsh/zprofile ~/.zprofile
+ln -sfn ${BASEDIR}/zsh/zshenv ~/.zshenv
+ln -sfn ${BASEDIR}/zsh/zshrc ~/.zshrc
 
-ln -sf ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
-ln -sf ${BASEDIR}/git/gitconfig ~/.gitconfig
+ln -sfn ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
+ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
 
-ln -sf ${BASEDIR}/other/agignore ~/.agignore
-ln -sf ${BASEDIR}/other/Xresources ~/.Xresources
+ln -sfn ${BASEDIR}/other/agignore ~/.agignore
+ln -sfn ${BASEDIR}/other/Xresources ~/.Xresources
 
 if [ -d $HOME/.config/termite/ ]; then mkdir -p $HOME/.config/termite; fi
-ln -sfr ${BASEDIR}/other/termite ~/.config/termite/config
+ln -sfrn ${BASEDIR}/other/termite ~/.config/termite/config
 
 echo "Installing Vim plugins ..."
 echo | vim +PlugInstall +qall
