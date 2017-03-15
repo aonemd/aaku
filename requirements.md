@@ -4,13 +4,19 @@
 - tmux
 - silversearcher-ag
 - xsel
-- cmus
-- weech
-- albert
+
+- i3-gaps
 - i3lock
+- i3-blocks
+- termite
 - imagemagick
 - scrot
+- feh
+
+- cmus
+- weechat
+- albert
+
 - rbenv
 - golang
 - docker
-- termite
