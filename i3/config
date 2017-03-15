@@ -15,9 +15,8 @@ bindsym $mod+Shift+q kill
 # toggle fullscreen
 bindsym F11 fullscreen toggle
 
-# split mode
-bindsym $mod+semicolon split h
-bindsym $mod+v split v
+# toggle split mode
+bindsym $mod+backslash split toggle
 
 # change focus
 bindsym $mod+$up focus up
