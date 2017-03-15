@@ -25,7 +25,7 @@ ln -sfn ${BASEDIR}/other/Xresources ~/.Xresources
 ln -sfrn ${BASEDIR}/other/termite ~/.config/termite/config
 
 echo "Installing Vim plugins ..."
-echo | vim +PlugInstall +qall
+echo | vim - +PlugInstall +qall
 
 echo "Source Zsh files"
 source ~/.zshrc
