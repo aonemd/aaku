@@ -13,7 +13,7 @@ set $right l
 bindsym $mod+Shift+q kill
 
 # toggle fullscreen
-bindsym $mod+f fullscreen toggle
+bindsym F11 fullscreen toggle
 
 # split mode
 bindsym $mod+semicolon split h
