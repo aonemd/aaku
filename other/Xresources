@@ -9,31 +9,6 @@ URxvt*imLocale: en_US.utf8
 XTerm*locale: en_US.utf8
 XTerm*utf8: 1
 
-XTerm*selectToClipboard: true
-
-!! to be tested
-! Meta modifier for keybindings
-URxvt.modifier: super
-
-! perl extensions
-URxvt.perl-ext:             default,url-select,clipboard
-
-! url-select (part of urxvt-perls package)
-URxvt.keysym.M-u:           perl:url-select:select_next
-URxvt.url-select.autocopy:  true
-URxvt.url-select.button:    2
-URxvt.url-select.launcher:  chromium
-URxvt.url-select.underline: true
-
-! Nastavuje kopirovani
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C:   perl:clipboard:copy
-
-! disable the stupid ctrl+shift 'feature'
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-!! ends to be tested
-
 *termName: xterm-256color
 
 ! colorscheme
