@@ -1,5 +1,14 @@
+# Always sourced
+
 # In case a non-login shell is running
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc"
-  source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
+export TERMINAL='termite'
+
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
