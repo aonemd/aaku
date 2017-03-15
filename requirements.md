@@ -9,13 +9,13 @@
 - i3lock
 - i3-blocks
 - termite
+- rofi
 - imagemagick
 - scrot
 - feh
 
 - cmus
 - weechat
-- albert
 
 - rbenv
 - golang

@@ -69,9 +69,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # change container layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+Shift+s layout stacking
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+w layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -81,10 +81,11 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Launching programs
-bindsym $mod+d exec dmenu_run
+bindsym $mod+f exec rofi -show drun
+bindsym $mod+w exec rofi -show window
 bindsym $mod+t exec i3-sensible-terminal
 bindsym $mod+shift+BackSpace exec $HOME/.config/i3/scripts/screen-lock.sh
 
