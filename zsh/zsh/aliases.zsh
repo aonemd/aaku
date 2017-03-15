@@ -7,7 +7,7 @@ alias wk='cd $WK'
 
 alias v='vim'
 alias vv='gvim'
-alias t='tmux'
+alias t='tmux -u'
 
 alias myip="nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4"
 
