@@ -21,7 +21,7 @@ ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
 ln -sfn ${BASEDIR}/other/agignore ~/.agignore
 ln -sfn ${BASEDIR}/other/Xresources ~/.Xresources
 
-if [ -d $HOME/.config/termite/ ]; then mkdir -p $HOME/.config/termite; fi
+[ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfrn ${BASEDIR}/other/termite ~/.config/termite/config
 
 echo "Installing Vim plugins ..."
