@@ -7,7 +7,7 @@
 
 - i3-gaps
 - i3lock
-- i3-blocks
+- i3status
 - termite
 - rofi
 - imagemagick
