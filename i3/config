@@ -138,4 +138,4 @@ bar {
 # Autostart
 exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768 
 exec --no-startup-id  xrdb ~/.Xresources
-exec --no-startup-id  feh --bg-scale $HOME/Pictures/wallpaper.jpg
+exec --no-startup-id  feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
