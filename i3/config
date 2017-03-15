@@ -1,0 +1,141 @@
+# Mod key: super
+set $mod Mod4
+
+font xft: Hack 8
+
+# Movement keys
+set $up k
+set $down j
+set $left h
+set $right l
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# toggle fullscreen
+bindsym $mod+f fullscreen toggle
+
+# split mode
+bindsym $mod+semicolon split h
+bindsym $mod+v split v
+
+# change focus
+bindsym $mod+$up focus up
+bindsym $mod+$down focus down
+bindsym $mod+$left focus left
+bindsym $mod+$right focus right
+
+# move focused window
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$right move right
+
+# nagivate workspaces left/right
+bindsym $mod+Ctrl+$right workspace next
+bindsym $mod+Ctrl+$left workspace prev
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+
+# resize window
+mode "resize" {
+
+        bindsym $up         resize grow height 10 px or 10 ppt
+        bindsym $down       resize shrink height 10 px or 10 ppt
+        bindsym $left       resize shrink width 10 px or 10 ppt
+        bindsym $right      resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Launching programs
+bindsym $mod+d exec dmenu_run
+bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+shift+BackSpace exec $HOME/.config/i3/scripts/screen-lock.sh
+
+# Gaps
+gaps inner 30
+gaps outer 0
+smart_gaps on
+
+# hide window borders
+for_window [class="^.*"] border pixel 0
+
+# Colors
+set $colorbg   #1b1918
+set $colorfg   #ffffff
+set $colorblk  #1b1918
+set $colorbblk #766e6b
+set $colorred  #f22c40
+set $colorbred #f22c40
+set $colorgrn  #5ab738
+set $colorbgrn #5ab738
+set $colorylw  #d5911a
+set $colorbylw #d5911a
+set $colorblu  #407ee7
+set $colorbblu #407ee7
+set $colormag  #6666ea
+set $colorbmag #6666ea
+set $colorcyn  #00ad9c
+set $colorbcyn #00ad9c
+set $colorwht  ##a8a19f
+set $colorbwht #f1efee
+
+# Bar
+bar {
+  tray_output primary
+  position top
+  font xft: Hack 8
+
+  colors {
+      background $colorbg
+      statusline $colorfg
+      separator $colorfg
+      focused_workspace $colorfg $colorfg $colorbg
+      active_workspace $colorwht $colorwht $colorblk
+      inactive_workspace $colorbg $colorbg $colorfg
+      urgent_workspace $colorred $colorred $colorbg
+	}
+
+  status_command i3status -c $HOME/.config/i3/i3status.conf
+}
+
+# Autostart
+exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768 
+exec --no-startup-id  xrdb ~/.Xresources
+exec --no-startup-id  feh --bg-scale $HOME/Pictures/wallpaper.jpg

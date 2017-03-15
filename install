@@ -16,13 +16,18 @@ ln -sfn ${BASEDIR}/zsh/zshenv ~/.zshenv
 ln -sfn ${BASEDIR}/zsh/zshrc ~/.zshrc
 
 ln -sfn ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
-ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
 
-ln -sfn ${BASEDIR}/other/agignore ~/.agignore
-ln -sfn ${BASEDIR}/other/Xresources ~/.Xresources
-
+[ -d $HOME/.config/i3/ ] || mkdir -p $HOME/.config/i3
+ln -sfnr ${BASEDIR}/i3/config ~/.config/i3/config
+ln -sfnr ${BASEDIR}/i3/i3status.conf ~/.config/i3/i3status.conf
+ln -sfnr ${BASEDIR}/i3/scripts ~/.config/i3/scripts
+ln -sfnr ${BASEDIR}/i3/other/xinitrc ~/.xinitrc
+ln -sfnr ${BASEDIR}/i3/other/Xresources ~/.Xresources
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
-ln -sfrn ${BASEDIR}/other/termite ~/.config/termite/config
+ln -sfnr ${BASEDIR}/i3/other/termite ~/.config/termite/config
+
+ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
+ln -sfn ${BASEDIR}/other/agignore ~/.agignore
 
 echo "Installing Vim plugins ..."
 echo | vim - +PlugInstall +qall
