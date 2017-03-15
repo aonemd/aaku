@@ -13,3 +13,4 @@
 - rbenv
 - golang
 - docker
+- termite
