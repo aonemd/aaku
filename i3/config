@@ -72,7 +72,7 @@ bindsym $mod+Shift+t layout tabbed
 bindsym $mod+Shift+w layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+f floating toggle
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
