@@ -4,9 +4,9 @@ set $mod Mod4
 font xft: Hack 8
 
 # Movement keys
-set $up k
-set $down j
-set $left h
+set $up    k
+set $down  j
+set $left  h
 set $right l
 
 # kill focused window
@@ -16,23 +16,23 @@ bindsym $mod+Shift+q kill
 bindsym F11 fullscreen toggle
 
 # toggle split mode
-bindsym $mod+backslash split toggle
+bindsym $mod+BackSlash split toggle
 
 # change focus
-bindsym $mod+$up focus up
-bindsym $mod+$down focus down
-bindsym $mod+$left focus left
+bindsym $mod+$up    focus up
+bindsym $mod+$down  focus down
+bindsym $mod+$left  focus left
 bindsym $mod+$right focus right
 
 # move focused window
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$left  move left
 bindsym $mod+Shift+$right move right
 
 # nagivate workspaces left/right
 bindsym $mod+Ctrl+$right workspace next
-bindsym $mod+Ctrl+$left workspace prev
+bindsym $mod+Ctrl+$left  workspace prev
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -54,11 +54,10 @@ bindsym $mod+Shift+7 move container to workspace 7
 
 # resize window
 mode "resize" {
-
-        bindsym $up         resize grow height 10 px or 10 ppt
-        bindsym $down       resize shrink height 10 px or 10 ppt
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+        bindsym $up    resize grow height 10 px or 10 ppt
+        bindsym $down  resize shrink height 10 px or 10 ppt
+        bindsym $left  resize shrink width 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
@@ -123,19 +122,19 @@ bar {
   font xft: Hack 8
 
   colors {
-      background $colorbg
-      statusline $colorfg
-      separator $colorfg
-      focused_workspace $colorfg $colorfg $colorbg
-      active_workspace $colorwht $colorwht $colorblk
-      inactive_workspace $colorbg $colorbg $colorfg
-      urgent_workspace $colorred $colorred $colorbg
-	}
+    background $colorbg
+    statusline $colorfg
+    separator $colorfg
+    focused_workspace $colorfg $colorfg $colorbg
+    active_workspace $colorwht $colorwht $colorblk
+    inactive_workspace $colorbg $colorbg $colorfg
+    urgent_workspace $colorred $colorred $colorbg
+  }
 
   status_command i3status -c $HOME/.config/i3/i3status.conf
 }
 
 # Autostart
-exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768 
+exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768
 exec --no-startup-id  xrdb ~/.Xresources
 exec --no-startup-id  feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg
