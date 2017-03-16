@@ -25,8 +25,8 @@ ln -sfnr ${BASEDIR}/i3/other/xinitrc ~/.xinitrc
 ln -sfnr ${BASEDIR}/i3/other/Xresources ~/.Xresources
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfnr ${BASEDIR}/i3/other/termite ~/.config/termite/config
-[ -d $HOME/.local/rofi/ ] || mkdir -p $HOME/.local/rofi
-ln -sfnr ${BASEDIR}/i3/other/rofi ~/.local/rofi/config
+[ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
+ln -sfnr ${BASEDIR}/i3/other/rofi ~/.config/rofi/config
 
 ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
 ln -sfn ${BASEDIR}/other/agignore ~/.agignore
