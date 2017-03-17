@@ -6,16 +6,16 @@ echo "Updating submodules..."
 git submodule update --init --recursive --remote
 
 echo "Linking files..."
-ln -sfn ${BASEDIR}/vim/vim/ ~/.vim
-ln -sfn ${BASEDIR}/vim/vimrc ~/.vimrc
-ln -sfn ${BASEDIR}/vim/gvimrc ~/.gvimrc
+ln -sfn ${BASEDIR}/vim/vim/ $HOME/.vim
+ln -sfn ${BASEDIR}/vim/vimrc $HOME/.vimrc
+ln -sfn ${BASEDIR}/vim/gvimrc $HOME/.gvimrc
 
-ln -sfn ${BASEDIR}/zsh/zsh/ ~/.zsh
-ln -sfn ${BASEDIR}/zsh/zprofile ~/.zprofile
-ln -sfn ${BASEDIR}/zsh/zshenv ~/.zshenv
-ln -sfn ${BASEDIR}/zsh/zshrc ~/.zshrc
+ln -sfn ${BASEDIR}/zsh/zsh/ $HOME/.zsh
+ln -sfn ${BASEDIR}/zsh/zprofile $HOME/.zprofile
+ln -sfn ${BASEDIR}/zsh/zshenv $HOME/.zshenv
+ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
 
-ln -sfn ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
+ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 
 ln -sfn ${BASEDIR}/app-config/gitconfig $HOME/.gitconfig
 
@@ -42,7 +42,8 @@ echo "Installing Vim plugins ..."
 echo | vim - +PlugInstall +qall
 
 echo "Source Zsh files"
-source ~/.zshrc
+source $HOME/.zshrc
 
 echo "Installing Fonts..."
-git clone https://github.com/powerline/fonts.git ~/workspace/fonts/ && ~/workspace/fonts/install.sh
+git clone https://github.com/powerline/fonts.git $HOME/workspace/fonts/
+$HOME/workspace/fonts/install.sh
