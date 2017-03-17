@@ -28,6 +28,9 @@ ln -sfnr ${BASEDIR}/i3/other/termite ~/.config/termite/config
 [ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
 ln -sfnr ${BASEDIR}/i3/other/rofi ~/.config/rofi/config
 
+[ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
+ln -sfnr ${BASEDIR}/app-config/dunstrc $HOME/.config/dunst/dunstrc
+
 ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
 ln -sfn ${BASEDIR}/other/agignore ~/.agignore
 

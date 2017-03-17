@@ -6,13 +6,14 @@
 - xsel
 
 - i3-gaps
-- i3lock
 - i3status
+- i3lock
+- dunst
+- feh
+- scrot
+- imagemagick
 - termite
 - rofi
-- imagemagick
-- scrot
-- feh
 
 - cmus
 - weechat
