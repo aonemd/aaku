@@ -20,6 +20,10 @@ bindsym $mod+backslash split toggle
 
 focus_follows_mouse false
 
+# scratchpad
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
 # change focus
 bindsym $mod+$up    focus up
 bindsym $mod+$down  focus down
