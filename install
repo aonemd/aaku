@@ -17,22 +17,26 @@ ln -sfn ${BASEDIR}/zsh/zshrc ~/.zshrc
 
 ln -sfn ${BASEDIR}/tmux/tmux.conf ~/.tmux.conf
 
+ln -sfn ${BASEDIR}/app-config/gitconfig $HOME/.gitconfig
+
+ln -sfn ${BASEDIR}/app-config/agignore $HOME/.agignore
+
+[ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
+ln -sfnr ${BASEDIR}/app-config/termite $HOME/.config/termite/config
+
+[ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
+ln -sfnr ${BASEDIR}/app-config/rofi $HOME/.config/rofi/config
+
+[ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
+ln -sfnr ${BASEDIR}/app-config/dunstrc $HOME/.config/dunst/dunstrc
+
+ln -sfnr ${BASEDIR}/app-config/Xresources $HOME/.Xresources
+
 [ -d $HOME/.config/i3/ ] || mkdir -p $HOME/.config/i3
 ln -sfnr ${BASEDIR}/i3/config ~/.config/i3/config
 ln -sfnr ${BASEDIR}/i3/i3status.conf ~/.config/i3/i3status.conf
 ln -sfnr ${BASEDIR}/i3/scripts ~/.config/i3/scripts
 ln -sfnr ${BASEDIR}/i3/other/xinitrc ~/.xinitrc
-ln -sfnr ${BASEDIR}/i3/other/Xresources ~/.Xresources
-[ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
-ln -sfnr ${BASEDIR}/i3/other/termite ~/.config/termite/config
-[ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
-ln -sfnr ${BASEDIR}/i3/other/rofi ~/.config/rofi/config
-
-[ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
-ln -sfnr ${BASEDIR}/app-config/dunstrc $HOME/.config/dunst/dunstrc
-
-ln -sfn ${BASEDIR}/git/gitconfig ~/.gitconfig
-ln -sfn ${BASEDIR}/other/agignore ~/.agignore
 
 echo "Installing Vim plugins ..."
 echo | vim - +PlugInstall +qall
