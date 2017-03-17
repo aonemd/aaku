@@ -88,24 +88,25 @@ smart_gaps on
 for_window [class="^.*"] border pixel 0
 
 # Colors
-set $colorbg   #1b1918
-set $colorfg   #ffffff
-set $colorblk  #1b1918
-set $colorbblk #766e6b
-set $colorred  #f22c40
-set $colorbred #f22c40
-set $colorgrn  #5ab738
-set $colorbgrn #5ab738
-set $colorylw  #d5911a
-set $colorbylw #d5911a
-set $colorblu  #407ee7
-set $colorbblu #407ee7
-set $colormag  #6666ea
-set $colorbmag #6666ea
-set $colorcyn  #00ad9c
-set $colorbcyn #00ad9c
-set $colorwht  ##a8a19f
-set $colorbwht #f1efee
+set $colorbg       #1b1918
+set $colorfg       #ffffff
+set $colorblk      #1b1918
+set $colorbblk     #766e6b
+set $colorred      #f22c40
+set $colorbred     #f22c40
+set $colorgrn      #5ab738
+set $colorbgrn     #5ab738
+set $colorylw      #d5911a
+set $colorbylw     #d5911a
+set $colorblu      #407ee7
+set $colorbblu     #407ee7
+set $colormag      #6666ea
+set $colorbmag     #6666ea
+set $colorcyn      #00ad9c
+set $colorbcyn     #00ad9c
+set $colorwht      #a8a19f
+set $colorbwht     #f1efee
+set $colorinactive #373b41
 
 # Bar
 bar {
@@ -117,10 +118,12 @@ bar {
     background $colorbg
     statusline $colorfg
     separator $colorfg
-    focused_workspace $colorfg $colorfg $colorbg
-    active_workspace $colorwht $colorwht $colorblk
-    inactive_workspace $colorbg $colorbg $colorfg
-    urgent_workspace $colorred $colorred $colorbg
+                      
+                       # border   #background   #text
+    focused_workspace  $colorbg   $colorbg      $colorfg
+    active_workspace   $colorwht  $colorwht     $colorblk
+    inactive_workspace $colorbg   $colorbg      $colorinactive
+    urgent_workspace   $colorbg   $colorbg      $colorred
   }
 
   status_command i3status -c $AAKU/i3/i3status.conf
