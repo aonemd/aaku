@@ -78,14 +78,6 @@ bindsym $mod+Shift+f floating toggle
 bindsym $mod+Shift+c reload
 # restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+Delete exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Launching programs
-bindsym $mod+f exec rofi -show drun
-bindsym $mod+w exec rofi -show window
-bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+shift+BackSpace exec $HOME/.config/i3/scripts/screen-lock.sh
 
 # Gaps
 gaps inner 30
@@ -131,11 +123,29 @@ bar {
     urgent_workspace $colorred $colorred $colorbg
   }
 
-  status_command i3status -c $HOME/.config/i3/i3status.conf
+  status_command i3status -c $AAKU/i3/i3status.conf
+}
+
+# Launching programs
+bindsym $mod+f exec rofi -show drun
+bindsym $mod+w exec rofi -show window
+bindsym $mod+t exec i3-sensible-terminal
+
+bindsym $mod+Delete mode "system"
+mode "system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym o exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym d exec --no-startup-id i3exit shutdown, mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Autostart
 exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768
-exec --no-startup-id  $HOME/.config/i3/scripts/screen-lock.sh
+exec --no-startup-id  i3exit lock
 exec --no-startup-id  xrdb ~/.Xresources
 exec --no-startup-id  feh --bg-scale $HOME/Pictures/Wallpapers/wallpaper.jpg

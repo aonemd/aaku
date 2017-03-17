@@ -13,3 +13,8 @@ export BROWSER='firefox'
 
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
+
+export WK="$HOME/workspace"
+export AAKU="$WK/aaku"
+
+export PATH=$PATH:$AAKU/i3/scripts

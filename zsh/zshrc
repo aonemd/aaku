@@ -8,7 +8,9 @@ fi
 # Support 256-color terminals
 export TERM=screen-256color
 
-export WK="$HOME/workspace"
+# export WK="$HOME/workspace"
+#
+# export PATH=$PATH:$WK/aaku/i3/scripts
 
 # Ruby rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
