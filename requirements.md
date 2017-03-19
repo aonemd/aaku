@@ -4,6 +4,8 @@
 - tmux
 - silversearcher-ag
 - xsel
+- curl
+- wget
 
 - i3-gaps
 - i3status
