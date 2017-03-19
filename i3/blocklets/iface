@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# Use the provided interface, otherwise the device used for the default route.
+if [[ -n $BLOCK_INSTANCE ]]; then
+  IF=$BLOCK_INSTANCE
+else
+  IF=$(ip route | awk '/^default/ { print $5 ; exit }')
+fi
+
+[[ ! -d /sys/class/net/${IF} ]] && exit
+
+if [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
+  echo ""
+  echo ""
+  echo "#ffffff"
+else
+  echo ""
+  echo ""
+  echo "#f22c40"
+fi
+
+exit 0

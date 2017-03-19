@@ -38,7 +38,9 @@ ln -sfnr ${BASEDIR}/app-config/Xresources $HOME/.Xresources
 [ -d $HOME/.config/i3/ ] || mkdir -p $HOME/.config/i3
 ln -sfnr ${BASEDIR}/i3/config $HOME/.config/i3/config
 ln -sfnr ${BASEDIR}/i3/i3status.conf $HOME/.config/i3/i3status.conf
+ln -sfnr ${BASEDIR}/i3/i3blocks.conf $HOME/.config/i3/i3blocks.conf
 ln -sfnr ${BASEDIR}/i3/scripts $HOME/.config/i3/scripts
+ln -sfnr ${BASEDIR}/i3/blocklets $HOME/.config/i3/blocklets
 ln -sfnr ${BASEDIR}/i3/dep/xinitrc $HOME/.xinitrc
 
 echo "Installing Vim plugins ..."

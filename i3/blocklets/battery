@@ -1,0 +1,33 @@
+#!/bin/zsh
+
+BATTERY=0
+BATTERY_INFO=$(acpi -b | grep "Battery ${BATTERY}")
+BATTERY_STATE=$(echo "${BATTERY_INFO}" | grep -wo "Full\|Charging\|Discharging")
+BATTERY_POWER=$(echo "${BATTERY_INFO}" | grep -o '[0-9]\+%' | tr -d '%')
+
+URGENT_VALUE=10
+
+if [[ "${BATTERY_STATE}" = "Full" ]]; then
+  echo " ${BATTERY_POWER}%"
+  echo " ${BATTERY_POWER}%"
+elif [[ "${BATTERY_STATE}" = "Charging" ]]; then
+  echo "${BATTERY_POWER}%"
+  echo "${BATTERY_POWER}%"
+elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
+  if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
+    echo " ${BATTERY_POWER}%"
+    echo " ${BATTERY_POWER}%"
+    echo "#f22c40"
+  elif [[ "${BATTERY_POWER}" -le "50" ]]; then
+    echo " ${BATTERY_POWER}%"
+    echo " ${BATTERY_POWER}%"
+  else
+    echo " ${BATTERY_POWER}%"
+    echo " ${BATTERY_POWER}%"
+  fi
+else
+  echo ""
+  echo ""
+fi
+
+exit 0

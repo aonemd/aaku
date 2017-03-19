@@ -7,6 +7,7 @@
 
 - i3-gaps
 - i3status
+- i3blocks
 - i3lock
 - dunst
 - feh
@@ -14,6 +15,7 @@
 - imagemagick
 - termite
 - rofi
+- FontAwesome
 
 - cmus
 - weechat
