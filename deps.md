@@ -4,6 +4,7 @@
 - tmux
 - silversearcher-ag
 - xsel
+- ctags
 - curl
 - wget
 
