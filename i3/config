@@ -85,7 +85,7 @@ bindsym $mod+Shift+r restart
 
 # Gaps
 gaps inner 30
-gaps outer 0
+gaps outer 30
 smart_gaps on
 
 # hide window borders
@@ -111,6 +111,13 @@ set $colorbcyn     #00ad9c
 set $colorwht      #a8a19f
 set $colorbwht     #f1efee
 set $colorinactive #373b41
+
+#                        border      bg          fg                indicator
+client.focused           $colorbg    $colorbg    $colorfg          $colorbg
+client.focused_inactive  $colorbg    $colorbg    $colorinactive    $colorbg
+client.unfocused         $colorbg    $colorbg    $colorinactive    $colorbg
+client.urgent            $colorbg    $colorred   $colorred         $colorbg
+client.background        $colorbg
 
 # Bar
 bar {
