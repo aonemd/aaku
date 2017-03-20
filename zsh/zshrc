@@ -12,9 +12,9 @@ export TERM=screen-256color
 #
 # export PATH=$PATH:$WK/aaku/i3/scripts
 
-# Ruby rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# chruby
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"

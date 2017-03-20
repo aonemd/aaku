@@ -22,6 +22,6 @@
 - cmus
 - weechat
 
-- rbenv
+- chruby && ruby-install
 - golang
 - docker
