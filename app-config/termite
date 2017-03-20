@@ -11,6 +11,7 @@
   mouse_autohide      = true
   clickable_url       = true
   browser             = firefox
+  resize_grip		      = false
 
 [colors]
   # special
