@@ -20,6 +20,7 @@
 - rofi
 - FontAwesome
 
+- pacaur
 - cmus
 - weechat
 
