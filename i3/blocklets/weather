@@ -57,7 +57,7 @@ elif [[ "${WEATHER_MAIN}" = *Clear* ]]; then
     echo "${ICON_NIGHT} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
     echo ""
   fi
-elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]]; then
+elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]] || [[ "${WEATHER_MAIN}" = *Haze* ]]; then
   echo "${ICON_FOG} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo "${ICON_FOG} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
