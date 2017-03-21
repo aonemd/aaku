@@ -22,7 +22,7 @@
 
 - pacaur
 - cmus
-- weechat
+- irssi
 
 - chruby && ruby-install
 - golang

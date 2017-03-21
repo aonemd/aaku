@@ -33,6 +33,11 @@ ln -sfnr ${BASEDIR}/app-config/dunstrc $HOME/.config/dunst/dunstrc
 [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
 ln -sfnr ${BASEDIR}/app-config/cmus-theme $HOME/.config/cmus/aaku.theme
 
+[ -d $HOME/.irssi ] || mkdir -p $HOME/.irssi
+ln -sfnr ${BASEDIR}/app-config/irssi/config $HOME/.irssi/config
+ln -sfnr ${BASEDIR}/app-config/irssi/weed.theme $HOME/.irssi/weed.theme
+ln -sfnr ${BASEDIR}/app-config/irssi/scripts $HOME/.irssi/scripts
+
 ln -sfnr ${BASEDIR}/app-config/Xresources $HOME/.Xresources
 
 [ -d $HOME/.config/i3/ ] || mkdir -p $HOME/.config/i3
