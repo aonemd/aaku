@@ -54,3 +54,7 @@ alias dst='docker stop'
 alias dps='docker ps'
 alias drac='docker rm -f `docker ps --no-trunc -aq`'
 alias dc='docker-compose'
+
+# Arch Linux
+alias pacins="pacaur -S"
+alias pacupd="pacaur --noedit -Syu; pkill -RTMIN+3 i3blocks"
