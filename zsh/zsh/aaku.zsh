@@ -17,13 +17,14 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
 # History
-export HISTSIZE=1007
+export HISTSIZE=25000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.zsh_history"
-setopt hist_ignore_all_dups   # Ignore duplicate commands
-setopt hist_ignore_space 	    # Ignore commands that start with a space
-setopt inc_append_history     # add commands as they are typed, don't wait until shell exit
-setopt share_history          # share hist between sessions
+export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..)"
+setopt HIST_IGNORE_ALL_DUPS   # Ignore duplicate commands
+setopt HIST_IGNORE_SPACE 	    # Ignore commands that start with a space
+setopt INC_APPEND_HISTORY     # add commands as they are typed, don't wait until shell exit
+setopt SHARE_HISTORY          # share hist between sessions
 # Complete Search history
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
