@@ -1,13 +1,15 @@
-# aliases
-alias ls='ls --color=auto'
-alias l='ls -CF'
-alias ll='ls -alF'
+alias ls='ls --color=auto -CF'
+alias l='ls'
+alias ll='ls -l'
 alias la='ls -A'
+alias lla='ls -Al'
+alias grep='grep --colour --devices=skip'
+alias rm='rm -v'
 alias wk='cd $WK'
 
 alias v='vim'
 alias vv='gvim'
-alias t='tmux -u'
+alias t='tmux'
 
 alias myip="nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4"
 
