@@ -55,5 +55,5 @@ echo "Source Zsh files"
 source $HOME/.zshrc
 
 echo "Installing Fonts..."
-git clone https://github.com/powerline/fonts.git $HOME/workspace/fonts/
-$HOME/workspace/fonts/install.sh
+git clone https://github.com/powerline/fonts.git $HOME/Workspace/fonts/
+$HOME/Workspace/fonts/install.sh
