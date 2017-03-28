@@ -84,8 +84,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Gaps
-gaps inner 30
-gaps outer 30
+gaps inner 17
+gaps outer -1
 smart_gaps on
 
 # hide window borders
