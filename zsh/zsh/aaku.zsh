@@ -11,6 +11,7 @@ setopt autocd
 
 # Autocompletion
 autoload -U compinit && compinit
+zmodload zsh/complist
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
