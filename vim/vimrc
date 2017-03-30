@@ -23,6 +23,7 @@ set lazyredraw
 set autoread                    "automatically read changes in the file
 set showcmd                     "display incomplete commands
 set wildmenu
+set wildmode=longest:full,full
 set laststatus=2                "always display the status bar
 set hidden                      "hide buffers instead of closing them
 set nowrap                      "disable soft wrap for lines
