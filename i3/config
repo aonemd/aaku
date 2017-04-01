@@ -84,9 +84,13 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # Gaps
-gaps inner 17
-gaps outer -1
+gaps inner 15
+gaps outer 0
+new_window pixel 1
+new_float pixel 1
+smart_borders on
 smart_gaps on
+popup_during_fullscreen smart
 
 # hide window borders
 for_window [class="^.*"] border pixel 0
