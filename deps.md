@@ -8,19 +8,20 @@
 - curl
 - wget
 
+- termite
 - i3-gaps
-- i3status
 - i3blocks
 - i3lock
 - dunst
 - feh
 - scrot
 - imagemagick
-- termite
 - rofi
+- wicd
+- ranger
+- pacaur
 - FontAwesome
 
-- pacaur
 - cmus
 - irssi
 
