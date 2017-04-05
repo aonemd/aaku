@@ -5,18 +5,12 @@ get_current_time() {
   DAY='5'
   NIGHT='17'
 
-
   if [ ${TIME} -ge ${DAY} -a ${TIME} -le ${NIGHT} ]; then
     echo "day"
   else
     echo "night"
   fi
 }
-
-API_KEY="ea46c35a4bfc775806a6aae803647e7d"
-
-# Check on http://openweathermap.org/find
-CITY_ID="${BLOCK_INSTANCE}"
 
 ICON_SUNNY=""
 ICON_NIGHT=""
@@ -25,14 +19,16 @@ ICON_RAINY=""
 ICON_STORM=""
 ICON_SNOW=""
 ICON_FOG=""
-
 SYMBOL_CELSIUS="°C" 
 
-WEATHER_URL="http://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&appid=${API_KEY}&units=metric"
+API_KEY="cabfc935d0f32912c7fc1f963648b2fd"
+CITY_ID="29.98333,31.445127"
+PARAMETERS="exclude=minutely,hourly,daily,alerts,flags&units=si"
+WEATHER_URL="https://api.darksky.net/forecast/${API_KEY}/${CITY_ID}?${PARAMETERS}"
 
 WEATHER_INFO=$(wget -qO- "${WEATHER_URL}")
-WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"main\":\"[a-Z]*\"' | awk -F ':' '{print $2}' | tr -d '"')
-WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep -o -e '\"temp\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
+WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-Z]*\"'     | awk -F ':' '{print $2}' | tr -d '"')
+WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 
 if [[ "${WEATHER_MAIN}" = *Snow* ]]; then
   echo "${ICON_SNOW} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
