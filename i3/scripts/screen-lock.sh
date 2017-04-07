@@ -14,7 +14,7 @@ fi
 scrot -z "$lockbg"
 
 convert "$lockbg" -blur 0x5 "$lockbg"
-convert "$lockbg" \( "$lockfg" -scale 77% -gravity center \) -composite -matte "$lockbg"
+convert "$lockbg" \( "$lockfg" -scale 50% -gravity center \) -composite "$lockbg"
 
 setxkbmap us  # change layout to us
 
