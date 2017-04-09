@@ -136,3 +136,13 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
+
+"Goyo
+nmap <leader>z :Goyo<cr>
+
+if !exists('*s:goyo_leave')
+  function s:goyo_leave()
+    source $MYVIMRC
+  endfunction
+endif
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
