@@ -27,7 +27,7 @@ PARAMETERS="exclude=minutely,hourly,daily,alerts,flags&units=si"
 WEATHER_URL="https://api.darksky.net/forecast/${API_KEY}/${CITY_ID}?${PARAMETERS}"
 
 WEATHER_INFO=$(wget -qO- "${WEATHER_URL}")
-WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-Z]*\"'     | awk -F ':' '{print $2}' | tr -d '"')
+WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"'     | awk -F ':' '{print $2}' | tr -d '"')
 WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 
 if [[ "${WEATHER_MAIN}" = *Snow* ]]; then
