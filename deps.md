@@ -6,7 +6,6 @@
 - xsel
 - ctags
 - curl
-- wget
 
 - termite
 - i3-gaps
