@@ -2,11 +2,12 @@
 - zsh
 - vim
 - tmux
-- silversearcher-ag
+- silver-searcher-git
 - xsel
 - ctags
 - curl
 
+- pacaur
 - termite
 - i3-gaps
 - i3blocks
@@ -18,7 +19,6 @@
 - rofi
 - wicd
 - ranger
-- pacaur
 - FontAwesome
 
 - cmus
