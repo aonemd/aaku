@@ -12,6 +12,7 @@
 - i3-gaps
 - i3blocks
 - i3lock
+- xorg && xorg-xinit
 - dunst
 - feh
 - scrot
