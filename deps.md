@@ -13,6 +13,7 @@
 - i3blocks
 - i3lock
 - xorg && xorg-xinit
+- polkit && systemctl enable polkit
 - dunst && libnotify
 - feh
 - scrot
