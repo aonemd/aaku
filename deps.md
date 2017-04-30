@@ -13,7 +13,7 @@
 - i3blocks
 - i3lock
 - xorg && xorg-xinit
-- dunst
+- dunst && libnotify
 - feh
 - scrot
 - imagemagick
