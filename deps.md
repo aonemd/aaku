@@ -20,11 +20,12 @@
 - imagemagick
 - rofi
 - wicd
-- ranger
 - FontAwesome
 
-- cmus
+- ranger
 - irssi
+- cmus
+- htop
 
 - chruby && ruby-install
 - golang
