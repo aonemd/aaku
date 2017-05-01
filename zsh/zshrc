@@ -11,4 +11,4 @@ source /usr/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"
-export PATH=$PATH:/usr/local/go/bin
+export PATH="$PATH:$GOPATH/bin"
