@@ -25,11 +25,15 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 export HISTSIZE=25000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.zsh_history"
-export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..)"
-setopt HIST_IGNORE_ALL_DUPS   # Ignore duplicate commands
-setopt HIST_IGNORE_SPACE 	    # Ignore commands that start with a space
-setopt INC_APPEND_HISTORY     # add commands as they are typed, don't wait until shell exit
-setopt SHARE_HISTORY          # share hist between sessions
+export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|pony|pony *)"
+# Ignore duplicate commands
+setopt HIST_IGNORE_ALL_DUPS
+# Ignore commands that start with a space
+setopt HIST_IGNORE_SPACE
+# add commands as they are typed, don't wait until shell exit
+setopt INC_APPEND_HISTORY
+# share hist between sessions
+setopt SHARE_HISTORY
 # Complete Search history
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
