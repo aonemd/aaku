@@ -39,7 +39,7 @@ set t_Co=256                    "enable 256 colors
 set background=dark
 colorscheme PaperColor
 
-set statusline=%=%m\ %P\ %f\    "modifiedflag, filepath, filepercent
+set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, filepath, filepercent
 hi StatusLine ctermfg=235 ctermbg=245 guifg=Grey15 guibg=Grey54
 hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
 
