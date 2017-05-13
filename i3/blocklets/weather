@@ -27,38 +27,38 @@ PARAMETERS="exclude=minutely,hourly,daily,alerts,flags&units=si"
 WEATHER_URL="https://api.darksky.net/forecast/${API_KEY}/${CITY_ID}?${PARAMETERS}"
 
 WEATHER_INFO=$(curl -s "${WEATHER_URL}")
-WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"'     | awk -F ':' '{print $2}' | tr -d '"')
+WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
 WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 
 if [[ "${WEATHER_MAIN}" = *Snow* ]]; then
-  echo "${ICON_SNOW} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_SNOW} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_SNOW}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_SNOW}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
 elif [[ "${WEATHER_MAIN}" = *Rain* ]] || [[ "${WEATHER_MAIN}" = *Drizzle* ]]; then
-  echo "${ICON_RAINY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_RAINY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_RAINY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_RAINY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
 elif [[ "${WEATHER_MAIN}" = *Cloud* ]] || [[ "${WEATHER_MAIN}" = *Overcast* ]]; then
-  echo "${ICON_CLOUDY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_CLOUDY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_CLOUDY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_CLOUDY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
 elif [[ "${WEATHER_MAIN}" = *Clear* ]]; then
   CURRENT_TIME="$(get_current_time)"
   if [[ "$CURRENT_TIME" == "day" ]]; then
-    echo "${ICON_SUNNY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo "${ICON_SUNNY} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+    echo "${ICON_SUNNY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+    echo "${ICON_SUNNY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
     echo ""
   else
-    echo "${ICON_NIGHT} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo "${ICON_NIGHT} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+    echo "${ICON_NIGHT}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+    echo "${ICON_NIGHT}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
     echo ""
   fi
 elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]] || [[ "${WEATHER_MAIN}" = *Haze* ]]; then
-  echo "${ICON_FOG} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_FOG} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_FOG}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${ICON_FOG}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
 else
-  echo "${WEATHER_MAIN} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${WEATHER_MAIN} ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${WEATHER_MAIN}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
+  echo "${WEATHER_MAIN}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
   echo ""
 fi
