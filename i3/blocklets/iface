@@ -10,12 +10,12 @@ fi
 [[ ! -d /sys/class/net/${IF} ]] && exit
 
 if [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
-  echo ""
-  echo ""
+  echo ""
+  echo ""
   echo "#ffffff"
 else
-  echo ""
-  echo ""
+  echo ""
+  echo ""
   echo "#f22c40"
 fi
 
