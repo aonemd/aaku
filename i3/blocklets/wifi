@@ -9,7 +9,7 @@ IF="${BLOCK_INSTANCE:-wlan0}"
 
 QUALITY=$(grep $IF /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
-echo " $QUALITY%"
-echo " $QUALITY%"
+echo "  $QUALITY%"
+echo "  $QUALITY%"
 
 exit 0
