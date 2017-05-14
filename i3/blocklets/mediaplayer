@@ -78,4 +78,4 @@ if ($title && $title ne "(null)") {
   push(@metadata, $title);
 }
 
-print('  ' . join(" - ", @metadata)) if @metadata;
+print('  ' . join(" - ", @metadata)) if @metadata;
