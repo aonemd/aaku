@@ -162,6 +162,15 @@ mode "system" {
     bindsym Escape mode "default"
 }
 
+bindsym $mod+Print mode "screenshot"
+mode "screenshot" {
+  bindsym a exec scrot    $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+  bindsym f exec scrot -u $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
 # Autostart
 exec --no-startup-id  i3exit lock
 exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768
