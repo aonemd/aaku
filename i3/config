@@ -162,7 +162,7 @@ mode "system" {
   bindsym Escape mode "default"
 }
 
-bindsym $mod+Print mode "screenshot"
+bindsym Print mode "screenshot"
 mode "screenshot" {
   bindsym a exec scrot    $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
   bindsym f exec scrot -u $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
