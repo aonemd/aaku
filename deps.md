@@ -30,3 +30,4 @@
 - chruby && ruby-install
 - golang
 - docker
+- redshift
