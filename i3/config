@@ -61,14 +61,14 @@ bindsym $mod+Shift+7 move container to workspace 7
 # resize window
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym $up    resize grow height 10 px or 10 ppt
-        bindsym $down  resize shrink height 10 px or 10 ppt
-        bindsym $left  resize shrink width 10 px or 10 ppt
-        bindsym $right resize grow width 10 px or 10 ppt
+  bindsym $up    resize grow height 10 px or 10 ppt
+  bindsym $down  resize shrink height 10 px or 10 ppt
+  bindsym $left  resize shrink width 10 px or 10 ppt
+  bindsym $right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 # change container layout
@@ -151,15 +151,15 @@ bindsym $mod+t exec i3-sensible-terminal
 
 bindsym $mod+Delete mode "system"
 mode "system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym o exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym d exec --no-startup-id i3exit shutdown, mode "default"
+  bindsym l exec --no-startup-id i3exit lock, mode "default"
+  bindsym o exec --no-startup-id i3exit logout, mode "default"
+  bindsym s exec --no-startup-id i3exit suspend, mode "default"
+  bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+  bindsym r exec --no-startup-id i3exit reboot, mode "default"
+  bindsym d exec --no-startup-id i3exit shutdown, mode "default"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+Print mode "screenshot"
