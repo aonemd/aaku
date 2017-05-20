@@ -18,3 +18,4 @@ export WK="$HOME/Workspace"
 export AAKU="$WK/aaku"
 
 export PATH=$PATH:$AAKU/i3/scripts
+export PATH=$PATH:$WK/scripts
