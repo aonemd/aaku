@@ -25,7 +25,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 export HISTSIZE=25000
 export SAVEHIST=$HISTSIZE
 export HISTFILE="$HOME/.zsh_history"
-export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|pony|pony *)"
+export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|sic|sic *)"
 # Ignore duplicate commands
 setopt HIST_IGNORE_ALL_DUPS
 # Ignore commands that start with a space
