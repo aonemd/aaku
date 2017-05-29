@@ -40,7 +40,7 @@ set background=dark
 colorscheme PaperColor
 
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, filepath, filepercent
-hi StatusLine ctermfg=235 ctermbg=245 guifg=Grey15 guibg=Grey54
+hi StatusLine   ctermfg=235 ctermbg=240 guifg=Grey15 guibg=Grey35
 hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
 
 set encoding=utf-8
