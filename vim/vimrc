@@ -110,6 +110,9 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 "override file systems by typing :w!!
 cmap w!! %!sudo tee > /dev/null %
 
+"toggle showing hidden characters
+nmap <silent> <leader>s :set nolist!<CR>
+
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter *  set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
