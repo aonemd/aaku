@@ -39,9 +39,14 @@ set t_Co=256                    "enable 256 colors
 set background=dark
 colorscheme PaperColor
 
+"status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, filepath, filepercent
 hi StatusLine   ctermfg=235 ctermbg=240 guifg=Grey15 guibg=Grey35
 hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
+
+"remove current line highlight in unfocused window
+au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
+au WinLeave,FocusLost,CmdwinLeave * set nocul
 
 set encoding=utf-8
 set ttimeout
@@ -112,10 +117,6 @@ cmap w!! %!sudo tee > /dev/null %
 
 "toggle showing hidden characters
 nmap <silent> <leader>s :set nolist!<CR>
-
-"remove current line highlight in unfocused window
-au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter *  set cul
-au WinLeave,FocusLost,CmdwinLeave * set nocul
 
 "window navigation and splits
 set splitbelow
