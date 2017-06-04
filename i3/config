@@ -95,6 +95,9 @@ popup_during_fullscreen smart
 # hide window borders
 for_window [class="^.*"] border pixel 0
 
+# maximum size for floating windows
+floating_maximum_size 1366 x 768
+
 # Colors
 set $colorbg       #1b1918
 set $colorfg       #ffffff
