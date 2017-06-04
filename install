@@ -18,7 +18,7 @@ ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
 ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 
 ln -sfn ${BASEDIR}/app-config/gitconfig $HOME/.gitconfig
-
+ln -sfn ${BASEDIR}/app-config/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/app-config/agignore $HOME/.agignore
 
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
