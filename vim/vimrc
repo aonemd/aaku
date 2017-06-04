@@ -12,6 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'reedes/vim-colors-pencil'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'kchmck/vim-coffee-script'
@@ -37,16 +38,18 @@ set path+=**
 
 set t_Co=256                    "enable 256 colors
 set background=dark
-colorscheme PaperColor
+colorscheme pencil
 
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, filepath, filepercent
-hi StatusLine   ctermfg=235 ctermbg=240 guifg=Grey15 guibg=Grey35
-hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
+hi StatusLine   ctermfg=240 ctermbg=235 guifg=Grey35 guibg=Grey15
+hi StatusLineNC ctermfg=237 ctermbg=235 guifg=Grey23 guibg=Grey15
 
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
+
+highlight ColorColumn ctermbg=235
 
 set encoding=utf-8
 set ttimeout
