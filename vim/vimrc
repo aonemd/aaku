@@ -9,6 +9,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-surround'
+Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'NLKNguyen/papercolor-theme'
@@ -114,6 +115,11 @@ nmap <Tab> :bnext<CR>
 nmap <S-Tab> :bprevious<CR>
 "close current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bd #<CR>
+
+"start EasyAlign for a motion/text object
+nmap ga <Plug>(EasyAlign)
+"start EasyAlign in visual mode
+xmap ga <Plug>(EasyAlign)
 
 "override file systems by typing :w!!
 cmap w!! %!sudo tee > /dev/null %
