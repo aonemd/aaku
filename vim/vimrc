@@ -117,9 +117,9 @@ nmap <S-Tab> :bprevious<CR>
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 "start EasyAlign for a motion/text object
-nmap ga <Plug>(EasyAlign)
+nmap <leader>a <Plug>(EasyAlign)
 "start EasyAlign in visual mode
-xmap ga <Plug>(EasyAlign)
+xmap <leader>a <Plug>(EasyAlign)
 
 "override file systems by typing :w!!
 cmap w!! %!sudo tee > /dev/null %
