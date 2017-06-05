@@ -1,64 +1,63 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-get_current_time() {
-  TIME=$(date +"%H")
-  DAY='5'
-  NIGHT='17'
+current_part_of_the_day() {
+  local current_hour=$(date +"%H")
+  local day='5'
+  local night='17'
 
-  if [ ${TIME} -ge ${DAY} -a ${TIME} -le ${NIGHT} ]; then
+  if [ ${current_hour} -ge ${day} -a ${current_hour} -le ${night} ]; then
     echo "day"
   else
     echo "night"
   fi
 }
 
-ICON_SUNNY=""
-ICON_NIGHT=""
-ICON_CLOUDY=""
-ICON_RAINY=""
-ICON_STORM=""
-ICON_SNOW=""
-ICON_FOG=""
-SYMBOL_CELSIUS="°C" 
+parse_weather_details () {
+  local api_key="cabfc935d0f32912c7fc1f963648b2fd"
+  local api_parameters="exclude=minutely,hourly,daily,alerts,flags&units=si"
+  local city_id="29.98333,31.445127"
+  local api_url="https://api.darksky.net/forecast/${api_key}/${city_id}?${api_parameters}"
 
-API_KEY="cabfc935d0f32912c7fc1f963648b2fd"
-CITY_ID="29.98333,31.445127"
-PARAMETERS="exclude=minutely,hourly,daily,alerts,flags&units=si"
-WEATHER_URL="https://api.darksky.net/forecast/${API_KEY}/${CITY_ID}?${PARAMETERS}"
+  local response=$(curl -s "${api_url}")
+  status=$(echo "${response}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
+  temperature=$(echo "${response}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
+}
 
-WEATHER_INFO=$(curl -s "${WEATHER_URL}")
-WEATHER_MAIN=$(echo "${WEATHER_INFO}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
-WEATHER_TEMP=$(echo "${WEATHER_INFO}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
+print_weather () {
+  local sun_icon=""
+  local night_icon=""
+  local cloud_icon=""
+  local rain_icon=""
+  local storm_icon=""
+  local snow_icon=""
+  local fog_icon=""
+  local celsius_symbol="°C" 
 
-if [[ "${WEATHER_MAIN}" = *Snow* ]]; then
-  echo "${ICON_SNOW}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_SNOW}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo ""
-elif [[ "${WEATHER_MAIN}" = *Rain* ]] || [[ "${WEATHER_MAIN}" = *Drizzle* ]]; then
-  echo "${ICON_RAINY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_RAINY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo ""
-elif [[ "${WEATHER_MAIN}" = *Cloud* ]] || [[ "${WEATHER_MAIN}" = *Overcast* ]]; then
-  echo "${ICON_CLOUDY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_CLOUDY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo ""
-elif [[ "${WEATHER_MAIN}" = *Clear* ]]; then
-  CURRENT_TIME="$(get_current_time)"
-  if [[ "$CURRENT_TIME" == "day" ]]; then
-    echo "${ICON_SUNNY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo "${ICON_SUNNY}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo ""
+  parse_weather_details
+
+  if [[ "${status}" = *Snow* ]]; then
+    weather="${snow_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${status}" = *Rain* ]] || [[ "${status}" = *Drizzle* ]]; then
+    weather="${rain_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${status}" = *Cloud* ]] || [[ "${status}" = *Overcast* ]]; then
+    weather="${cloud_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${status}" = *Clear* ]]; then
+    local current_time="$(current_part_of_the_day)"
+    if [[ "$current_time" == "day" ]]; then
+      weather="${sun_icon}  ${temperature}${celsius_symbol}"
+    else
+      weather="${night_icon}  ${temperature}${celsius_symbol}"
+    fi
+  elif [[ "${status}" = *Fog* ]] || [[ "${status}" = *Mist* ]] || [[ "${status}" = *Haze* ]]; then
+    weather="${fog_icon}  ${temperature}${celsius_symbol}"
   else
-    echo "${ICON_NIGHT}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo "${ICON_NIGHT}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-    echo ""
+    weather="${status}  ${temperature}${celsius_symbol}"
   fi
-elif [[ "${WEATHER_MAIN}" = *Fog* ]] || [[ "${WEATHER_MAIN}" = *Mist* ]] || [[ "${WEATHER_MAIN}" = *Haze* ]]; then
-  echo "${ICON_FOG}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${ICON_FOG}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo ""
-else
-  echo "${WEATHER_MAIN}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo "${WEATHER_MAIN}  ${WEATHER_TEMP}${SYMBOL_CELSIUS}"
-  echo ""
-fi
+
+  echo "${weather}"
+  echo "${weather}"
+}
+
+print_weather
+
+exit 0

@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # The second parameter overrides the mixer selection
 # For PulseAudio users, use "pulse"

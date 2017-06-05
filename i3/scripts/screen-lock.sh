@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # i3lock screen lock script
 # requires imagemagick, scrot

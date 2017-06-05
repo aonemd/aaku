@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 # Base16 - Gnome Terminal color scheme install script
 # terminal.sexy: atelierforest.dark
 

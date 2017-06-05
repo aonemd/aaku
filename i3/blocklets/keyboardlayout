@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-LG=$(setxkbmap -query | awk '/layout/{print $2}')
+language=$(setxkbmap -query | awk '/layout/{print $2}')
 
-case "$LG" in
+case "$language" in
   'ara')
     layout='ar' ;;
   'us'|*)
@@ -11,4 +11,5 @@ esac
 
 echo "$layout"
 echo "$layout"
+
 exit 0

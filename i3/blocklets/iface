@@ -1,22 +1,24 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
 # Use the provided interface, otherwise the device used for the default route.
 if [[ -n $BLOCK_INSTANCE ]]; then
-  IF=$BLOCK_INSTANCE
+  interface=$BLOCK_INSTANCE
 else
-  IF=$(ip route | awk '/^default/ { print $5 ; exit }')
+  interface=$(ip route | awk '/^default/ { print $5 ; exit }')
 fi
 
-[[ ! -d /sys/class/net/${IF} ]] && exit
+[[ ! -d /sys/class/net/${interface} ]] && exit
 
-if [[ "$(cat /sys/class/net/$IF/operstate)" = 'up' ]]; then
-  echo ""
-  echo ""
-  echo "#ffffff"
+if [[ "$(cat /sys/class/net/$interface/operstate)" = 'up' ]]; then
+  iface=""
+  color="#ffffff"
 else
-  echo ""
-  echo ""
-  echo "#f22c40"
+  iface=""
+  color="#f22c40"
 fi
+
+echo "${iface}"
+echo "${iface}"
+echo "$color"
 
 exit 0

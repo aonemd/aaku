@@ -1,7 +1,7 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-UPDATES=$(checkupdates | wc -l)
-[[ "${UPDATES}" = "0" ]] && exit 0
+update_counter=$(checkupdates | wc -l)
+[[ "${update_counter}" = "0" ]] && exit 0
 
-echo "  ${UPDATES}"
+echo "  ${update_counter}"
 exit 0

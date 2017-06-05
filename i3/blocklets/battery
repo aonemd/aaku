@@ -1,34 +1,37 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-BATTERY=0
-BATTERY_INFO=$(acpi -b | grep "Battery ${BATTERY}")
-BATTERY_STATE=$(echo "${BATTERY_INFO}" | grep -wo "Full\|Charging\|Discharging")
-BATTERY_POWER=$(echo "${BATTERY_INFO}" | grep -o '[0-9]\+%' | tr -d '%')
+parse_battery_details () {
+  local battery_device=0
+  local response=$(acpi -b | grep "Battery ${battery_device}")
 
-URGENT_VALUE=10
+  state=$(echo "${response}" | grep -wo "Full\|Charging\|Discharging")
+  power=$(echo "${response}" | grep -o '[0-9]\+%' | tr -d '%')
+}
 
-if [[ "${BATTERY_STATE}" = "Full" ]]; then
-  echo "  ${BATTERY_POWER}%"
-  echo "  ${BATTERY_POWER}%"
-  echo "#5ab738"
-elif [[ "${BATTERY_STATE}" = "Charging" ]]; then
-  echo " ${BATTERY_POWER}%"
-  echo " ${BATTERY_POWER}%"
-elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
-  if [[ "${BATTERY_POWER}" -le "${URGENT_VALUE}" ]]; then
-    echo "  ${BATTERY_POWER}%"
-    echo "  ${BATTERY_POWER}%"
-    echo "#f22c40"
-  elif [[ "${BATTERY_POWER}" -le "50" ]]; then
-    echo "  ${BATTERY_POWER}%"
-    echo "  ${BATTERY_POWER}%"
-  else
-    echo "  ${BATTERY_POWER}%"
-    echo "  ${BATTERY_POWER}%"
+print_battery () {
+  local critical_level=10
+
+  if [[ "${state}" = "Full" ]]; then
+    battery="  ${power}%"
+    color="#5ab738"
+  elif [[ "${state}" = "Charging" ]]; then
+    battery=" ${power}%"
+  elif [[ "${state}" = "Discharging" ]]; then
+    if [[ "${power}" -le "${critical_level}" ]]; then
+      battery="  ${power}%"
+      color="#f22c40"
+    elif [[ "${power}" -le "50" ]]; then
+      battery="  ${power}%"
+    else
+      battery="  ${power}%"
+    fi
   fi
-else
-  echo ""
-  echo ""
-fi
+
+  echo "${battery}"
+  echo "${battery}"
+  echo "$color"
+}
+
+print_battery
 
 exit 0

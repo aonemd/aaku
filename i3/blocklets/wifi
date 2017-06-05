@@ -1,15 +1,15 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-IF="${BLOCK_INSTANCE:-wlan0}"
+interface="${BLOCK_INSTANCE:-wlan0}"
 
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
-[[ ! -d /sys/class/net/${IF}/wireless ]] ||
-    [[ "$(cat /sys/class/net/$IF/operstate)" = 'down' ]] && exit
+[[ ! -d /sys/class/net/${interface}/wireless ]] ||
+    [[ "$(cat /sys/class/net/$interface/operstate)" = 'down' ]] && exit
 
-QUALITY=$(grep $IF /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
+strength=$(grep $interface /proc/net/wireless | awk '{ print int($3 * 100 / 70) }')
 
-echo "  $QUALITY%"
-echo "  $QUALITY%"
+echo "  $strength%"
+echo "  $strength%"
 
 exit 0
