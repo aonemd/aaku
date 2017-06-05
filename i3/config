@@ -148,9 +148,10 @@ bar {
 }
 
 # Launching programs
-bindsym $mod+f exec rofi -show drun
-bindsym $mod+w exec rofi -show window
-bindsym $mod+t exec i3-sensible-terminal
+bindsym $mod+f     exec rofi -show drun
+bindsym $mod+w     exec rofi -show window
+bindsym $mod+t     exec i3-sensible-terminal
+bindsym $mod+space exec --no-startup-id switch-layout
 
 bindsym $mod+Delete mode "system"
 mode "system" {
@@ -178,8 +179,8 @@ mode "screenshot" {
 }
 
 # Autostart
-exec --no-startup-id  i3exit lock
-exec --no-startup-id  xrandr --output VGA-1 --mode 1366x768
-exec --no-startup-id  dunst -config $AAKU/app-config/dunstrc
-exec --no-startup-id  xrdb ~/.Xresources
-exec --no-startup-id  $HOME/.fehbg
+exec --no-startup-id i3exit lock
+exec --no-startup-id xrandr --output VGA-1 --mode 1366x768
+exec --no-startup-id dunst -config $AAKU/app-config/dunstrc
+exec --no-startup-id xrdb ~/.Xresources
+exec --no-startup-id $HOME/.fehbg

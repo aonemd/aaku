@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if (setxkbmap -query | awk '/layout/{print $2}' | grep us); then
+  setxkbmap -layout ara -variant qwerty_digits
+else
+  setxkbmap -layout us
+fi
