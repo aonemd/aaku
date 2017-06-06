@@ -19,6 +19,7 @@
 - scrot
 - imagemagick
 - rofi
+- compton
 - wicd
 - FontAwesome
 
