@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 if (setxkbmap -query | awk '/layout/{print $2}' | grep us); then
   setxkbmap -layout ara -variant qwerty_digits

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 interface="${BLOCK_INSTANCE:-wlan0}"
 

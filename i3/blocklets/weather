@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 current_part_of_the_day() {
   local current_hour=$(date +"%H")

@@ -1,6 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
-BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASEDIR="$(cd "$(dirname "${ZSH_SOURCE[0]}")" && pwd)"
 
 echo "Updating submodules..."
 git submodule update --init --recursive --remote
