@@ -30,6 +30,9 @@ ln -sfnr ${BASEDIR}/app-config/rofi $HOME/.config/rofi/config
 [ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
 ln -sfnr ${BASEDIR}/app-config/dunstrc $HOME/.config/dunst/dunstrc
 
+[ -d $HOME/.config/compton/ ] || mkdir -p $HOME/.config/compton
+ln -sfnr ${BASEDIR}/app-config/compton.conf $HOME/.config/compton/compton.conf
+
 [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
 ln -sfnr ${BASEDIR}/app-config/cmus-theme $HOME/.config/cmus/aaku.theme
 
