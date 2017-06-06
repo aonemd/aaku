@@ -11,14 +11,14 @@
   mouse_autohide      = true
   clickable_url       = true
   browser             = firefox
-  resize_grip		      = false
+  resize_grip         = false
 
 [colors]
   # special
   foreground      = #ffffff
   foreground_bold = #ffffff
   cursor          = #ffffff
-  background      = #1b1918
+  background      = rgba(27, 25, 24, 0.98)
 
   # black
   color0  = #1b1918
