@@ -19,7 +19,7 @@ parse_weather_details () {
   local api_url="https://api.darksky.net/forecast/${api_key}/${city_id}?${api_parameters}"
 
   local response=$(curl -s "${api_url}")
-  status=$(echo "${response}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
+  forecast=$(echo "${response}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
   temperature=$(echo "${response}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 }
 
@@ -35,23 +35,23 @@ print_weather () {
 
   parse_weather_details
 
-  if [[ "${status}" = *Snow* ]]; then
+  if [[ "${forecast}" = *Snow* ]]; then
     weather="${snow_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${status}" = *Rain* ]] || [[ "${status}" = *Drizzle* ]]; then
+  elif [[ "${forecast}" = *Rain* ]] || [[ "${forecast}" = *Drizzle* ]]; then
     weather="${rain_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${status}" = *Cloud* ]] || [[ "${status}" = *Overcast* ]]; then
+  elif [[ "${forecast}" = *Cloud* ]] || [[ "${forecast}" = *Overcast* ]]; then
     weather="${cloud_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${status}" = *Clear* ]]; then
+  elif [[ "${forecast}" = *Clear* ]]; then
     local current_time="$(current_part_of_the_day)"
     if [[ "$current_time" == "day" ]]; then
       weather="${sun_icon}  ${temperature}${celsius_symbol}"
     else
       weather="${night_icon}  ${temperature}${celsius_symbol}"
     fi
-  elif [[ "${status}" = *Fog* ]] || [[ "${status}" = *Mist* ]] || [[ "${status}" = *Haze* ]]; then
+  elif [[ "${forecast}" = *Fog* ]] || [[ "${forecast}" = *Mist* ]] || [[ "${forecast}" = *Haze* ]]; then
     weather="${fog_icon}  ${temperature}${celsius_symbol}"
   else
-    weather="${status}  ${temperature}${celsius_symbol}"
+    weather="${forecast}  ${temperature}${celsius_symbol}"
   fi
 
   echo "${weather}"
