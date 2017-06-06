@@ -10,7 +10,7 @@ rofi.terminal:        termite
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: #1b1918, #111111, #111111
-rofi.color-normal: #1b1918, #766e6b, #1b1918, #111111, #ffffff
-rofi.color-active: #1b1918, #407ee7, #1b1918, #111111, #407ee7
-rofi.color-urgent: #1b1918, #f22c40, #1b1918, #111111, #f22c40
+rofi.color-window: #121110, #111111, #100f0e
+rofi.color-normal: #121110, #766e6b, #121110, #100f0e, #ffffff
+rofi.color-active: #121110, #407ee7, #121110, #100f0e, #407ee7
+rofi.color-urgent: #121110, #f22c40, #121110, #100f0e, #f22c40
