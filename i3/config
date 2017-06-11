@@ -178,6 +178,9 @@ mode "screenshot" {
   bindsym Escape mode "default"
 }
 
+# Application rules
+assign [class="Chromium"] → 2
+
 # Autostart
 exec --no-startup-id i3exit lock
 exec --no-startup-id xrandr --output VGA-1 --mode 1366x768
