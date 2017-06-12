@@ -179,7 +179,9 @@ mode "screenshot" {
 }
 
 # Application rules
+assign [class="Chrome"] → 2
 assign [class="Chromium"] → 2
+assign [class="Firefox"] → 2
 
 # Autostart
 exec --no-startup-id i3exit lock
