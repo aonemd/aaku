@@ -1,0 +1,56 @@
+# /etc/X11/xorg.conf.d/70-synaptics.conf
+
+Section "InputClass"
+    Identifier "touchpad catchall"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+    # This option is recommend on all Linux systems using evdev, but cannot be
+    # enabled by default. See the following link for details:
+    # http://who-t.blogspot.com/2010/11/how-to-ignore-configuration-errors.html
+    MatchDevicePath "/dev/input/event*"
+EndSection
+
+Section "InputClass"
+    Identifier "touchpad ignore duplicates"
+    MatchIsTouchpad "on"
+    MatchOS "Linux"
+    MatchDevicePath "/dev/input/mouse*"
+
+    Option "Ignore" "on"
+EndSection
+
+Section "InputClass"
+    Identifier "touchpad"
+    Driver "synaptics"
+    MatchIsTouchpad "on"
+
+    ## Clicking
+    # accurate tap-to-click
+    Option "FingerLow"            "50"
+    Option "FingerHigh"           "55"
+    Option "FastTaps"             "on"
+    Option "AccelFactor"          "0.1028806"
+    Option "MinSpeed"             "1"
+    Option "MaxSpeed"             "1.75"
+    # multi-finger taps
+    Option "TapButton1"           "1"
+    Option "TapButton2"           "3"
+    Option "TapButton3"           "2"
+
+    ## Scrolling
+    Option "VertEdgeScroll"       "on"
+    Option "VertTwoFingerScroll"  "on"
+    Option "HorizEdgeScroll"      "on"
+    Option "HorizTwoFingerScroll" "on"
+    # circular scrolling for all edges
+    Option "CircularScrolling"    "on"
+    Option "CircScrollTrigger"    "0"
+    # natural Scrolling
+    Option "VertScrollDelta"      "-111"
+    Option "HorizScrollDelta"     "-111"
+
+    ## Palm detection
+    Option "PalmDetect"           "on"
+    Option "PalmMinWidth"         "4"
+    Option "PalmMinZ"             "1"
+EndSection
