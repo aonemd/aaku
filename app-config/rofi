@@ -4,7 +4,10 @@ rofi.lines:           7
 rofi.width:           420
 rofi.padding:         20
 
-rofi.terminal:        termite
+rofi.matching:        fuzzy
+rofi.terminal:        termite -e
+rofi.kb-row-up:       Up,Control+k
+rofi.kb-row-down:     Down,Control+j
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
