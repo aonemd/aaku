@@ -1,8 +1,9 @@
 alias ls='ls --color=auto -CF'
 alias l='ls'
-alias ll='ls -l'
 alias la='ls -A'
-alias lla='ls -Al'
+alias ll='ls -lh'
+alias lla='ll -A'
+alias lld="du -sch *"
 alias grep='grep --colour --devices=skip'
 alias rm='rm -v'
 alias wk='cd $WK'
