@@ -3,7 +3,7 @@ alias l='ls'
 alias la='ls -A'
 alias ll='ls -lh'
 alias lla='ll -A'
-alias lld="du -sch *"
+alias lld='du -sch *'
 alias grep='grep --colour --devices=skip'
 alias rm='rm -v'
 alias wk='cd $WK'
@@ -12,7 +12,7 @@ alias v='vim'
 alias vv='gvim'
 alias t='tmux'
 
-alias myip="nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4"
+alias myip='nc 4.ifcfg.me 23 | grep IPv4 | cut -d' ' -f4'
 
 # Git
 alias g='git'
@@ -62,5 +62,5 @@ alias drac='docker rm -f `docker ps --no-trunc -aq`'
 alias dc='docker-compose'
 
 # Arch Linux
-alias pacins="pacaur -S"
-alias pacupd="pacaur --noedit -Syu; pkill -RTMIN+3 i3blocks"
+alias pacins='pacaur -S'
+alias pacupd='pacaur --noedit -Syu; pkill -RTMIN+3 i3blocks'
