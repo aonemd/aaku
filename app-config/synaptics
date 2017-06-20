@@ -42,9 +42,6 @@ Section "InputClass"
     Option "VertTwoFingerScroll"  "on"
     Option "HorizEdgeScroll"      "on"
     Option "HorizTwoFingerScroll" "on"
-    # circular scrolling for all edges
-    Option "CircularScrolling"    "on"
-    Option "CircScrollTrigger"    "0"
     # natural Scrolling
     Option "VertScrollDelta"      "-111"
     Option "HorizScrollDelta"     "-111"
