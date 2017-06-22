@@ -12,8 +12,7 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'reedes/vim-colors-pencil'
+Plug 'w0ng/vim-hybrid'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'kchmck/vim-coffee-script'
@@ -39,12 +38,13 @@ set path+=**
 
 set t_Co=256                    "enable 256 colors
 set background=dark
-colorscheme pencil
+colorscheme hybrid
+highlight Normal ctermbg=black
 
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
-hi StatusLine   ctermfg=240 ctermbg=235 guifg=Grey35 guibg=Grey15
-hi StatusLineNC ctermfg=237 ctermbg=235 guifg=Grey23 guibg=Grey15
+hi StatusLine   ctermfg=235 ctermbg=240 guifg=Grey15 guibg=Grey35
+hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
 
 highlight ColorColumn ctermbg=235
 
