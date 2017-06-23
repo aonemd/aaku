@@ -55,7 +55,8 @@ set tabstop=2
 set expandtab                   "use spaces, not tabs
 set shiftwidth=2
 set softtabstop=2
-autocmd FileType c setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType c    setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd FileType java setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 
 set t_Co=256                    "enable 256 colors
