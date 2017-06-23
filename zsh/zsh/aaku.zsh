@@ -6,7 +6,6 @@ setopt prompt_subst
 setopt correct
 setopt extendedglob
 unsetopt nomatch
-setopt glob_dots
 unsetopt beep
 setopt autocd
 
