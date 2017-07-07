@@ -26,40 +26,44 @@ set ttimeout
 set ttimeoutlen=50
 set nobackup
 set noswapfile
-set autoread                    "automatically read changes in the file
-set showcmd                     "display incomplete commands
+set autoread                        "automatically read changes in the file
+set showcmd                         "display incomplete commands
 set wildmenu
 set wildmode=longest:full,full
+set completeopt=longest,menu,preview
 set mouse=a
 set path+=**
-set history=77
-set undolevels=77
-set laststatus=2                "always display the status bar
-set hidden                      "hide buffers instead of closing them
-set nowrap                      "disable soft wrap for lines
+set history=777
+set undolevels=777
+set laststatus=2                    "always display the status bar
+set hidden                          "hide buffers instead of closing them
+set nowrap                          "disable soft wrap for lines
 set scrolloff=2
 set ruler
 set number
-set cursorline                  "higlight current line
+set cursorline                      "higlight current line
 set colorcolumn=81
 set splitbelow
 set splitright
 
 set incsearch
-set ignorecase                  "searches are case insensitive...
-set smartcase                   " ..unless they contain at least one capital letter
+set ignorecase                      "searches are case insensitive...
+set smartcase                       " ..unless they contain at least one capital letter
+set gdefault                        "substitue globally on a line (no need to type `g`)
 
-set autoindent                  "always set autoindenting on
-set backspace=indent,eol,start  "backspace through everything in insert mode
+set autoindent                      "always set autoindenting on
+set backspace=indent,eol,start      "backspace through everything in insert mode
 set tabstop=2
-set expandtab                   "use spaces, not tabs
+set expandtab                       "use spaces, not tabs
 set shiftwidth=2
 set softtabstop=2
 autocmd FileType c    setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType java setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+"remove trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
 
-set t_Co=256                    "enable 256 colors
+set t_Co=256                        "enable 256 colors
 set background=dark
 colorscheme hybrid
 highlight Normal ctermbg=black
@@ -73,60 +77,59 @@ au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
 
 "The Leader
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
+
+nnoremap ! :!
+nnoremap <leader>w :w<cr>
+"replace the word under cursor
+nnoremap <leader>* :%s/\<<c-r><c-w>\>//<left>
+"toggle showing hidden characters
+nnoremap <silent> <leader>s :set nolist!<cr>
+"toggle RTL mode
+nnoremap <silent> <leader>l :set rl!<cr>
+"override file systems by typing :w!!
+cnoremap w!! %!sudo tee > /dev/null %
+
+"move lines around
+nnoremap <leader>k :m-2<cr>==
+nnoremap <leader>j :m+<cr>==
+xnoremap <leader>k :m-2<cr>gv=gv
+xnoremap <leader>j :m'>+<cr>gv=gv
 
 "Ag
-let g:ag_working_path_mode="r"  "search from the project root instead of cwd
-"map Silver Searcher
-nmap \ :Ag!<space>
-"search the word under cursor
-nnoremap <leader>k :Ag! "\b<C-R><C-W>\b"<CR>:cw<CR>
+let g:ag_working_path_mode="r"      "search from the project root instead of cwd
+nnoremap \  :Ag!<space>
+nnoremap \| :Ag! "\b<C-R><C-W>\b"<cr>:cw<cr>
 
 "CtrlP
 if executable('ag')
-  " Use Ag over Grep
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-  let g:ctrlp_use_caching = 0 " no caching
+  let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
+  let g:ctrlp_use_caching=0
 endif
-"search tags
-nmap <leader>t :CtrlPTag<cr>
-"search files
-nmap <leader>p :CtrlP<cr>
-"search open buffers
-nmap <leader>r :CtrlPBuffer<cr>
+nnoremap <leader>p :CtrlP<cr>
+nnoremap <leader>t :CtrlPTag<cr>
+nnoremap <leader>r :CtrlPBuffer<cr>
 
 "Ctags
 set tags+=.git/tags
-nmap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<CR><CR>
+nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
 
-"new empty buffer
-nmap <leader>T :enew<cr>
-"next buffer
-nmap <Tab> :bnext<CR>
-"previous buffer
-nmap <S-Tab> :bprevious<CR>
-"close current buffer and move to the previous one
-nmap <leader>bq :bp <BAR> bd #<CR>
-"cycle between last two open files
-nmap <leader><leader> <c-^>
+nnoremap <leader>T :enew<cr>
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+"cycle between last two open buffers
+nnoremap <leader><leader> <c-^>
 
-"start EasyAlign for a motion/text object
-nmap <leader>a <Plug>(EasyAlign)
-"start EasyAlign in visual mode
-xmap <leader>a <Plug>(EasyAlign)
+"EasyAlign
+nnoremap <leader>a <Plug>(EasyAlign)
+xnoremap <leader>a <Plug>(EasyAlign)
 
-"toggle showing hidden characters
-nmap <silent> <leader>s :set nolist!<CR>
-"toggle RTL mode
-nmap <silent> <leader>l :set rl!<CR>
-"override file systems by typing :w!!
-cmap w!! %!sudo tee > /dev/null %
-
-map <silent> <C-h> :call WinMove('h')<cr>
-map <silent> <C-j> :call WinMove('j')<cr>
-map <silent> <C-k> :call WinMove('k')<cr>
-map <silent> <C-l> :call WinMove('l')<cr>
+nnoremap <silent> <C-h> :call WinMove('h')<cr>
+nnoremap <silent> <C-j> :call WinMove('j')<cr>
+nnoremap <silent> <C-k> :call WinMove('k')<cr>
+nnoremap <silent> <C-l> :call WinMove('l')<cr>
 "move to the window in the direction shown, or create a new window
 function! WinMove(key)
   let t:curwin = winnr()
@@ -141,8 +144,14 @@ function! WinMove(key)
   endif
 endfunction
 
+"netrw
+let g:netrw_banner=0
+let g:netrw_winsize=25
+let g:netrw_liststyle=3
+let g:netrw_localrmdir='rm -r'
+
 "Goyo
-nmap <leader>g :Goyo<cr>
+nnoremap <leader>g :Goyo<cr>
 if !exists('*s:goyo_leave')
   function s:goyo_leave()
     source $MYVIMRC
