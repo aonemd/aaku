@@ -123,8 +123,8 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 nnoremap <leader><leader> <c-^>
 
 "EasyAlign
-nnoremap <leader>a <Plug>(EasyAlign)
-xnoremap <leader>a <Plug>(EasyAlign)
+nmap <leader>a <Plug>(EasyAlign)
+xmap <leader>a <Plug>(EasyAlign)
 
 nnoremap <silent> <C-h> :call WinMove('h')<cr>
 nnoremap <silent> <C-j> :call WinMove('j')<cr>
