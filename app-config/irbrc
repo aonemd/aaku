@@ -1,4 +1,54 @@
+require 'irb/completion'
 require 'irb/ext/save-history'
+require 'rubygems'
 
-IRB.conf[:SAVE_HISTORY] = 200
-IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-history"
+IRB.conf[:SAVE_HISTORY] = 1000
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:AUTO_INDENT]  = true
+
+class Object
+  # print documentation
+  #
+  # ri 'Array#pop'
+  # Array.ri
+  # Array.ri :pop
+  # Array.new.ri :pop
+  def ri(method = nil)
+    unless method && method =~ /^[A-Z]/ # if class isn't specified
+      klass  = self.kind_of?(Class) ? name : self.class.name
+      method = [klass, method].compact.join('#')
+    end
+    puts `ri '#{method}'`
+  end
+end
+
+module Kernel
+  # print object methods
+  #
+  # m(Array)
+  # m(Array.new, 'ma', false)
+  def m(object=Object.new, pattern=nil, local_only=true)
+    if object.class.name == "DBus::ProxyObjectInterface"
+      methods = object.methods.keys.sort
+    else
+      methods = object.public_methods(!local_only).sort
+    end
+    methods = methods.grep Regexp.new(pattern) unless pattern.nil?
+    methods
+  end
+end
+
+def r
+  reload!
+end
+
+if defined? RUBY_DESCRIPTION
+  puts RUBY_DESCRIPTION
+else
+  if defined? JRUBY_VERSION
+    puts "ruby #{RUBY_VERSION} (jruby #{JRUBY_VERSION}) (#{RUBY_RELEASE_DATE} patchlevel #{RUBY_PATCHLEVEL}) [#{RUBY_PLATFORM}]"
+  else
+    puts "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE} patchlevel #{RUBY_PATCHLEVEL}) [#{RUBY_PLATFORM}]"
+  end
+end
