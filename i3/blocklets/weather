@@ -1,17 +1,5 @@
 #!/usr/bin/env zsh
 
-current_part_of_the_day() {
-  local current_hour=$(date +"%H")
-  local day='5'
-  local night='17'
-
-  if [ ${current_hour} -ge ${day} -a ${current_hour} -le ${night} ]; then
-    echo "day"
-  else
-    echo "night"
-  fi
-}
-
 parse_weather_details () {
   local api_key="cabfc935d0f32912c7fc1f963648b2fd"
   local api_parameters="exclude=minutely,hourly,daily,alerts,flags&units=si"
@@ -19,7 +7,7 @@ parse_weather_details () {
   local api_url="https://api.darksky.net/forecast/${api_key}/${city_id}?${api_parameters}"
 
   local response=$(curl -s "${api_url}")
-  forecast=$(echo "${response}" | grep -o -e '\"summary\":\"[a-zA-Z ]*\"' | awk -F ':' '{print $2}' | tr -d '"')
+  forecast=$(echo "${response}" | grep -o -e '\"icon\":\"[a-zA-Z-]*\"' | awk -F ':' '{print $2}' | tr -d '"')
   temperature=$(echo "${response}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 }
 
@@ -28,27 +16,27 @@ print_weather () {
   local night_icon=""
   local cloud_icon=""
   local rain_icon=""
-  local storm_icon=""
   local snow_icon=""
+  local wind_icon=""
+  local storm_icon=""
   local fog_icon=""
-  local celsius_symbol="°C" 
+  local celsius_symbol="°C"
 
   parse_weather_details
 
-  if [[ "${forecast}" = *Snow* ]]; then
-    weather="${snow_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *Rain* ]] || [[ "${forecast}" = *Drizzle* ]]; then
-    weather="${rain_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *Cloud* ]] || [[ "${forecast}" = *Overcast* ]]; then
-    weather="${cloud_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *Clear* ]]; then
-    local current_time="$(current_part_of_the_day)"
-    if [[ "$current_time" == "day" ]]; then
+  if [[ "${forecast}" = *clear-day* ]]; then
       weather="${sun_icon}  ${temperature}${celsius_symbol}"
-    else
+  elif [[ "${forecast}" = *clear-night* ]]; then
       weather="${night_icon}  ${temperature}${celsius_symbol}"
-    fi
-  elif [[ "${forecast}" = *Fog* ]] || [[ "${forecast}" = *Mist* ]] || [[ "${forecast}" = *Haze* ]]; then
+  elif [[ "${forecast}" = *cloudy* ]]; then
+    weather="${cloud_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${forecast}" = *rain* ]]; then
+    weather="${rain_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${forecast}" = *snow* ]] || [[ "${forecast}" = *sleet* ]]; then
+    weather="${snow_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${forecast}" = *wind* ]]; then
+    weather="${wind_icon}  ${temperature}${celsius_symbol}"
+  elif [[ "${forecast}" = *fog* ]]; then
     weather="${fog_icon}  ${temperature}${celsius_symbol}"
   else
     weather="${forecast}  ${temperature}${celsius_symbol}"
