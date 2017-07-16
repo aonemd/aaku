@@ -8,6 +8,9 @@ note () {
     l)
       ls "$notes_dir"
       ;;
+    t)
+      tree --noreport "$notes_dir"
+      ;;
     p)
       pushd "$notes_dir"
       msg="Regenerated at $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
