@@ -27,6 +27,7 @@
 - irssi
 - cmus
 - htop
+- tree
 
 - chruby && ruby-install
 - golang
