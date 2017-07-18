@@ -136,7 +136,7 @@ bar {
     background $colorbg
     statusline $colorfg
     separator  $colorfg
-                      
+
                        # border   #background   #text
     focused_workspace  $colorbg   $colorbg      $colorfg
     active_workspace   $colorwht  $colorwht     $colorblk
