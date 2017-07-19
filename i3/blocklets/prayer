@@ -29,8 +29,14 @@ print_prayer () {
 
   report_mode=${BLOCK_INSTANCE:=0}
   if [[ $report_mode == 1 ]]; then
+    time_left=$(date -u -d "@${seconds_left}" +'%H:%M')
+    prayer="${prayer_name} ${time_left} Left"
+  elif [[ $report_mode == 2 ]]; then
     minutes_left=$(($seconds_left / 60))
     prayer="${prayer_name} ${minutes_left} Minutes Left"
+  elif [[ $report_mode == 3 ]]; then
+    hours_left=$(($seconds_left / 3600))
+    prayer="${prayer_name} ${hours_left} Hours Left"
   else
     prayer="${prayer_name} ${prayer_time}"
   fi
