@@ -5,6 +5,7 @@ alias ll='ls -lh'
 alias lla='ll -A'
 alias lld='du -sch *'
 alias grep='grep --colour --devices=skip'
+alias less='less -r'
 alias rm='rm -v'
 alias tree='tree -C'
 
