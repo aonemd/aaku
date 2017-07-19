@@ -9,7 +9,8 @@ parse_prayer_times () {
   for prayer in "${prayers[@]}"; do
     local prayer_parsed_time=$(echo "${response}" \
       | grep -o -e "\"${prayer}\":\"[0-9][0-9]:[0-9][0-9]\"" \
-      | awk -F "\"${prayer}\":" '{print $2}' | tr -d '"')
+      | awk -F "\"${prayer}\":" '{print $2}' \
+      | tr -d '"')
 
     local prayer_time_in_seconds=$(date -d "${prayer_parsed_time}" +"%s")
     local seconds_until_prayer=$(($prayer_time_in_seconds - $(date +'%s')))
