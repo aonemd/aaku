@@ -26,6 +26,7 @@ parse_prayer_times () {
 
 print_prayer () {
   parse_prayer_times
+  [[ -z $seconds_left ]] && exit 0
 
   report_mode=${BLOCK_INSTANCE:=0}
   if [[ $report_mode == 1 ]]; then
