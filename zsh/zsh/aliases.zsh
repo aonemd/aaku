@@ -8,6 +8,7 @@ alias grep='grep --colour --devices=skip'
 alias less='less -r'
 alias rm='rm -v'
 alias tree='tree -C'
+alias feh='feh -F'
 
 alias wk='cd $WK'
 alias v='vim'
