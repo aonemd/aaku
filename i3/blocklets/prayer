@@ -3,7 +3,9 @@
 parse_prayer_times () {
   local api_parameters="city=Cairo&country=EG&method=2"
   local api_url="http://api.aladhan.com/timingsByCity?${api_parameters}"
+
   local response=$(curl -s "${api_url}")
+  [[ -z $response ]] && exit 0
 
   local prayers=('Fajr' 'Sunrise' 'Dhuhr' 'Asr' 'Maghrib' 'Isha')
   for prayer in "${prayers[@]}"; do

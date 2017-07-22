@@ -7,6 +7,8 @@ parse_weather_details () {
   local api_url="https://api.darksky.net/forecast/${api_key}/${city_id}?${api_parameters}"
 
   local response=$(curl -s "${api_url}")
+  [[ -z $response ]] && exit 0
+
   forecast=$(echo "${response}" | grep -o -e '\"icon\":\"[a-zA-Z-]*\"' | awk -F ':' '{print $2}' | tr -d '"')
   temperature=$(echo "${response}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
 }
