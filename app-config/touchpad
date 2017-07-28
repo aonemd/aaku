@@ -1,8 +1,8 @@
 # /etc/X11/xorg.conf.d/70-synaptics.conf
 
 Section "InputClass"
-    Identifier "touchpad catchall"
-    Driver "synaptics"
+    Identifier      "touchpad catchall"
+    Driver          "synaptics"
     MatchIsTouchpad "on"
     # This option is recommend on all Linux systems using evdev, but cannot be
     # enabled by default. See the following link for details:
@@ -11,17 +11,17 @@ Section "InputClass"
 EndSection
 
 Section "InputClass"
-    Identifier "touchpad ignore duplicates"
+    Identifier      "touchpad ignore duplicates"
     MatchIsTouchpad "on"
-    MatchOS "Linux"
+    MatchOS         "Linux"
     MatchDevicePath "/dev/input/mouse*"
 
-    Option "Ignore" "on"
+    Option          "Ignore" "on"
 EndSection
 
 Section "InputClass"
-    Identifier "touchpad"
-    Driver "synaptics"
+    Identifier      "touchpad"
+    Driver          "synaptics"
     MatchIsTouchpad "on"
 
     ## Clicking
@@ -48,6 +48,6 @@ Section "InputClass"
 
     ## Palm detection
     Option "PalmDetect"           "on"
-    Option "PalmMinWidth"         "4"
-    Option "PalmMinZ"             "1"
+    Option  "PalmMinWidth"        "15"
+    Option  "PalmMinZ"            "250"
 EndSection
