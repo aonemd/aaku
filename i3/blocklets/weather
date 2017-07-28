@@ -9,8 +9,15 @@ parse_weather_details () {
   local response=$(curl -s "${api_url}")
   [[ -z $response ]] && exit 0
 
-  forecast=$(echo "${response}" | grep -o -e '\"icon\":\"[a-zA-Z-]*\"' | awk -F ':' '{print $2}' | tr -d '"')
-  temperature=$(echo "${response}" | grep -o -e '\"temperature\":\-\?[0-9]*' | awk -F ':' '{print $2}' | tr -d '"')
+  forecast=$(echo "${response}" \
+    | grep -o -e '\"icon\":\"[a-zA-Z-]*\"' \
+    | awk -F ':' '{print $2}' \
+    | tr -d '"')
+
+  temperature=$(echo "${response}" \
+    | grep -o -e '\"temperature\":\-\?[0-9]*' \
+    | awk -F ':' '{print $2}' \
+    | tr -d '"')
 }
 
 print_weather () {
@@ -25,29 +32,21 @@ print_weather () {
   local celsius_symbol="°C"
 
   parse_weather_details
+  case "${forecast}" in
+    *clear-day*)    current_icon=$sun_icon;;
+    *clear-night*)  current_icon=$night_icon;;
+    *cloudy*)       current_icon=$cloud_icon;;
+    *rain*)         current_icon=$rain_icon;;
+    *snow*)         current_icon=$snow_icon;;
+    *sleet*)        current_icon=$snow_icon;;
+    *wind*)         current_icon=$wind_icon;;
+    *fog*)          current_icon=$fog_icon;;
+  esac
 
-  if [[ "${forecast}" = *clear-day* ]]; then
-      weather="${sun_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *clear-night* ]]; then
-      weather="${night_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *cloudy* ]]; then
-    weather="${cloud_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *rain* ]]; then
-    weather="${rain_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *snow* ]] || [[ "${forecast}" = *sleet* ]]; then
-    weather="${snow_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *wind* ]]; then
-    weather="${wind_icon}  ${temperature}${celsius_symbol}"
-  elif [[ "${forecast}" = *fog* ]]; then
-    weather="${fog_icon}  ${temperature}${celsius_symbol}"
-  else
-    weather="${forecast}  ${temperature}${celsius_symbol}"
-  fi
-
+  weather="${current_icon} ${temperature}${celsius_symbol}"
   echo "${weather}"
   echo "${weather}"
 }
 
 print_weather
-
 exit 0
