@@ -60,3 +60,6 @@ source $HOME/.zshrc
 echo "Installing Fonts..."
 git clone https://github.com/powerline/fonts.git $HOME/Workspace/fonts/
 $HOME/Workspace/fonts/install.sh
+
+git clone https://github.com/sebastiencs/icons-in-terminal.git $HOME/Workspace/icons-in-terminal
+$HOME/Workspace/icons-in-terminal/install.sh
