@@ -21,29 +21,33 @@ parse_weather_details () {
 }
 
 print_weather () {
-  local sun_icon=""
-  local night_icon=""
-  local cloud_icon=""
-  local rain_icon=""
-  local snow_icon=""
-  local wind_icon=""
-  local storm_icon=""
-  local fog_icon=""
-  local celsius_symbol="°C"
+  local clear_day_icon=''
+  local clear_night_icon=''
+  local partly_cloudy_day_icon=''
+  local partly_cloudy_night_icon=''
+  local cloudy_icon=''
+  local rain_icon=''
+  local sleet_icon=''
+  local snow_icon=''
+  local wind_icon=''
+  local fog_icon=''
+  local celsius_icon='°C'
 
   parse_weather_details
   case "${forecast}" in
-    *clear-day*)    current_icon=$sun_icon;;
-    *clear-night*)  current_icon=$night_icon;;
-    *cloudy*)       current_icon=$cloud_icon;;
-    *rain*)         current_icon=$rain_icon;;
-    *snow*)         current_icon=$snow_icon;;
-    *sleet*)        current_icon=$snow_icon;;
-    *wind*)         current_icon=$wind_icon;;
-    *fog*)          current_icon=$fog_icon;;
+    clear-day)            current_icon=$clear_day_icon;;
+    clear-night)          current_icon=$clear_night_icon;;
+    partly-cloudy-day)    current_icon=$partly_cloudy_day_icon;;
+    partly-cloudy-night)  current_icon=$partly_cloudy_night_icon;;
+    cloudy)               current_icon=$cloudy_icon;;
+    rain)                 current_icon=$rain_icon;;
+    sleet)                current_icon=$sleet_icon;;
+    snow)                 current_icon=$snow_icon;;
+    wind)                 current_icon=$wind_icon;;
+    fog)                  current_icon=$fog_icon;;
   esac
 
-  weather="${current_icon} ${temperature}${celsius_symbol}"
+  weather="${current_icon} ${temperature}${celsius_icon}"
   echo "${weather}"
   echo "${weather}"
 }
