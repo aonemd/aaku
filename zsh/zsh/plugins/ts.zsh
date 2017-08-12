@@ -9,7 +9,7 @@ ts () {
     return
   fi
 
-  pushd "${WK}/${session_path}"
+  pushd "${WK}/${session_path}" > /dev/null
 
   tmux new-session   -d -s "${session_name}"
 
@@ -25,5 +25,5 @@ ts () {
   tmux select-window -t "${session_name}":1
   [ -n "$TMUX" ] && tmux switch -t "${session_name}" || tmux attach -t "${session_name}"
 
-  popd
+  popd > /dev/null
 }
