@@ -20,6 +20,7 @@ ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 ln -sfn ${BASEDIR}/app-config/gitconfig $HOME/.gitconfig
 ln -sfn ${BASEDIR}/app-config/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/app-config/agignore $HOME/.agignore
+ln -sfn ${BASEDIR}/app-config/fehbg $HOME/.fehbg
 
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfnr ${BASEDIR}/app-config/termite $HOME/.config/termite/config

@@ -1,0 +1,3 @@
+#!/usr/bin/env zsh
+
+feh --bg-max --randomize --no-fehbg $HOME/Pictures/wallpapers/*
