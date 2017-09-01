@@ -14,6 +14,7 @@
 - i3lock
 - xorg && xorg-xinit
 - polkit && systemctl enable polkit
+- acpi
 - dunst && libnotify
 - feh
 - scrot
