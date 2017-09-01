@@ -185,7 +185,7 @@ assign [class="Firefox"] → 2
 
 # Autostart
 exec --no-startup-id i3exit lock
-exec --no-startup-id xrandr --output VGA-1 --mode 1366x768
+exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080
 exec --no-startup-id dunst -config $AAKU/app-config/dunstrc
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id $HOME/.fehbg
