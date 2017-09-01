@@ -15,6 +15,7 @@
 - xorg && xorg-xinit
 - polkit && systemctl enable polkit
 - acpi
+- light
 - dunst && libnotify
 - feh
 - scrot

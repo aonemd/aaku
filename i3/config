@@ -153,6 +153,12 @@ bindsym $mod+w     exec rofi -show window
 bindsym $mod+t     exec i3-sensible-terminal
 bindsym $mod+space exec --no-startup-id switch-layout
 
+bindsym XF86MonBrightnessUp   exec light -A 15
+bindsym XF86MonBrightnessDown exec light -U 15
+bindsym XF86AudioRaiseVolume  exec amixer sset 'Master' 5%+
+bindsym XF86AudioLowerVolume  exec amixer sset 'Master' 5%-
+bindsym XF86AudioMute         exec amixer sset 'Master' toggle
+
 bindsym $mod+Delete mode "system"
 mode "system" {
   bindsym l exec --no-startup-id i3exit lock, mode "default"
