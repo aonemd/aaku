@@ -14,15 +14,14 @@ XTerm*faceName:   Hack:style=Regular:size=10
 XTerm*.scrollBar: false
 XTerm*saveLines:  10000
 
-! TODO: Fix me later
 ! Font rendering
-! Xft.dpi:       96
-! Xft.antialias: true
-! Xft.hinting:   true
-! Xft.rgba:      rgb
-! Xft.autohint:  false
-! Xft.hintstyle: hintslight
-! Xft.lcdfilter: lcddefault
+Xft.dpi:       122
+Xft.antialias: true
+Xft.hinting:   true
+Xft.autohint:  false
+Xft.rgba:      rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
 
 ! colorscheme
 *.foreground:    #ffffff
