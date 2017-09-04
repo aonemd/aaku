@@ -59,8 +59,8 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 
 # resize window
-bindsym $mod+r mode "resize"
-mode "resize" {
+bindsym $mod+r mode "Resize: h, j, k, l"
+mode "Resize: h, j, k, l" {
   bindsym $up    resize grow height 10 px or 10 ppt
   bindsym $down  resize shrink height 10 px or 10 ppt
   bindsym $left  resize shrink width 10 px or 10 ppt
@@ -159,8 +159,8 @@ bindsym XF86AudioRaiseVolume  exec amixer sset 'Master' 5%+
 bindsym XF86AudioLowerVolume  exec amixer sset 'Master' 5%-
 bindsym XF86AudioMute         exec amixer sset 'Master' toggle
 
-bindsym $mod+Delete mode "system"
-mode "system" {
+bindsym $mod+Delete mode "System: (l)ock, log(o)ut, (s)uspend, (h)ibernate, (r)eboot, shut(d)own"
+mode "System: (l)ock, log(o)ut, (s)uspend, (h)ibernate, (r)eboot, shut(d)own" {
   bindsym l exec --no-startup-id i3exit lock, mode "default"
   bindsym o exec --no-startup-id i3exit logout, mode "default"
   bindsym s exec --no-startup-id i3exit suspend, mode "default"
@@ -173,8 +173,8 @@ mode "system" {
 }
 
 bindsym Print exec scrot $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
-bindsym $mod+Print mode "screenshot"
-mode "screenshot" {
+bindsym $mod+Print mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay"
+mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay" {
   bindsym a exec scrot         $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
   bindsym f exec scrot -u      $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
   bindsym d exec scrot -d 3    $HOME/Pictures/screenshots/`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
