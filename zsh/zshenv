@@ -5,6 +5,9 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc"
 fi
 
+export $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
