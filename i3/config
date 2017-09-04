@@ -185,9 +185,11 @@ mode "screenshot" {
 }
 
 # Application rules
-assign [class="Chrome"] → 2
+assign [class="Chrome"]   → 2
 assign [class="Chromium"] → 2
-assign [class="Firefox"] → 2
+assign [class="Firefox"]  → 2
+assign [class="Geary"]    → 6
+assign [class="Slack"]    → 6
 
 # Autostart
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --dpi 122
