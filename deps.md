@@ -12,11 +12,13 @@
 - i3-gaps
 - i3blocks
 - i3lock
-- xorg && xorg-xinit
+- xorg xorg-xinit
 - polkit && systemctl enable polkit
+- xf86-input-synaptics xf86-input-libinput
 - acpi
 - light
-- dunst && libnotify
+- alsa-utils
+- dunst libnotify
 - feh
 - scrot
 - imagemagick
@@ -25,13 +27,18 @@
 - wicd
 - FontAwesome
 
-- ranger
+- ranger w3m
 - irssi
 - cmus
 - htop
 - tree
-
-- chruby && ruby-install
-- golang
-- docker
+- arander
+- zathura zathura-pdf-poppler
+- p7zip zip unzip unrar
 - redshift
+- neofetch
+- vlc qt4
+
+- chruby ruby-install
+- go go-tools
+- docker docker-compose && systemctl enable docker && sudo usermod -aG docker ${USER}
