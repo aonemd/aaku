@@ -10,7 +10,7 @@
   size_hints          = true
   mouse_autohide      = true
   clickable_url       = true
-  browser             = firefox
+  browser             = chromium
   resize_grip         = false
 
 [colors]
