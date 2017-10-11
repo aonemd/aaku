@@ -9,7 +9,7 @@ ts () {
     return
   fi
 
-  pushd "${WK}/${session_path}" > /dev/null
+  pushd "${session_path}" > /dev/null
 
   tmux new-session   -d -s "${session_name}"
 
