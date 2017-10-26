@@ -28,6 +28,7 @@ set nobackup
 set noswapfile
 set autoread                        "automatically read changes in the file
 set showcmd                         "display incomplete commands
+set shell=zsh
 set wildmenu
 set wildmode=longest:full,full
 set completeopt=longest,menu,preview
