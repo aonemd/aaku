@@ -58,6 +58,7 @@ alias rdm='bundle exec rake db:migrate'
 alias rds='bundle exec rake db:seed'
 alias rbi='bundle install'
 alias rbe='bundle exec'
+alias rcop='bundle exec rubocop `git diff --name-only master..HEAD`'
 
 # Docker and Docker Compose
 alias d='docker'
