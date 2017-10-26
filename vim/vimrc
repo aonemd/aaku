@@ -42,7 +42,7 @@ set nowrap                          "disable soft wrap for lines
 set scrolloff=2
 set ruler
 set number
-set cursorline                      "higlight current line
+set cursorline                      "highlight current line
 set colorcolumn=81
 set splitbelow
 set splitright
@@ -51,6 +51,7 @@ set incsearch
 set ignorecase                      "searches are case insensitive...
 set smartcase                       " ..unless they contain at least one capital letter
 set gdefault                        "substitue globally on a line (no need to type `g`)
+set hlsearch
 
 set autoindent                      "always set autoindenting on
 set backspace=indent,eol,start      "backspace through everything in insert mode
@@ -90,6 +91,8 @@ nnoremap <silent> <leader>s :set nolist!<cr>
 nnoremap <silent> <leader>l :set rl!<cr>
 "override file systems by typing :w!!
 cnoremap w!! %!sudo tee > /dev/null %
+"remove search highlight
+nmap <leader>q :nohlsearch<CR>
 
 "move lines around
 nnoremap <leader>k :m-2<cr>==
