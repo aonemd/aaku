@@ -29,7 +29,7 @@ print_battery () {
     Discharging)
       if [[ "${power}" -le "${critical_level}" ]]; then
         current_icon=$empty_icon
-        color='#f22c40'
+        msg_color='#f22c40'
       elif [[ "${power}" -le '50' ]]; then
         current_icon=$half_icon
       elif [[ "${power}" -le '75' ]]; then
@@ -45,7 +45,7 @@ print_battery () {
   battery="${current_icon} ${power}% ${remaining_time}"
   echo "${battery}"
   echo "${battery}"
-  echo "$color"
+  echo "$msg_color"
 }
 
 print_battery

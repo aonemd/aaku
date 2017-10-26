@@ -11,14 +11,14 @@ fi
 
 if [[ "$(cat /sys/class/net/$interface/operstate)" = 'up' ]]; then
   iface=""
-  color="#ffffff"
+  msg_color="#ffffff"
 else
   iface=""
-  color="#f22c40"
+  msg_color="#f22c40"
 fi
 
 echo "${iface}"
 echo "${iface}"
-echo "$color"
+echo "$msg_color"
 
 exit 0
