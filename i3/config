@@ -184,11 +184,6 @@ mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay" {
   bindsym Escape mode "default"
 }
 
-# Application rules
-assign [class="Chrome"] → 2
-assign [class="Chromium"] → 2
-assign [class="Firefox"] → 2
-
 # Autostart
 exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --dpi 122
 exec --no-startup-id dunst -config $AAKU/app-config/dunstrc
