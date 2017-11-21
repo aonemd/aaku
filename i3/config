@@ -85,11 +85,10 @@ bindsym $mod+Shift+r restart
 
 # Gaps
 gaps inner 15
-gaps outer 0
+gaps outer 15
 new_window pixel 1
 new_float pixel 1
 smart_borders on
-smart_gaps on
 popup_during_fullscreen smart
 
 # hide window borders
