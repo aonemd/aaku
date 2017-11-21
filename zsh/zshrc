@@ -1,10 +1,14 @@
-# Load necessary files
+# sourced in interactive shell
+
 if [ -d $HOME/.zsh ]; then
   for file in $HOME/.zsh/**/*.zsh; do
     source $file
   done
 fi
 
+export WK="$HOME/Workspace"
+export AAKU="$WK/aaku"
+export PATH="$PATH:$AAKU/i3/scripts"
 export PATH="$PATH:$WK/scripts"
 
 # chruby

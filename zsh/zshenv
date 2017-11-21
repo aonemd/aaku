@@ -1,23 +1,18 @@
-# Always sourced
+# sourced always
 
-# In case a non-login shell is running
-if [[ "$SHLVL" -eq 1 && ! -o LOGIN ]]; then
+# in case a non-interactive shell is not running
+if [[ $- != *i* ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc"
 fi
 
 export $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 export TERMINAL='termite'
 export BROWSER='chromium'
-
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-
-export WK="$HOME/Workspace"
-export AAKU="$WK/aaku"
-
-export PATH="$PATH:$AAKU/i3/scripts"
