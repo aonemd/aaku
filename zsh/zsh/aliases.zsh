@@ -45,7 +45,7 @@ alias gl='git log --topo-order --pretty=format:"${git_log_normal_format}"'
 alias glo='git log --topo-order --decorate --pretty=oneline --abbrev-commit'
 alias glg='git log --topo-order --graph --decorate --pretty=oneline --abbrev-commit'
 alias glga='git log --topo-order --graph --decorate --pretty=oneline --abbrev-commit --all'
-alias glc='git shortlog --summary --numbered --all --no-merges'
+alias glc='git shortlog --summary --numbered --no-merges'
 alias glh='gl --follow -p -- '
 
 # Ruby on Rails
