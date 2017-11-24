@@ -147,16 +147,17 @@ bar {
 }
 
 # Launching programs
-bindsym $mod+f     exec rofi -show drun
-bindsym $mod+w     exec rofi -show window
-bindsym $mod+t     exec i3-sensible-terminal
+bindsym $mod+f     exec --no-startup-id rofi -show drun
+bindsym $mod+w     exec --no-startup-id rofi -show window
+bindsym $mod+t     exec --no-startup-id i3-sensible-terminal
 bindsym $mod+space exec --no-startup-id switch-layout
+bindsym $mod+b     exec --no-startup-id $BROWSER
 
-bindsym XF86MonBrightnessUp   exec light -A 15
-bindsym XF86MonBrightnessDown exec light -U 15
-bindsym XF86AudioRaiseVolume  exec amixer sset 'Master' 5%+
-bindsym XF86AudioLowerVolume  exec amixer sset 'Master' 5%-
-bindsym XF86AudioMute         exec amixer sset 'Master' toggle
+bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 15
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 15
+bindsym XF86AudioRaiseVolume  exec --no-startup-id amixer sset 'Master' 5%+
+bindsym XF86AudioLowerVolume  exec --no-startup-id amixer sset 'Master' 5%-
+bindsym XF86AudioMute         exec --no-startup-id amixer sset 'Master' toggle
 
 bindsym $mod+Delete mode "System: (l)ock, log(o)ut, (s)uspend, (h)ibernate, (r)eboot, shut(d)own"
 mode "System: (l)ock, log(o)ut, (s)uspend, (h)ibernate, (r)eboot, shut(d)own" {
@@ -171,13 +172,13 @@ mode "System: (l)ock, log(o)ut, (s)uspend, (h)ibernate, (r)eboot, shut(d)own" {
   bindsym Escape mode "default"
 }
 
-bindsym Print exec scrot $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Print exec --no-startup-id scrot $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
 bindsym $mod+Print mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay"
 mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay" {
-  bindsym a exec scrot         $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
-  bindsym f exec scrot -u      $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
-  bindsym d exec scrot -d 3    $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
-  bindsym s exec scrot -u -d 3 $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+  bindsym a exec --no-startup-id scrot         $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+  bindsym f exec --no-startup-id scrot -u      $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+  bindsym d exec --no-startup-id scrot -d 3    $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
+  bindsym s exec --no-startup-id scrot -u -d 3 $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -188,4 +189,4 @@ exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --dpi 122
 exec --no-startup-id dunst -config $AAKU/app-config/dunstrc
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id $HOME/.fehbg
-exec --no-startup-id compton --config ~/.config/compton/compton.conf -b
+xec  --no-startup-id compton --config ~/.config/compton/compton.conf -b
