@@ -70,4 +70,4 @@ alias dc='docker-compose'
 
 # Arch Linux
 alias pacins='pacaur -S'
-alias pacupd='pacaur --noedit -Syu; pkill -RTMIN+3 i3blocks'
+alias pacupd='pacaur --noedit -Syu'
