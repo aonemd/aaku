@@ -42,7 +42,8 @@ ln -sfnr ${BASEDIR}/app-config/irssi/config $HOME/.irssi/config
 ln -sfnr ${BASEDIR}/app-config/irssi/weed.theme $HOME/.irssi/weed.theme
 ln -sfnr ${BASEDIR}/app-config/irssi/scripts $HOME/.irssi/scripts
 
-ln -sfnr ${BASEDIR}/app-config/Xresources $HOME/.Xresources
+ln -sfnr ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
+ln -sfnr ${BASEDIR}/X11/Xresources $HOME/.Xresources
 
 [ -d $HOME/.config/i3/ ] || mkdir -p $HOME/.config/i3
 ln -sfnr ${BASEDIR}/i3/config $HOME/.config/i3/config
@@ -50,7 +51,6 @@ ln -sfnr ${BASEDIR}/i3/i3status.conf $HOME/.config/i3/i3status.conf
 ln -sfnr ${BASEDIR}/i3/i3blocks.conf $HOME/.config/i3/i3blocks.conf
 ln -sfnr ${BASEDIR}/i3/scripts $HOME/.config/i3/scripts
 ln -sfnr ${BASEDIR}/i3/blocklets $HOME/.config/i3/blocklets
-ln -sfnr ${BASEDIR}/i3/dep/xinitrc $HOME/.xinitrc
 
 echo "Installing Vim plugins ..."
 echo | vim - +PlugInstall +qall
