@@ -183,10 +183,3 @@ mode "Printscreen: (a)ll, (f)ocused, (d)elay, focu(s)ed delay" {
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-
-# Autostart
-exec --no-startup-id xrandr --output eDP-1 --mode 1920x1080 --dpi 122
-exec --no-startup-id dunst -config $AAKU/app-config/dunstrc
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id $HOME/.fehbg
-xec  --no-startup-id compton --config ~/.config/compton/compton.conf -b

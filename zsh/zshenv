@@ -5,9 +5,6 @@ if [[ $- != *i* ]]; then
   source "${ZDOTDIR:-$HOME}/.zshrc"
 fi
 
-export $(gnome-keyring-daemon --start)
-export SSH_AUTH_SOCK
-
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 

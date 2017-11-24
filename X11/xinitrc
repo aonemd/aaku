@@ -7,4 +7,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
+xrdb ~/.Xresources &
+xrandr --output eDP-1 --mode 1920x1080 --dpi 122 &
+dunst -config $HOME/.config/dunst/dunstrc &
+$HOME/.fehbg &
+compton --config $HOME/.config/compton/compton.conf -b
+
 exec i3
