@@ -25,7 +25,7 @@
 - rofi
 - compton
 - wicd
-- FontAwesome
+- ttf-font-awesome noto-fonts
 
 - ranger w3m
 - irssi

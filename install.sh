@@ -52,6 +52,8 @@ ln -sfnr ${BASEDIR}/i3/i3blocks.conf $HOME/.config/i3/i3blocks.conf
 ln -sfnr ${BASEDIR}/i3/scripts $HOME/.config/i3/scripts
 ln -sfnr ${BASEDIR}/i3/blocklets $HOME/.config/i3/blocklets
 
+ln -sfnr ${BASEDIR}/fontconfig/ $HOME/.config/fontconfig
+
 echo "Installing Vim plugins ..."
 echo | vim - +PlugInstall +qall
 
