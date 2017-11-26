@@ -69,5 +69,8 @@ alias drac='docker rm -f `docker ps --no-trunc -aq`'
 alias dc='docker-compose'
 
 # Arch Linux
-alias pacins='pacaur -S'
-alias pacupd='pacaur --noedit -Syu'
+alias journalctl='sudo journalctl'
+alias pacman='sudo pacman'
+alias paci='pacaur -S'
+alias pacu='pacaur --noedit -Syu'
+alias pacs='pacaur -Ss'
