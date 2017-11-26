@@ -143,7 +143,7 @@ bar {
     urgent_workspace   $colorbg   $colorbg      $colorred
   }
 
-  status_command i3blocks -c $AAKU/i3/i3blocks.conf
+  status_command i3blocks -c $HOME/.config/i3blocks/i3blocks.conf
 }
 
 # Launching programs
