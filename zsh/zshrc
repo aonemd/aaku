@@ -9,7 +9,6 @@ fi
 export WK="$HOME/Workspace"
 export AAKU="$WK/aaku"
 export PATH="$PATH:$AAKU/bin"
-export PATH="$PATH:$AAKU/i3/bin"
 export PATH="$PATH:$WK/bin"
 
 # chruby

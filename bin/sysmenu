@@ -4,9 +4,6 @@ case "$1" in
   lock)
     screenlock
     ;;
-  logout)
-    i3-msg exit
-    ;;
   suspend)
     systemctl suspend
     ;;
@@ -20,7 +17,7 @@ case "$1" in
     systemctl poweroff
     ;;
   *)
-    echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+    echo "Usage: $0 {lock|suspend|hibernate|reboot|shutdown}"
     exit 2
 esac
 
