@@ -155,8 +155,8 @@ bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 
 # scratchpad
-bindsym $mod+Shift+minus move scratchpad
-bindsym $mod+minus scratchpad show
+bindsym $mod+m move scratchpad
+bindsym $mod+n scratchpad show
 
 # Launching programs
 bindsym $mod+e     exec --no-startup-id rofi -show drun
