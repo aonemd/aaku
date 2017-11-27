@@ -24,7 +24,7 @@
 - rofi
 - compton
 - wicd
-- freetype2 ttf-font-awesome noto-fonts
+- freetype2 ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji
 
 - ranger w3m
 - irssi
