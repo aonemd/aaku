@@ -1,12 +1,8 @@
 #!/usr/bin/env zsh
 
-lock() {
-  screenlock.sh
-}
-
 case "$1" in
   lock)
-    lock
+    screenlock
     ;;
   logout)
     i3-msg exit

@@ -11,7 +11,7 @@
 - termite
 - i3-gaps
 - i3blocks
-- i3lock
+- i3lock-color
 - xorg xorg-xinit
 - polkit && systemctl enable polkit
 - xf86-input-synaptics xf86-input-libinput
@@ -21,7 +21,6 @@
 - dunst libnotify
 - feh
 - scrot
-- imagemagick
 - rofi
 - compton
 - wicd
