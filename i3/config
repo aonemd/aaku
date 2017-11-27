@@ -84,8 +84,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # focus on parent/child containers
-bindsym $mod+p       focus parent
-bindsym $mod+Shift+p focus child
+bindsym $mod+a focus parent
+bindsym $mod+d focus child
 
 # toggle split direction (v and h)
 bindsym $mod+backslash split toggle
