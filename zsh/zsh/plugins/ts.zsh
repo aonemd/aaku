@@ -16,7 +16,7 @@ ts () {
   tmux send-keys     -t "${session_name}":1 'vim ' C-m
   tmux split-window  -t "${session_name}":1 -v
   tmux split-window  -t "${session_name}":1 -h
-  tmux resize-pane   -t "${session_name}":1 -D 17
+  tmux resize-pane   -t "${session_name}":1 -D 10
   tmux select-pane   -t "${session_name}":1.0
 
   tmux new-window    -t "${session_name}":2 -n 'log'
