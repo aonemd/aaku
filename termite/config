@@ -4,13 +4,12 @@
   scroll_on_output    = false
   scroll_on_keystroke = true
   audible_bell        = false
-  visible_bell        = false
+  visible_bell        = true
   urgent_on_bell      = true
   scrollback_lines    = 10000
   size_hints          = true
   mouse_autohide      = true
   clickable_url       = true
-  browser             = chromium
   resize_grip         = false
 
 [colors]
