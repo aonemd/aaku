@@ -1,0 +1,21 @@
+; /etc/systemd/system/wakelock.service
+; systemctl daemon-reload && systemctl enable wakelock.service
+
+[Unit]
+Description = Lock the screen after system resume
+Before      = sleep.target
+Before      = suspend.target
+Before      = hibernate.target
+Before      = hybrid-sleep.target
+
+[Service]
+User        = yahmds
+Type        = simple
+Environment = DISPLAY=:0
+ExecStart   = /home/yahmds/Workspace/aaku/bin/screenlock
+
+[Install]
+WantedBy = sleep.target
+WantedBy = suspend.target
+WantedBy = hibernate.target
+WantedBy = hybrid-sleep.target
