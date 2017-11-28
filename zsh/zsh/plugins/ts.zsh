@@ -14,10 +14,10 @@ ts () {
   tmux new-session   -d -s "${session_name}"
 
   tmux send-keys     -t "${session_name}":1 'vim ' C-m
+  sleep 0.5
   tmux split-window  -t "${session_name}":1 -v
-  tmux split-window  -t "${session_name}":1 -h
   tmux resize-pane   -t "${session_name}":1 -D 10
-  tmux select-pane   -t "${session_name}":1.0
+  tmux select-pane   -t "${session_name}":1.1
 
   tmux new-window    -t "${session_name}":2 -n 'log'
   tmux new-window    -t "${session_name}":3 -n 'misc'
