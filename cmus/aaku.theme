@@ -2,7 +2,7 @@
 
 # upper window title
 set color_win_title_bg=black
-set color_win_title_fg=238
+set color_win_title_fg=blue
 
 # track info line
 set color_titleline_bg=black
@@ -18,7 +18,7 @@ set color_win_fg=white
 
 # currently selected item
 set color_win_sel_bg=233
-set color_win_sel_fg=red
+set color_win_sel_fg=blue
 
 # focused playing selected item
 set color_win_cur=blue
@@ -38,9 +38,9 @@ set color_cmdline_bg=black
 set color_cmdline_fg=white
 
 # browser mode 5 fg
-set color_win_dir=238
+set color_win_dir=white
 
 set color_error=red
 set color_info=yellow
 
-set color_separator=233
+set color_separator=black
