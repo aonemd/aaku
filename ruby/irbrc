@@ -1,5 +1,6 @@
 require 'irb/completion'
 require 'irb/ext/save-history'
+require 'pp'
 require 'rubygems'
 
 IRB.conf[:SAVE_HISTORY] = 1000
