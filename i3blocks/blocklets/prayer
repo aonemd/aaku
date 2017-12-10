@@ -46,7 +46,6 @@ print_prayer () {
 
   echo "${prayer}"
   echo "${prayer}"
-  echo "#5ab738"
 }
 
 print_prayer
