@@ -55,6 +55,7 @@ set hlsearch
 
 set autoindent                      "always set autoindenting on
 set backspace=indent,eol,start      "backspace through everything in insert mode
+set formatoptions-=cro              "disable auto comments on new lines
 set tabstop=2
 set expandtab                       "use spaces, not tabs
 set shiftwidth=2
