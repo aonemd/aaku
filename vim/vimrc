@@ -70,11 +70,10 @@ set t_Co=256                        "enable 256 colors
 set background=dark
 colorscheme hybrid
 highlight Normal ctermbg=black
-highlight ColorColumn ctermbg=235
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
-hi StatusLine   ctermfg=235 ctermbg=240 guifg=Grey15 guibg=Grey35
-hi StatusLineNC ctermfg=235 ctermbg=237 guifg=Grey15 guibg=Grey23
+highlight StatusLine   ctermfg=235 ctermbg=240
+highlight StatusLineNC ctermfg=235 ctermbg=237
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul

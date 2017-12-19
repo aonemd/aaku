@@ -20,3 +20,7 @@ set guioptions+=c
 
 " Silent bell
 autocmd GUIEnter * set vb t_vb=
+
+highlight Normal       guibg=#1b1918
+highlight StatusLine   guifg=Grey15 guibg=Grey35
+highlight StatusLineNC guifg=Grey15 guibg=Grey23
