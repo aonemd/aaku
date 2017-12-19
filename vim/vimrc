@@ -127,6 +127,7 @@ nnoremap <leader>T :enew<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
 nnoremap <leader>bq :bp <bar> bd! #<cr>
+nnoremap <leader>ba :bufdo bd!<cr>
 "cycle between last two open buffers
 nnoremap <leader><leader> <c-^>
 
