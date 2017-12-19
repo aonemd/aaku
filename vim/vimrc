@@ -88,6 +88,8 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//<left>
 "toggle showing hidden characters
 nnoremap <silent> <leader>s :set nolist!<cr>
+"toggle spell checking
+nnoremap <leader>ss :setlocal spell!<cr>
 "toggle RTL mode
 nnoremap <silent> <leader>l :set rl!<cr>
 "override file systems by typing :w!!
