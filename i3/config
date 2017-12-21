@@ -126,9 +126,9 @@ mode "Resize: h, j, k, l" {
 }
 
 # nagivate workspaces left/right
-bindsym $mod+period workspace next
-bindsym $mod+comma  workspace prev
-bindsym $mod+Tab    workspace back_and_forth
+bindsym $mod+n   workspace next
+bindsym $mod+p   workspace prev
+bindsym $mod+Tab workspace back_and_forth
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -151,15 +151,18 @@ bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
 
 # scratchpad
-bindsym $mod+m move scratchpad
-bindsym $mod+n scratchpad show
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus       scratchpad show
 
 # Launching programs
-bindsym $mod+e     exec --no-startup-id rofi -show drun
-bindsym $mod+w     exec --no-startup-id rofi -show window
-bindsym $mod+t     exec --no-startup-id i3-sensible-terminal
-bindsym $mod+space exec --no-startup-id switch-layout
-bindsym $mod+b     exec --no-startup-id $BROWSER
+bindsym $mod+e       exec --no-startup-id rofi -show drun
+bindsym $mod+w       exec --no-startup-id rofi -show window
+bindsym $mod+t       exec --no-startup-id i3-sensible-terminal
+bindsym $mod+space   exec --no-startup-id switch-layout
+bindsym $mod+b       exec --no-startup-id $BROWSER
+bindsym $mod+shift+p exec --no-startup-id cmus-remote --pause
+bindsym $mod+shift+b exec --no-startup-id cmus-remote --prev
+bindsym $mod+shift+n exec --no-startup-id cmus-remote --next
 
 bindsym XF86MonBrightnessUp   exec --no-startup-id light -A 10
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
