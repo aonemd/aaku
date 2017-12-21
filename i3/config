@@ -19,31 +19,25 @@ gaps inner 20
 gaps outer 5
 
 # Colors
-set $colorbg       #1b1918
-set $colorfg       #ffffff
 set $colorblk      #1b1918
 set $colorbblk     #766e6b
 set $colorred      #f22c40
-set $colorbred     #f22c40
 set $colorgrn      #5ab738
-set $colorbgrn     #5ab738
 set $colorylw      #d5911a
-set $colorbylw     #d5911a
 set $colorblu      #407ee7
-set $colorbblu     #407ee7
 set $colormag      #6666ea
-set $colorbmag     #6666ea
 set $colorcyn      #00ad9c
-set $colorbcyn     #00ad9c
 set $colorwht      #a8a19f
 set $colorbwht     #f1efee
+set $colorbg       #1b1918
+set $colorfg       #f1efee
 set $colorinactive #373b41
 
 #                        border      bg          fg                indicator
 client.focused           $colorbg    $colorbg    $colorfg          $colorbg
-client.focused_inactive  $colorbg    $colorbg    $colorinactive    $colorbg
+client.focused_inactive  $colorbg    $colorbg    $colorgrn         $colorbg
 client.unfocused         $colorbg    $colorbg    $colorinactive    $colorbg
-client.urgent            $colorbg    $colorred   $colorred         $colorbg
+client.urgent            $colorbg    $colorbg    $colorred         $colorbg
 client.background        $colorbg
 
 # Bar
@@ -58,8 +52,8 @@ bar {
     separator  $colorfg
 
                        # border   #background   #text
-    focused_workspace  $colorbg   $colorbg      $colorfg
-    active_workspace   $colorwht  $colorwht     $colorblk
+    focused_workspace  $colorbg   $colorblu     $colorfg
+    active_workspace   $colorbg   $colorbg      $colorgrn
     inactive_workspace $colorbg   $colorbg      $colorinactive
     urgent_workspace   $colorbg   $colorbg      $colorred
   }
