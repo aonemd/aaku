@@ -14,9 +14,9 @@
 
 [colors]
   # special
-  foreground      = #ffffff
-  foreground_bold = #ffffff
-  cursor          = #ffffff
+  foreground      = #f1efee
+  foreground_bold = #f1efee
+  cursor          = #f1efee
   background      = rgba(27, 25, 24, 0.98)
 
   # black
