@@ -21,7 +21,7 @@ function prompt_git_branch {
 }
 
 function _prompt_git_status {
-  if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]]; then
+  if [ -n "$(git status --porcelain 2> /dev/null)" ]; then
     echo "%{$fg[red]%}"
   else
     echo "%{$fg[green]%}"
