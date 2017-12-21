@@ -1,4 +1,10 @@
 PROMPT_INSERT_SYMBOL="›"
+PROMPT_NORMAL_SYMBOL="·"
+
+function prompt_redraw {
+    zle reset-prompt
+}
+zle -N zle-keymap-select prompt_redraw
 
 function prompt_current_dir {
   echo -n "%{$fg[blue]%}%1~"
@@ -6,6 +12,7 @@ function prompt_current_dir {
 
 function prompt_symbol {
   local current_symbol="$PROMPT_INSERT_SYMBOL"
+  [ "$KEYMAP" = 'vicmd' ] && current_symbol="$PROMPT_NORMAL_SYMBOL"
   echo -n "%{$fg[white]%}$current_symbol"
 }
 
