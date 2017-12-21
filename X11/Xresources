@@ -24,9 +24,9 @@ Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
 
 ! colorscheme
-*.foreground:    #ffffff
+*.foreground:    #f1efee
+*.cursorColor:   #f1efee
 *.background:    #1b1918
-*.cursorColor:   #ffffff
 
 ! black
 *.color0:        #1b1918
