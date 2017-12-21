@@ -9,7 +9,7 @@ case "$language" in
     layout='en' ;;
 esac
 
-echo "$layout"
-echo "$layout"
+echo "  $layout"
+echo "  $layout"
 
 exit 0

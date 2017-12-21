@@ -42,7 +42,7 @@ print_battery () {
 
   [[ -n $remaining_time ]] && remaining_time="(${remaining_time})"
 
-  battery="${current_icon} ${power}% ${remaining_time}"
+  battery="${current_icon}  ${power}% ${remaining_time}"
   echo "${battery}"
   echo "${battery}"
   echo "$msg_color"

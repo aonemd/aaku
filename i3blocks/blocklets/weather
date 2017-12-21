@@ -47,7 +47,7 @@ print_weather () {
     fog)                  current_icon=$fog_icon;;
   esac
 
-  weather="${current_icon} ${temperature}${celsius_icon}"
+  weather="${current_icon}  ${temperature}${celsius_icon}"
   echo "${weather}"
   echo "${weather}"
 }
