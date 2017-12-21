@@ -126,6 +126,11 @@ nnoremap <leader>r :CtrlPBuffer<cr>
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
 
+"GitGutter
+nnoremap <c-N> :GitGutterNextHunk<CR>
+nnoremap <c-P> :GitGutterPrevHunk<CR>
+nnoremap <c-U> :GitGutterUndoHunk<CR>
+
 nnoremap <leader>T :enew<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
