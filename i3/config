@@ -52,7 +52,7 @@ bar {
     separator  $colorfg
 
                        # border   #background   #text
-    focused_workspace  $colorbg   $colorblu     $colorfg
+    focused_workspace  $colorbg   $colorbg      $colorblu
     active_workspace   $colorbg   $colorbg      $colorgrn
     inactive_workspace $colorbg   $colorbg      $colorinactive
     urgent_workspace   $colorbg   $colorbg      $colorred
