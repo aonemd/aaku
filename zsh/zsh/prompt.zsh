@@ -16,11 +16,11 @@ function prompt_symbol {
   echo -n "%{$fg[white]%}$current_symbol"
 }
 
-function git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(git_status)\1/"
+function prompt_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(_prompt_git_status)\1/"
 }
 
-function git_status {
+function _prompt_git_status {
   if [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working tree clean" ]]; then
     echo "%{$fg[red]%}"
   else
@@ -28,11 +28,11 @@ function git_status {
   fi
 }
 
-function hg_branch {
-  hg branch 2> /dev/null | sed -e "s/\(.*\)/ $(hg_status)\1/"
+function prompt_hg_branch {
+  hg branch 2> /dev/null | sed -e "s/\(.*\)/ $(_prompt_hg_status)\1/"
 }
 
-function hg_status {
+function _prompt_hg_status {
   if [[ $( hg status 2> /dev/null ) != "" ]]; then
     echo "%{$fg[red]%}"
   else
@@ -40,4 +40,4 @@ function hg_status {
   fi
 }
 
-PROMPT='$(prompt_current_dir)$(git_branch)$(hg_branch) $(prompt_symbol) %{$reset_color%}'
+PROMPT='$(prompt_current_dir)$(prompt_git_branch)$(prompt_hg_branch) $(prompt_symbol) %{$reset_color%}'
