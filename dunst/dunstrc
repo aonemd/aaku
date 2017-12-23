@@ -11,7 +11,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = yes
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -73,7 +73,10 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.).
-    transparency = 3
+    transparency = 10
+
+    frame_width = 1
+    frame_color = "#141312"
 
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
@@ -143,7 +146,7 @@
     max_icon_size = 32
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/Adwaita/32x32/status/:/usr/share/icons/Adwaita/32x32/devices/
+    icon_folders = /usr/share/icons/la-capitaine-icon-theme-0.5.0/status/scalable/:/usr/share/icons/la-capitaine-icon-theme-0.5.0/emblems/scalable:/usr/share/icons/la-capitaine-icon-theme-0.5.0/apps/scalable/
 
 [shortcuts]
     # Close notification.
@@ -158,21 +161,17 @@
     # Context menu.
     context = ctrl+shift+period
 
-[frame]
-    width = 1
-    color = "#111111"
-
 [urgency_low]
-    background = "#111111"
-    foreground = "#888888"
-    timeout = 5
+    background = "#1b1918"
+    foreground = "#a8a19f"
+    timeout = 10
 
 [urgency_normal]
-    background = "#111111"
-    foreground = "#ffffff"
-    timeout = 5
+    background = "#1b1918"
+    foreground = "#f1efee"
+    timeout = 10
 
 [urgency_critical]
-    background = "#111111"
-    foreground = "#B14D4C"
-    timeout = 5
+    background = "#1b1918"
+    foreground = "#f22c40"
+    timeout = 0
