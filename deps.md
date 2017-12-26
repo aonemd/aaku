@@ -9,12 +9,10 @@
 
 - pacaur
 - termite
-- i3-gaps
-- i3blocks
-- i3lock-color
 - xorg xorg-xinit
-- polkit && systemctl enable polkit
 - xf86-input-synaptics xf86-input-libinput
+- i3-gaps i3blocks i3lock-color
+- polkit && systemctl enable polkit
 - acpi
 - light
 - alsa-utils
@@ -38,6 +36,7 @@
 - neofetch
 - vlc qt4
 
+- strace
 - chruby ruby-install
 - go go-tools
 - docker docker-compose && systemctl enable docker && sudo usermod -aG docker ${USER}
