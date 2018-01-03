@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh
 
 parse_weather_details () {
-  local api_key="cabfc935d0f32912c7fc1f963648b2fd"
+  local api_key=$WEATHER_API_KEY
+  local city_id=$WEATHER_CITY_GEOLOCATION
   local api_parameters="exclude=minutely,hourly,daily,alerts,flags&units=si"
-  local city_id="29.98333,31.445127"
   local api_url="https://api.darksky.net/forecast/${api_key}/${city_id}?${api_parameters}"
 
   local response=$(curl -s "${api_url}")

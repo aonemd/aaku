@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 parse_battery_details () {
-  local battery_device=${BLOCK_INSTANCE:=0}
+  local battery_device=${BATTERY_NUMBER:=0}
   local response=$(acpi -b | grep "Battery ${battery_device}")
 
   state=$(echo "${response}" | grep -wo 'Full\|Charging\|Discharging')

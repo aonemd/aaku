@@ -23,7 +23,7 @@
 # DBus session).
 
 use Time::HiRes qw(usleep);
-use Env qw(BLOCK_INSTANCE);
+use Env qw(MEDIA_PLAYER);
 
 use constant DELAY => 50; # Delay in ms to let network-based players (spotify) reflect new data.
 use constant SPOTIFY_STR => 'spotify';
@@ -31,8 +31,8 @@ use constant SPOTIFY_STR => 'spotify';
 my @metadata = ();
 my $player_arg = "";
 
-if ($BLOCK_INSTANCE) {
-    $player_arg = "--player='$BLOCK_INSTANCE'";
+if ($MEDIA_PLAYER) {
+    $player_arg = "--player='$MEDIA_PLAYER'";
 }
 
 sub buttons {
@@ -61,12 +61,12 @@ sub buttons {
     } elsif ($method eq 'playerctl') {
         if ($ENV{'BLOCK_BUTTON'} == 1) {
             system("playerctl $player_arg previous");
-            usleep(DELAY * 1000) if $BLOCK_INSTANCE eq SPOTIFY_STR;
+            usleep(DELAY * 1000) if $MEDIA_PLAYER eq SPOTIFY_STR;
         } elsif ($ENV{'BLOCK_BUTTON'} == 2) {
             system("playerctl $player_arg play-pause");
         } elsif ($ENV{'BLOCK_BUTTON'} == 3) {
             system("playerctl $player_arg next");
-            usleep(DELAY * 1000) if $BLOCK_INSTANCE eq SPOTIFY_STR;
+            usleep(DELAY * 1000) if $MEDIA_PLAYER eq SPOTIFY_STR;
         } elsif ($ENV{'BLOCK_BUTTON'} == 4) {
             system("playerctl $player_arg volume 0.01+");
         } elsif ($ENV{'BLOCK_BUTTON'} == 5) {

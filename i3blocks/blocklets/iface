@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 # Use the provided interface, otherwise the device used for the default route.
-if [[ -n $BLOCK_INSTANCE ]]; then
-  interface=$BLOCK_INSTANCE
+if [[ -n $ETHERNET_INTERFACE ]]; then
+  interface=$ETHERNET_INTERFACE
 else
   interface=$(ip route | awk '/^default/ { print $5 ; exit }')
 fi
