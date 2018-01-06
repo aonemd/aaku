@@ -15,6 +15,9 @@ ln -sfn ${BASEDIR}/zsh/zprofile $HOME/.zprofile
 ln -sfn ${BASEDIR}/zsh/zshenv $HOME/.zshenv
 ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
 
+ln -sfn ${BASEDIR}/atom $HOME/.atom
+apm install --packages-file ./atom/package-list.txt
+
 ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 ln -sfn ${BASEDIR}/git/gitconfig $HOME/.gitconfig
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
