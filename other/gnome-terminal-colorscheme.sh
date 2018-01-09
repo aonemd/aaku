@@ -1,6 +1,5 @@
 #!/usr/bin/env zsh
 # Base16 - Gnome Terminal color scheme install script
-# terminal.sexy: atelierforest.dark
 
 [[ -z "$PROFILE_NAME" ]] && PROFILE_NAME="atelierforest.dark"
 [[ -z "$PROFILE_SLUG" ]] && PROFILE_SLUG="atelier-dot-dark"
