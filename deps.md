@@ -35,6 +35,7 @@
 - redshift
 - neofetch
 - vlc qt4
+- libinput-gestures
 
 - strace
 - chruby ruby-install
