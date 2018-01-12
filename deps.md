@@ -24,7 +24,7 @@
 - wicd
 - freetype2 ttf-font-awesome noto-fonts noto-fonts-cjk noto-fonts-emoji
 
-- ranger w3m
+- ranger w3m udiskie
 - irssi
 - cmus
 - htop

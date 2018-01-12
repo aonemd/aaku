@@ -16,5 +16,6 @@ xrandr --output eDP-1 --mode 1920x1080 --dpi 122 &
 dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
 compton --config $HOME/.config/compton/compton.conf -b
+udiskie &
 
 exec i3
