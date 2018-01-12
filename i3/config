@@ -3,6 +3,9 @@ font xft: Hack 8
 # hide window borders
 for_window [class="^.*"] border pixel 0
 
+# default tiling mode for all workspaces
+workspace_layout tabbed
+
 # show popups during fullscreen only if they belong to the fullscreen window
 popup_during_fullscreen smart
 
