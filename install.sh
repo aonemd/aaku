@@ -34,6 +34,8 @@ ln -sfn ${BASEDIR}/irssi/scripts $HOME/.irssi/scripts
 ln -sfn ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
 ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
 
+-ln -sfn ${BASEDIR}/i3 $HOME/.config/i3
+
 [ -d $HOME/.xmonad ] || mkdir -p $HOME/.xmonad
 ln -sfn ${BASEDIR}/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
