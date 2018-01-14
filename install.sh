@@ -39,6 +39,8 @@ ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
 [ -d $HOME/.xmonad ] || mkdir -p $HOME/.xmonad
 ln -sfn ${BASEDIR}/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
 
+ln -sfn ${BASEDIR}/polybar $HOME/.config/polybar
+
 ln -sfn ${BASEDIR}/i3blocks $HOME/.config/i3blocks
 
 ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
