@@ -84,7 +84,7 @@ sub buttons {
 }
 
 sub cmus {
-    my @cmus = split /^/, qx(cmus-remote -Q);
+    my @cmus = split /^/, qx(cmus-remote -Q 2> /dev/null);
     if ($? == 0) {
         foreach my $line (@cmus) {
             my @data = split /\s/, $line;
