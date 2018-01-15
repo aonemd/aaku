@@ -45,7 +45,6 @@ print_prayer () {
   fi
 
   echo "${prayer}"
-  echo "${prayer}"
 }
 
 print_prayer
