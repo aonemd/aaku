@@ -18,4 +18,4 @@ $HOME/.fehbg &
 compton --config $HOME/.config/compton/compton.conf -b
 udiskie &
 
-exec i3
+exec dwm
