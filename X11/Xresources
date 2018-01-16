@@ -15,7 +15,7 @@ XTerm*.scrollBar: false
 XTerm*saveLines:  10000
 
 ! Font rendering
-Xft.dpi:       122
+Xft.dpi:       120
 Xft.antialias: true
 Xft.hinting:   true
 Xft.autohint:  false
