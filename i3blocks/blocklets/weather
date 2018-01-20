@@ -49,6 +49,7 @@ print_weather () {
 
   weather="${current_icon} ${temperature}${celsius_icon}"
   echo "${weather}"
+  echo "${weather}"
 }
 
 print_weather
