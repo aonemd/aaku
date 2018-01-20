@@ -17,5 +17,6 @@ dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
 compton --config $HOME/.config/compton/compton.conf -b
 udiskie &
+onpar  &
 
 exec dwm
