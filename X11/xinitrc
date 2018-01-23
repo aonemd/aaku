@@ -17,6 +17,7 @@ dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
 compton --config $HOME/.config/compton/compton.conf -b
 udiskie &
+geary --hidden &
 onpar  &
 
 exec dwm
