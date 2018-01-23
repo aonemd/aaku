@@ -33,7 +33,7 @@
 - zathura zathura-pdf-poppler
 - p7zip zip unzip unrar
 - redshift
-- neofetch
+- neofetch cmatrix cowsay
 - vlc qt4
 - libinput-gestures
 
