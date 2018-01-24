@@ -9,7 +9,7 @@
 
 - pacaur
 - termite
-- xorg xorg-xinit
+- xorg-server xorg-server-utils xorg-xinit
 - xf86-input-synaptics xf86-input-libinput
 - i3-gaps i3blocks i3lock-color
 - polkit && systemctl enable polkit
