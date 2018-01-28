@@ -12,7 +12,7 @@ export SSH_AUTH_SOCK
 
 xrdb ~/.Xresources &
 xsetroot -cursor_name left_ptr &
-xrandr --output eDP-1 --mode 1920x1080 --dpi 120 &
+xrandr --output eDP-1 --mode 1920x1080 --dpi 96 &
 dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
 compton --config $HOME/.config/compton/compton.conf -b
