@@ -1,0 +1,22 @@
+#!/usr/bin/env zsh
+
+case "$1" in
+  all)
+    scrot $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+    ;;
+  focused)
+    scrot -u $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+    ;;
+  all_delay)
+    scrot -d 3 $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+    ;;
+  focused_delay)
+    scrot -u -d 3 $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+    ;;
+  *)
+    echo "Usage: $0 {all|focused|all_delay|focused_delay}"
+    exit 2
+esac
+
+exit 0
+
