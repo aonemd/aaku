@@ -1,4 +1,4 @@
-set guifont=Hack\ Regular\ 10
+set guifont=Hack\ Regular\ 12
 
 " Window size
 set lines=50
