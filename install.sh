@@ -15,9 +15,6 @@ ln -sfn ${BASEDIR}/zsh/zprofile $HOME/.zprofile
 ln -sfn ${BASEDIR}/zsh/zshenv $HOME/.zshenv
 ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
 
-ln -sfn ${BASEDIR}/atom $HOME/.atom
-apm install --packages-file ./atom/package-list.txt
-
 ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 ln -sfn ${BASEDIR}/git/gitconfig $HOME/.gitconfig
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
@@ -35,11 +32,6 @@ ln -sfn ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
 ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
 
 -ln -sfn ${BASEDIR}/i3 $HOME/.config/i3
-
-[ -d $HOME/.xmonad ] || mkdir -p $HOME/.xmonad
-ln -sfn ${BASEDIR}/xmonad/xmonad.hs $HOME/.xmonad/xmonad.hs
-
-ln -sfn ${BASEDIR}/polybar $HOME/.config/polybar
 
 ln -sfn ${BASEDIR}/i3blocks $HOME/.config/i3blocks
 
