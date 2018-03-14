@@ -13,6 +13,7 @@ alias feh='feh -F'
 alias wk='cd $WK'
 alias v='vim'
 alias vv='gvim'
+alias brvim='printf "\033[?5h"; vim; printf "\033[?5l"'
 alias t='tmux'
 
 alias myip='nc 4.ifcfg.me 23 | grep IPv4 | cut -d" " -f4'
