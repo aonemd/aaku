@@ -9,10 +9,10 @@ Before      = hibernate.target
 Before      = hybrid-sleep.target
 
 [Service]
-User        = yahmds
+User        = aonemd
 Type        = simple
 Environment = DISPLAY=:0
-ExecStart   = /home/yahmds/Workspace/aaku/bin/screenlock
+ExecStart   = /home/aonemd/Workspace/aaku/bin/screenlock
 
 [Install]
 WantedBy = sleep.target
