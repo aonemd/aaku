@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+case "$1" in
+  mount)
+    simple-mtpfs /media/android
+    ;;
+  umount)
+    fusermount -u /media/android
+    ;;
+  *)
+    echo "Usage: $0 {mount|umount}"
+    exit 2
+esac
+
+exit 0
