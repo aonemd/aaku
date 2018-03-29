@@ -12,7 +12,7 @@ aaku
 
 ### Installation
 
-1. Download the repo or use Git `git clone https://gitlab.com/aasare/aaku.git`
+1. Download the repo or use Git `git clone https://gitlab.com/aonemd/aaku.git`
 2. Run the installation script in the repo `cd aaku && ./install`
 
 ### A note to myself:
