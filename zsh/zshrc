@@ -11,10 +11,13 @@ export AAKU="$WK/aaku"
 export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
 
-# chruby
+# Ruby
 source /usr/share/chruby/chruby.sh
 source /usr/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"
 export PATH="$PATH:$GOPATH/bin"
+
+# Javascript
+export PATH="$PATH:$HOME/.yarn/bin"
