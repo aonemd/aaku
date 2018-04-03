@@ -13,6 +13,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'w0ng/vim-hybrid'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'posva/vim-vue'
@@ -68,8 +69,18 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 set t_Co=256                        "enable 256 colors
 set background=dark
-colorscheme hybrid
-highlight Normal ctermbg=black
+let g:PaperColor_Theme_Options = {
+      \   'theme': {
+      \     'default.dark': {
+      \       'transparent_background': 1
+      \     }
+      \   }
+      \ }
+colorscheme PaperColor
+
+" colorscheme hybrid
+" highlight Normal ctermbg=black
+
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
 highlight StatusLine   ctermfg=235 ctermbg=240
