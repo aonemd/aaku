@@ -102,6 +102,12 @@ nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 xnoremap <leader>j :m'>+<cr>gv=gv
 
+"autoclose parenthesis
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+
 "keep text selected after indentation
 vnoremap < <gv
 vnoremap > >gv
