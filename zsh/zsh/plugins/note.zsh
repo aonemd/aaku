@@ -13,7 +13,11 @@ note () {
       ;;
     *)
       pushd "$notes_dir"
-      vim "$1"
+      if [ $# -eq 0 ]; then
+        vim "$1"
+      else
+        vim "$1".md
+      fi
       popd
   esac
 }
