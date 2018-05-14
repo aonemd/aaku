@@ -80,3 +80,4 @@ alias pacu='trizen --noedit -Syu'
 alias pacs='trizen -Ss'
 alias pacinfo='trizen -Qi'
 alias pacorphan='trizen -Rns $(pacman -Qtdq)'
+alias paccclean="paccache -rk2"
