@@ -188,3 +188,15 @@ if !exists('*s:goyo_leave')
   endfunction
 endif
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+"trailing whitespace
+function! StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    normal mz
+    normal Hmy
+    %s/\s\+$//e
+    normal 'yz<CR>
+    normal `z
+  endif
+endfunction
+autocmd! BufWritePre * call StripTrailingWhitespace()
