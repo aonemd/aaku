@@ -13,9 +13,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'w0ng/vim-hybrid'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
 call plug#end()
@@ -64,27 +65,21 @@ set softtabstop=2
 autocmd FileType c    setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd FileType java setlocal ts=4 sts=4 sw=4 expandtab
 autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-"remove trailing whitespace on save
-autocmd BufWritePre * :%s/\s\+$//e
 
 set t_Co=256                        "enable 256 colors
 set background=dark
-let g:PaperColor_Theme_Options = {
-      \   'theme': {
-      \     'default.dark': {
-      \       'transparent_background': 1
-      \     }
-      \   }
-      \ }
-colorscheme PaperColor
+
+colorscheme plain
 
 " colorscheme hybrid
-" highlight Normal ctermbg=black
+" highlight StatusLine   ctermfg=235 ctermbg=240
+" highlight StatusLineNC ctermfg=235 ctermbg=237
+
+highlight Normal ctermbg=black
+highlight EndOfBuffer ctermfg=black ctermbg=black
 
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
-highlight StatusLine   ctermfg=235 ctermbg=240
-highlight StatusLineNC ctermfg=235 ctermbg=237
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
