@@ -27,7 +27,7 @@ i3lock -n -e -k \
        --keyhlcolor=407ee7ff \
        --bshlcolor=407ee7ff \
        --separatorcolor=00000000 \
-       --timepos="w-320:h-180" \
+       --timepos="w-140:h-80" \
        --timecolor=ffffffff \
        --datecolor=ffffffff \
        --datestr="%A, %d %b"
