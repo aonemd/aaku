@@ -13,7 +13,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'w0ng/vim-hybrid'
-Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -69,12 +68,10 @@ autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
 set t_Co=256                        "enable 256 colors
 set background=dark
 
-colorscheme plain
+colorscheme hybrid
 
-" colorscheme hybrid
-" highlight StatusLine   ctermfg=235 ctermbg=240
-" highlight StatusLineNC ctermfg=235 ctermbg=237
-
+highlight StatusLine   ctermfg=235 ctermbg=240
+highlight StatusLineNC ctermfg=235 ctermbg=237
 highlight Normal ctermbg=black
 highlight EndOfBuffer ctermfg=black ctermbg=black
 
