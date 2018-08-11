@@ -1,4 +1,5 @@
-# sudo cp % /usr/share/applications/cmus.desktop
+# sudo cp % /.local/share/applications/cmus.desktop
+
 [Desktop Entry]
 Type=Application
 Name=cmus
