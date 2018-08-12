@@ -1,12 +1,12 @@
-# sudo cp % /.local/share/applications/cmus.desktop
+# cp % /.local/share/applications/cmus.desktop
 
 [Desktop Entry]
 Type=Application
 Name=cmus
 Comment=Launches the cmus music player
 Icon=org.gnome.Music
-Terminal=true
-Exec=cmus
+Terminal=false
+Exec=st -c 'Cmus' -e cmus
 Categories=Audio;Player;
 Keywords=Player;Audio;
 MimeType=application/ogg;application/x-ogg;audio/ogg;audio/vorbis;audio/x-vorbis;audio/x-vorbis+ogg;audio/x-speex;audio/opus;application/x-flac;audio/flac;audio/x-flac;audio/x-ms-asf;audio/x-ms-asx;audio/x-ms-wax;audio/x-ms-wma;application/vnd.rn-realmedia-vbr;audio/vnd.rn-realaudio;audio/x-pn-realaudio;audio/x-pn-realaudio-plugin;audio/x-real-audio;audio/x-realaudio;audio/mpeg;audio/mpg;audio/mp1;audio/mp2;audio/mp3;audio/x-mp1;audio/x-mp2;audio/x-mp3;audio/x-mpeg;audio/x-mpg;application/mpeg4-iod;application/mpeg4-muxcodetable;application/x-extension-m4a;application/x-extension-mp4;audio/aac;audio/m4a;audio/mp4;audio/x-m4a;audio/x-aac;application/x-quicktime-media-link;application/x-quicktimeplayer;
