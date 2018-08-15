@@ -47,3 +47,8 @@ bindkey -v
 export KEYTIMEOUT=1
 bindkey '^?' backward-delete-char # backspace working afte command mode
 bindkey '^r' history-incremental-search-backward # ctrl-r starts searching history backward
+
+# edit current command in a text editor
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd '^X' edit-command-line
