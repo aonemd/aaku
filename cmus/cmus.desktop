@@ -1,4 +1,4 @@
-# cp % /.local/share/applications/cmus.desktop
+# cp % ~/.local/share/applications/cmus.desktop
 
 [Desktop Entry]
 Type=Application
