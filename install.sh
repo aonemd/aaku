@@ -22,6 +22,7 @@ ln -sfn ${BASEDIR}/ag/agignore $HOME/.agignore
 
 [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
 ln -sfn ${BASEDIR}/cmus/aaku.theme $HOME/.config/cmus/aaku.theme
+ln -sfn ${BASEDIR}/cmus/rc $HOME/.config/cmus/rc
 
 [ -d $HOME/.irssi ] || mkdir -p $HOME/.irssi
 ln -sfn ${BASEDIR}/irssi/config $HOME/.irssi/config
