@@ -1,0 +1,13 @@
+; sudo powertop --calibrate
+; sudo cp % /etc/systemd/system/powertop.service
+; sudo systemctl enable powertop
+
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
