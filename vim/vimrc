@@ -13,6 +13,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
 Plug 'w0ng/vim-hybrid'
+Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
