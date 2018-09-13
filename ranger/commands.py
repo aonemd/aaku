@@ -14,6 +14,7 @@ import os
 
 # You always need to import ranger.api.commands here to get the Command class:
 from ranger.api.commands import Command
+from ranger.core.loader import CommandLoader
 
 
 # Any class that is a subclass of "Command" will be integrated into ranger as a
