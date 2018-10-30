@@ -17,7 +17,7 @@ source /usr/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"
-export PATH="$PATH:$GOPATH/bin"
+export PATH=$PATH:$(go env GOROOT)/bin:$(go env GOPATH)/bin
 
 # Javascript
 export PATH="$PATH:$HOME/.yarn/bin"
