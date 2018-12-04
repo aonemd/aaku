@@ -120,6 +120,9 @@ inoremap " ""<Left>
 vnoremap < <gv
 vnoremap > >gv
 
+"resize Vim on Tmux split
+autocmd VimResized * :wincmd =
+
 "Ag
 let g:ag_working_path_mode="r"      "search from the project root instead of cwd
 nnoremap \  :Ag!<space>
