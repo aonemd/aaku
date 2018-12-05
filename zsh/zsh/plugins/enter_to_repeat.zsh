@@ -1,4 +1,4 @@
-enter_to_repeat () {
+enter_to_repeat() {
   # check if buffer is empty
   if [ ${#${(z)BUFFER}} -eq 0 ]; then
     # get recent command in history and run it

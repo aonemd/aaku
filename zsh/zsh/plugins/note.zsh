@@ -1,4 +1,4 @@
-note () {
+note() {
   local notes_dir="$HOME/Dropbox/notes"
 
   case "$1" in

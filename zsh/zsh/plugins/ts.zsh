@@ -1,4 +1,4 @@
-ts () {
+ts() {
   [ -z "$1" ] && return
 
   local session_path="${1}"
