@@ -1,14 +1,17 @@
-rofi.bw:                0
-rofi.lines:             7
-rofi.width:             420
-rofi.padding:           20
-
+rofi.modi:             drun,window,run
 rofi.matching:         normal
 rofi.terminal:         rofi-sensible-terminal
 rofi.kb-accept-entry:  Return
 rofi.kb-remove-to-eol:
 rofi.kb-row-up:        Up,Control+k
 rofi.kb-row-down:      Down,Control+j
+
+rofi.bw:               0
+rofi.lines:            7
+rofi.width:            420
+rofi.padding:          20
+rofi.show-icons:       true
+rofi.drun-icon-theme:  la-capitaine
 
 ! ------------------------------------------------------------------------------
 ! ROFI Color theme
