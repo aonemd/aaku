@@ -17,6 +17,7 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
 call plug#end()
