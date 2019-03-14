@@ -148,7 +148,7 @@ nnoremap <leader>r :CtrlPBuffer<cr>
 
 "Ctags
 set tags+=.git/tags
-nnoremap <leader>ct :!ctags --tag-relative --extra=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
+nnoremap <leader>ct :!ctags --tag-relative=yes --extras=+f -Rf .git/tags --exclude=.git,pkg --languages=-javascript,sql<cr><cr>
 
 "GitGutter
 nnoremap <c-N> :GitGutterNextHunk<CR>
