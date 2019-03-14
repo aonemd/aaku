@@ -71,15 +71,15 @@ autocmd FileType ruby setlocal makeprg=ruby\ %
 autocmd FileType go setlocal makeprg=go\ run\ %
 autocmd BufRead,BufNewFile *.h set filetype=c
 
-set t_Co=256                        "enable 256 colors
 set background=dark
+set termguicolors                   "or enable 256 colors: set t_Co=256
 
 colorscheme hybrid
 
-highlight StatusLine   ctermfg=235 ctermbg=240
-highlight StatusLineNC ctermfg=235 ctermbg=237
-highlight Normal ctermbg=black
-highlight EndOfBuffer ctermfg=black ctermbg=black
+highlight Normal                     ctermbg=black               guibg=#1b1918
+highlight StatusLine   ctermfg=235   ctermbg=240   guifg=#262626 guibg=#585858
+highlight StatusLineNC ctermfg=235   ctermbg=237   guifg=#262626 guibg=#3a3a3a
+highlight EndOfBuffer  ctermfg=black ctermbg=black guifg=#1b1918 guibg=#1b1918
 
 "status line
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
