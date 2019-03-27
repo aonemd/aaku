@@ -72,7 +72,7 @@ autocmd FileType go setlocal makeprg=go\ run\ %
 autocmd BufRead,BufNewFile *.h set filetype=c
 
 set background=dark
-set termguicolors                   "or enable 256 colors: set t_Co=256
+set t_Co=256                          "or enable true colors: set termguicolors
 
 colorscheme hybrid
 
