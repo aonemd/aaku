@@ -12,7 +12,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
-Plug 'w0ng/vim-hybrid'
+Plug 'aonemd/vim-hybrid'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
@@ -77,13 +77,11 @@ set t_Co=256                          "or enable true colors: set termguicolors
 
 colorscheme hybrid
 
-highlight Normal                     ctermbg=black               guibg=#1b1918
-highlight StatusLine   ctermfg=235   ctermbg=240   guifg=#262626 guibg=#585858
-highlight StatusLineNC ctermfg=235   ctermbg=237   guifg=#262626 guibg=#3a3a3a
-highlight EndOfBuffer  ctermfg=black ctermbg=black guifg=#1b1918 guibg=#1b1918
+highlight StatusLineFilePath ctermfg=33 ctermbg=235 guifg=#407ee7 guibg=#262626
 
 "status line
-set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepath, filepercent
+set statusline=%=%m\ %c\ %P\ %#StatusLineFilePath#\ %f\    "modifiedflag, charcount, filepercent, filepath
+
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 au WinLeave,FocusLost,CmdwinLeave * set nocul
