@@ -93,10 +93,11 @@ let mapleader="\<Space>"
 "execute silent commands
 command! -nargs=1 SilentCmd execute 'silent !' . <q-args> | execute 'redraw!'
 nnoremap <leader>e :SilentCmd<space>
-nnoremap <leader>m :SilentCmd tsk<space>
+nnoremap <leader>d :SilentCmd tsk<space>
 
 nnoremap ! :!
 nnoremap <leader>w :w<cr>
+nnoremap <leader>m :make<cr>
 "replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//<left>
 "toggle showing hidden characters
