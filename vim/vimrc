@@ -110,6 +110,8 @@ nnoremap <silent> <leader>l :set rl!<cr>
 cnoremap w!! %!sudo tee > /dev/null %
 "remove search highlight
 nmap <leader>q :nohlsearch<CR>
+"execute and replace current line in $SHELL with the output
+nnoremap Q !!$SHELL<cr>
 
 "move lines around
 nnoremap <leader>k :m-2<cr>==
