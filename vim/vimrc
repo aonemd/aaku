@@ -12,7 +12,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
 Plug 'christoomey/vim-system-copy'
 Plug 'junegunn/goyo.vim'
-Plug 'aonemd/vim-hybrid'
+Plug 'aonemd/kuroi.vim'
 Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
@@ -76,7 +76,7 @@ autocmd BufRead,BufNewFile *.h set filetype=c
 set background=dark
 set t_Co=256                          "or enable true colors: set termguicolors
 
-colorscheme hybrid
+colorscheme kuroi
 
 highlight StatusLineFilePath ctermfg=33 ctermbg=235 guifg=#407ee7 guibg=#262626
 
