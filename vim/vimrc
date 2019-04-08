@@ -78,10 +78,8 @@ set t_Co=256                          "or enable true colors: set termguicolors
 
 colorscheme kuroi
 
-highlight StatusLineFilePath ctermfg=33 ctermbg=235 guifg=#407ee7 guibg=#262626
-
 "status line
-set statusline=%=%m\ %c\ %P\ %#StatusLineFilePath#\ %f\    "modifiedflag, charcount, filepercent, filepath
+set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepercent, filepath
 
 "remove current line highlight in unfocused window
 au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
