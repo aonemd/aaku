@@ -1,5 +1,5 @@
 [options]
-  font                = Hack 11
+  font                = Hack 13
   allow_bold          = true
   scroll_on_output    = false
   scroll_on_keystroke = true
