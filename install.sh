@@ -57,7 +57,7 @@ ln -sfn ${BASEDIR}/compton/compton.conf $HOME/.config/compton/compton.conf
 ln -sfn ${BASEDIR}/fontconfig $HOME/.config/fontconfig
 
 echo "Installing Vim plugins ..."
-echo | vim - +PlugInstall +qall
+vim -E -c PlugInstall  -c qall
 
 echo "Source Zsh files"
 source $HOME/.zshrc
