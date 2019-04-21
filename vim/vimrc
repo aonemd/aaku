@@ -39,6 +39,7 @@ set wildmode=longest:full,full
 set completeopt=longest,menuone,preview
 set mouse=a
 set path+=**
+set complete-=i
 set history=777
 set undolevels=777
 set laststatus=2                    "always display the status bar
