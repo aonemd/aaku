@@ -158,7 +158,6 @@ nnoremap <leader>ct :!ctags --tag-relative=yes --extras=+f -Rf .git/tags --exclu
 "GitGutter
 nnoremap <c-N> :GitGutterNextHunk<CR>
 nnoremap <c-P> :GitGutterPrevHunk<CR>
-nnoremap <c-U> :GitGutterUndoHunk<CR>
 
 nnoremap <leader>T :enew<cr>
 nnoremap <Tab> :bnext<cr>
@@ -217,3 +216,18 @@ function! StripTrailingWhitespace()
   endif
 endfunction
 autocmd! BufWritePre * call StripTrailingWhitespace()
+
+"smooth scroll
+nnoremap <silent> <c-u> :call <sid>smoothScroll(1)<cr>
+nnoremap <silent> <c-d> :call <sid>smoothScroll(0)<cr>
+fun! s:smoothScroll(up)
+  execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
+  redraw
+  for l:count in range(3, &scroll, 2)
+    sleep 7m
+    execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
+    redraw
+  endfor
+  " bring the cursor in the middle of screen
+  execute "normal M"
+endf
