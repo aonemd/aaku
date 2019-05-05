@@ -205,11 +205,11 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 "trailing whitespace
 function! StripTrailingWhitespace()
   if !&binary && &filetype != 'diff'
-    normal mz
+    let w:winview = winsaveview()
     normal Hmy
-    %s/\s\+$//e
+    %s/\(\s\+$\)\|\($\n\s*\)\+\%$//e
     normal 'yz<CR>
-    normal `z
+    if exists('w:winview') | call winrestview(w:winview) | endif
   endif
 endfunction
 autocmd! BufWritePre * call StripTrailingWhitespace()
