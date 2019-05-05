@@ -70,12 +70,14 @@ set tabstop=2
 set expandtab                       "use spaces, not tabs
 set shiftwidth=2
 set softtabstop=2
-autocmd FileType c    setlocal ts=4 sts=4 sw=4 noexpandtab
-autocmd FileType java setlocal ts=4 sts=4 sw=4 expandtab
-autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd FileType ruby setlocal makeprg=ruby\ %
-autocmd FileType go   setlocal makeprg=go\ run\ %
-autocmd BufRead,BufNewFile *.h set filetype=c
+
+autocmd! FileType c    setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd! FileType java setlocal ts=4 sts=4 sw=4 expandtab
+autocmd! FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd! FileType ruby setlocal makeprg=ruby\ %
+autocmd! FileType go   setlocal makeprg=go\ run\ %
+autocmd! FileType *.h  setlocal filetype=c
+autocmd! FileType vue  syntax sync fromstart
 
 set background=dark
 set t_Co=256                          "or enable true colors: set termguicolors
@@ -86,8 +88,8 @@ colorscheme kuroi
 set statusline=%=%m\ %c\ %P\ %f\    "modifiedflag, charcount, filepercent, filepath
 
 "remove current line highlight in unfocused window
-au VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
-au WinLeave,FocusLost,CmdwinLeave * set nocul
+autocmd! VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
+autocmd! WinLeave,FocusLost,CmdwinLeave * set nocul
 
 "The Leader
 let mapleader="\<Space>"
@@ -132,7 +134,7 @@ vnoremap < <gv
 vnoremap > >gv
 
 "resize Vim on Tmux split
-autocmd VimResized * :wincmd =
+autocmd! VimResized * :wincmd =
 
 "Ag
 let g:ag_working_path_mode="r"      "search from the project root instead of cwd
