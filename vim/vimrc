@@ -18,7 +18,6 @@ Plug 'andreypopp/vim-colors-plain'
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'wlangstroth/vim-racket'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
