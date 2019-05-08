@@ -29,6 +29,10 @@ ln -sfn ${BASEDIR}/irssi/config $HOME/.irssi/config
 ln -sfn ${BASEDIR}/irssi/weed.theme $HOME/.irssi/weed.theme
 ln -sfn ${BASEDIR}/irssi/scripts $HOME/.irssi/scripts
 
+[ -d $HOME/.newsboat/ ] || mkdir -p $HOME/.newsboat
+ln -sfn ${BASEDIR}/newsboat/config $HOME/.newsboat/config
+ln -sfn ${BASEDIR}/newsboat/urls $HOME/.newsboat/urls
+
 ln -sfn ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
 ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
 
