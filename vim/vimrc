@@ -22,6 +22,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
+Plug 'calebsmith/vim-lambdify'
 call plug#end()
 
 set encoding=utf-8
