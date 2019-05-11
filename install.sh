@@ -43,6 +43,9 @@ ln -sfn ${BASEDIR}/i3blocks $HOME/.config/i3blocks
 
 ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
 
+[ -d $HOME/.config/kitty/ ] || mkdir -p $HOME/.config/kitty
+ln -sfn ${BASEDIR}/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
+
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfn ${BASEDIR}/termite/config $HOME/.config/termite/config
 
