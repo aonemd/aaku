@@ -21,3 +21,6 @@ export PATH=$PATH:$(go env GOROOT)/bin:$(go env GOPATH)/bin
 
 # Javascript
 export PATH="$PATH:$HOME/.yarn/bin"
+
+# fzf
+export FZF_DEFAULT_COMMAND='ag --nogroup --nocolor -g ""'
