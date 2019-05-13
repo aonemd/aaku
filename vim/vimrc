@@ -2,8 +2,8 @@ set nocompatible              "no compatibility with legacy vi
 
 "Plugins
 call plug#begin('~/.vim/plugins')
-Plug 'rking/ag.vim'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -138,22 +138,16 @@ vnoremap > >gv
 "resize Vim on Tmux split
 autocmd! VimResized * :wincmd =
 
-"Ag
-let g:ag_working_path_mode="r"      "search from the project root instead of cwd
-nnoremap \  :Ag!<space>
-nnoremap \| :Ag! "\b<C-R><C-W>\b"<cr>:cw<cr>
+"fzf
+let g:fzf_layout = { 'down': '~30%' }
 
-"CtrlP
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command='ag %s -l --nocolor --hidden -g ""'
-  let g:ctrlp_use_caching=0
-endif
-let g:ctrlp_map = ''
-nnoremap <leader>p :CtrlP<cr>
-nnoremap <leader>o :CtrlPLine<cr>
-nnoremap <leader>t :CtrlPTag<cr>
-nnoremap <leader>r :CtrlPBuffer<cr>
+nnoremap <leader>p :FZF<cr>
+nnoremap <leader>o :Lines<cr>
+nnoremap <leader>t :Tags<cr>
+nnoremap <leader>r :Buffers<cr>
+
+nnoremap \  :Ag<space>
+nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
 
 "Ctags
 set tags+=.git/tags
