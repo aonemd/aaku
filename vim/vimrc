@@ -6,7 +6,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'tomtom/tcomment_vim'
 Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
@@ -153,9 +153,9 @@ nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
 set tags+=.git/tags
 nnoremap <leader>ct :!ctags --tag-relative=yes --extras=+f -Rf .git/tags --exclude={.git,pkg,node_modules,public} --languages=-javascript,sql --append<cr><cr>
 
-"GitGutter
-nnoremap <c-N> :GitGutterNextHunk<CR>
-nnoremap <c-P> :GitGutterPrevHunk<CR>
+"Signify
+nmap <c-n> <plug>(signify-next-hunk)
+nmap <c-p> <plug>(signify-prev-hunk)
 
 nnoremap <leader>T :enew<cr>
 nnoremap <Tab> :bnext<cr>
