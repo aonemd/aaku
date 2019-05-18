@@ -170,6 +170,13 @@ nnoremap <leader><leader> <c-^>
 nmap <leader>a <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
 
+"netrw
+let g:netrw_banner=0
+let g:netrw_winsize=15
+let g:netrw_liststyle=3
+let g:netrw_localrmdir='rm -r'
+nnoremap <leader>n :Lexplore<CR>
+
 nnoremap <silent> <C-h> :call WinMove('h')<cr>
 nnoremap <silent> <C-j> :call WinMove('j')<cr>
 nnoremap <silent> <C-k> :call WinMove('k')<cr>
@@ -188,22 +195,6 @@ function! WinMove(key)
   endif
 endfunction
 
-"netrw
-let g:netrw_banner=0
-let g:netrw_winsize=15
-let g:netrw_liststyle=3
-let g:netrw_localrmdir='rm -r'
-nnoremap <leader>n :Lexplore<CR>
-
-"Goyo
-nnoremap <leader>g :Goyo<cr>
-if !exists('*s:goyo_leave')
-  function s:goyo_leave()
-    source $MYVIMRC
-  endfunction
-endif
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-
 "trailing whitespace
 function! StripTrailingWhitespace()
   if !&binary && &filetype != 'diff'
@@ -217,9 +208,9 @@ endfunction
 autocmd! BufWritePre * call StripTrailingWhitespace()
 
 "smooth scroll
-nnoremap <silent> <c-u> :call <sid>SmoothScroll(1)<cr>
-nnoremap <silent> <c-d> :call <sid>SmoothScroll(0)<cr>
-function! s:SmoothScroll(up)
+nnoremap <silent> <c-u> :call SmoothScroll(1)<cr>
+nnoremap <silent> <c-d> :call SmoothScroll(0)<cr>
+function! SmoothScroll(up)
   execute "normal " . (a:up ? "\<c-y>" : "\<c-e>")
   redraw
   for l:count in range(3, &scroll, 2)
@@ -230,3 +221,12 @@ function! s:SmoothScroll(up)
   " bring the cursor in the middle of screen
   execute "normal M"
 endfunction
+
+"Goyo
+nnoremap <leader>g :Goyo<cr>
+if !exists('*s:goyo_leave')
+  function s:goyo_leave()
+    source $MYVIMRC
+  endfunction
+endif
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
