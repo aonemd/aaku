@@ -72,7 +72,7 @@ set t_Co=256                          "or enable true colors: set termguicolors
 colorscheme kuroi
 
 "status line: modifiedflag, charcount, filepercent, filepath
-set statusline=%=%m\ %c\ %P\ %f\
+set statusline=%=%m\ %c\ %P\ %f
 
 "remove current line highlight in unfocused window
 autocmd! VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
