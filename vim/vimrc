@@ -4,7 +4,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
-Plug 'tomtom/tcomment_vim'
+" https://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim
+" Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-endwise'
@@ -24,8 +26,7 @@ set lazyredraw                                     "lazily redraw screen while e
 set ttyfast                                        "more characters will be sent to the screen for redrawing
 set ttimeout                                       "time waited for key press(es) to complete...
 set ttimeoutlen=50                                 " ...makes for a faster key response
-set nobackup                                       "disable backup and swap files
-set noswapfile
+set noswapfile                                     "disable swap files
 set viminfo+=n/tmp/.viminfo                        "path to store .viminfo files
 set autoread                                       "automatically read changes in the file
 set hidden                                         "hide buffers instead of closing them even if they contain unwritten changes
