@@ -142,7 +142,7 @@ nnoremap <leader>ct :!ctags --tag-relative=yes --extras=+f -Rf .git/tags --exclu
 nmap <c-n> <plug>(signify-next-hunk)
 nmap <c-p> <plug>(signify-prev-hunk)
 
-nnoremap <leader>T :enew<cr>
+nnoremap <leader>B :enew<cr>
 nnoremap <Tab> :bnext<cr>
 nnoremap <S-Tab> :bprevious<cr>
 nnoremap <leader>bq :bp <bar> bd! #<cr>
