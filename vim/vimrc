@@ -136,7 +136,7 @@ nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
 
 "Ctags
 set tags+=.git/tags
-nnoremap <leader>ct :!ctags --tag-relative=yes --extras=+f -Rf .git/tags --exclude={.git,pkg,node_modules,public} --languages=-javascript,sql --append<cr><cr>
+nnoremap <leader>ct :!ctags -Rf .git/tags<cr><cr>
 
 "Signify
 nmap <c-n> <plug>(signify-next-hunk)
