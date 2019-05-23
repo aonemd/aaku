@@ -46,6 +46,7 @@ set termwinsize=15x                                "terminal will be 15 units lo
 
 set autoindent                                     "always set autoindenting on
 set formatoptions-=cro                             "disable auto comments on new lines
+set formatoptions+=j                               "remove a comment leader when joining lines
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab "use two spaces for indentation
 
 set incsearch                                      "incremental search highlight
