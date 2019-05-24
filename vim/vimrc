@@ -124,6 +124,14 @@ vnoremap > >gv
 "resize Vim on Tmux split
 autocmd! VimResized * :wincmd =
 
+nnoremap <leader>B :enew<cr>
+nnoremap <Tab> :bnext<cr>
+nnoremap <S-Tab> :bprevious<cr>
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+nnoremap <leader>ba :bufdo bd!<cr>
+"cycle between last two open buffers
+nnoremap <leader><leader> <c-^>
+
 "fzf
 let g:fzf_layout = { 'down': '~30%' }
 
@@ -140,16 +148,9 @@ set tags+=.git/tags
 nnoremap <leader>ct :!ctags -Rf .git/tags<cr><cr>
 
 "Signify
+let g:signify_vcs_list = ['git', 'hg']
 nmap <c-n> <plug>(signify-next-hunk)
 nmap <c-p> <plug>(signify-prev-hunk)
-
-nnoremap <leader>B :enew<cr>
-nnoremap <Tab> :bnext<cr>
-nnoremap <S-Tab> :bprevious<cr>
-nnoremap <leader>bq :bp <bar> bd! #<cr>
-nnoremap <leader>ba :bufdo bd!<cr>
-"cycle between last two open buffers
-nnoremap <leader><leader> <c-^>
 
 "EasyAlign
 nmap <leader>a <Plug>(EasyAlign)
