@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugins')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-fugitive'
 Plug 'mhinz/vim-signify'
 Plug 'tomtom/tcomment_vim'
@@ -37,7 +36,7 @@ set nowrap                                         "disable soft wrap for lines
 set scrolloff=2                                    "always show 2 lines above/below the cursor
 set showcmd                                        "display incomplete commands
 set laststatus=2                                   "always display the status bar
-set number                                         "display line numbers
+set number relativenumber                           "display line numbers
 set cursorline                                     "highlight current line
 set colorcolumn=81                                 "display text width column
 set splitbelow                                     "vertical splits will be at the bottom
