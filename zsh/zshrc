@@ -24,3 +24,5 @@ export PATH="$PATH:$HOME/.yarn/bin"
 
 # fzf
 export FZF_DEFAULT_COMMAND='ag -l --nogroup  --nocolor --hidden -g ""'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
