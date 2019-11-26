@@ -51,7 +51,7 @@ alias glg='git log --topo-order --graph --decorate --pretty=oneline --abbrev-com
 alias glga='git log --topo-order --graph --decorate --pretty=oneline --abbrev-commit --all'
 alias glc='git shortlog --summary --numbered --no-merges'
 alias glh='gl --follow -p -- '
-alias gcc='git rev-list --count HEAD'
+alias glcc='git rev-list --count HEAD'
 
 # Ruby on Rails
 alias rs='bundle exec rails server'
