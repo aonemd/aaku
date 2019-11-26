@@ -65,6 +65,8 @@ autocmd! FileType css    setlocal iskeyword+=-
 autocmd! FileType scss   setlocal iskeyword+=-
 autocmd! FileType vue    syntax sync fromstart
 
+let g:ruby_path = system('echo $(which ruby)')
+
 set background=dark
 set termguicolors                                  "or enable 256 colors: set t_Co=256
 colorscheme kuroi
