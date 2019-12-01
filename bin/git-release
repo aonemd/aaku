@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+mapfile -t messages < <(git log --no-merges --pretty="- %s" $(git describe --tags --abbrev=0)..HEAD)
+git tag "$1" -e -m "$1" -m "$(printf "%s\n" "${messages[@]}")"
