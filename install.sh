@@ -66,6 +66,7 @@ ln -sfn ${BASEDIR}/fontconfig $HOME/.config/fontconfig
 
 echo "Installing Vim plugins..."
 vim -E -c PlugInstall  -c qall
+vim -c 'CocInstall -sync coc-go coc-tsserver coc-html coc-css|q'
 
 echo "Source Zsh files"
 source $HOME/.zshrc

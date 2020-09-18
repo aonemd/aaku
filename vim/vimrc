@@ -10,6 +10,7 @@ Plug 'tpope/vim-endwise'
 Plug 'junegunn/goyo.vim'
 Plug 'aonemd/kuroi.vim'
 Plug 'aonemd/atlas.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
