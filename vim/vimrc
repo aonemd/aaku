@@ -14,8 +14,10 @@ Plug 'tpope/vim-rails'
 Plug 'fatih/vim-go'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'leafgarland/typescript-vim'
 Plug 'posva/vim-vue'
 Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
 Plug 'calebsmith/vim-lambdify'
 call plug#end()
 
@@ -53,16 +55,17 @@ set ignorecase                                     "searches are case insensitiv
 set smartcase                                      " ..unless they contain at least one capital letter
 set hlsearch                                       "highlight search patterns
 
-autocmd! FileType c      setlocal ts=4 sts=4 sw=4 noexpandtab
-autocmd! FileType java   setlocal ts=4 sts=4 sw=4 expandtab
-autocmd! FileType make   setlocal ts=8 sts=8 sw=8 noexpandtab
-autocmd! FileType ruby   setlocal makeprg=ruby\ %
-autocmd! FileType go     setlocal makeprg=go\ run\ %
-autocmd! FileType scheme setlocal makeprg=chicken-csi\ -s\ %
-autocmd! FileType *.h    setlocal filetype=c
-autocmd! FileType css    setlocal iskeyword+=-
-autocmd! FileType scss   setlocal iskeyword+=-
-autocmd! FileType vue    syntax sync fromstart
+autocmd! FileType c          setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd! FileType java       setlocal ts=4 sts=4 sw=4 expandtab
+autocmd! FileType make       setlocal ts=8 sts=8 sw=8 noexpandtab
+autocmd! FileType ruby       setlocal makeprg=ruby\ %
+autocmd! FileType go         setlocal makeprg=go\ run\ %
+autocmd! FileType typescript setlocal makeprg=ts-node\ %
+autocmd! FileType scheme     setlocal makeprg=chicken-csi\ -s\ %
+autocmd! FileType *.h        setlocal filetype=c
+autocmd! FileType css        setlocal iskeyword+=-
+autocmd! FileType scss       setlocal iskeyword+=-
+autocmd! FileType vue        syntax sync fromstart
 
 let g:ruby_path = system('echo $(which ruby)')
 
