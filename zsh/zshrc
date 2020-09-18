@@ -10,6 +10,7 @@ export WK="$HOME/Workspace"
 export AAKU="$WK/aaku"
 export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
+export PATH="$PATH:$WK/onpar/bin"
 
 # Ruby
 source /usr/share/chruby/chruby.sh
