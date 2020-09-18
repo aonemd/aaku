@@ -144,8 +144,8 @@ nnoremap <leader>o :Lines<cr>
 nnoremap <leader>t :Tags<cr>
 nnoremap <leader>r :Buffers<cr>
 
-nnoremap \  :Ag<space>
-nnoremap \| :Ag <C-R><C-W><cr>:cw<cr>
+nnoremap \  :Rg<space>
+nnoremap \| :Rg <C-R><C-W><cr>:cw<cr>
 
 "Ctags
 set tags+=.git/tags
