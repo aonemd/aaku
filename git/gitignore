@@ -1,0 +1,9 @@
+.git/
+.hg/
+.svn/
+tmp/
+log/
+bin/
+node_modules/
+bower_components/
+.bundle/
