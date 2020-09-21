@@ -21,6 +21,7 @@ ln -sfn ${BASEDIR}/git/gitignore $HOME/.gitignore
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/scheme/csirc $HOME/.csirc
 ln -sfn ${BASEDIR}/ag/agignore $HOME/.agignore
+ln -sfn ${BASEDIR}/rg/rgignore $HOME/.rgignore
 
 [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
 ln -sfn ${BASEDIR}/cmus/aaku.theme $HOME/.config/cmus/aaku.theme
