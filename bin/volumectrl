@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 
+SINK=1
+
 case "$1" in
   up)
-    pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%
+    pactl set-sink-mute $SINK false ; pactl set-sink-volume $SINK +5%
     ;;
   down)
-    pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%
+    pactl set-sink-mute $SINK false ; pactl set-sink-volume $SINK -5%
     ;;
   mute)
-    pactl set-sink-mute 0 toggle
+    pactl set-sink-mute $SINK toggle
     ;;
   mic)
     pactl set-source-mute 1 toggle
