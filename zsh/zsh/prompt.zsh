@@ -10,6 +10,12 @@ function prompt_current_dir {
   echo -n "%{$fg[blue]%}%1~"
 }
 
+function remote_hostname {
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    echo -n " %{$fg[white]%}@%M"
+  fi
+}
+
 function prompt_symbol {
   local current_symbol="$PROMPT_INSERT_SYMBOL"
   [ "$KEYMAP" = 'vicmd' ] && current_symbol="$PROMPT_NORMAL_SYMBOL"
@@ -40,4 +46,4 @@ function _prompt_hg_status {
   fi
 }
 
-PROMPT='$(prompt_current_dir)$(prompt_git_branch)$(prompt_hg_branch) $(prompt_symbol)%(?..$PROMPT_NORMAL_SYMBOL) %{$reset_color%}'
+PROMPT='$(prompt_current_dir)$(prompt_git_branch)$(prompt_hg_branch)$(remote_hostname) $(prompt_symbol)%(?..$PROMPT_NORMAL_SYMBOL) %{$reset_color%}'
