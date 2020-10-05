@@ -82,6 +82,9 @@ set statusline=%=%m\ %c\ %P\ %f
 autocmd! VimEnter,WinEnter,BufWinEnter,FocusGained,CmdwinEnter * set cul
 autocmd! WinLeave,FocusLost,CmdwinLeave * set nocul
 
+"resize Vim on Tmux split
+autocmd! VimResized * :wincmd =
+
 "The Leader
 let mapleader="\<Space>"
 
@@ -127,9 +130,6 @@ inoremap '<space> '
 "keep text selected after indentation
 vnoremap < <gv
 vnoremap > >gv
-
-"resize Vim on Tmux split
-autocmd! VimResized * :wincmd =
 
 nnoremap <leader>B :enew<cr>
 nnoremap <Tab> :bnext<cr>
