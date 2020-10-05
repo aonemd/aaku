@@ -122,6 +122,7 @@ inoremap { {}<Left>
 inoremap [ []<Left>
 inoremap " ""<Left>
 inoremap ' ''<left>
+inoremap '<space> '
 
 "keep text selected after indentation
 vnoremap < <gv
