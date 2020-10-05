@@ -27,3 +27,8 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden --color never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# nnn
+export NNN_COLORS='4213'
+export NNN_BMS='w:~/Workspace;d:~/Documents;v:~/Videos;D:~/Downloads;n:~/Dropbox/notes'
+export NNN_PLUG=''
