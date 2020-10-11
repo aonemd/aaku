@@ -49,10 +49,6 @@ ln -sfn ${BASEDIR}/rofi/config $HOME/.config/rofi/config
 [ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
 ln -sfn ${BASEDIR}/dunst/dunstrc $HOME/.config/dunst/dunstrc
 
-[ -d $HOME/.config/ranger/ ] || mkdir -p $HOME/.config/ranger
-ln -sfn ${BASEDIR}/ranger/rc.conf $HOME/.config/ranger/rc.conf
-ln -sfn ${BASEDIR}/ranger/commands.py $HOME/.config/ranger/commands.py
-
 [ -d $HOME/.config/compton/ ] || mkdir -p $HOME/.config/compton
 ln -sfn ${BASEDIR}/compton/compton.conf $HOME/.config/compton/compton.conf
 
