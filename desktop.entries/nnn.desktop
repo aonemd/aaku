@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=nnn
+Comment=Launches the nnn file manager
+Icon=file-manager
+Terminal=true
+Exec=zsh -lc 'nnn -cdEFQrux'
+Categories=ConsoleOnly;System;FileTools;FileManager
+MimeType=inode/directory;
+Keywords=File;Manager;Browser;Explorer;Launcher

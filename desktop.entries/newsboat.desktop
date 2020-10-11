@@ -1,0 +1,11 @@
+# cp % ~/.local/share/applications/newsboat.desktop
+
+[Desktop Entry]
+Type=Application
+Name=newsboat
+Comment=An RSS/Atom feed reader for text terminals
+Icon=rss
+Terminal=false
+Exec=st -c 'Newsboat' -e newsboat
+Categories=News;
+StartupNotify=true

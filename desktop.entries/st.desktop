@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=st
+GenericName=Terminal
+StartupWMClass=st-256color
+Comment=standard terminal emulator for the X window system
+Exec=st -g "80x24"
+Icon=utilities-terminal
+Type=Application
+Categories=GTK;System;TerminalEmulator;
+StartupNotify=true
