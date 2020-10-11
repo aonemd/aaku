@@ -35,4 +35,4 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # nnn
 export NNN_COLORS='4213'
 export NNN_BMS='w:~/Workspace;d:~/Documents;v:~/Videos;D:~/Downloads;n:~/Dropbox/notes'
-export NNN_PLUG=''
+export NNN_PLUG='l:-launch;'
