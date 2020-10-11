@@ -20,7 +20,6 @@ ln -sfn ${BASEDIR}/git/gitconfig $HOME/.gitconfig
 ln -sfn ${BASEDIR}/git/gitignore $HOME/.gitignore
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/scheme/csirc $HOME/.csirc
-ln -sfn ${BASEDIR}/ag/agignore $HOME/.agignore
 ln -sfn ${BASEDIR}/rg/rgignore $HOME/.rgignore
 
 [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
@@ -39,14 +38,7 @@ ln -sfn ${BASEDIR}/newsboat/urls $HOME/.newsboat/urls
 ln -sfn ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
 ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
 
--ln -sfn ${BASEDIR}/i3 $HOME/.config/i3
-
-ln -sfn ${BASEDIR}/i3blocks $HOME/.config/i3blocks
-
 ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
-
-[ -d $HOME/.config/kitty/ ] || mkdir -p $HOME/.config/kitty
-ln -sfn ${BASEDIR}/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfn ${BASEDIR}/termite/config $HOME/.config/termite/config

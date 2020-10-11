@@ -1,7 +1,0 @@
-#!/usr/bin/env zsh
-
-update_counter=$(checkupdates | wc -l)
-[[ "${update_counter}" = "0" ]] && exit 0
-
-notify-send "Software Updates" "There are ${update_counter} pending updates"
-exit 0
