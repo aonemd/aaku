@@ -51,8 +51,8 @@ ln -sfn ${BASEDIR}/rofi/config $HOME/.config/rofi/config
 [ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
 ln -sfn ${BASEDIR}/dunst/dunstrc $HOME/.config/dunst/dunstrc
 
-[ -d $HOME/.config/compton/ ] || mkdir -p $HOME/.config/compton
-ln -sfn ${BASEDIR}/compton/compton.conf $HOME/.config/compton/compton.conf
+[ -d $HOME/.config/picom/ ] || mkdir -p $HOME/.config/picom
+ln -sfn ${BASEDIR}/picom/picom.conf $HOME/.config/picom/picom.conf
 
 ln -sfn ${BASEDIR}/fontconfig $HOME/.config/fontconfig
 

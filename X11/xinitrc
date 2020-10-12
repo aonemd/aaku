@@ -16,7 +16,7 @@ xsetroot -cursor_name left_ptr &
 xrandr --output eDP-1 --mode 1920x1080 --dpi 96 &
 dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
-compton --config $HOME/.config/compton/compton.conf -b
+picom --config $HOME/.config/picom/picom.conf -b
 nm-applet 2>&1 /dev/null &
 udiskie &
 dropbox &
