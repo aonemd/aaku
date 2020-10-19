@@ -18,6 +18,7 @@ ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
 ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
 ln -sfn ${BASEDIR}/git/gitconfig $HOME/.gitconfig
 ln -sfn ${BASEDIR}/git/gitignore $HOME/.gitignore
+ln -sfn ${BASEDIR}/git/gitattributes $HOME/.gitattributes
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/scheme/csirc $HOME/.csirc
 ln -sfn ${BASEDIR}/rg/rgignore $HOME/.rgignore
