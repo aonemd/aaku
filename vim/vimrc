@@ -140,7 +140,8 @@ nnoremap <leader>ba :bufdo bd!<cr>
 nnoremap <leader><leader> <c-^>
 
 "fzf
-let g:fzf_layout = { 'down': '~30%' }
+let g:fzf_layout       = { 'down': '~30%' }
+let g:fzf_tags_command = 'ctags -Rf .git/tags'
 
 nnoremap <leader>p :FZF<cr>
 nnoremap <leader>o :Lines<cr>
