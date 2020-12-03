@@ -1,8 +1,16 @@
 ts() {
   [ -z "$1" ] && return
 
-  local session_path="${1}"
-  local session_name="${1##*/}"
+  local session_path=""
+  case "$1" in
+    .)
+      session_path=$(pwd)
+      ;;
+    *)
+      session_path="${1}"
+  esac
+
+  local session_name="${session_path##*/}"
 
   if tmux has-session -t="${session_name}" 2> /dev/null; then
     tmux attach -t "${session_name}"
