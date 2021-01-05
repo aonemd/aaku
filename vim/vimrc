@@ -104,7 +104,7 @@ nnoremap <silent> <leader>s :set nolist!<cr>
 "toggle spell checking
 nnoremap <leader>ss :setlocal spell!<cr>
 "toggle RTL mode
-nnoremap <silent> <leader>l :set rl!<cr>
+nnoremap <silent> <leader>l :set arabic!<cr>
 "override system files by typing :w!!
 cnoremap w!! %!sudo tee > /dev/null %
 "remove search highlight
