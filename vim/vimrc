@@ -58,6 +58,9 @@ set ignorecase                                     "searches are case insensitiv
 set smartcase                                      " ..unless they contain at least one capital letter
 set hlsearch                                       "highlight search patterns
 
+set foldmethod=indent
+set nofoldenable
+
 autocmd! FileType c          setlocal ts=4 sts=4 sw=4 noexpandtab
 autocmd! FileType java       setlocal ts=4 sts=4 sw=4 expandtab
 autocmd! FileType make       setlocal ts=8 sts=8 sw=8 noexpandtab
