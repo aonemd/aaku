@@ -1,6 +1,7 @@
 # Ignore Vim plugins
 vim/vim/plugins/
 vim/vim/.netrwhist
+vim/vim/view
 
 # Ignore Tmux plugins
 tmux/tmux/
