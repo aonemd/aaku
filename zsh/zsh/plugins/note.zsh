@@ -1,5 +1,5 @@
 note() {
-  local notes_dir="$HOME/Dropbox/notes"
+  local notes_dir=${NOTES_DIR:="$HOME/Dropbox/notes"}
 
   case "$1" in
     c)
