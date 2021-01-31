@@ -1,12 +1,13 @@
 # sourced in interactive shell
 
+export WK="$HOME/Workspace"
+
 if [ -d $HOME/.zsh ]; then
   for file in $HOME/.zsh/**/*.zsh; do
     source $file
   done
 fi
 
-export WK="$HOME/Workspace"
 export AAKU="$WK/aaku"
 export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
