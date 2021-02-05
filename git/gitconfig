@@ -3,7 +3,7 @@
 	email = aonemdsaleh@gmail.com
 [core]
 	editor = vim
-	attributesfile = /home/aonemd/.gitattributes
+	attributesfile = ./.gitattributes
 [color]
 	ui = true
 [rebase]
