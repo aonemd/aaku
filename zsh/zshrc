@@ -1,5 +1,9 @@
 # sourced in interactive shell
 
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
+
 export WK="$HOME/Workspace"
 
 if [ -d $HOME/.zsh ]; then
@@ -14,8 +18,8 @@ export PATH="$PATH:$WK/bin"
 export PATH="$PATH:$WK/onpar/bin"
 
 # Ruby
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
+include /usr/share/chruby/chruby.sh
+include /usr/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"
@@ -26,10 +30,10 @@ export PATH="$PATH:$HOME/.yarn/bin"
 export NVM_DIR="$HOME/.nvm"
 include $NVM_DIR/nvm.sh
 
-# fzf
+# FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+include ~/.fzf.zsh
 
 # nnn
 export NNN_COLORS='4213'
