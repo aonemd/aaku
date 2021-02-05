@@ -14,6 +14,9 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0
 xrdb ~/.Xresources &
 xsetroot -cursor_name left_ptr &
 xrandr --output eDP-1 --mode 1920x1080 --dpi 96 &
+# for track point speed
+xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Speed" 1.0
+xinput --set-prop "TPPS/2 Elan TrackPoint" "libinput Accel Profile Enabled" 0 1
 dunst -config $HOME/.config/dunst/dunstrc &
 $HOME/.fehbg &
 picom --config $HOME/.config/picom/picom.conf -b
