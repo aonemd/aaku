@@ -1,0 +1,5 @@
+--tag-relative=yes
+--extras=+f
+--exclude={.git,pkg,node_modules,public,vendor}
+--languages=-sql
+--append

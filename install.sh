@@ -22,6 +22,7 @@ ln -sfn ${BASEDIR}/git/gitattributes $HOME/.gitattributes
 ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
 ln -sfn ${BASEDIR}/scheme/csirc $HOME/.csirc
 ln -sfn ${BASEDIR}/rg/rgignore $HOME/.rgignore
+ln -sfn ${BASEDIR}/ctags/ctags $HOME/.ctags
 
 ln -sfn ${BASEDIR}/nnn/plugins $HOME/.config/nnn/plugins
 
