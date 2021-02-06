@@ -70,8 +70,6 @@ augroup SyntaxAutocmds
   autocmd! FileType vue        syntax sync fromstart
 augroup END
 
-let g:ruby_path = system('echo $(which ruby)')
-
 set background=dark
 set termguicolors                                  "or enable 256 colors: set t_Co=256
 colorscheme kuroi
@@ -161,31 +159,31 @@ nnoremap \| :Rg <C-R><C-W><cr>:cw<cr>
 
 "Coc
 "longer updatetime (default=4000 ms) leads to noticeable delays and poor user experience
-set updatetime=300
+"set updatetime=300
 
-"trigger completion menu with ctrl-space (terminal c-space as sends Nul)
-inoremap <silent><expr> <Nul> coc#refresh()
-"confirm selection using Enter key
-inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+""trigger completion menu with ctrl-space (terminal c-space as sends Nul)
+"inoremap <silent><expr> <Nul> coc#refresh()
+""confirm selection using Enter key
+"inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>cf :call CocAction('format')<cr>
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"nmap <silent> gd <Plug>(coc-definition)
+"nmap <silent> gy <Plug>(coc-type-definition)
+"nmap <silent> gi <Plug>(coc-implementation)
+"nmap <silent> gr <Plug>(coc-references)
+"nmap <leader>cr <Plug>(coc-rename)
+"nmap <leader>cf :call CocAction('format')<cr>
+"nmap <silent> [g <Plug>(coc-diagnostic-prev)
+"nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-"use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
- if (index(['vim', 'help', 'c'], &filetype) >= 0)
-   execute 'h '.expand('<cword>')
- else
-   call CocAction('doHover')
- endif
-endfunction
+""use K to show documentation in preview window.
+"nnoremap <silent> K :call <SID>show_documentation()<CR>
+"function! s:show_documentation()
+" if (index(['vim', 'help', 'c'], &filetype) >= 0)
+"   execute 'h '.expand('<cword>')
+" else
+"   call CocAction('doHover')
+" endif
+"endfunction
 
 "Ctags
 set tags+=.git/tags
