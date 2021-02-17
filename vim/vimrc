@@ -10,7 +10,7 @@ Plug 'obcat/vim-hitspop'
 Plug 'junegunn/goyo.vim'
 Plug 'aonemd/kuroi.vim'
 Plug 'aonemd/atlas.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'natebosch/vim-lsc'
 Plug 'sheerun/vim-polyglot'
 Plug 'calebsmith/vim-lambdify'
 Plug 'mattn/emmet-vim'
@@ -29,7 +29,6 @@ set backspace=indent,eol,start                     "make backspace behave proper
 set clipboard=unnamedplus                          "requires has('unnamedplus') to be 1
 set wildmenu                                       "better menu with completion in command mode
 set wildmode=longest:full,full
-set completeopt=longest,menuone,preview            "better insert mode completions
 set shortmess+=c                                   "don't give completion messages like 'match 1 of 2' or 'The only match'
 set nowrap                                         "disable soft wrap for lines
 set scrolloff=2                                    "always show 2 lines above/below the cursor
@@ -157,33 +156,57 @@ nnoremap <leader>r :Buffers<cr>
 nnoremap \  :Rg<space>
 nnoremap \| :Rg <C-R><C-W><cr>:cw<cr>
 
-"Coc
-"longer updatetime (default=4000 ms) leads to noticeable delays and poor user experience
-set updatetime=300
-
-"trigger completion menu with ctrl-space (terminal c-space as sends Nul)
-inoremap <silent><expr> <Nul> coc#refresh()
+"Autocomplete
+set completeopt=menu,menuone,popup,noinsert "better insert mode completions
 "confirm selection using Enter key
-" "inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+" trigger omnicompletion with ctrl-space
+inoremap <Nul> <C-x><C-o><C-o>
 
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>cr <Plug>(coc-rename)
-nmap <leader>cf :call CocAction('format')<cr>
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+"LSC
+let g:lsc_enable_autocomplete  = v:true
+let g:lsc_enable_diagnostics   = v:true
+let g:lsc_reference_highlights = v:false
+let g:lsc_trace_level          = 'off'
+let g:lsc_auto_completeopt     = 'menu,menuone,popup,noinsert'
 
-"use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
- if (index(['vim', 'help', 'c'], &filetype) >= 0)
-   execute 'h '.expand('<cword>')
- else
-   call CocAction('doHover')
- endif
-endfunction
+let g:lsc_auto_map = {
+ \  'GoToDefinition': 'gd',
+ \  'FindReferences': 'gr',
+ \  'FindImplementations': 'gI',
+ \  'Rename': 'gR',
+ \  'ShowHover': v:true,
+ \  'FindCodeActions': 'ga',
+ \  'Completion': 'omnifunc',
+ \}
+
+nnoremap ge :LSClientAllDiagnostics<cr>
+
+let g:lsc_server_commands = {
+ \  'c': {
+ \    'command': 'clangd --background-index',
+ \    'suppress_stderr': v:true,
+ \  },
+ \  'go': {
+ \    'command': 'gopls',
+ \    'suppress_stderr': v:true,
+ \  },
+ \  'javascript': {
+ \    'command': 'typescript-language-server --stdio',
+ \    'log_level': -1,
+ \    'suppress_stderr': v:true,
+ \  },
+ \  'typescript': {
+ \    'command': 'typescript-language-server --stdio',
+ \    'log_level': -1,
+ \    'suppress_stderr': v:true,
+ \  },
+ \  'ruby': {
+ \    'command': 'solargraph stdio',
+ \    'log_level': -1,
+ \    'suppress_stderr': v:true,
+ \  },
+ \}
 
 "Ctags
 set tags+=.git/tags
