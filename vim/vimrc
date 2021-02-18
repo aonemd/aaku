@@ -6,14 +6,14 @@ Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/goyo.vim'
-Plug 'aonemd/kuroi.vim'
-Plug 'aonemd/atlas.vim'
 Plug 'natebosch/vim-lsc'
 Plug 'sheerun/vim-polyglot'
-Plug 'calebsmith/vim-lambdify'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
+Plug 'junegunn/goyo.vim'
+Plug 'calebsmith/vim-lambdify'
+Plug 'aonemd/kuroi.vim'
+Plug 'aonemd/atlas.vim'
 call plug#end()
 
 set lazyredraw                                     "lazily redraw screen while executing macros, and other commands
