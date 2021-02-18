@@ -158,6 +158,7 @@ nnoremap \| :Rg <C-R><C-W><cr>:cw<cr>
 
 "Autocomplete
 set completeopt=menu,menuone,popup,noinsert "better insert mode completions
+set completepopup=border:off,highlight:InfoPopup
 "confirm selection using Enter key
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " trigger omnicompletion with ctrl-space
