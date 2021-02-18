@@ -1,0 +1,2 @@
+autoload zmv
+autoload zcalc
