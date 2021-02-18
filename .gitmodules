@@ -1,0 +1,8 @@
+[submodule "aaku-sys"]
+	path = aaku-sys
+	url = https://github.com/aonemd/aaku-sys
+	branch = master
+[submodule "aaku-dev"]
+	path = aaku-dev
+	url = https://github.com/aonemd/aaku-dev
+	branch = master
