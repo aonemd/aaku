@@ -187,7 +187,7 @@ let g:lsc_auto_map = {
  \  'Completion': 'omnifunc',
  \}
 
-nnoremap ge :LSClientAllDiagnostics<cr>
+nnoremap gs :LSClientAllDiagnostics<cr>
 
 let g:lsc_server_commands = {
  \  'c': {
