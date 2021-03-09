@@ -232,6 +232,9 @@ nmap <c-p> <plug>(signify-prev-hunk)
 nmap <leader>a <Plug>(EasyAlign)
 xmap <leader>a <Plug>(EasyAlign)
 
+"vim-polyglot
+let g:go_highlight_functions = 1
+
 "netrw
 let g:netrw_banner=0
 let g:netrw_winsize=20
