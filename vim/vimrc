@@ -126,10 +126,16 @@ inoreabbrev df def()<CR>end<UP>
 
 "autoclose tags
 inoremap ( ()<Left>
+inoremap (; ();<Left><Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 inoremap { {}<Left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 inoremap [ []<Left>
-inoremap " ""<Left>
-inoremap ' ''<left>
+inoremap [<CR> [<CR>]<ESC>O
+inoremap [;<CR> [<CR>];<ESC>O
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 inoremap '<space> '
 
 "keep text selected after indentation
