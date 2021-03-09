@@ -11,6 +11,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'junegunn/goyo.vim'
+Plug 'aonemd/dazzle.vim'
 Plug 'calebsmith/vim-lambdify'
 Plug 'aonemd/kuroi.vim'
 Plug 'aonemd/atlas.vim'
@@ -234,6 +235,9 @@ xmap <leader>a <Plug>(EasyAlign)
 
 "vim-polyglot
 let g:go_highlight_functions = 1
+
+"Dazzle
+autocmd BufNewFile,BufRead *.pres :Dazzle
 
 "netrw
 let g:netrw_banner=0
