@@ -286,6 +286,7 @@ function! SmoothScroll(up)
 endfunction
 
 "Goyo
+let g:goyo_width = 81
 nnoremap <leader>g :Goyo<cr>
 if !exists('*s:goyo_leave')
   function s:goyo_leave()
