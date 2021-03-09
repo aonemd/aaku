@@ -10,3 +10,5 @@
 	autosquash = true
 [pull]
 	rebase = merges
+[init]
+	defaultBranch = master
