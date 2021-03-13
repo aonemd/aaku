@@ -58,6 +58,9 @@ ln -sfn ${BASEDIR}/picom/picom.conf $HOME/.config/picom/picom.conf
 
 ln -sfn ${BASEDIR}/fontconfig $HOME/.config/fontconfig
 
+[ -d $HOME/.config/zathura/ ] || mkdir -p $HOME/.config/zathura
+ln -sfn ${BASEDIR}/zathura/zathurarc $HOME/.config/zathura/zathurarc
+
 echo "Installing Vim plugins..."
 vim -E -c PlugInstall  -c qall
 vim -c 'CocInstall -sync coc-go coc-tsserver coc-html coc-css coc-emmet coc-solargraph|q'

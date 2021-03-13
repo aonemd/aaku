@@ -1,0 +1,51 @@
+set sandbox none
+
+# Open document in fit-width mode by default
+set adjust-open "best-fit"
+
+# One page per row by default
+set pages-per-row 1
+
+#stop at page boundries
+set scroll-page-aware "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# zoom and scroll step size
+set zoom-step 20
+set scroll-step 80
+
+# copy selection to system clipboard
+set selection-clipboard clipboard
+
+set window-title-basename "true"
+set statusbar-basename
+
+# enable incremental search
+set incremental-search true
+
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1
+
+map r reload
+
+set statusbar-fg "#B0B0B0" #04
+set statusbar-bg "#202020" #01
+
+set inputbar-bg "#151515" #00 currently not used
+set inputbar-fg "#FFFFFF" #02
+
+set notification-error-bg "#AC4142" #08
+set notification-error-fg "#151515" #00
+
+set notification-warning-bg "#AC4142" #08
+set notification-warning-fg "#151515" #00
+
+set highlight-color        "#d5911a"
+set highlight-active-color "#d5911a"
+
+set recolor-lightcolor \#1b1918
+set recolor-darkcolor \#f1efee
+set recolor-reverse-video "true"
+set recolor-keephue "true"
