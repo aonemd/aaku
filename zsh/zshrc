@@ -17,6 +17,9 @@ export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
 export PATH="$PATH:$WK/onpar/bin"
 
+# Rust
+include $HOME/.cargo/env
+
 # Ruby
 include /usr/share/chruby/chruby.sh
 include /usr/share/chruby/auto.sh
