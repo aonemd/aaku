@@ -28,7 +28,8 @@ export PATH=$PATH:$(go env GOROOT)/bin:$(go env GOPATH)/bin
 # Javascript
 export PATH="$PATH:$HOME/.yarn/bin"
 export NVM_DIR="$HOME/.nvm"
-include $NVM_DIR/nvm.sh
+include $NVM_DIR/nvm.sh --no-use
+export PATH=~/.nvm/versions/node/v14.15.4/bin:$PATH
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
