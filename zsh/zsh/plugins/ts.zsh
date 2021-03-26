@@ -10,7 +10,8 @@ ts() {
       session_path="${1}"
   esac
 
-  local session_name="${session_path##*/}"
+  local raw_session_name="${session_path##*/}"
+  local session_name="${raw_session_name//[.]/-}"
 
   if tmux has-session -t="${session_name}" 2> /dev/null; then
     tmux attach -t "${session_name}"
