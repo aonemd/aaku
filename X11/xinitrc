@@ -23,6 +23,6 @@ picom --config $HOME/.config/picom/picom.conf -b
 nm-applet 2>&1 /dev/null &
 udiskie &
 dropbox &
-onpar  &
+bars -C $WK/bars.toml &
 
 exec dwm
