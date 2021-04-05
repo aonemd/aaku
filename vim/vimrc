@@ -8,7 +8,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'junegunn/vim-easy-align'
 Plug 'natebosch/vim-lsc'
 Plug 'sheerun/vim-polyglot'
-Plug 'meain/vim-printer'
+Plug 'aonemd/vim-printer'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'junegunn/goyo.vim'
@@ -240,14 +240,6 @@ let g:go_highlight_functions = 1
 
 "Dazzle
 autocmd BufNewFile,BufRead *.pres :Dazzle
-
-"vim-printer
-let g:vim_printer_print_below_keybinding = '<leader>P'
-let g:vim_printer_print_above_keybinding = ''
-let g:vim_printer_items = {
-      \ 'ruby': 'puts("{$}: #{{$}}")',
-      \ 'crystal': 'puts("{$}: #{{$}}")',
-      \ }
 
 "netrw
 let g:netrw_banner=0
