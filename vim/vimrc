@@ -96,6 +96,10 @@ nnoremap <leader>d :SilentCmd tsk<space>
 nnoremap ! :!
 nnoremap <leader>w :w<cr>
 nnoremap <leader>m :make<cr>
+
+"easily move between end of current line
+map H ^
+map L g_
 "replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 "toggle showing hidden characters
