@@ -350,6 +350,34 @@ function! MaximizeToggle()
   endif
 endfunction
 
+"scroll popup windows
+nnoremap <silent> <C-a> :call ScrollPopup(3)<CR>
+nnoremap <silent> <C-s> :call ScrollPopup(-3)<CR>
+function! ScrollPopup(val)
+  let winid = popup_list()
+  if winid == [] | return 0 | endif
+
+  let pos = popup_getpos(winid[0])
+  "if there's no scrollbar visible, exit.
+  if pos.scrollbar == 0 | return 0 | endif
+
+  "set the first and last lines of the popup buffer.
+  "https://fortime.ws/blog/2020/03/14/20200312-01/
+  let new_firstline = pos.firstline + a:val
+  let new_lastline = str2nr(trim(win_execute(winid[0], "echo line ('$')")))
+  if new_firstline < 1
+    let new_firstline = 1
+  elseif pos.lastline + a:val > new_lastline
+    let new_firstline = new_firstline - a:val + new_lastline - pos.lastline
+  endif
+
+  call popup_setoptions(winid[0], #{
+        \ firstline: new_firstline,
+        \ minwidth: pos.core_width,
+        \ maxwidth: pos.core_width + 1,
+        \ }) "constrain min and maxwidth so that they don't change when scrolling.
+endfunction
+
 function! SynStack()
   if !exists("*synstack")
     return
