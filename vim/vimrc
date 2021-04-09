@@ -53,6 +53,10 @@ set ignorecase                                     "searches are case insensitiv
 set smartcase                                      " ..unless they contain at least one capital letter
 set hlsearch                                       "highlight search patterns
 
+"read project `.vimrc` file
+set exrc
+set secure
+
 set foldmethod=indent
 set nofoldenable
 
