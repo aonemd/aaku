@@ -9,6 +9,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'natebosch/vim-lsc'
 Plug 'sheerun/vim-polyglot'
 Plug 'aonemd/vim-printer'
+Plug 'aonemd/decalogue.vim'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'junegunn/goyo.vim'
@@ -92,11 +93,6 @@ autocmd! VimResized * :wincmd =
 "The Leader
 let mapleader="\<Space>"
 
-"execute silent commands
-command! -nargs=1 SilentCmd execute 'silent !' . <q-args> | execute 'redraw!'
-nnoremap <leader>e :SilentCmd<space>
-nnoremap <leader>d :SilentCmd tsk<space>
-
 nnoremap ! :!
 nnoremap <leader>w :w<cr>
 nnoremap <leader>m :make<cr>
@@ -160,6 +156,14 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 nnoremap <leader>ba :bufdo bd!<cr>
 "cycle between last two open buffers
 nnoremap <leader><leader> <c-^>
+
+"commandments
+let g:decalogue_commandments = {
+      \ 'Git push': '!git push origin HEAD',
+      \ 'Rust test': 'term cargo t',
+      \ 'Rust check': 'term cargo c',
+      \ 'C run': '!gcc % -o a.out; ./a.out',
+      \ }
 
 "fzf
 let g:fzf_layout       = { 'down': '~30%' }
