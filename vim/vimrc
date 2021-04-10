@@ -126,6 +126,7 @@ xnoremap <leader>j :m'>+<cr>gv=gv
 "custom abbreviations
 "inoreabbrev ignores custom mappings when executing the abbreviations
 inoreabbrev cf () {<CR>}<UP><LEFT>
+inoreabbrev fn fn() -> () {<CR>}<UP><ESC>f(i
 inoreabbrev af () => {<CR>}<UP>
 inoreabbrev jf function() {<CR>}<UP><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT><RIGHT>
 inoreabbrev df def()<CR>end<UP>
