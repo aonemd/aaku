@@ -284,9 +284,7 @@ endfunction
 function! StripTrailingWhitespace()
   if !&binary && &filetype != 'diff'
     let w:winview = winsaveview()
-    normal Hmy
     %s/\(\s\+$\)\|\($\n\s*\)\+\%$//e
-    normal 'yz<CR>
     if exists('w:winview') | call winrestview(w:winview) | endif
   endif
 endfunction
