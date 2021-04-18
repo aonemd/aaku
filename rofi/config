@@ -1,4 +1,4 @@
-rofi.modi:             drun,window,run
+rofi.modi:             drun,run,window
 rofi.matching:         normal
 rofi.terminal:         rofi-sensible-terminal
 rofi.kb-accept-entry:  Return
