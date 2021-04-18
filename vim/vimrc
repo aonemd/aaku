@@ -354,8 +354,8 @@ function! MaximizeToggle()
 endfunction
 
 "scroll popup windows
-nnoremap <silent> <C-a> :call ScrollPopup(3)<CR>
-nnoremap <silent> <C-s> :call ScrollPopup(-3)<CR>
+nnoremap <silent> <C-e> :call ScrollPopup(3)<CR>
+nnoremap <silent> <C-y> :call ScrollPopup(-3)<CR>
 function! ScrollPopup(val)
   let winid = popup_list()
   if winid == [] | return 0 | endif
