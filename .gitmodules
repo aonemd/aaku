@@ -1,0 +1,15 @@
+[submodule "dwm"]
+	path = dwm
+	url = git@gitlab.com:aonemd/dwm.git
+	branch = master
+  ignore = all
+[submodule "st"]
+	path = st
+	url = git@gitlab.com:aonemd/st.git
+	branch = master
+  ignore = all
+[submodule "slock"]
+	path = slock
+	url = git@gitlab.com:aonemd/slock.git
+	branch = master
+  ignore = all
