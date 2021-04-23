@@ -16,6 +16,7 @@ Plug 'junegunn/goyo.vim'
 Plug 'aonemd/dazzle.vim'
 Plug 'aonemd/vim-lambdify'
 Plug 'aonemd/kuroi.vim'
+Plug 'aonemd/quietlight.vim'
 Plug 'aonemd/atlas.vim'
 call plug#end()
 
