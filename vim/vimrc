@@ -144,8 +144,6 @@ inoremap [ []<Left>
 inoremap [<CR> [<CR>]<ESC>O
 inoremap [;<CR> [<CR>];<ESC>O
 inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
-inoremap '<space> '
 
 "keep text selected after indentation
 vnoremap < <gv
