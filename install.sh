@@ -47,6 +47,9 @@ ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
 [ -d $HOME/.config/termite/ ] || mkdir -p $HOME/.config/termite
 ln -sfn ${BASEDIR}/termite/config $HOME/.config/termite/config
 
+[ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacritty
+ln -sfn ${BASEDIR}/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+
 [ -d $HOME/.config/kitty/ ] || mkdir -p $HOME/.config/kitty
 ln -sfn ${BASEDIR}/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
 
