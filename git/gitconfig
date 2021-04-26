@@ -12,3 +12,36 @@
 	rebase = merges
 [init]
 	defaultBranch = master
+[alias]
+	c     = clone
+	s     = status --short
+	d     = diff
+	dw    = diff --word-diff
+	ds    = diff --staged
+	a     = add
+	aa    = add -A
+	ap    = add --patch
+	c     = commit
+	ca    = commit --amend -C HEAD
+	caa   = commit -a --amend -C HEAD
+	st    = stash
+	sta   = stash -u
+	sh    = show --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B'
+	p     = push
+	ppush = push origin HEAD
+	pu    = pull
+	ppull = pull origin HEAD
+	f     = fetch
+	fa    = fetch --all
+	b     = branch
+	co    = checkout
+	m     = merge
+	rb    = rebase
+	l     = log --topo-order --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B'
+	lp    = log --topo-order --patch --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B'
+	lo    = log --topo-order --decorate --pretty=oneline --abbrev-commit
+	lg    = log --topo-order --graph --decorate --pretty=oneline --abbrev-commit
+	lga   = log --topo-order --graph --decorate --pretty=oneline --abbrev-commit --all
+	lh    = log --topo-order --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B' --follow -p --
+	lc    = shortlog --summary --numbered --no-merges
+	lcc   = rev-list --count HEAD
