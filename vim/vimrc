@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugins')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'lambdalisue/gina.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-commentary'
 Plug 'machakann/vim-sandwich'
@@ -160,7 +160,9 @@ nnoremap <leader><leader> <c-^>
 
 "commandments
 let g:decalogue_commandments = {
-      \ 'Git push': '!git push origin HEAD',
+      \ 'Git push': 'Gina push',
+      \ 'Git status': 'Gina status -s',
+      \ 'Git patch': 'Gina patch --oneside --opener=edit %',
       \ 'Rust test': 'term cargo t',
       \ 'Rust check': 'term cargo c',
       \ 'C run': '!gcc % -o a.out; ./a.out',
