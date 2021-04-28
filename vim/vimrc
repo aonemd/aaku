@@ -165,6 +165,7 @@ let g:decalogue_commandments = {
       \ 'Git patch': 'Gina patch --oneside --opener=edit %',
       \ 'Rust test': 'term cargo t',
       \ 'Rust check': 'term cargo c',
+      \ 'Rust run': 'term cargo r',
       \ 'C run': '!gcc % -o a.out; ./a.out',
       \ }
 
