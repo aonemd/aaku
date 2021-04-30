@@ -13,7 +13,7 @@
 [init]
 	defaultBranch = master
 [alias]
-	c     = clone
+	cl    = clone
 	s     = status --short
 	d     = diff
 	dw    = diff --word-diff
