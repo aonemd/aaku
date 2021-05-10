@@ -47,9 +47,6 @@ ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
 [ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacritty
 ln -sfn ${BASEDIR}/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 
-[ -d $HOME/.config/kitty/ ] || mkdir -p $HOME/.config/kitty
-ln -sfn ${BASEDIR}/kitty/kitty.conf $HOME/.config/kitty/kitty.conf
-
 [ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
 ln -sfn ${BASEDIR}/rofi/config $HOME/.config/rofi/config
 
