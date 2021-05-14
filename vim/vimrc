@@ -97,8 +97,23 @@ autocmd! VimResized * :wincmd =
 let mapleader="\<Space>"
 
 nnoremap ! :!
-nnoremap <leader>w :w<cr>
 nnoremap <leader>m :make<cr>
+
+"trailing whitespace
+function! StripTrailingWhitespace()
+  if !&binary && &filetype != 'diff'
+    let w:winview = winsaveview()
+    %s/\(\s\+$\)\|\($\n\s*\)\+\%$//e
+    if exists('w:winview') | call winrestview(w:winview) | endif
+  endif
+endfunction
+
+function! SaveAuxiliary()
+  :call StripTrailingWhitespace()
+  :Fmt
+  :w
+endfunction
+nnoremap <leader>w :call SaveAuxiliary()<cr>
 
 "easily move between end of current line
 map H ^
@@ -288,16 +303,6 @@ function! WinMove(key)
     exec "wincmd ".a:key
   endif
 endfunction
-
-"trailing whitespace
-function! StripTrailingWhitespace()
-  if !&binary && &filetype != 'diff'
-    let w:winview = winsaveview()
-    %s/\(\s\+$\)\|\($\n\s*\)\+\%$//e
-    if exists('w:winview') | call winrestview(w:winview) | endif
-  endif
-endfunction
-autocmd! BufWritePre * call StripTrailingWhitespace()
 
 "smooth scroll
 nnoremap <silent> <c-u> :call SmoothScroll(1)<cr>
