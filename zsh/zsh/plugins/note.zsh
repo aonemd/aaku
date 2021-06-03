@@ -11,7 +11,7 @@ note() {
     t)
       tree --noreport "$notes_dir"
       ;;
-    gp)
+    gpu)
       pushd "$notes_dir"
       msg="Regenerated at $(date -u '+%Y-%m-%d %H:%M:%S') UTC"
       git add .
@@ -19,7 +19,7 @@ note() {
       git push origin master
       popd
       ;;
-    gpu)
+    gpl)
       pushd "$notes_dir"
       git pull origin master
       popd
