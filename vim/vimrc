@@ -229,6 +229,10 @@ let g:lsc_server_commands = {
  \    'command': 'clangd --background-index',
  \    'suppress_stderr': v:true,
  \  },
+ \  'cpp': {
+ \    'command': 'clangd --background-index',
+ \    'suppress_stderr': v:true,
+ \  },
  \  'rust': {
  \    'command': 'rls',
  \    'suppress_stderr': v:true,
