@@ -190,6 +190,11 @@ let g:decalogue_commandments = {
       \ 'C run': '!gcc % -o a.out; ./a.out',
       \ }
 
+"fmt"
+let g:fmt_commands = {
+      \ 'scheme': 'scheme-format -i',
+      \ }
+
 "fzf
 let g:fzf_layout       = { 'down': '~30%' }
 let g:fzf_tags_command = 'ctags -Rf .git/tags'
