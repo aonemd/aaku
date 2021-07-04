@@ -195,6 +195,11 @@ let g:fmt_commands = {
       \ 'scheme': 'scheme-format -i',
       \ }
 
+"gina
+let g:gina#command#blame#formatter#format="%au: %su%=on %ti %ma%in"
+call gina#custom#command#option('patch', '--oneside')
+call gina#custom#command#option('patch', '--opener', 'edit')
+
 "fzf
 let g:fzf_layout       = { 'down': '~30%' }
 let g:fzf_tags_command = 'ctags -Rf .git/tags'
