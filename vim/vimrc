@@ -70,8 +70,8 @@ augroup SyntaxAutocmds
   autocmd! FileType make       setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd! FileType ruby       setlocal makeprg=ruby\ %
   autocmd! FileType go         setlocal makeprg=go\ run\ %
-  autocmd! FileType javascript setlocal makeprg=node\ %
-  autocmd! FileType typescript setlocal makeprg=ts-node\ %
+  autocmd! FileType javascript setlocal ts=2 sts=2 sw=2 expandtab makeprg=node\ %
+  autocmd! FileType typescript setlocal ts=2 sts=2 sw=2 expandtab makeprg=ts-node\ %
   autocmd! FileType scheme     setlocal makeprg=chicken-csi\ -s\ %
   autocmd! FileType *.h        setlocal filetype=c
   autocmd! FileType css        setlocal iskeyword+=-
