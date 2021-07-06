@@ -210,7 +210,7 @@ nnoremap <leader>t :Tags<cr>
 nnoremap <leader>r :Buffers<cr>
 
 nnoremap \  :Rg<space>
-nnoremap \| :Rg <C-R><C-W><cr>:cw<cr>
+nnoremap \| :Rg <C-R><C-W><cr><cr>
 
 "Autocomplete
 set completeopt=menu,menuone,popup,noinsert "better insert mode completions
