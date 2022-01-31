@@ -39,8 +39,7 @@ require('packer').startup(function()
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
-
-  use 'tpope/vim-fugitive' -- Git commands for nvim.
+  use 'lambdalisue/gina.vim'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   -- use 'b3nj5m1n/kommentary'
   use {
@@ -67,6 +66,7 @@ require("plugins.lsp")
 require("plugins.treesitter")
 -- require("plugins.telescope")
 require("plugins.fzf")
+require("plugins.gina")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
 
