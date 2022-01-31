@@ -41,7 +41,7 @@ require('packer').startup(function()
 
 
   use 'tpope/vim-fugitive' -- Git commands for nvim.
-  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } } -- Adds git related info in the signs columns (near the line numbers) and popups.
+  use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   -- use 'b3nj5m1n/kommentary'
   use {
     'numToStr/Comment.nvim',
