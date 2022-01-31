@@ -66,13 +66,12 @@ vim.api.nvim_exec(
   false
 )
 
--- Set dark theme if macOS theme is dark, light otherwise.
--- local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
--- print(theme)
--- if theme and (string.find(theme, 'Dark')) then
--- 	vim.o.background = 'dark'
--- 	vim.cmd [[colorscheme kuroi]]
--- else
--- 	vim.o.background = 'light'
--- 	vim.cmd [[colorscheme quietlight]]
--- end
+-- Set colorscheme for macOS
+local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
+if theme and (string.find(theme, 'Light')) then
+	vim.o.background = 'light'
+	vim.cmd [[colorscheme quietlight]]
+else
+	vim.o.background = 'dark'
+	vim.cmd [[colorscheme kuroi]]
+end
