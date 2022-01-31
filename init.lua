@@ -1,7 +1,7 @@
 require("keybindings")
 require("plugins")
 
-vim.cmd('source funks.vim')
+vim.cmd('source $HOME/.config/nvim/funks.vim')
 
 local options = {
   number         = true,
