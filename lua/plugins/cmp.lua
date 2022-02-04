@@ -1,12 +1,7 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-  return
-end
+local require_safe = require("utils").require_safe
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-  return
-end
+local cmp     = require_safe("cmp")
+local luasnip = require_safe("luasnip")
 
 require("luasnip/loaders/from_vscode").lazy_load()
 
@@ -149,7 +144,7 @@ cmp.setup {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
-    -- If you don't set up snippets in the section below, this might crash, either go through the "Snippets" section or remove any `luasnip` related code from this config.  
+    -- If you don't set up snippets in the section below, this might crash, either go through the "Snippets" section or remove any `luasnip` related code from this config.
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
