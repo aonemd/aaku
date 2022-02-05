@@ -56,15 +56,9 @@ vim.o.background = 'dark'
 vim.cmd [[colorscheme kuroi]]
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
-vim.api.nvim_exec(
-  [[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
-]],
-  false
-)
+require("utils").create_augroup({
+  {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank()'}
+}, 'YankHighlight')
 
 -- Set colorscheme for macOS
 local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
