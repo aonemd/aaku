@@ -4,7 +4,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require("utils").create_augroup({
-  {'BufWritePost init.lua PackerSync'}
+  {'BufWritePost */lua/plugins/init.lua source <afile> | PackerSync'}
 }, 'Packer')
 
 local use = require('packer').use
