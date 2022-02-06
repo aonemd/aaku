@@ -5,7 +5,6 @@ local options    = {
   inccommand     = 'nosplit',
   hlsearch       = false,
   ignorecase     = true,
-  smartcase      = true,
   mouse          = 'a',
   breakindent    = true,
   wrap           = false,
