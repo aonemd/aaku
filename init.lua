@@ -1,9 +1,4 @@
-require("keybindings")
-require("plugins")
-
-vim.cmd('source $HOME/.config/nvim/funks.vim')
-
-local options = {
+local options    = {
   number         = true,
   relativenumber = true,
   hidden         = true,
@@ -25,6 +20,7 @@ local options = {
   showtabline    = 0,
   clipboard      = "unnamedplus",
   completeopt    = { "menuone", "noselect" },
+  shortmess      = vim.opt.shortmess + 'c',
 
   undofile       = true,   -- Save undo history
   writebackup    = false,  -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
@@ -44,11 +40,13 @@ local options = {
   background    = 'dark',
 }
 
-vim.opt.shortmess:append "c"
-
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+require("keybindings")
+require("plugins")
+vim.cmd('source $HOME/.config/nvim/funks.vim')
 
 vim.cmd [[colorscheme kuroi]]
 require("statusline")
