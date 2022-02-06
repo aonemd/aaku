@@ -39,6 +39,9 @@ local options = {
   tabstop        = 2,
   smartcase      = true,
   smartindent    = true,
+
+  termguicolors = true,
+  background    = 'dark',
 }
 
 vim.opt.shortmess:append "c"
@@ -47,13 +50,8 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
--- status line: modifiedflag, charcount, filepercent, filepath
-vim.cmd [[set statusline=%f%=%m\ %c\ %P]]
-
-vim.o.termguicolors = true
-vim.g.onedark_terminal_italics = 2
-vim.o.background = 'dark'
 vim.cmd [[colorscheme kuroi]]
+require("statusline")
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
 require("utils").create_augroup({
