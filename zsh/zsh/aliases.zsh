@@ -14,6 +14,7 @@ alias feh='feh -F'
 
 alias wk='cd $WK'
 alias v='vim'
+alias nv='nvim'
 alias vv='gvim'
 alias brvim='printf "\033[?5h"; vim; printf "\033[?5l"'
 alias t='tmux'
