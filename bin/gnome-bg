@@ -1,0 +1,6 @@
+#!/bin/sh
+
+ruser_dbus_session_bus_address="unix:path=/run/user/${UID}/bus"
+
+background_name="file://$(ls -d /home/aonemd/Pictures/Wallpapers/* | shuf -n 1)"
+DBUS_SESSION_BUS_ADDRESS=${ruser_dbus_session_bus_address} gsettings set org.gnome.desktop.background picture-uri $background_name
