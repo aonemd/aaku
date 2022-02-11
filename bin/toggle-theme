@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+alacritty_them() {
+  [[ -z $response ]] && exit 0
+}
+
+local theme="dark"
+local config_path="$AAKU/alacritty/alacritty.yml"
+sed -i -e "s#^colors: \*.*#colors: *$theme#g" $config_path
