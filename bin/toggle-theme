@@ -1,9 +1,19 @@
 #!/usr/bin/env zsh
 
-alacritty_them() {
-  [[ -z $response ]] && exit 0
+local theme="${1:-dark}"
+
+toggle_alacritty() {
+  local config_path="$AAKU/alacritty/colors.yml"
+  local alacritty_file="$AAKU/alacritty/alacritty.yml"
+  sed -i -e "s#^colors: \*.*#colors: *$theme#g" $config_path
+  touch $alacritty_file
 }
 
-local theme="dark"
-local config_path="$AAKU/alacritty/alacritty.yml"
-sed -i -e "s#^colors: \*.*#colors: *$theme#g" $config_path
+toggle_nvims() {
+  # https://github.com/chmln/nvim-ctrl
+  #
+  nvim-ctrl "call v:lua.ToggleTheme('$theme')"
+}
+
+toggle_alacritty
+toggle_nvims
