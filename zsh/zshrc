@@ -41,3 +41,10 @@ include ~/.fzf.zsh
 
 # K8S
 source <(kubectl completion zsh 2>/dev/null)
+
+# Android
+export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
+export ANDROID_HOME=/opt/android-sdk
+export PATH="$ANDROID_HOME/tools:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+# export PATH="$ANDROID_HOME/emulator:$PATH"
