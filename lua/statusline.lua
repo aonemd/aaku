@@ -35,7 +35,7 @@ local function get_mode()
   end
 end
 
-function set_statusline()
+function _G.set_statusline()
   local blocks = {
     get_mode(),
     ' ',

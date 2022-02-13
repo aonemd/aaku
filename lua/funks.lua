@@ -11,4 +11,23 @@ function M.makeScratch()
   vim.bo[0].swapfile=false
 end
 
+function ToggleTheme()
+  local current_mode = vim.api.nvim_get_option('background')
+  if current_mode == 'dark' then
+    vim.cmd([[
+    set background=light
+    colorscheme quietlight
+    ]])
+  else
+    vim.cmd([[
+    set background=dark
+    colorscheme kuroi
+    ]])
+  end
+
+  -- reload statusline
+  package.loaded['statusline'] = nil
+  require("statusline")
+end
+
 return M

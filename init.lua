@@ -49,6 +49,7 @@ vim.cmd('source $HOME/.config/nvim/funks.vim')
 
 vim.cmd [[colorscheme kuroi]]
 require("statusline")
+require("funks")
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
 require("utils").create_augroup({
@@ -56,11 +57,11 @@ require("utils").create_augroup({
 }, 'YankHighlight')
 
 -- Set colorscheme for macOS
-local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
-if theme and (string.find(theme, 'Light')) then
-	vim.o.background = 'light'
-	vim.cmd [[colorscheme quietlight]]
-else
-	vim.o.background = 'dark'
-	vim.cmd [[colorscheme kuroi]]
-end
+-- local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
+-- if theme and (string.find(theme, 'Light')) then
+-- 	vim.o.background = 'light'
+-- 	vim.cmd [[colorscheme quietlight]]
+-- else
+-- 	vim.o.background = 'dark'
+-- 	vim.cmd [[colorscheme kuroi]]
+-- end
