@@ -27,9 +27,9 @@ note() {
     *)
       pushd "$notes_dir"
       if [ $# -eq 0 ]; then
-        vim "$1"
+        $EDITOR "$1"
       else
-        vim "$1".md
+        $EDITOR "$1".md
       fi
       popd
   esac

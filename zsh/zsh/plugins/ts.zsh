@@ -22,7 +22,7 @@ ts() {
 
   tmux new-session   -d -s "${session_name}"
 
-  tmux send-keys     -t="${session_name}":1 'vim ' C-m
+  tmux send-keys     -t="${session_name}":1 $EDITOR C-m
   sleep 0.5
   tmux split-window  -t="${session_name}":1 -v
   tmux resize-pane   -t="${session_name}":1 -D 15
