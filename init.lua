@@ -55,13 +55,3 @@ require("funks")
 require("utils").create_augroup({
   {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank()'}
 }, 'YankHighlight')
-
--- Set colorscheme for macOS
--- local theme = vim.fn.system("defaults read -g AppleInterfaceStyle")
--- if theme and (string.find(theme, 'Light')) then
--- 	vim.o.background = 'light'
--- 	vim.cmd [[colorscheme quietlight]]
--- else
--- 	vim.o.background = 'dark'
--- 	vim.cmd [[colorscheme kuroi]]
--- end
