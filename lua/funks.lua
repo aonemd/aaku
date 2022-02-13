@@ -11,18 +11,32 @@ function M.makeScratch()
   vim.bo[0].swapfile=false
 end
 
-function ToggleTheme()
-  local current_mode = vim.api.nvim_get_option('background')
-  if current_mode == 'dark' then
-    vim.cmd([[
-    set background=light
-    colorscheme quietlight
-    ]])
-  else
+function _G.ToggleTheme(mode)
+  local _toggle_dark = function ()
     vim.cmd([[
     set background=dark
     colorscheme kuroi
     ]])
+  end
+
+  local _toggle_light = function ()
+    vim.cmd([[
+    set background=light
+    colorscheme quietlight
+    ]])
+  end
+
+  if mode == "dark" then
+    _toggle_dark()
+  elseif mode == 'light' then
+    _toggle_light()
+  else
+    local current_mode = vim.api.nvim_get_option('background')
+    if current_mode == 'dark' then
+      _toggle_light()
+    else
+      _toggle_dark()
+    end
   end
 
   -- reload statusline
