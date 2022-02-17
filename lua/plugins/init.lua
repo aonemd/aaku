@@ -41,6 +41,8 @@ require('packer').startup(function()
   }
   use 'machakann/vim-sandwich'
   use 'junegunn/vim-easy-align'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'tpope/vim-eunuch'
 
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
@@ -54,4 +56,6 @@ require("plugins.fzf")
 require("plugins.gina")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
+
 require('Comment').setup()
+require'colorizer'.setup()
