@@ -7,6 +7,8 @@ link_dev() {
   ln -sfn ${BASEDIR}/vim/vimrc $HOME/.vimrc
   ln -sfn ${BASEDIR}/vim/gvimrc $HOME/.gvimrc
 
+  ln -sfn ${BASEDIR}/nvim $HOME/.config/nvim
+
   ln -sfn ${BASEDIR}/zsh/zsh $HOME/.zsh
   ln -sfn ${BASEDIR}/zsh/zprofile $HOME/.zprofile
   ln -sfn ${BASEDIR}/zsh/zshenv $HOME/.zshenv
