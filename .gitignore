@@ -3,5 +3,8 @@ vim/vim/plugins/
 vim/vim/.netrwhist
 vim/vim/view
 
+# NVIM plugins
+nvim/plugin
+
 # Ignore Tmux plugins
 tmux/tmux/
