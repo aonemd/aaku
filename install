@@ -11,6 +11,8 @@ link_config() {
 }
 
 link_dev() {
+  echo "Installing Dev config..."
+
   link_config vim/vim    .vim
   link_config vim/vimrc  .vimrc
   link_config vim/gvimrc .gvimrc
@@ -42,6 +44,8 @@ link_dev() {
 }
 
 link_linux() {
+  echo "Installing Linux config..."
+
   link_config bin/fehbg      .fehbg
   link_config X11/xinitrc    .xinitrc
   link_config X11/Xresources .Xresources
@@ -52,9 +56,13 @@ link_linux() {
   link_config zathura        .config/zathura
 }
 
-link_macos() {}
+link_macos() {
+  echo "Installing MacOS config..."
+}
 
 link_cli_tools() {
+  echo "Installing CLI tools..."
+
   link_config nnn      .config/nnn
   link_config newsboat .newsboat
   link_config cmus     .config/cmus
@@ -63,6 +71,7 @@ link_cli_tools() {
 
 link_fonts() {
   echo "Installing Fonts..."
+
   [ -d $HOME/Workspace/fonts/ ] && exit
   git clone https://github.com/powerline/fonts.git $HOME/Workspace/fonts/
   pushd $HOME/Workspace/fonts && ./install.sh && popd
@@ -89,23 +98,18 @@ elif [[ condition ]]; then
   do
     case "$1" in
       dev)
-        echo "Installing dev..."
         link_dev
         ;;
       linux)
-        echo "Installing linux..."
         link_linux
         ;;
       macos)
-        echo "Installing macos..."
         link_macos
         ;;
       cli)
-        echo "Installing cli..."
         link_cli_tools
         ;;
       fonts)
-        echo "Installing fonts..."
         link_fonts
         ;;
       *)
