@@ -150,3 +150,19 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_set_keymap('n', 'Y', 'y$', { noremap = true }) -- Y yank until the end of line  (note: this is now a default on master)
+
+vim.cmd([[
+"keep cursor centered on these ops
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+"break undo sequences on these chars
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") .'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") .'j'
+]])
