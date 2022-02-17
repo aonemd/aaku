@@ -80,11 +80,11 @@ link_fonts() {
   pushd $HOME/Workspace/fonts/icons-in-terminal && ./install.sh && popd
 }
 
-echo "Creating Workspace..."
-# mkdir $HOME/Workspace
+echo "Creating Workspace folder..."
+mkdir -p $HOME/Workspace
 
-echo "Updating submodules..."
-# git submodule update --init --recursive --remote
+echo "Updating Git submodules..."
+git submodule update --init --recursive --remote
 
 if [ $# -eq 0 ]; then
   echo "Installing all..."
