@@ -8,3 +8,5 @@ nvim/plugin
 
 # Ignore Tmux plugins
 tmux/tmux/
+
+newsboat/

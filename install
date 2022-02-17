@@ -2,30 +2,36 @@
 
 BASEDIR="$(cd "$(dirname "${ZSH_SOURCE[0]}")" && pwd)"
 
+link_config() {
+  src=$1
+  dst=$2
+
+  rm -rf $HOME/$dst
+  ln -sfn ${BASEDIR}/$src $HOME/$dst
+}
+
 link_dev() {
-  ln -sfn ${BASEDIR}/vim/vim $HOME/.vim
-  ln -sfn ${BASEDIR}/vim/vimrc $HOME/.vimrc
-  ln -sfn ${BASEDIR}/vim/gvimrc $HOME/.gvimrc
+  link_config vim/vim    .vim
+  link_config vim/vimrc  .vimrc
+  link_config vim/gvimrc .gvimrc
 
-  ln -sfn ${BASEDIR}/nvim $HOME/.config/nvim
+  link_config nvim .config/nvim
 
-  ln -sfn ${BASEDIR}/zsh/zsh $HOME/.zsh
-  ln -sfn ${BASEDIR}/zsh/zprofile $HOME/.zprofile
-  ln -sfn ${BASEDIR}/zsh/zshenv $HOME/.zshenv
-  ln -sfn ${BASEDIR}/zsh/zshrc $HOME/.zshrc
+  link_config zsh/zsh      .zsh
+  link_config zsh/zprofile .zprofile
+  link_config zsh/zshenv   .zshenv
+  link_config zsh/zshrc    .zshrc
 
-  ln -sfn ${BASEDIR}/tmux/tmux.conf $HOME/.tmux.conf
-  ln -sfn ${BASEDIR}/git/gitconfig $HOME/.gitconfig
-  ln -sfn ${BASEDIR}/git/gitignore $HOME/.gitignore
-  ln -sfn ${BASEDIR}/git/gitattributes $HOME/.gitattributes
-  ln -sfn ${BASEDIR}/ruby/irbrc $HOME/.irbrc
-  ln -sfn ${BASEDIR}/scheme/csirc $HOME/.csirc
-  ln -sfn ${BASEDIR}/rg/rgignore $HOME/.rgignore
-  ln -sfn ${BASEDIR}/ctags/ctags $HOME/.ctags
+  link_config tmux/tmux.conf    .tmux.conf
+  link_config git/gitconfig     .gitconfig
+  link_config git/gitignore     .gitignore
+  link_config git/gitattributes .gitattributes
+  link_config ruby/irbrc        .irbrc
+  link_config scheme/csirc      .csirc
+  link_config rg/rgignore       .rgignore
+  link_config ctags/ctags       .ctags
 
-  [ -d $HOME/.config/alacritty/ ] || mkdir -p $HOME/.config/alacritty
-  ln -sfn ${BASEDIR}/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
-  ln -sfn ${BASEDIR}/alacritty/colors.yml $HOME/.config/alacritty/colors.yml
+  link_config alacritty .config/alacritty
 
   echo "Installing Vim plugins..."
   vim -E -c PlugInstall  -c qall
@@ -36,43 +42,23 @@ link_dev() {
 }
 
 link_linux() {
-  ln -sfn ${BASEDIR}/bin/fehbg $HOME/.fehbg
-
-  ln -sfn ${BASEDIR}/X11/xinitrc $HOME/.xinitrc
-  ln -sfn ${BASEDIR}/X11/Xresources $HOME/.Xresources
-
-  [ -d $HOME/.config/rofi/ ] || mkdir -p $HOME/.config/rofi
-  ln -sfn ${BASEDIR}/rofi/config $HOME/.config/rofi/config
-
-  [ -d $HOME/.config/dunst/ ] || mkdir -p $HOME/.config/dunst
-  ln -sfn ${BASEDIR}/dunst/dunstrc $HOME/.config/dunst/dunstrc
-
-  [ -d $HOME/.config/picom/ ] || mkdir -p $HOME/.config/picom
-  ln -sfn ${BASEDIR}/picom/picom.conf $HOME/.config/picom/picom.conf
-
-  ln -sfn ${BASEDIR}/fontconfig $HOME/.config/fontconfig
-
-  [ -d $HOME/.config/zathura/ ] || mkdir -p $HOME/.config/zathura
-  ln -sfn ${BASEDIR}/zathura/zathurarc $HOME/.config/zathura/zathurarc
+  link_config bin/fehbg      .fehbg
+  link_config X11/xinitrc    .xinitrc
+  link_config X11/Xresources .Xresources
+  link_config rofi           .config/rofi
+  link_config dunst          .config/dunst
+  link_config picom          .config/picom
+  link_config fontconfig     .config/fontconfig
+  link_config zathura        .config/zathura
 }
 
 link_macos() {}
 
 link_cli_tools() {
-  ln -sfn ${BASEDIR}/nnn/plugins $HOME/.config/nnn/plugins
-
-  [ -d $HOME/.newsboat/ ] || mkdir -p $HOME/.newsboat
-  ln -sfn ${BASEDIR}/newsboat/config $HOME/.newsboat/config
-  ln -sfn ${BASEDIR}/newsboat/urls $HOME/.newsboat/urls
-
-  [ -d $HOME/.config/cmus/ ] || mkdir -p $HOME/.config/cmus
-  ln -sfn ${BASEDIR}/cmus/aaku.theme $HOME/.config/cmus/aaku.theme
-  ln -sfn ${BASEDIR}/cmus/rc $HOME/.config/cmus/rc
-
-  [ -d $HOME/.irssi ] || mkdir -p $HOME/.irssi
-  ln -sfn ${BASEDIR}/irssi/config $HOME/.irssi/config
-  ln -sfn ${BASEDIR}/irssi/weed.theme $HOME/.irssi/weed.theme
-  ln -sfn ${BASEDIR}/irssi/scripts $HOME/.irssi/scripts
+  link_config nnn      .config/nnn
+  link_config newsboat .newsboat
+  link_config cmus     .config/cmus
+  link_config irssi    .irssi
 }
 
 link_fonts() {
