@@ -37,7 +37,10 @@ link_dev() {
   link_config alacritty .config/alacritty
 
   echo "fetching vim plugins..."
-  vim -E -c PlugInstall  -c qall
+  vim -c PlugInstall -c qall
+
+  echo "fetching nvim plugins..."
+  nvim -c PackerSync -c qall
 
   source $HOME/.zshrc
   echo "zshrc sourced."
