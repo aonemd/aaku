@@ -29,11 +29,12 @@ local options    = {
   scrolloff      = 8,
   sidescrolloff  = 8,
 
-  expandtab      = true,
-  shiftwidth     = 2,
-  tabstop        = 2,
-  smartcase      = true,
-  smartindent    = true,
+  expandtab   = true,
+  shiftwidth  = 2,
+  tabstop     = 2,
+  softtabstop = 2,
+  smartcase   = true,
+  -- smartindent = true,
 
   termguicolors = true,
   background    = 'dark',
