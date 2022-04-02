@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# usage: source toggle-theme light
+#
+
 local theme="${1:-dark}"
 
 toggle_alacritty() {
@@ -14,6 +17,8 @@ toggle_nvims() {
   #
   nvim-ctrl "call v:lua.ToggleTheme('$theme')"
 }
+
+export TERM_COLOR_MODE="$theme"
 
 toggle_alacritty
 toggle_nvims
