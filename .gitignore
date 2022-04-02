@@ -1,3 +1,5 @@
+**/secrets.zsh
+
 # Ignore Vim plugins
 vim/vim/plugins/
 vim/vim/.netrwhist
