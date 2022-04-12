@@ -1,4 +1,5 @@
 **/secrets.zsh
+git/gitconfig.secrets
 
 # Ignore Vim plugins
 vim/vim/plugins/

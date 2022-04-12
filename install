@@ -25,14 +25,16 @@ link_dev() {
   link_config zsh/zshenv   .zshenv
   link_config zsh/zshrc    .zshrc
 
-  link_config tmux/tmux.conf    .tmux.conf
-  link_config git/gitconfig     .gitconfig
-  link_config git/gitignore     .gitignore
-  link_config git/gitattributes .gitattributes
-  link_config ruby/irbrc        .irbrc
-  link_config scheme/csirc      .csirc
-  link_config rg/rgignore       .rgignore
-  link_config ctags/ctags       .ctags
+  link_config git/gitconfig         .gitconfig
+  link_config git/gitconfig.secrets .gitconfig.secrets
+  link_config git/gitignore         .gitignore
+  link_config git/gitattributes     .gitattributes
+
+  link_config tmux/tmux.conf .tmux.conf
+  link_config ruby/irbrc     .irbrc
+  link_config scheme/csirc   .csirc
+  link_config rg/rgignore    .rgignore
+  link_config ctags/ctags    .ctags
 
   link_config alacritty .config/alacritty
 

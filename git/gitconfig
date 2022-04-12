@@ -1,6 +1,6 @@
-[user]
-	name = aonemd
-	email = asalehmo7@gmail.com
+[include]
+  path = ./.gitconfig.secrets
+
 [core]
 	editor = $EDITOR
 	attributesfile = ./.gitattributes
