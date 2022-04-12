@@ -22,4 +22,4 @@
 
 ### License
 
-See [LICENSE](https://gitlab.com/aonemd/aaku/blob/master/LICENSE).
+See [LICENSE](LICENSE).
