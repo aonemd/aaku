@@ -18,7 +18,7 @@
 
 ### Notes
 
-- A note to self: [A Good Carpenter Doesn't Blame His Tools](https://aonemd.github.io/blog/the-dotfiles).
+- A note to self: [A Good Carpenter Doesn't Blame His Tools](https://aonemd.me/blog/the-dotfiles).
 
 ### License
 
