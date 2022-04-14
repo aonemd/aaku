@@ -79,8 +79,13 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
-  documentation = {
-    border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+  window = {
+    completion = {
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+    },
+    documentation = {
+      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+    },
   },
   views = {
     entries = 'native',
