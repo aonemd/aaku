@@ -63,6 +63,9 @@ link_linux() {
 
 link_macos() {
   echo "Installing MacOS config..."
+
+  link_config macos/yabai .config/yabai
+  link_config macos/skhd  .config/skhd
 }
 
 link_cli_tools() {
