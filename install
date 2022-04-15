@@ -74,7 +74,6 @@ link_cli_tools() {
   link_config nnn      .config/nnn
   link_config newsboat .newsboat
   link_config cmus     .config/cmus
-  link_config irssi    .irssi
 }
 
 link_fonts() {
