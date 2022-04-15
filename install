@@ -48,17 +48,24 @@ link_dev() {
   echo "zshrc sourced."
 }
 
-link_linux() {
-  echo "Installing Linux config..."
+link_linux_shared() {
+  echo "Installing Linux shared config..."
+
+  link_config dunst   .config/dunst
+  link_config zathura .config/zathura
+}
+
+link_linux_x11() {
+  echo "Installing Linux X11 config..."
 
   link_config bin/fehbg      .fehbg
   link_config X11/xinitrc    .xinitrc
   link_config X11/Xresources .Xresources
-  link_config rofi           .config/rofi
-  link_config dunst          .config/dunst
-  link_config picom          .config/picom
-  link_config fontconfig     .config/fontconfig
-  link_config zathura        .config/zathura
+  link_config X11/rofi       .config/rofi
+  link_config X11/picom      .config/picom
+  link_config X11/fontconfig .config/fontconfig
+
+  link_linux_shared
 }
 
 link_macos() {
@@ -96,7 +103,7 @@ git submodule update --init --recursive --remote
 if [ $# -eq 0 ]; then
   echo "Installing all..."
   link_dev
-  link_linux
+  link_linux_x11
   link_macos
   link_cli_tools
   link_fonts
@@ -107,8 +114,8 @@ elif [[ condition ]]; then
       dev)
         link_dev
         ;;
-      linux)
-        link_linux
+      linux-x)
+        link_linux_x11
         ;;
       macos)
         link_macos
