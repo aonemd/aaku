@@ -13,8 +13,3 @@
 	url = git@gitlab.com:aonemd/slock.git
 	branch = master
   ignore = all
-[submodule "firefox-sweet-theme"]
-	path = firefox-sweet-theme
-	url = git@github.com:aonemd/firefox-sweet-theme.git
-	branch = master
-  ignore = all
