@@ -1,0 +1,103 @@
+{
+  "layer": "top",
+    "position": "top",
+    "height": 24,
+    "modules-left": ["custom/launcher", "sway/workspaces", "sway/window", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "sway/language", "pulseaudio", "network", "battery", "clock", "custom/power"],
+    "custom/launcher": {
+        "format":" ",
+        "on-click": "exec wofi",
+        "tooltip": false,
+    },
+    "sway/workspaces": {
+      "all-outputs": true,
+      "disable-scroll": true,
+      "disable-click": false,
+      "persistent_workspaces": {
+        "1": [],
+        "2": [],
+        "3": [],
+        "4": []
+      }
+    },
+    "sway/window": {
+      "format": "{app_id}"
+    },
+    "sway/mode": {
+      "format": "{}"
+    },
+    "tray": {
+      "spacing": 10,
+    },
+    "idle_inhibitor": {
+      "format": "{icon} ",
+      "format-icons":{
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+    "clock": {
+      "format": "{:%d %b %H:%M}",
+      "interval": 60,
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "battery": {
+      "bat": "BAT0",
+      "full-at": 95,
+      "states": {
+        "good": 85,
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-icons": ["", "", "", "", ""],
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+    },
+    "network": {
+      "format-wifi": " {essid}",
+      "format-disconnected": "⚠ Disconnected"
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%  {format_source}",
+			"format-bluetooth": "{icon} {volume}%  {format_source}",
+			"format-bluetooth-muted": " {icon}  {format_source}",
+			"format-muted": " {format_source}",
+			"format-source": "",
+			"format-source-muted": "",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": [
+					"",
+					"",
+					""
+				]
+			},
+			"on-click": "pavucontrol"
+    },
+    "custom/prayer": {
+      "format": "  {}",
+      "exec": "exec $AAKU/wayland/bin/prayer.sh",
+      "interval": 600
+    },
+    "custom/weather": {
+      "format": "{}",
+      /* "exec": "curl -q https://wttr.in/Amsterdam?format='%c+%t' 2>/dev/null", */
+      "exec": "exec $AAKU/wayland/bin/weather.sh",
+      "interval": 600
+    },
+    "sway/language": {
+      "format": "{short}"
+    },
+    "custom/power": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "exec $AAKU/wayland/bin/power-menu.sh"
+    }
+}

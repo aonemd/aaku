@@ -1,0 +1,58 @@
+# man 5 mako
+
+layer=top
+markup=1
+actions=1
+anchor=top-right
+background-color=#1b1918
+text-color=#f1efee
+width=350
+height=200
+icons=1
+max-icon-size=64
+icon-location=right
+icon-path=$HOME/.local/share/icons/WhiteSur-dark:/usr/share/icons/Adwaita:/usr/share/icons/hicolor
+margin=20,20,0
+padding=15,15,15
+border-size=2
+border-color=#373b41
+border-radius=2
+progress-color=source #373b41
+default-timeout=5000
+group-by=summary
+font=Noto Sans Regular 11
+format=<b>%s</b>\n%b
+sort=-time
+
+[grouped]
+format=<b>%s</b>\n%b
+
+[mode=progress]
+format=<b>%s</b>\n%b
+
+[urgency=low actionable]
+border-color=#93a1a1
+
+[urgency=normal actionable]
+border-color=#268bd2
+
+[urgency=high]
+ignore-timeout=0
+border-color=#e06c75
+
+[urgency=high actionable]
+border-color=#6c71c4
+
+[hidden]
+format=Hidden: %h [%t]
+
+[mode=away]
+default-timeout=0
+ignore-timeout=1
+
+[mode=do-not-disturb]
+invisible=1
+
+[summary~=Volume|Brightness]
+format=<b>%s</b>: %b
+default-timeout=1000

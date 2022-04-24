@@ -1,0 +1,40 @@
+* {
+  font-family:  'Lato', 'Droid Sans Mono Nerd Font', sans-serif;
+}
+
+#window {
+  margin: 0px;
+  border: 7px solid;
+  border-color: #100f0e;
+  background-color: #1b1918;
+  color: #abb2bf;
+}
+
+#input {
+  margin: 15px;
+  background-color: #100f0e;
+  color: #abb2bf;
+}
+
+#scroll {
+  margin-bottom: 15px;
+}
+
+#entry {
+  margin: 0px 15px;
+}
+
+#entry:selected {
+  background-color: #100f0e;
+  color: #abb2bf;
+  border: none;
+  outline: none;
+}
+
+#entry > box {
+  margin-left: 16px;
+}
+
+#entry image {
+  padding-right: 10px;
+}

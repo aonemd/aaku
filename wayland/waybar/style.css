@@ -1,0 +1,81 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family:  'Lato', 'Droid Sans Mono Nerd Font', sans-serif;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: rgba(27, 25, 24, 0.6);  /* #1b1918 */
+  color: white;
+}
+
+#window {}
+
+#workspaces button {
+  padding: 0 5px;
+  background: transparent;
+  color: white;
+  border-radius: 0;
+}
+
+#workspaces button.focused {
+  color: #abb2bf;
+  background-color: #373b41;
+}
+
+#custom-launcher,
+#tray,
+#window,
+#mode,
+#idle_inhibitor,
+#clock,
+#battery,
+#network,
+#language,
+#custom-prayer,
+#custom-weather,
+#custom-power,
+#pulseaudio {
+  padding: 0 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#custom-launcher {
+  margin-left: 5px;
+}
+
+#mode {
+  font-style:italic;
+}
+
+#battery.charging {
+  color: #d5911a;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.warning:not(.charging) {
+  color: #f22c40;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network.disconnected {
+  background: #f53c3c;
+}
+
+#custom-power {
+  color: #f53c3c;
+}

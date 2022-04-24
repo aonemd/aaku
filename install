@@ -55,6 +55,17 @@ link_linux_shared() {
   link_config zathura .config/zathura
 }
 
+link_linux_wayland() {
+  echo "Installing Linux Wayland config..."
+
+  link_config wayland/sway   .config/sway
+  link_config wayland/waybar .config/waybar
+  link_config wayland/wofi   .config/wofi
+  link_config wayland/mako   .config/mako
+
+  link_linux_shared
+}
+
 link_linux_x11() {
   echo "Installing Linux X11 config..."
 
@@ -103,6 +114,7 @@ git submodule update --init --recursive --remote
 if [ $# -eq 0 ]; then
   echo "Installing all..."
   link_dev
+  link_linux_wayland
   link_linux_x11
   link_macos
   link_cli_tools
@@ -113,6 +125,9 @@ elif [[ condition ]]; then
     case "$1" in
       dev)
         link_dev
+        ;;
+      linux)
+        link_linux_wayland
         ;;
       linux-x)
         link_linux_x11
@@ -127,7 +142,7 @@ elif [[ condition ]]; then
         link_fonts
         ;;
       *)
-        echo "Usage: $0 [*|dev|linux|macos|cli|fonts]"
+        echo "Usage: $0 [*|dev|linux|linux-x|macos|cli|fonts]"
         ;;
     esac
     shift

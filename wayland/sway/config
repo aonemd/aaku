@@ -1,0 +1,291 @@
+# Default config for sway
+#
+# Copy this to ~/.config/sway/config and edit it to your liking.
+#
+# Read `man 5 sway` for a complete reference.
+
+## Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+set $left  h
+set $down  j
+set $up    k
+set $right l
+
+set $term alacritty
+set $browser firefox
+set $menu wofi
+set $lock_command $AAKU/wayland/bin/screen-lock.sh
+set $sys_menu_command $AAKU/wayland/bin/power-menu.sh
+
+
+## Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg $(find $HOME/Pictures/Wallpapers/. -type f | shuf -n 1) fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+
+## Idle configuration
+#
+# https://libredd.it/r9c7ja?sort=old
+exec swayidle -w \
+         timeout 300 'makoctl set-mode away' \
+         timeout 300 '$lock_command' \
+         timeout 600 'swaymsg "output * dpms off"' \
+         resume 'swaymsg "output * dpms on" && makoctl set-mode default' \
+         resume "makoctl set-mode default" \
+         before-sleep '$lock_command'
+#
+# This will lock your screen after 300 seconds of inactivity, then turn off
+# your displays after another 300 seconds, and turn your screens back on when
+# resumed. It will also lock your screen before your computer goes to sleep.
+
+
+## Input configuration
+#
+# You can get the names of your inputs by running (outside Tmux): swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+input * {
+    xkb_layout  "us,ar,tr"
+    xkb_options "grp:win_space_toggle"
+
+    tap              enabled
+    natural_scroll   enabled
+    middle_emulation enabled
+}
+
+
+## Startup
+#
+exec mako
+exec dropbox
+
+## Key bindings
+#
+# terminal
+bindsym $mod+t      exec $term
+bindsym $mod+Return exec $browser
+# launcher
+bindsym $mod+d exec $menu
+# sys/power menu
+bindsym $mod+Shift+e exec $sys_menu_command
+
+# reload configuration file
+bindsym $mod+Shift+c reload
+# kill focused window
+bindsym $mod+Shift+q kill
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+
+# Brightness controls
+bindsym XF86MonBrightnessUp   exec $AAKU/wayland/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec $AAKU/wayland/bin/brightness.sh down
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec $AAKU/wayland/bin/volume.sh up
+bindsym XF86AudioLowerVolume exec $AAKU/wayland/bin/volume.sh down
+bindsym XF86AudioMute        exec $AAKU/wayland/bin/volume.sh mute
+bindsym XF86AudioMicMute     exec $AAKU/wayland/bin/volume.sh mute-mic
+bindsym XF86AudioPlay        exec playerctl play-pause
+bindsym XF86AudioNext        exec playerctl next
+bindsym XF86AudioPrev        exec playerctl pre
+# Notitifications
+bindsym $mod+Period exec makoctl dismiss -a
+bindsym $mod+Comma  exec makoctl restore
+# Screen capture
+bindsym Print       exec grimshot save screen $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym Shift+Print exec grimshot save window $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+bindsym $mod+Print  exec grimshot save area $HOME/Pictures/screenshots/screenshot_`date +%Y-%m-%d_%H:%M:%S`.png
+
+
+## Window navigation
+#
+# https://git.sr.ht/~tsdh/swayr
+exec env RUST_BACKTRACE=1 RUST_LOG=swayr=debug swayrd > /tmp/swayrd.log 2>&1
+bindsym Alt+Tab exec env RUST_BACKTRACE=1 \
+    swayr next-window all-workspaces >> /tmp/swayr.log 2>&1
+bindsym Alt+Shift+Tab exec env RUST_BACKTRACE=1 \
+    swayr prev-window all-workspaces >> /tmp/swayr.log 2>&1
+
+# Move your focus around
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left   focus left
+bindsym $mod+Down   focus down
+bindsym $mod+Up     focus up
+bindsym $mod+Right  focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left   move left
+bindsym $mod+Shift+Down   move down
+bindsym $mod+Shift+Up     move up
+bindsym $mod+Shift+Right  move right
+
+## Workspace navigation:
+#
+set $next_or_new       swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (max_by(.num) | .num) as $maxOutput | (.[] | select(.focused == true) | .num) as $current | if $current >= 10 then 10 else $current + 1 end'
+set $previous_or_first swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (min_by(.num) | .num) as $minOutput | (.[] | select(.focused == true) | .num) as $current | if $current <= 1 then 1 else $current - 1 end'
+
+bindsym $mod+Next  exec swaymsg "workspace $($next_or_new)"
+bindsym $mod+Prior exec swaymsg "workspace $($previous_or_first)"
+bindsym $mod+n     exec swaymsg "workspace $($next_or_new)"
+bindsym $mod+p     exec swaymsg "workspace $($previous_or_first)"
+
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+
+# Move focused container to workspace
+bindsym $mod+Shift+Next  exec swaymsg "move container to workspace number $($next_or_new); workspace $($next_or_new)"
+bindsym $mod+Shift+Prior exec swaymsg "move container to workspace number $($previous_or_first); workspace $($previous_or_first)"
+bindsym $mod+Shift+n     exec swaymsg "move container to workspace number $($next_or_new); workspace $($next_or_new)"
+bindsym $mod+Shift+p     exec swaymsg "move container to workspace number $($previous_or_first); workspace $($previous_or_first)"
+
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+
+## Layouts
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+backslash split toggle
+
+# Make the current focus fullscreen
+bindsym F11 fullscreen
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+f floating toggle
+# Stick floating window on all workspaces
+bindsym $mod+Shift+s sticky toggle
+# Swap focus between the tiling area and the floating area
+# bindsym $mod+space focus mode_toggle
+bindsym $mod+f focus mode_toggle
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+
+## Scratchpad
+#
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+
+## Resizing containers
+#
+mode "resize" {
+    bindsym $left  resize shrink width 10px
+    bindsym $down  resize grow height 10px
+    bindsym $up    resize shrink height 10px
+    bindsym $right resize grow width 10px
+    bindsym Left   resize shrink width 10px
+    bindsym Down   resize grow height 10px
+    bindsym Up     resize shrink height 10px
+    bindsym Right  resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+## Status Bar
+#
+# Read `man 5 sway-bar` for more information about this section.
+# https://github.com/Alexays/Waybar
+bar {
+  swaybar_command waybar
+}
+
+
+## Theme
+#
+default_border pixel 7
+gaps inner 15
+gaps outer 0
+smart_borders on
+smart_gaps off
+# show popups during fullscreen only if they belong to the fullscreen window
+popup_during_fullscreen smart
+# maximum size for floating windows
+floating_maximum_size 1366 x 768
+
+# defining colors         border     bg         text       indicator  child_border
+client.focused        	 	#100f0e    #100f0e    #abb2bf    #373b41    #100f0e
+client.unfocused        	#1b1918    #1b1918    #abb2bf	   #282c34    #282c34
+client.focused_inactive 	#1b1918    #1b1918    #abb2bf    #282c34    #282c34
+client.urgent	          	#e06c75    #1b1918    #abb2bf    #e06c75    #e06c75
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Colloid-dark'
+    gsettings set $gnome-schema icon-theme 'WhiteSur'
+    gsettings set $gnome-schema cursor-theme 'Capitaine Cursors'
+    gsettings set $gnome-schema font-name 'Noto Sans Regular 11'
+    gsettings set org.gnome.desktop.wm.preferences button-layout '' # remove window buttons
+}
+
+
+## Application rules
+#
+# `swaymsg -t get_tree`
+for_window [class="Spotify"] floating enable
+for_window [class="Popcorn-Time"] floating enable
+for_window [class="Cmus"] floating enable
+for_window [app_id="Nautilus"] floating enable
+for_window [app_id="thunar"] floating enable
+for_window [class="KeePassXC"] floating enable
+for_window [class="zoom"] floating enable
+for_window [app_id="pavucontrol"] floating enable
+for_window [title="Customise Look and Feel"] floating enable
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
+for_window [app_id="firefox" title="Firefox – Sharing Indicator"] floating enable
+for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
+for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+
+include /etc/sway/config.d/*
