@@ -18,7 +18,12 @@ toggle_nvims() {
   nvim-ctrl "call v:lua.ToggleTheme('$theme')"
 }
 
+toggle_gtk() {
+  gsettings set org.gnome.desktop.interface gtk-theme "Colloid-$theme"
+}
+
 export TERM_COLOR_MODE="$theme"
 
 toggle_alacritty
 toggle_nvims
+toggle_gtk
