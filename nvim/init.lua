@@ -38,11 +38,17 @@ local options    = {
 
   termguicolors = true,
   background    = 'dark',
+
+  grepprg = "rg --vimgrep --smart-case",
 }
 
 for k, v in pairs(options) do
   vim.opt[k] = v
 end
+
+-- `:Cfilter pattern` to filter entires in copen
+-- more ideas https://gosukiwi.github.io/vim/2022/04/19/vim-advanced-search-and-replace.html
+vim.cmd [[packadd! cfilter]]
 
 require("keybindings")
 require("plugins")
