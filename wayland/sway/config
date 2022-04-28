@@ -38,11 +38,11 @@ output * bg $(find $HOME/Pictures/Wallpapers/. -type f | shuf -n 1) fill
 # https://libredd.it/r9c7ja?sort=old
 exec swayidle -w \
          timeout 300 'makoctl set-mode away' \
-         timeout 300 '$lock_command' \
+         timeout 300 $lock_command \
          timeout 600 'swaymsg "output * dpms off"' \
-         resume 'swaymsg "output * dpms on" && makoctl set-mode default' \
-         resume "makoctl set-mode default" \
-         before-sleep '$lock_command'
+         resume 'swaymsg "output * dpms on"; makoctl set-mode default' \
+         before-sleep 'playerctl pause' \
+         before-sleep $lock_command
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
