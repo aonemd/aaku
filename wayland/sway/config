@@ -274,7 +274,7 @@ exec_always {
 ## Application rules
 #
 # `swaymsg -t get_tree`
-for_window [class="Spotify"] floating enable
+for_window [class="Spotify"] floating enable, resize set 1000 1000
 for_window [class="Popcorn-Time"] floating enable
 for_window [class="Cmus"] floating enable
 for_window [app_id="Nautilus"] floating enable
