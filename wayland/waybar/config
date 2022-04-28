@@ -83,13 +83,13 @@
     },
     "custom/prayer": {
       "format": "  {}",
-      "exec": "exec $AAKU/wayland/bin/prayer.sh",
+      "exec": "exec ~/Workspace/aaku/wayland/bin/prayer.sh",
       "interval": 600
     },
     "custom/weather": {
       "format": "{}",
       /* "exec": "curl -q https://wttr.in/Amsterdam?format='%c+%t' 2>/dev/null", */
-      "exec": "exec $AAKU/wayland/bin/weather.sh",
+      "exec": "exec ~/Workspace/aaku/wayland/bin/weather.sh",
       "interval": 600
     },
     "sway/language": {
@@ -98,6 +98,6 @@
     "custom/power": {
       "format": "",
       "tooltip": false,
-      "on-click": "exec $AAKU/wayland/bin/power-menu.sh"
+      "on-click": "exec ~/Workspace/aaku/wayland/bin/power-menu.sh"
     }
 }

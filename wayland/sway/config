@@ -17,8 +17,8 @@ set $right l
 set $term alacritty
 set $browser firefox
 set $menu wofi
-set $lock_command $AAKU/wayland/bin/screen-lock.sh
-set $sys_menu_command $AAKU/wayland/bin/power-menu.sh
+set $lock_command ~/Workspace/aaku/wayland/bin/screen-lock.sh
+set $sys_menu_command ~/Workspace/aaku/wayland/bin/power-menu.sh
 
 
 ## Output configuration
@@ -90,13 +90,13 @@ bindsym $mod+Shift+q kill
 floating_modifier $mod normal
 
 # Brightness controls
-bindsym XF86MonBrightnessUp   exec $AAKU/wayland/bin/brightness.sh up
-bindsym XF86MonBrightnessDown exec $AAKU/wayland/bin/brightness.sh down
+bindsym XF86MonBrightnessUp   exec ~/Workspace/aaku/wayland/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec ~/Workspace/aaku/wayland/bin/brightness.sh down
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec $AAKU/wayland/bin/volume.sh up
-bindsym XF86AudioLowerVolume exec $AAKU/wayland/bin/volume.sh down
-bindsym XF86AudioMute        exec $AAKU/wayland/bin/volume.sh mute
-bindsym XF86AudioMicMute     exec $AAKU/wayland/bin/volume.sh mute-mic
+bindsym XF86AudioRaiseVolume exec ~/Workspace/aaku/wayland/bin/volume.sh up
+bindsym XF86AudioLowerVolume exec ~/Workspace/aaku/wayland/bin/volume.sh down
+bindsym XF86AudioMute        exec ~/Workspace/aaku/wayland/bin/volume.sh mute
+bindsym XF86AudioMicMute     exec ~/Workspace/aaku/wayland/bin/volume.sh mute-mic
 bindsym XF86AudioPlay        exec playerctl play-pause
 bindsym XF86AudioNext        exec playerctl next
 bindsym XF86AudioPrev        exec playerctl pre

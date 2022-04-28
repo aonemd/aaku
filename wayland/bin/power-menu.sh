@@ -1,6 +1,6 @@
 #!/bin/sh
 
-lock=$AAKU/wayland/bin/screen-lock.sh
+lock=~/Workspace/aaku/wayland/bin/screen-lock.sh
 
 case $(wofi -d -L 8 -l 3 -W 110 -x -105 -y 20 \
     << EOF | sed 's/^ *//'
