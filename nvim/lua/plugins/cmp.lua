@@ -10,23 +10,24 @@ local has_words_before = function()
   return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local mappings = {
-  ["<Down>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
-  ["<Up>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
-  ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
-  ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }), { "i", "c" }),
+local mappings = cmp.mapping.preset.insert({
+  ["<C-j>"]  = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+  ["<C-k>"]  = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
+  ['<Up>']   = cmp.mapping(cmp.mapping.select_prev_item(), { 'i', 'c' }),
+  ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item(), { 'i', 'c' }),
 
-  ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-  ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-  ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-  ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-  ["<C-e>"] = cmp.mapping {
+  ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+  ['<C-f>'] = cmp.mapping.scroll_docs(4),
+
+  ['<Enter>']   = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'i', 'c' }),
+  ['<C-Space>'] = cmp.mapping.complete(),
+  ["<C-y>"]     = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+  ["<C-e>"]     = cmp.mapping {
     i = cmp.mapping.abort(),
     c = cmp.mapping.close(),
   },
   -- Accept currently selected item. If none selected, `select` first item.
   -- Set `select` to `false` to only confirm explicitly selected items.
-  ["<CR>"] = cmp.mapping.confirm { select = true },
   ["<Tab>"] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_next_item()
@@ -55,7 +56,7 @@ local mappings = {
     "i",
     "s",
   }),
-}
+})
 
 cmp.setup {
   completion = { completeopt = "menu,menuone,noinsert" },
