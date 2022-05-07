@@ -19,7 +19,7 @@ local mappings = cmp.mapping.preset.insert({
   ['<C-b>'] = cmp.mapping.scroll_docs(-4),
   ['<C-f>'] = cmp.mapping.scroll_docs(4),
 
-  ['<Enter>']   = cmp.mapping(cmp.mapping.confirm({ select = true }), { 'i', 'c' }),
+  ["<CR>"]      = cmp.mapping.confirm { behavior = cmp.ConfirmBehavior.Replace, select = false, },
   ['<C-Space>'] = cmp.mapping.complete(),
   ["<C-y>"]     = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
   ["<C-e>"]     = cmp.mapping {
@@ -59,7 +59,7 @@ local mappings = cmp.mapping.preset.insert({
 })
 
 cmp.setup {
-  completion = { completeopt = "menu,menuone,noinsert" },
+  completion = { completeopt = "menu,menuone,noinsert", keyword_length = 2, },
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -84,10 +84,6 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
   },
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
-  },
   window = {
     completion = {
       border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
@@ -96,28 +92,30 @@ cmp.setup {
       border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
     },
   },
-  views = {
-    entries = 'native',
+  preselect = cmp.PreselectMode.None,
+  confirmation = {
+    get_commit_characters = function()
+      return {}
+    end,
   },
   experimental = {
-    ghost_text = false,
+    native_menu = false,
+    ghost_text  = false,
   },
 }
 
-cmp.setup.cmdline('/', {
-	mapping = mappings,
-  view = {
-    entries = {name = 'wildmenu', separator = '|' }
+cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = "buffer" },
   },
-	sources = {
-		{ name = "buffer", keyword_length = 2 },
-	},
 })
 
 cmp.setup.cmdline(":", {
-	mapping = mappings,
-	sources = {
-		{ name = "path", keyword_length = 2 },
-		{ name = "cmdline", keyword_length = 2, keyword_pattern = [=[[^[:blank:]\!]*]=] },
-	},
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = "path" },
+  }, {
+    { name = "cmdline" },
+  }),
 })
