@@ -86,10 +86,12 @@ cmp.setup {
   },
   window = {
     completion = {
-      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+      border = 'rounded',
+      winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
     },
     documentation = {
-      border = { "┌", "─", "┐", "│", "┘", "─", "└", "│" },
+      border = 'rounded',
+      winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
     },
   },
   preselect = cmp.PreselectMode.None,
