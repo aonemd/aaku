@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Toggle Theme
+Comment=Toggle system theme
+Exec=zsh -lc 'toggle-theme'
+Terminal=false
+Icon=settings
+Keywords=Settings
