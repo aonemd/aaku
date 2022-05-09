@@ -3,7 +3,22 @@
 # usage: source toggle-theme light
 #
 
-local theme="${1:-dark}"
+THEME_CONFIG_PATH=~/.config/system-theme
+
+read_system_theme() {
+  local current=$(cat $THEME_CONFIG_PATH 2>/dev/null)
+
+  if [[ $current == "dark" ]]; then
+    echo "light"
+  elif [[ $current == "light" ]]; then
+    echo "dark"
+  else
+    echo "dark"
+  fi
+}
+
+local from_system_theme=$(read_system_theme)
+local theme="${1:-$from_system_theme}"
 
 toggle_alacritty() {
   local config_path="$AAKU/alacritty/colors.yml"
@@ -27,3 +42,6 @@ export TERM_COLOR_MODE="$theme"
 toggle_alacritty
 toggle_nvims
 toggle_gtk
+
+# update theme config
+echo $theme > $THEME_CONFIG_PATH
