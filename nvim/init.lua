@@ -37,7 +37,6 @@ local options    = {
   -- smartindent = true,
 
   termguicolors = true,
-  background    = 'dark',
 
   grepprg = "rg --vimgrep --smart-case",
 }
@@ -54,9 +53,10 @@ require("keybindings")
 require("plugins")
 vim.cmd('source $HOME/.config/nvim/funks.vim')
 
-vim.cmd [[colorscheme kuroi]]
 require("statusline")
+
 require("funks")
+SetTheme()
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
 require("utils").create_augroup({

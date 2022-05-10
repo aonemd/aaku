@@ -11,6 +11,24 @@ function M.makeScratch()
   vim.bo[0].swapfile=false
 end
 
+function _G.SetTheme()
+  local filehandle    = io.open(os.getenv("HOME") .. "/.config/system-theme", "r")
+  local current_theme = filehandle:read()
+  filehandle:close()
+
+  if current_theme == "dark" then
+    vim.cmd([[
+    set background=dark
+    colorscheme kuroi
+    ]])
+  else
+    vim.cmd([[
+    set background=light
+    colorscheme quietlight
+    ]])
+  end
+end
+
 function _G.ToggleTheme(mode)
   local _toggle_dark = function ()
     vim.cmd([[
