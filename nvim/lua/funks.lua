@@ -27,6 +27,10 @@ function _G.SetTheme()
     colorscheme quietlight
     ]])
   end
+
+  -- reload statusline
+  package.loaded['statusline'] = nil
+  require("statusline")
 end
 
 function _G.ToggleTheme(mode)
