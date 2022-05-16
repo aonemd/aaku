@@ -50,4 +50,4 @@ schemes:
      magenta: '#6666ea'
      cyan:    '#00ad9c'
      white:   '#d3d3d3'
-colors: *dark
+colors: *light

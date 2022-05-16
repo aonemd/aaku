@@ -51,8 +51,8 @@ link_dev() {
 link_linux_shared() {
   echo "Installing Linux shared config..."
 
-  link_config dunst   .config/dunst
-  link_config zathura .config/zathura
+  link_config linux_shared/dunst   .config/dunst
+  link_config linux_shared/zathura .config/zathura
 }
 
 link_linux_wayland() {
