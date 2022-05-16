@@ -62,3 +62,10 @@ SetTheme()
 require("utils").create_augroup({
   {'TextYankPost', '*', 'silent! lua vim.highlight.on_yank()'}
 }, 'YankHighlight')
+
+vim.cmd [[
+  augroup Markdown
+    autocmd!
+    autocmd FileType markdown set wrap linebreak textwidth=80
+  augroup END
+]]
