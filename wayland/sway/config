@@ -64,6 +64,7 @@ input * {
 
 ## Startup
 #
+exec_always makoctl set-mode default
 exec mako
 exec dropbox
 # Screen sharing
