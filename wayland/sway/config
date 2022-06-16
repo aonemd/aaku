@@ -279,16 +279,23 @@ exec_always {
 # `swaymsg -t get_tree`
 for_window [class="Spotify"] floating enable, resize set 1000 1000
 for_window [class="Popcorn-Time"] floating enable
+for_window [class="vlc"] floating enable
 for_window [class="Cmus"] floating enable
 for_window [app_id="Nautilus"] floating enable
 for_window [app_id="thunar"] floating enable
+for_window [app_id="eog"] floating enable
 for_window [class="KeePassXC"] floating enable
-for_window [class="zoom"] floating enable
+for_window [class="KeeWeb"] floating enable
 for_window [app_id="pavucontrol"] floating enable
 for_window [title="Customise Look and Feel"] floating enable
 for_window [app_id="firefox" title="Picture-in-Picture"] floating enable
 for_window [app_id="firefox" title="Firefox – Sharing Indicator"] floating enable
 for_window [app_id="firefox" title="Pushbullet – Mozilla Firefox"] floating enable
 for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+for_window [app_id="zoom"] floating enable
+for_window [app_id="zoom" title="Choose ONE of the audio conference options"] floating enable
+for_window [app_id="zoom" title="zoom"] floating enable
+for_window [app_id="zoom" title="Zoom Meeting"] floating disable
+for_window [app_id="zoom" title="Zoom - Free Account"] floating disable
 
 include /etc/sway/config.d/*
