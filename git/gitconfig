@@ -38,6 +38,7 @@
   co    = checkout
   m     = merge
   rb    = rebase
+  bl    = blame -w -n -M -C
   l     = log --topo-order --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B'
   lp    = log --topo-order --patch --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B'
   lo    = log --topo-order --decorate --pretty=oneline --abbrev-commit
