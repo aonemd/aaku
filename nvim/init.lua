@@ -66,7 +66,7 @@ require("utils").create_augroup({
 vim.cmd [[
   augroup Markdown
     autocmd!
-    autocmd FileType markdown set wrap linebreak textwidth=80
+    autocmd FileType markdown set wrap linebreak
   augroup END
 ]]
 
