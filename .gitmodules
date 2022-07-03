@@ -13,3 +13,7 @@
 	url = git@gitlab.com:aonemd/slock.git
 	branch = master
   ignore = all
+[submodule "newsboat"]
+	path = newsboat
+	url = git@gitlab.com:aonemd/newsboat.git
+	branch = master
