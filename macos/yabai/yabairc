@@ -3,8 +3,6 @@
 # global settings
 # focus window that your mouse hovers on (disabled due to right click bugs)
 yabai -m config focus_follows_mouse          off
-# move mouse to focused window
-# yabai -m config mouse_follows_focus          on
 yabai -m config window_placement             second_child
 # floating windows always stay on top
 yabai -m config window_topmost               on
@@ -23,11 +21,11 @@ yabai -m config mouse_drop_action            swap
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  5
-yabai -m config bottom_padding               5
-yabai -m config left_padding                 5
-yabai -m config right_padding                5
-yabai -m config window_gap                   06
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               10
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
+yabai -m config window_gap                   15
 
 # SIP Required
 # prevent border from being under the active window
