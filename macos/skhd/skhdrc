@@ -1,4 +1,4 @@
-alt - return : "${HOME}"/.config/yabai/open_term.sh
+alt - return : alacritty
 
 ## Windows
 #
