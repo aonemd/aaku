@@ -103,3 +103,7 @@ tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
 tnoremap <Esc> <C-\><C-n>
 tnoremap :qq <C-\><C-n>:q!<CR>
 ]]
+
+require("hotpot")
+local _neato = require('is_neat')
+-- neato("fennel") -- => "fennel is neat!"

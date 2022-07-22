@@ -32,6 +32,8 @@ require('packer').startup(function()
   use "tamago324/nlsp-settings.nvim"      -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
 
+  use "rktjmp/hotpot.nvim"
+
   use 'lambdalisue/gina.vim'
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'numToStr/Comment.nvim',
