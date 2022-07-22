@@ -23,6 +23,8 @@ include $HOME/.cargo/env
 # Ruby
 include /usr/share/chruby/chruby.sh
 include /usr/share/chruby/auto.sh
+include /usr/local/opt/chruby/share/chruby/chruby.sh
+include /usr/local/opt/chruby/share/chruby/auto.sh
 
 # Go
 export GOPATH="$WK/go"
