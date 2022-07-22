@@ -17,3 +17,4 @@
 	path = newsboat
 	url = git@gitlab.com:aonemd/newsboat.git
 	branch = master
+  ignore = all
