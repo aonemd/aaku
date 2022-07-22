@@ -118,14 +118,11 @@ link_cli_tools() {
 link_fonts() {
   echo "Installing Fonts..."
 
-  [ -d $HOME/Workspace/fonts/ ] && exit
-  git clone https://github.com/powerline/fonts.git $HOME/Workspace/fonts/
-  pushd $HOME/Workspace/fonts && ./install.sh && popd
+  [ -d $HOME/Workspace/fonts/ ] || (git clone https://github.com/powerline/fonts.git $HOME/Workspace/fonts/ && pushd $HOME/Workspace/fonts && ./install.sh && popd)
 
-  git clone https://github.com/sebastiencs/icons-in-terminal.git $HOME/Workspace/fonts/icons-in-terminal
-  pushd $HOME/Workspace/fonts/icons-in-terminal && ./install.sh && popd
+  [ -d $HOME/Workspace/fonts/icons-in-terminal/ ] || (git clone https://github.com/sebastiencs/icons-in-terminal.git $HOME/Workspace/fonts/icons-in-terminal && pushd $HOME/Workspace/fonts/icons-in-terminal && ./install.sh && popd)
 
-  [ -d $HOME/Workspace/icons/ ] || git clone https://github.com/dhanishgajjar/terminal-icons $HOME/Workspace/icons/terminal-icons
+  [ -d $HOME/Workspace/icons/ ] || (git clone https://github.com/dhanishgajjar/terminal-icons $HOME/Workspace/icons/terminal-icons)
 }
 
 echo "Creating Workspace folder..."
