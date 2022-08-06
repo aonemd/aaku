@@ -1,5 +1,5 @@
-alt - return : alacritty
-alt - t      : alacritty
+alt - return : open -a alacritty
+alt - t      : open -a alacritty
 
 ## Windows
 #
