@@ -46,6 +46,7 @@ require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
   use 'tpope/vim-eunuch'
   use 'vim-crystal/vim-crystal'
+  use 'hashivim/vim-terraform'
 
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
