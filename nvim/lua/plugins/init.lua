@@ -43,6 +43,15 @@ require('packer').startup(function()
   }
   use 'machakann/vim-sandwich'
   use 'junegunn/vim-easy-align'
+  use({
+    "Pocco81/true-zen.nvim",
+    config = function()
+      require("true-zen").setup {
+        -- your config goes here
+        -- or just leave it empty :)
+      }
+    end,
+  })
   use 'norcalli/nvim-colorizer.lua'
   use 'tpope/vim-eunuch'
   use 'vim-crystal/vim-crystal'
