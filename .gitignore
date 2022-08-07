@@ -13,3 +13,6 @@ nvim/plugin
 tmux/tmux/
 
 cmus/
+
+# Ignore `toggle-theme` changes
+alacritty/colors.yml
