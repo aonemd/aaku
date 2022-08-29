@@ -1,9 +1,9 @@
 vim.api.nvim_exec(
 [[
-  hi StatusLineModeNormalColor   guibg=#df7f9e
+  hi StatusLineModeNormalColor   guibg=NONE
   hi StatusLineModeInsertColor   guibg=#7fbfff
   hi StatusLineModeVisualColor   guibg=#7fbf7f
-  hi StatusLineModeReplaceColor  guibg=#9f9fff
+  hi StatusLineModeReplaceColor  guibg=#df7f9e
   hi StatusLineModeTerminalColor guibg=NONE
   hi StatusLineModeDefaultColor  guibg=NONE ctermbg=NONE
 
