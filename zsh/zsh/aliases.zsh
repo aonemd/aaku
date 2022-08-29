@@ -45,7 +45,7 @@ alias k='kubectl'
 # Arch Linux
 alias journalctl='sudo journalctl'
 alias pacman='sudo pacman'
-alias paci='trizen -S'
+alias paci='trizen --noedit --noconfirm -S'
 alias pacr='trizen -Rcsn'
 alias pacu='trizen --noedit --noconfirm -Syu'
 alias pacs='trizen -Ss'
