@@ -25,6 +25,8 @@ set $sys_menu_command ~/Workspace/aaku/wayland/bin/power-menu.sh
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $(find $HOME/Pictures/Wallpapers/. -type f | shuf -n 1) fill
+
+output DP-1 mode 3840x2160@59.997hz scale 1.4
 #
 # Example configuration:
 #
