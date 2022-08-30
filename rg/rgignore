@@ -3,7 +3,7 @@
 .svn/
 tmp/
 log/
-bin/
+out/
 dist/
 node_modules/
 bower_components/
