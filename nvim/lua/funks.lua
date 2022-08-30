@@ -19,7 +19,8 @@ function _G.SetTheme()
   if current_theme == "dark" then
     vim.cmd([[
     set background=dark
-    colorscheme kuroi
+    "colorscheme kuroi
+    colorscheme oxocarbon-lua
     ]])
   else
     vim.cmd([[
@@ -37,7 +38,8 @@ function _G.ToggleTheme(mode)
   local _toggle_dark = function ()
     vim.cmd([[
     set background=dark
-    colorscheme kuroi
+    "colorscheme kuroi
+    colorscheme oxocarbon-lua
     ]])
   end
 
