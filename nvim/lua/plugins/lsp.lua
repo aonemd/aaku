@@ -59,8 +59,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gcf', vim.lsp.buf.formatting, bufopts)
 end
 
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting' ]]
-
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
