@@ -274,6 +274,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Noto Sans Regular 11'
     gsettings set org.gnome.desktop.wm.preferences button-layout '' # remove window buttons
 }
+exec_always ~/Workspace/aaku/bin/toggle-theme keep
 
 
 ## Application rules

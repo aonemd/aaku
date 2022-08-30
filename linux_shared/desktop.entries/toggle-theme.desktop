@@ -2,7 +2,7 @@
 Type=Application
 Name=Toggle Theme
 Comment=Toggle system theme
-Exec=zsh -lc 'toggle-theme'
+Exec=zsh -lc 'toggle-theme toggle'
 Terminal=false
 Icon=settings
 Keywords=Settings

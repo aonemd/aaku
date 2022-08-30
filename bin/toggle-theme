@@ -1,24 +1,28 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
-# usage: source toggle-theme light
+# usage: source toggle-theme (toggle $theme|keep)
 #
 
 THEME_CONFIG_PATH=~/.config/system-theme
 
 read_system_theme() {
   local current=$(cat $THEME_CONFIG_PATH 2>/dev/null)
+  echo $current
+}
 
-  if [[ $current == "dark" ]]; then
+toggle() {
+  if [[ $1 == "dark" ]]; then
     echo "light"
-  elif [[ $current == "light" ]]; then
+  elif [[ $1 == "light" ]]; then
     echo "dark"
   else
     echo "dark"
   fi
 }
 
-local from_system_theme=$(read_system_theme)
-local theme="${1:-$from_system_theme}"
+keep() {
+  echo $1
+}
 
 toggle_alacritty() {
   local config_path="$AAKU/alacritty/colors.yml"
@@ -37,6 +41,18 @@ toggle_gtk() {
   gsettings set org.gnome.desktop.interface gtk-theme "Colloid-$theme"
 }
 
+case "$1" in
+  toggle)
+    theme=$(toggle ${2:-$(read_system_theme)})
+    ;;
+  keep)
+    theme=$(keep $(read_system_theme))
+    ;;
+  *)
+    echo "Usage: $0 {toggle $theme|keep}"
+    exit 2
+esac
+
 export TERM_COLOR_MODE="$theme"
 
 toggle_alacritty
@@ -45,3 +61,5 @@ toggle_gtk
 
 # update theme config
 echo $theme > $THEME_CONFIG_PATH
+
+exit 0
