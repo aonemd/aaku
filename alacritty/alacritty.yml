@@ -760,12 +760,12 @@ key_bindings:
   #- { key: Return, mods: Shift,   mode: Search|~Vi, action: SearchFocusPrevious   }
 
   # (Windows, Linux, and BSD only)
-  - { key: V,              mods: Alt, mode: ~Vi,        action: Paste            }
-  - { key: C,              mods: Alt,                   action: Copy             }
-  - { key: F,              mods: Alt, mode: ~Search,    action: SearchForward    }
-  - { key: B,              mods: Alt, mode: ~Search,    action: SearchBackward   }
-  - { key: C,              mods: Alt, mode: Vi|~Search, action: ClearSelection   }
-  - { key: Y,              mods: Alt,                           action: PasteSelection   }
+  - { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
+  - { key: C,              mods: Control|Shift,                   action: Copy             }
+  - { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward    }
+  - { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
+  - { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
+  - { key: Y,              mods: Control|Shift,                   action: PasteSelection   }
   #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
   - { key: Key0,           mods: Alt,                         action: ResetFontSize    }
   - { key: Equals,         mods: Alt,                         action: IncreaseFontSize }
