@@ -104,9 +104,14 @@ cmp.setup {
   },
 }
 
-cmp.setup.cmdline("/", {
-  mapping = cmp.mapping.preset.cmdline(),
+require'cmp'.setup.cmdline('/', {
   sources = {
-    { name = "buffer" },
-  },
+    { name = 'buffer' }
+  }
+})
+
+require'cmp'.setup.cmdline(':', {
+  sources = {
+    { name = 'cmdline' }
+  }
 })
