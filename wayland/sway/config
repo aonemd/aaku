@@ -15,7 +15,8 @@ set $up    k
 set $right l
 
 set $primary_display  eDP-1
-set $external_display DP-1
+set $external_display_1 DP-1
+set $external_display_2 DP-2
 
 set $term alacritty
 set $browser firefox
@@ -31,7 +32,8 @@ set $sys_menu_command ~/Workspace/aaku/wayland/bin/power-menu.sh
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg $(find $HOME/Pictures/Wallpapers/. -type f | shuf -n 1) fill
 
-output $external_display mode 3840x2160@59.997hz scale 1.4
+output $external_display_1 mode 3840x2160@59.997hz scale 1.4
+output $external_display_2 mode 3840x2160@59.997hz scale 1.4
 
 bindsym $mod+m output $primary_display toggle
 
