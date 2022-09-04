@@ -5,7 +5,7 @@ include () {
 }
 
 zprof() {
-  source ~/.zshrc; time zsh -i -c exit
+  time zsh -i -c exit
 }
 
 export WK="$HOME/Workspace"
