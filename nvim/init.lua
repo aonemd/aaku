@@ -35,6 +35,7 @@ local options    = {
   softtabstop = 2,
   smartcase   = true,
   -- smartindent = true,
+  -- autoindent  = true,
 
   termguicolors = true,
 
