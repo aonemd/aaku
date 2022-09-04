@@ -1,7 +1,11 @@
 # sourced in interactive shell
 
 include () {
-  [[ -f "$1" ]] && source "$1"
+  [[ -f "$1" ]] && source "$1" "${@: 2}"
+}
+
+zprof() {
+  source ~/.zshrc; time zsh -i -c exit
 }
 
 export WK="$HOME/Workspace"
@@ -26,15 +30,20 @@ include /usr/share/chruby/auto.sh
 include /usr/local/opt/chruby/share/chruby/chruby.sh
 include /usr/local/opt/chruby/share/chruby/auto.sh
 
-# Go
+# # Go
 export GOPATH="$WK/go"
-export PATH=$PATH:$(go env GOROOT)/bin:$(go env GOPATH)/bin
+export PATH=$PATH:$GOPATH/bin
 
-# Javascript
-export PATH="$PATH:$HOME/.yarn/bin"
+# # Javascript
 export NVM_DIR="$HOME/.nvm"
-include $NVM_DIR/nvm.sh --no-use
-export PATH=~/.nvm/versions/node/v14.15.4/bin:$PATH
+export PATH=$NVM_DIR/versions/node/v16.17.0/bin:$PATH
+export PATH="$PATH:$HOME/.yarn/bin"
+nvm() {
+  unset -f nvm
+  include $NVM_DIR/nvm.sh --no-use
+  nvm $@
+}
+
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
@@ -42,11 +51,14 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 include ~/.fzf.zsh
 
 # K8S
-source <(kubectl completion zsh 2>/dev/null)
+kubectl() {
+  unset -f kubectl
+  source <(kubectl completion zsh 2>/dev/null)
+  kubectl $@
+}
 
 # Android
 export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
-# export PATH="$ANDROID_HOME/emulator:$PATH"
