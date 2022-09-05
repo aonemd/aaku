@@ -41,6 +41,16 @@ toggle_gtk() {
   gsettings set org.gnome.desktop.interface gtk-theme "Colloid-$theme"
 }
 
+toggle_macos() {
+  if [[ $theme == "dark" ]]; then
+    local set_dark="true"
+  else
+    local set_dark="false"
+  fi
+
+  osascript -l JavaScript -e "Application('System Events').appearancePreferences.darkMode = $set_dark"
+}
+
 case "$1" in
   toggle)
     theme=$(toggle ${2:-$(read_system_theme)})
@@ -55,9 +65,28 @@ esac
 
 export TERM_COLOR_MODE="$theme"
 
-toggle_alacritty
-toggle_nvims
-toggle_gtk
+unameOut="$(uname -s)"
+case "${unameOut}" in
+  Linux*)
+    toggle_alacritty
+    toggle_nvims
+    toggle_gtk
+    ;;
+  Darwin*)
+    toggle_alacritty
+    toggle_nvims
+    toggle_macos
+    ;;
+  CYGWIN*)
+    echo "Windows not supported, yet!"
+    ;;
+  MINGW*)
+    echo "Windows not supported, yet!"
+    ;;
+  *)
+    echo "Unknow OS:${unameOut}"
+    ;;
+esac
 
 # update theme config
 echo $theme > $THEME_CONFIG_PATH
