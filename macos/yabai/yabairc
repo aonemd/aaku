@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# load scriptting adittion
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
 # global settings
 # focus window that your mouse hovers on (disabled due to right click bugs)
 yabai -m config focus_follows_mouse          off
@@ -47,3 +51,4 @@ yabai -m rule --add app="zoom.us" manage=off
 yabai -m rule --add app="^.*VPN.*$" manage=off
 yabai -m rule --add app="KeeWeb" manage=off
 yabai -m rule --add app="^.*Docker.*$" manage=off
+yabai -m rule --add app="^.*VLC.*$" manage=off
