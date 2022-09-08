@@ -41,3 +41,7 @@
 - chruby ruby-install
 - go go-tools
 - docker docker-compose && systemctl enable docker && sudo usermod -aG docker ${USER}
+
+- https://github.com/dandavison/delta
+- https://cli.github.com/
+- https://github.com/chmln/nvim-ctrl
