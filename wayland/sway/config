@@ -302,5 +302,6 @@ for_window [app_id="zoom" title="Choose ONE of the audio conference options"] fl
 for_window [app_id="zoom" title="zoom"] floating enable
 for_window [app_id="zoom" title="Zoom Meeting"] floating disable
 for_window [app_id="zoom" title="Zoom - Free Account"] floating disable
+for_window [app_id="blueman-manager"] floating enable
 
 include /etc/sway/config.d/*
