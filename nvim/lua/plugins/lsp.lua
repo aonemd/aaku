@@ -1,5 +1,6 @@
 local lsp_installer = require("nvim-lsp-installer")
-local lspconfig = require("lspconfig")
+local lspconfig     = require("lspconfig")
+local root_pattern  = lspconfig.util.root_pattern
 
 -- 1. Set up nvim-lsp-installer first!
 lsp_installer.setup {}
@@ -71,9 +72,17 @@ local lsp_flags = {
 
 -- 3. Loop through all of the installed servers and set it up via lspconfig
 for _, server in ipairs(lsp_installer.get_installed_servers()) do
-  lspconfig[server.name].setup {
+  local config = {
     on_attach    = on_attach,
     capabilities = capabilities,
     flags        = lsp_flags,
   }
+
+  -- Java Java Javaa .. Java Java Javaa
+  if server.name == 'jdtls'
+  then
+    config["root_dir"] = root_pattern(".git")
+  end
+
+  lspconfig[server.name].setup(config)
 end
