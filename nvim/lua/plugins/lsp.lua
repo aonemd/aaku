@@ -3,7 +3,9 @@ local lspconfig     = require("lspconfig")
 local root_pattern  = lspconfig.util.root_pattern
 
 -- 1. Set up nvim-lsp-installer first!
-lsp_installer.setup {}
+lsp_installer.setup({
+  ensure_installed = { "clangd", "rust_analyzer", "jdtls", "sumneko_lua", "tsserver", "solargraph", },
+})
 
 -- 2. (optional) Override the default configuration to be applied to all servers.
 lspconfig.util.default_config = vim.tbl_extend(
