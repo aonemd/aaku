@@ -260,7 +260,7 @@ smart_gaps off
 # show popups during fullscreen only if they belong to the fullscreen window
 popup_during_fullscreen smart
 # maximum size for floating windows
-floating_maximum_size 1366 x 768
+floating_maximum_size 1366 x 1080
 
 # defining colors         border     bg         text       indicator  child_border
 client.focused        	 	#100f0e    #100f0e    #abb2bf    #373b41    #100f0e
