@@ -57,6 +57,7 @@ require('packer').startup(function()
   use 'tpope/vim-eunuch'
   use 'vim-crystal/vim-crystal'
   use 'hashivim/vim-terraform'
+  use 'udalov/kotlin-vim'
 
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'

@@ -4,7 +4,7 @@ local root_pattern  = lspconfig.util.root_pattern
 
 -- 1. Set up nvim-lsp-installer first!
 lsp_installer.setup({
-  ensure_installed = { "clangd", "rust_analyzer", "jdtls", "sumneko_lua", "tsserver", "solargraph", },
+  ensure_installed = { "clangd", "rust_analyzer", "jdtls", "kotlin_language_server", "sumneko_lua", "tsserver", "solargraph", },
 })
 
 -- 2. (optional) Override the default configuration to be applied to all servers.
@@ -64,7 +64,7 @@ end
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 local lsp_flags = {
@@ -82,6 +82,11 @@ for _, server in ipairs(lsp_installer.get_installed_servers()) do
 
   -- Java Java Javaa .. Java Java Javaa
   if server.name == 'jdtls'
+  then
+    config["root_dir"] = root_pattern(".git")
+  end
+
+  if server.name == 'kotlin_language_server'
   then
     config["root_dir"] = root_pattern(".git")
   end
