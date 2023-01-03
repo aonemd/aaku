@@ -36,7 +36,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # # Javascript
 export NVM_DIR="$HOME/.nvm"
-export PATH=$NVM_DIR/versions/node/v16.17.0/bin:$PATH
+export PATH=$NVM_DIR/versions/node/v18.12.1/bin:$PATH
 export PATH="$PATH:$HOME/.yarn/bin"
 nvm() {
   unset -f nvm
