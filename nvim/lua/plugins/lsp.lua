@@ -59,7 +59,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', 'gsh', vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set('n', 'gcr', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', 'gca', vim.lsp.buf.code_action, bufopts)
-  vim.keymap.set('n', 'gcf', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set('n', 'gcf', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- Add additional capabilities supported by nvim-cmp
