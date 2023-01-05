@@ -58,6 +58,12 @@ require('packer').startup(function()
   use 'vim-crystal/vim-crystal'
   use 'hashivim/vim-terraform'
   use 'udalov/kotlin-vim'
+  use({
+    'windwp/nvim-ts-autotag',
+    config = function ()
+      require('nvim-ts-autotag').setup()
+    end
+  })
 
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
