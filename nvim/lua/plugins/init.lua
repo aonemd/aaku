@@ -73,11 +73,13 @@ end)
 luasnip = require 'luasnip'
 require("plugins.cmp")
 require("plugins.lsp")
+require("plugins.null-ls")
 require("plugins.treesitter")
 require("plugins.fzf")
 require("plugins.gina")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
+require("plugins.prettier")
 
 require('Comment').setup()
 require'colorizer'.setup()
