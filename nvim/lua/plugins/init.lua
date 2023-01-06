@@ -35,7 +35,13 @@ require('packer').startup(function()
 
   use "rktjmp/hotpot.nvim"
 
-  use 'lambdalisue/gina.vim'
+  -- use 'lambdalisue/gina.vim'
+  use({
+    'dinhhuy258/git.nvim',
+    config = function()
+      require('git').setup()
+    end
+  })
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
   use { 'numToStr/Comment.nvim',
     config = function()
@@ -64,6 +70,7 @@ require('packer').startup(function()
       require('nvim-ts-autotag').setup()
     end
   })
+  use 'MunifTanjim/prettier.nvim'
 
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
@@ -76,7 +83,7 @@ require("plugins.lsp")
 require("plugins.null-ls")
 require("plugins.treesitter")
 require("plugins.fzf")
-require("plugins.gina")
+-- require("plugins.gina")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
 require("plugins.prettier")
