@@ -36,11 +36,17 @@ require('packer').startup(function()
 
   use "rktjmp/hotpot.nvim"
 
-  -- use 'lambdalisue/gina.vim'
   use({
     'dinhhuy258/git.nvim',
     config = function()
-      require('git').setup()
+      require('git').setup({
+        keymaps = {
+          -- Open blame window
+          blame = "<Leader>gb",
+          -- Open file/folder in git repository
+          browse = "<Leader>go",
+        }
+      })
     end
   })
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
@@ -84,7 +90,6 @@ require("plugins.lsp")
 require("plugins.null-ls")
 require("plugins.treesitter")
 require("plugins.fzf")
--- require("plugins.gina")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
 require("plugins.prettier")
