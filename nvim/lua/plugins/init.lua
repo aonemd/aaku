@@ -29,7 +29,8 @@ require('packer').startup(function()
 
   -- LSP
   use "neovim/nvim-lspconfig"             -- enable LSP
-  use "williamboman/nvim-lsp-installer"   -- simple to use language server installer
+  use  "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
   use "tamago324/nlsp-settings.nvim"      -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
 
