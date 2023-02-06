@@ -4,7 +4,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require("utils").create_augroup({
-  {'BufWritePost */lua/plugins/init.lua source <afile> | PackerSync'}
+  { 'BufWritePost */lua/plugins/init.lua source <afile> | PackerSync' }
 }, 'Packer')
 
 local use = require('packer').use
@@ -73,7 +73,7 @@ require('packer').startup(function()
   use 'udalov/kotlin-vim'
   use({
     'windwp/nvim-ts-autotag',
-    config = function ()
+    config = function()
       require('nvim-ts-autotag').setup()
     end
   })
@@ -95,4 +95,4 @@ require("plugins.vim-easy-aline")
 require("plugins.prettier")
 
 require('Comment').setup()
-require'colorizer'.setup()
+require 'colorizer'.setup()
