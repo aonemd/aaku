@@ -32,6 +32,18 @@ vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', 'gcq', vim.diagnostic.setloclist, opts)
 
+local sign = function(opts)
+  vim.fn.sign_define(opts.name, {
+    texthl = opts.name,
+    text = opts.text,
+    numhl = ''
+  })
+end
+sign({ name = 'DiagnosticSignError', text = '✘' })
+sign({ name = 'DiagnosticSignWarn', text = '▲' })
+sign({ name = 'DiagnosticSignHint', text = '⚑' })
+sign({ name = 'DiagnosticSignInfo', text = '' })
+
 vim.diagnostic.config({
   virtual_text     = false,
   signs            = true,
