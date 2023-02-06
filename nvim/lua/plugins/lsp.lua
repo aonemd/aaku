@@ -63,12 +63,12 @@ vim.diagnostic.config({
 
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
   vim.lsp.handlers.hover,
-  {border = 'rounded'}
+  { border = 'rounded' }
 )
 
 vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
   vim.lsp.handlers.signature_help,
-  {border = 'rounded'}
+  { border = 'rounded' }
 )
 
 -- Use an on_attach function to only map the following keys
@@ -106,11 +106,14 @@ local on_attach = function(client, bufnr)
 end
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+local capabilities = vim.tbl_deep_extend(
+  'force',
+  lspconfig.util.default_config.capabilities,
+  require('cmp_nvim_lsp').default_capabilities()
+)
 
 require("mason-lspconfig").setup_handlers {
-  function (server_name)
+  function(server_name)
     local options = {
       on_attach = on_attach,
       capabilities = capabilities,
