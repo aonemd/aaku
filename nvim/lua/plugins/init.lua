@@ -31,7 +31,6 @@ require('packer').startup(function()
   use "neovim/nvim-lspconfig"             -- enable LSP
   use  "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use "tamago324/nlsp-settings.nvim"      -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
 
   use "rktjmp/hotpot.nvim"
@@ -68,21 +67,11 @@ require('packer').startup(function()
   })
   use 'norcalli/nvim-colorizer.lua'
   use 'tpope/vim-eunuch'
-  use 'vim-crystal/vim-crystal'
-  use 'hashivim/vim-terraform'
-  use 'udalov/kotlin-vim'
-  use({
-    'windwp/nvim-ts-autotag',
-    config = function()
-      require('nvim-ts-autotag').setup()
-    end
-  })
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
   use 'B4mbus/oxocarbon-lua.nvim'
 end)
 
-luasnip = require 'luasnip'
 require("plugins.cmp")
 require("plugins.lsp")
 require("plugins.null-ls")
