@@ -77,8 +77,6 @@ require('packer').startup(function()
       require('nvim-ts-autotag').setup()
     end
   })
-  use 'MunifTanjim/prettier.nvim'
-
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
   use 'B4mbus/oxocarbon-lua.nvim'
@@ -92,7 +90,6 @@ require("plugins.treesitter")
 require("plugins.fzf")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
-require("plugins.prettier")
 
 require('Comment').setup()
 require 'colorizer'.setup()
