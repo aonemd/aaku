@@ -13,7 +13,6 @@ mason_lspconfig.setup({
     "gopls",
     "jdtls",
     "kotlin_language_server",
-    "sumneko_lua",
     "tsserver",
     "jsonls",
     "marksman",
