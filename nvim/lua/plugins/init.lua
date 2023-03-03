@@ -66,7 +66,12 @@ require('packer').startup(function()
     end,
   })
   use 'norcalli/nvim-colorizer.lua'
-  use 'tpope/vim-eunuch'
+  use { "chrisgrieser/nvim-genghis", requires = {
+		"stevearc/dressing.nvim",
+		"hrsh7th/nvim-cmp",
+		"hrsh7th/cmp-omni",
+    },
+  }
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
   use 'B4mbus/oxocarbon-lua.nvim'

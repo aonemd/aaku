@@ -116,3 +116,7 @@ require'cmp'.setup.cmdline(':', {
     { name = 'cmdline' }
   }
 })
+
+require("cmp").setup.filetype("DressingInput", {
+	sources = cmp.config.sources { {name = "omni"} },
+})
