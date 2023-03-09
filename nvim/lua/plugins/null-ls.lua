@@ -23,6 +23,7 @@ null_ls.setup {
     null_ls.builtins.diagnostics.eslint_d.with({
       diagnostics_format = '#{m}'
     }),
+    null_ls.builtins.code_actions.gitsigns,
   },
   on_attach = function(client, bufnr)
     -- if client.supports_method("textDocument/formatting") then
