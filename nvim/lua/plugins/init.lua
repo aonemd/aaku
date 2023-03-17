@@ -35,6 +35,8 @@ require('packer').startup(function()
 
   use "rktjmp/hotpot.nvim"
 
+  use { 'dpayne/CodeGPT.nvim', requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' } }
+
   use({
     'dinhhuy258/git.nvim',
     config = function()
