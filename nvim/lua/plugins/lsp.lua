@@ -114,7 +114,7 @@ require("mason-lspconfig").setup_handlers {
     }
 
     if server_name == 'jdtls' or server_name == 'kotlin_language_server' then
-      options.root_dir = root_pattern(".git")
+      options.root_dir = function() return vim.fs.dirname(vim.fs.find({ '.gradle', '.gradlew', '.gitignore', 'mvnw', 'build.grade.kts' }, { upward = true })[1]) .. "\\" end
     end
 
     if server_name == 'tsserver' then

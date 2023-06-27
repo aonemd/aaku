@@ -77,6 +77,7 @@ require('packer').startup(function()
   use 'aonemd/kuroi.vim'
   use 'aonemd/quietlight.vim'
   use 'B4mbus/oxocarbon-lua.nvim'
+  use 'mfussenegger/nvim-jdtls'
 end)
 
 require("plugins.cmp")
