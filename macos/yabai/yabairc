@@ -41,10 +41,12 @@ yabai -m config active_window_border_color   0xffff3050
 yabai -m config normal_window_border_color   0xffaaaaaa
 
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="Preferences$" manage=off topmost=on
 yabai -m rule --add app="Finder" manage=off
 yabai -m rule --add app="Calendar" manage=off
 yabai -m rule --add app="Spotify" manage=off
+yabai -m rule --add app="Obsidian" manage=off
 yabai -m rule --add app="Anghami" manage=off
 yabai -m rule --add app="Slack" manage=off
 yabai -m rule --add app="zoom.us" manage=off
