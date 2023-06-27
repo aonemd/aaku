@@ -6,7 +6,7 @@
 # sudo yabai --install-sa
 # sudo yabai --load-sa
 
-cmd - return : /Applications/Alacritty.app/Contents/MacOS/alacritty
+alt - t : /Applications/Alacritty.app/Contents/MacOS/alacritty
 
 # Restart yabai
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
