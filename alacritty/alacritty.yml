@@ -226,7 +226,7 @@ font:
 #      white:   '#f1efee'
 # colors: *dark
 import:
-  - "~/.config/alacritty/colors.yml"
+  - "~/.config/alacritty/colors.kuroi.yml"
 
 # Colors (Tomorrow Night)
 #schemes:
