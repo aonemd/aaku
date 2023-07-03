@@ -60,6 +60,8 @@ kubectl() {
   kubectl $@
 }
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Android
 # export JAVA_HOME='/usr/lib/jvm/java-19-openjdk'
 export JAVA_20_HOME=$(/usr/libexec/java_home -v 1.20)
