@@ -63,10 +63,7 @@ kubectl() {
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Android
-# export JAVA_HOME='/usr/lib/jvm/java-19-openjdk'
-export JAVA_20_HOME=$(/usr/libexec/java_home -v 1.20)
-export JAVA_HOME=$JAVA_20_HOME
-alias java20="export JAVA_HOME=$JAVA_20_HOME"
+export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
