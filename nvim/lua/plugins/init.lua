@@ -11,7 +11,13 @@ local use = require('packer').use
 require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
-  use { 'ibhagwan/fzf-lua' }
+  use {
+    'nvim-telescope/telescope.nvim', branch = '0.1.x',
+    requires = {
+      {'nvim-lua/plenary.nvim'},
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    }
+  }
 
   use { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
@@ -84,7 +90,7 @@ require("plugins.cmp")
 require("plugins.lsp")
 require("plugins.null-ls")
 require("plugins.treesitter")
-require("plugins.fzf")
+require("plugins.telescope")
 require("plugins.gitsigns")
 require("plugins.vim-easy-aline")
 
