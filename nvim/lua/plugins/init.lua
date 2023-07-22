@@ -85,6 +85,11 @@ require('packer').startup(function()
   use 'aonemd/quietlight.vim'
   use 'B4mbus/oxocarbon-lua.nvim'
   use 'mfussenegger/nvim-jdtls'
+  -- use 'jose-elias-alvarez/typescript.nvim'
+  use {
+    "pmizio/typescript-tools.nvim",
+    requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  }
 end)
 
 require("plugins.cmp")
