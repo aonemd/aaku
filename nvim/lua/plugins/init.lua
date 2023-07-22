@@ -43,6 +43,7 @@ require('packer').startup(function()
 
   use { 'dpayne/CodeGPT.nvim', requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' } }
 
+  use("tpope/vim-fugitive")
   use({
     'dinhhuy258/git.nvim',
     config = function()
