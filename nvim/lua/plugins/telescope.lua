@@ -11,7 +11,7 @@ telescope.setup({
     layout_config = {
       horizontal = {
         prompt_position = "bottom",
-        preview_width = 0.5
+        preview_width = 0.42
       },
     },
     sorting_strategy = "ascending",
