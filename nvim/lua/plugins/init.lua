@@ -88,11 +88,14 @@ require('packer').startup(function()
   use 'B4mbus/oxocarbon-lua.nvim'
   use "rebelot/kanagawa.nvim"
   use 'mfussenegger/nvim-jdtls'
-  -- use 'jose-elias-alvarez/typescript.nvim'
   use {
     "pmizio/typescript-tools.nvim",
     requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   }
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
 end)
 
 require("plugins.cmp")
