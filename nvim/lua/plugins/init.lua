@@ -37,7 +37,8 @@ require('packer').startup(function()
   use "neovim/nvim-lspconfig"             -- enable LSP
   use  "williamboman/mason.nvim"
   use "williamboman/mason-lspconfig.nvim"
-  use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
+  -- use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
+  use 'nvimdev/guard.nvim'
 
   use "rktjmp/hotpot.nvim"
 
@@ -94,7 +95,8 @@ end)
 
 require("plugins.cmp")
 require("plugins.lsp")
-require("plugins.null-ls")
+-- require("plugins.null-ls")
+require("plugins.guard")
 require("plugins.treesitter")
 require("plugins.telescope")
 require("plugins.gitsigns")
