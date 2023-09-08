@@ -27,10 +27,11 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("live_grep_args")
 
 vim.keymap.set('n', '<leader>p', ":lua require('telescope.builtin').find_files({ hidden = true })<CR>", {})
 vim.keymap.set('n', '<leader>o', builtin.current_buffer_fuzzy_find, {})
 vim.keymap.set('n', '<leader>r', builtin.buffers, {})
 vim.keymap.set('n', '<leader>;', builtin.resume, {})
-vim.keymap.set('n', '\\', builtin.live_grep, {})
+vim.keymap.set('n', '\\', ":Telescope live_grep_args<CR>", {})
 vim.keymap.set('n', '|', builtin.grep_string, {})
