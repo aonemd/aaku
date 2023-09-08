@@ -11,14 +11,14 @@ mason_lspconfig.setup({
     "clangd",
     "rust_analyzer",
     "gopls",
-    "jdtls",
     "kotlin_language_server",
     "jsonls",
     "marksman",
     "terraformls",
     "tflint",
     "yamlls",
-    -- "eslint_d", -- not LSP
+    "marksman",
+    -- "eslint-lsp", -- not LSP
     -- "prettierd", -- not LSP
   },
 })
@@ -111,10 +111,6 @@ require("mason-lspconfig").setup_handlers {
         debounce_text_changes = 150,
       },
     }
-
-    if server_name == 'jdtls' or server_name == 'kotlin_language_server' then
-      options.root_dir = function() return vim.fs.dirname(vim.fs.find({ '.gradle', '.gradlew', '.gitignore', 'mvnw', 'build.grade.kts' }, { upward = true })[1]) .. "\\" end
-    end
 
     require("lspconfig")[server_name].setup(options)
   end,
