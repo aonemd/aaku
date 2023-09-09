@@ -94,6 +94,7 @@ require('packer').startup(function()
   use('aonemd/quietlight.vim')
   use('B4mbus/oxocarbon-lua.nvim')
   use('rebelot/kanagawa.nvim')
+  use({ 'catppuccin/nvim', as = 'catppuccin' })
   use('mfussenegger/nvim-jdtls')
   use({
     'pmizio/typescript-tools.nvim',
