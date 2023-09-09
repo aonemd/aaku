@@ -1,4 +1,4 @@
-vim.cmd [[
+vim.cmd([[
 " Terminal Function
 let g:term_buf = 0
 let g:term_win = 0
@@ -30,8 +30,7 @@ tnoremap <C-t> <C-\><C-n>:call TermToggle(12)<CR>
 " Terminal go back to normal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap :qq <C-\><C-n>:q!<CR>
-]]
-
+]])
 
 vim.g.neoterm_size = tostring(0.3 * vim.o.columns)
 vim.g.neoterm_default_mod = 'botright vertical'
