@@ -52,12 +52,15 @@ vim.cmd [[packadd! cfilter]]
 
 require("keybindings")
 require("plugins")
-vim.cmd('source $HOME/.config/nvim/funks.vim')
 
 require("terminal")
 require("statusline")
 require("funks")
 SetTheme()
+
+-- fennel
+require('hotpot')
+require('scratch')
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
 require("utils").create_augroup({
@@ -70,7 +73,3 @@ vim.cmd [[
     autocmd FileType markdown set wrap linebreak
   augroup END
 ]]
-
-require("hotpot")
-local _neato = require('is_neat')
--- neato("fennel") -- => "fennel is neat!"

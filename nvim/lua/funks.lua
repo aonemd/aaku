@@ -4,51 +4,48 @@ local api = vim.api
 
 local M = {}
 
-function M.makeScratch()
-  api.nvim_command('enew') -- equivalent to :enew
-  vim.bo[0].buftype=nofile -- set the current buffer's (buffer 0) buftype to nofile
-  vim.bo[0].bufhidden=hide
-  vim.bo[0].swapfile=false
-end
-
 function _G.SetTheme()
-  local filehandle    = io.open(os.getenv("HOME") .. "/.config/system-theme", "r")
+  local filehandle = io.open(os.getenv('HOME') .. '/.config/system-theme', 'r')
   local current_theme = filehandle:read()
   filehandle:close()
 
-  if current_theme == "dark" then
+  if current_theme == 'dark' then
     vim.cmd([[
     set background=dark
-    colorscheme kuroi
+    " colorscheme kuroi
+    colorscheme kanagawa-dragon
     ]])
   else
     vim.cmd([[
     set background=light
-    colorscheme quietlight
+    " colorscheme quietlight
+    colorscheme catppuccin-latte
     ]])
   end
 
   -- reload statusline
   package.loaded['statusline'] = nil
-  require("statusline")
+  require('statusline')
 end
 
 function _G.ToggleTheme(mode)
-  local _toggle_dark = function ()
+  local _toggle_dark = function()
     vim.cmd([[
     set background=dark
-    colorscheme kuroi
+    " colorscheme kuroi
+    colorscheme kanagawa-dragon
     ]])
   end
 
-  local _toggle_light = function ()
+  local _toggle_light = function()
     vim.cmd([[
     set background=light
-    colorscheme quietlight
+    " colorscheme quietlight
+    colorscheme catppuccin-latte
     ]])
   end
 
-  if mode == "dark" then
+  if mode == 'dark' then
     _toggle_dark()
   elseif mode == 'light' then
     _toggle_light()
@@ -63,7 +60,7 @@ function _G.ToggleTheme(mode)
 
   -- reload statusline
   package.loaded['statusline'] = nil
-  require("statusline")
+  require('statusline')
 end
 
 return M
