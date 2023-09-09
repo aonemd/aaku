@@ -55,12 +55,11 @@ require('plugins')
 
 require('terminal')
 require('statusline')
-require('funks')
-SetTheme()
 
 -- fennel
 require('hotpot')
 require('scratch')
+require('colorscheme')
 
 -- Highlight on yank (copy). It will do a nice highlight blink of the thing you just copied.
 require('utils').create_augroup({
