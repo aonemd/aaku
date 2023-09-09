@@ -108,6 +108,7 @@ require("plugins.guard")
 require("plugins.treesitter")
 require("plugins.telescope")
 require("plugins.gitsigns")
+require("plugins.git")
 require("plugins.vim-easy-aline")
 
 require('Comment').setup()
