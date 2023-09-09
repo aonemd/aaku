@@ -60,9 +60,12 @@ require('packer').startup(function()
     end
   })
   use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use { 'numToStr/Comment.nvim',
     config = function()
-      require('Comment').setup()
+      require('Comment').setup({
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      })
     end
   }
   use 'machakann/vim-sandwich'
