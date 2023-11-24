@@ -36,18 +36,12 @@ export GOPATH="$WK/go"
 export PATH=$PATH:$GOPATH/bin
 
 # # Javascript
-export NVM_DIR="$HOME/.nvm"
-export PATH=$NVM_DIR/versions/node/v18.12.1/bin:$PATH
-export PATH="$PATH:$HOME/.yarn/bin"
-nvm() {
-  unset -f nvm
-  include $NVM_DIR/nvm.sh --no-use
-  nvm $@
-}
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
