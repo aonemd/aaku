@@ -7,7 +7,7 @@ function prompt_redraw {
 zle -N zle-keymap-select prompt_redraw
 
 function prompt_current_dir {
-  echo -n "%{$fg[blue]%}%1~"
+  echo -n "%{$fg[blue]%}%2~"
 }
 
 function remote_hostname {
