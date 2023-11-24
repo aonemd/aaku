@@ -76,14 +76,6 @@ vim.cmd([[
 ]])
 
 vim.cmd([[
-  "netrw
-  let g:netrw_banner=0
-  let g:netrw_winsize=20
-  let g:netrw_liststyle=3  "tree
-  let g:netrw_localrmdir='rm -r'
-  nnoremap <leader>n :Lexplore<CR>
-  nnoremap <silent><leader>- :Lexplore %:h<CR><CR>
-
   "move to the split in the direction shown, or create a new split
   nnoremap <silent> <C-h> :call WinMove('h')<cr>
   nnoremap <silent> <C-j> :call WinMove('j')<cr>

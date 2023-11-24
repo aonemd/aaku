@@ -44,7 +44,10 @@ require('packer').startup(function()
 
   use('rktjmp/hotpot.nvim')
 
-  use({ 'dpayne/CodeGPT.nvim', requires = { 'nvim-lua/plenary.nvim', 'MunifTanjim/nui.nvim' } })
+  use 'nvim-tree/nvim-web-devicons'
+  require'nvim-web-devicons'.setup()
+
+  use 'nvim-tree/nvim-tree.lua'
 
   use('tpope/vim-fugitive')
   use({
@@ -117,6 +120,7 @@ require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.git')
 require('plugins.vim-easy-aline')
+require('plugins.nvim-tree')
 
 require('Comment').setup()
 require('colorizer').setup()
