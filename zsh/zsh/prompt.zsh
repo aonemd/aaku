@@ -23,7 +23,7 @@ function prompt_symbol {
 }
 
 function prompt_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ $(_prompt_git_status)\1/"
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/ %{$reset_color%}:: $(_prompt_git_status)\1/"
 }
 
 function _prompt_git_status {
