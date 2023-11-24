@@ -54,6 +54,24 @@ require('packer').startup(function()
 
   use 'nvim-tree/nvim-tree.lua'
 
+  use({
+    "jackMort/ChatGPT.nvim",
+    branch= "main",
+    commit= "d4aa4d9",
+    config = function()
+      require("chatgpt").setup({
+        openai_params = {
+          model = "gpt-4",
+        },
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
+
   use('tpope/vim-fugitive')
   use({
     'dinhhuy258/git.nvim',
