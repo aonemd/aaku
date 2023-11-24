@@ -40,7 +40,12 @@ require('packer').startup(function()
   use('williamboman/mason.nvim')
   use('williamboman/mason-lspconfig.nvim')
   -- use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
-  use('nvimdev/guard.nvim')
+	use({
+		"nvimdev/guard.nvim",
+		requires = {
+      { "nvimdev/guard-collection" }
+		},
+	})
 
   use('rktjmp/hotpot.nvim')
 
