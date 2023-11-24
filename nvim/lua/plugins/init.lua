@@ -1,60 +1,65 @@
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-  vim.fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-require('utils').create_augroup({
-  { 'BufWritePost */lua/plugins/init.lua source <afile> | PackerSync' },
-}, 'Packer')
-
-local use = require('packer').use
-require('packer').startup(function()
-  use('wbthomason/packer.nvim')
-
-  use({
+require('lazy').setup({
+  {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
-    requires = {
+    dependencies = {
       { 'nvim-lua/plenary.nvim' },
       { 'nvim-telescope/telescope-live-grep-args.nvim' },
-      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     },
-  })
+  },
 
-  use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
-  use('nvim-treesitter/nvim-treesitter-textobjects')
-  use('nvim-treesitter/nvim-treesitter-context')
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  'nvim-treesitter/nvim-treesitter-textobjects',
+  'nvim-treesitter/nvim-treesitter-context',
 
-  use('hrsh7th/nvim-cmp') -- Autocompletion plugin.
-  use('hrsh7th/cmp-buffer') -- Autocompletion plugin.
-  use('hrsh7th/cmp-path') -- Autocompletion plugin.
-  use('hrsh7th/cmp-cmdline') -- Autocompletion plugin.
-  use('hrsh7th/cmp-nvim-lsp') -- Provide completions from LSP
-  use('saadparwaiz1/cmp_luasnip') -- Snippet completion
+  'hrsh7th/nvim-cmp', -- Autocompletion plugin.
+  'hrsh7th/cmp-buffer', -- Autocompletion plugin.
+  'hrsh7th/cmp-path', -- Autocompletion plugin.
+  'hrsh7th/cmp-cmdline', -- Autocompletion plugin.
+  'hrsh7th/cmp-nvim-lsp', -- Provide completions from LSP
+  'saadparwaiz1/cmp_luasnip', -- Snippet completion
   -- snippets
-  use('L3MON4D3/LuaSnip') -- Snippets plugin, snippet "engine"
-  use('rafamadriz/friendly-snippets') -- a bunch of snippets to use
+  'L3MON4D3/LuaSnip', -- Snippets plugin, snippet "engine"
+  'rafamadriz/friendly-snippets', -- a bunch of snippets to use
 
   -- LSP
-  use('neovim/nvim-lspconfig') -- enable LSP
-  use('williamboman/mason.nvim')
-  use('williamboman/mason-lspconfig.nvim')
+  'neovim/nvim-lspconfig', -- enable LSP
+  'williamboman/mason.nvim',
+  'williamboman/mason-lspconfig.nvim',
   -- use "jose-elias-alvarez/null-ls.nvim"   -- for formatters and linters
-	use({
+	{
 		"nvimdev/guard.nvim",
-		requires = {
+		dependencies = {
       { "nvimdev/guard-collection" }
 		},
-	})
+	},
 
-  use('rktjmp/hotpot.nvim')
+  'rktjmp/hotpot.nvim',
 
-  use 'nvim-tree/nvim-web-devicons'
-  require'nvim-web-devicons'.setup()
+  {
+    'nvim-tree/nvim-web-devicons',
+    config = function()
+      require'nvim-web-devicons'.setup()
+    end
+  },
 
-  use 'nvim-tree/nvim-tree.lua'
+  'nvim-tree/nvim-tree.lua',
 
-  use({
+  {
     "jackMort/ChatGPT.nvim",
     branch= "main",
     commit= "d4aa4d9",
@@ -65,15 +70,15 @@ require('packer').startup(function()
         },
       })
     end,
-    requires = {
+    dependencies = {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim"
     }
-  })
+  },
 
-  use('tpope/vim-fugitive')
-  use({
+  'tpope/vim-fugitive',
+  {
     'dinhhuy258/git.nvim',
     config = function()
       require('git').setup({
@@ -85,20 +90,20 @@ require('packer').startup(function()
         },
       })
     end,
-  })
-  use({ 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } })
-  use('JoosepAlviste/nvim-ts-context-commentstring')
-  use({
+  },
+  { 'lewis6991/gitsigns.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+  'JoosepAlviste/nvim-ts-context-commentstring',
+  {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup({
         pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
       })
     end,
-  })
-  use('machakann/vim-sandwich')
-  use('junegunn/vim-easy-align')
-  use({
+  },
+  'machakann/vim-sandwich',
+  'junegunn/vim-easy-align',
+  {
     'Pocco81/true-zen.nvim',
     config = function()
       require('true-zen').setup({
@@ -106,33 +111,34 @@ require('packer').startup(function()
         -- or just leave it empty :)
       })
     end,
-  })
-  use('norcalli/nvim-colorizer.lua')
-  use({
+  },
+  'norcalli/nvim-colorizer.lua',
+  {
     'chrisgrieser/nvim-genghis',
-    requires = {
+    dependencies = {
       'stevearc/dressing.nvim',
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-omni',
     },
-  })
-  use('aonemd/kuroi.vim')
-  use('aonemd/quietlight.vim')
-  use('B4mbus/oxocarbon-lua.nvim')
-  use('rebelot/kanagawa.nvim')
-  use({ 'catppuccin/nvim', as = 'catppuccin' })
-  use('mfussenegger/nvim-jdtls')
-  use({
+  },
+  'aonemd/kuroi.vim',
+  'aonemd/quietlight.vim',
+  'B4mbus/oxocarbon-lua.nvim',
+  'rebelot/kanagawa.nvim',
+  { 'catppuccin/nvim', as = 'catppuccin' },
+  'mfussenegger/nvim-jdtls',
+  'ray-x/go.nvim',
+  {
     'pmizio/typescript-tools.nvim',
-    requires = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-  })
-  use({
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+  },
+  {
     'iamcco/markdown-preview.nvim',
-    run = function()
+    build = function()
       vim.fn['mkdp#util#install']()
     end,
-  })
-end)
+  },
+})
 
 require('plugins.cmp')
 require('plugins.lsp')
@@ -147,3 +153,4 @@ require('plugins.nvim-tree')
 
 require('Comment').setup()
 require('colorizer').setup()
+-- require('go').setup()
