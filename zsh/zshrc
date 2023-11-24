@@ -21,6 +21,20 @@ export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
 export PATH="$PATH:$WK/onpar/bin"
 
+# FZF
+export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+include ~/.fzf.zsh
+
+# K8S
+kubectl() {
+  unset -f kubectl
+  source <(kubectl completion zsh 2>/dev/null)
+  kubectl $@
+}
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Rust
 include $HOME/.cargo/env
 
@@ -42,20 +56,6 @@ export PATH="$PNPM_HOME:$PATH"
 
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
-
-# FZF
-export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-include ~/.fzf.zsh
-
-# K8S
-kubectl() {
-  unset -f kubectl
-  source <(kubectl completion zsh 2>/dev/null)
-  kubectl $@
-}
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Android
 export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
