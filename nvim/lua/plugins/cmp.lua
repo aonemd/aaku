@@ -16,8 +16,10 @@ return {
     local cmp = require_safe('cmp')
     local luasnip = require_safe('luasnip')
 
-    require('luasnip/loaders/from_vscode').lazy_load()
+    require('luasnip.loaders.from_vscode').lazy_load()
+
     luasnip.filetype_extend('typescript', { 'javascript' })
+    luasnip.filetype_extend('ruby', { 'rails' })
 
     local has_words_before = function()
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -131,19 +133,19 @@ return {
       },
     })
 
-    require('cmp').setup.cmdline('/', {
+    cmp.setup.cmdline('/', {
       sources = {
         { name = 'buffer' },
       },
     })
 
-    require('cmp').setup.cmdline(':', {
+    cmp.setup.cmdline(':', {
       sources = {
         { name = 'cmdline' },
       },
     })
 
-    require('cmp').setup.filetype('DressingInput', {
+    cmp.setup.filetype('DressingInput', {
       sources = cmp.config.sources({ { name = 'omni' } }),
     })
   end,
