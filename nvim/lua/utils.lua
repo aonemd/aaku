@@ -19,4 +19,23 @@ function M.require_safe(name)
   return module
 end
 
+function M.map_key(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+
+  if opts then
+    if opts.desc then
+      opts.desc = 'keymaps.lua: ' .. opts.desc
+    end
+    options = vim.tbl_extend('force', options, opts)
+  end
+
+  vim.keymap.set(mode, lhs, rhs, options)
+end
+
+function M.map_key_buffer(mode, lhs, rhs, bufnr)
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
+
+  M.map_key(mode, lhs, rhs, bufopts)
+end
+
 return M
