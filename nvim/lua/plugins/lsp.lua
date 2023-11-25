@@ -12,6 +12,17 @@ return {
     local lspconfig = require_safe('lspconfig')
     local root_pattern = lspconfig.util.root_pattern
 
+    local border = {
+      { '┌', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '┐', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+      { '┘', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '└', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+    }
+
     mason.setup()
     mason_lspconfig.setup({
       ensure_installed = {
@@ -60,7 +71,7 @@ return {
       float = {
         focusable = false,
         style = 'minimal',
-        border = 'rounded',
+        border = border,
         source = 'always',
         header = '',
         prefix = '',
@@ -68,10 +79,10 @@ return {
     })
 
     vim.lsp.handlers['textDocument/hover'] =
-      vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
+      vim.lsp.with(vim.lsp.handlers.hover, { border = border })
 
     vim.lsp.handlers['textDocument/signatureHelp'] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
+      vim.lsp.with(vim.lsp.handlers.signature_help, { border = border })
 
     -- Use an on_attach function to only map the following keys
     -- after the language server attaches to the current buffer

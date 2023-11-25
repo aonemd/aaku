@@ -72,6 +72,17 @@ return {
       }),
     })
 
+    local border = {
+      { '┌', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '┐', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+      { '┘', 'FloatBorder' },
+      { '─', 'FloatBorder' },
+      { '└', 'FloatBorder' },
+      { '│', 'FloatBorder' },
+    }
+
     cmp.setup({
       completion = { completeopt = 'menu,menuone,noinsert', keyword_length = 2 },
       snippet = {
@@ -100,11 +111,11 @@ return {
       },
       window = {
         completion = {
-          border = 'rounded',
+          border = border,
           winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
         },
         documentation = {
-          border = 'rounded',
+          border = border,
           winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel',
         },
       },
