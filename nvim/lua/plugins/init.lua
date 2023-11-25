@@ -143,4 +143,12 @@ require('lazy').setup({
   'B4mbus/oxocarbon-lua.nvim',
   'rebelot/kanagawa.nvim',
   { 'catppuccin/nvim', as = 'catppuccin' },
+}, {
+  checker = {
+    enabled = true,
+    notify = false,
+  },
+  change_detection = {
+    notify = false,
+  },
 })
