@@ -5,6 +5,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+    'ray-x/lsp_signature.nvim',
   },
   config = function()
     local require_safe = require('utils').require_safe
@@ -172,6 +173,13 @@ return {
         require('lsp_lines').toggle,
         { desc = 'Toggle lsp_lines diagnostics' }
       ),
+    })
+
+    require('lsp_signature').setup({
+      bind = true, -- This is mandatory, otherwise border config won't get registered.
+      handler_opts = {
+        border = border,
+      },
     })
   end,
 }
