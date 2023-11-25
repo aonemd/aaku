@@ -1,8 +1,10 @@
 return {
   'neovim/nvim-lspconfig',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
   },
   config = function()
     local require_safe = require('utils').require_safe
@@ -38,43 +40,6 @@ return {
         'marksman',
         -- "eslint-lsp", -- not LSP
         -- "prettierd", -- not LSP
-      },
-    })
-
-    -- Mappings.
-    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
-    vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
-    vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
-    vim.keymap.set('n', 'gcq', vim.diagnostic.setloclist, opts)
-
-    local sign = function(opts)
-      vim.fn.sign_define(opts.name, {
-        texthl = opts.name,
-        text = opts.text,
-        numhl = '',
-      })
-    end
-    sign({ name = 'DiagnosticSignError', text = '✘' })
-    sign({ name = 'DiagnosticSignWarn', text = '▲' })
-    sign({ name = 'DiagnosticSignHint', text = '⚑' })
-    sign({ name = 'DiagnosticSignInfo', text = '' })
-
-    vim.diagnostic.config({
-      virtual_text = false,
-      signs = true,
-      underline = true,
-      update_in_insert = false,
-      severity_sort = true,
-
-      float = {
-        focusable = false,
-        style = 'minimal',
-        border = border,
-        source = 'always',
-        header = '',
-        prefix = '',
       },
     })
 
@@ -160,6 +125,53 @@ return {
         tsserver_format_options = {},
         tsserver_file_preferences = {},
       },
+    })
+
+    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+    local opts = { noremap = true, silent = true }
+    vim.keymap.set('n', 'gl', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', 'gcq', vim.diagnostic.setloclist, opts)
+
+    local sign = function(opts)
+      vim.fn.sign_define(opts.name, {
+        texthl = opts.name,
+        text = opts.text,
+        numhl = '',
+      })
+    end
+    sign({ name = 'DiagnosticSignError', text = '✘' })
+    sign({ name = 'DiagnosticSignWarn', text = '▲' })
+    sign({ name = 'DiagnosticSignHint', text = '⚑' })
+    sign({ name = 'DiagnosticSignInfo', text = '' })
+
+    vim.diagnostic.config({
+      virtual_text = false,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true,
+
+      float = {
+        focusable = false,
+        style = 'minimal',
+        border = border,
+        source = 'always',
+        header = '',
+        prefix = '',
+      },
+    })
+
+    require('lsp_lines').setup({
+      vim.diagnostic.config({ virtual_lines = { only_current_line = true } }),
+
+      vim.keymap.set(
+        'n',
+        '<Leader>td',
+        require('lsp_lines').toggle,
+        { desc = 'Toggle lsp_lines diagnostics' }
+      ),
     })
   end,
 }
