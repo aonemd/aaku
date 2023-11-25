@@ -5,10 +5,6 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
-    -- -- set termguicolors to enable highlight groups
-    -- vim.opt.termguicolors = true
-
-    -- OR setup with some options
     require('nvim-tree').setup({
       sort_by = 'case_sensitive',
       sync_root_with_cwd = false,
@@ -17,7 +13,7 @@ return {
         update_cwd = true,
       },
       view = {
-        width = 37,
+        width = 40,
       },
       renderer = {
         group_empty = true,
@@ -27,9 +23,14 @@ return {
       },
     })
 
-    vim.cmd([[
-      nnoremap <leader>n :NvimTreeToggle<CR>
-      nnoremap <silent><leader>- :NvimTreeToggle %:h<CR><CR>
-    ]])
+    local map_key = require('utils').map_key
+
+    map_key('n', '<leader>n', ':NvimTreeToggle<CR>', { desc = 'nvim-tree: toggle tree' })
+    map_key(
+      'n',
+      '<leader>-',
+      ':NvimTreeToggle %:h<CR>',
+      { desc = 'nvim-tree: toggle tree in current file directory' }
+    )
   end,
 }
