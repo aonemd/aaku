@@ -9,6 +9,7 @@ return {
     'saadparwaiz1/cmp_luasnip',
     'L3MON4D3/LuaSnip',
     'rafamadriz/friendly-snippets',
+    'hrsh7th/cmp-nvim-lua',
   },
   config = function()
     local require_safe = require('utils').require_safe
@@ -109,6 +110,7 @@ return {
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'buffer' },
+        { name = 'nvim_lua' },
         { name = 'path' },
       },
       window = {

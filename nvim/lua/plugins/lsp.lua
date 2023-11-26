@@ -94,6 +94,22 @@ return {
           },
         }
 
+        if server_name == 'lua_ls' then
+          options['settings'] = {
+            Lua = {
+              diagnostics = {
+                globals = { 'vim' },
+              },
+              workspace = {
+                library = {
+                  [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                  [vim.fn.stdpath('config') .. '/lua'] = true,
+                },
+              },
+            },
+          }
+        end
+
         require('lspconfig')[server_name].setup(options)
       end,
     })
