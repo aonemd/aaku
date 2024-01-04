@@ -19,7 +19,7 @@ return {
         map('n', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>')
         map('v', '<leader>gr', '<cmd>Gitsigns reset_hunk<CR>')
 
-        map('n', '<leader>cb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
+        map('n', '<leader>gb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
 
         -- Text object
         map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>')

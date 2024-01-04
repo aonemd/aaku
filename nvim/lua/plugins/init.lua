@@ -36,8 +36,8 @@ require('lazy').setup({
     'dinhhuy258/git.nvim',
     config = function()
       require('git').setup({
+        default_mappings = true,
         keymaps = {
-          blame = '<Leader>gb', -- Open blame window
           browse = '<Leader>go', -- Open file/folder in git repository
         },
       })
