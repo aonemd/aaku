@@ -1,8 +1,16 @@
-local keymap = vim.api.nvim_set_keymap
+local keymap = vim.keymap.set
 
 keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+keymap('', '<Space>', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set(
+  'n',
+  '<leader>*',
+  ':%s/\\<<c-r><c-w>\\>//g<left><left>',
+  { desc = 'keymap: search and replace word under cursor' }
+)
 
 vim.cmd([[
   nnoremap ! :!
@@ -11,8 +19,6 @@ vim.cmd([[
   "easily move between end of current line
   map H ^
   map L g_
-  "replace the word under cursor
-  nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
   "toggle showing hidden characters
   nnoremap <silent> <leader>s :set nolist!<cr>
   "toggle spell checking
