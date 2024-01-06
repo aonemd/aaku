@@ -103,6 +103,7 @@ require('lazy').setup({
       require('chatgpt').setup({
         openai_params = {
           model = 'gpt-4',
+          max_tokens = 1000,
         },
       })
     end,
