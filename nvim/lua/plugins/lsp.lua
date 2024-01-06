@@ -4,7 +4,6 @@ return {
   dependencies = {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
-    'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
     'ray-x/lsp_signature.nvim',
   },
   config = function()
@@ -178,17 +177,6 @@ return {
         header = '',
         prefix = '',
       },
-    })
-
-    require('lsp_lines').setup({
-      vim.diagnostic.config({ virtual_lines = { only_current_line = true } }),
-
-      vim.keymap.set(
-        'n',
-        '<Leader>td',
-        require('lsp_lines').toggle,
-        { desc = 'Toggle lsp_lines diagnostics' }
-      ),
     })
 
     require('lsp_signature').setup({
