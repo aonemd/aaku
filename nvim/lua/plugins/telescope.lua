@@ -16,8 +16,8 @@ return {
     telescope.setup({
       defaults = {
         path_display = function(opts, path)
-          local tail = require("telescope.utils").path_tail(path)
-          return string.format("%s (%s)", tail, path), { { { 1, #tail }, "Constant" } }
+          local tail = require('telescope.utils').path_tail(path)
+          return string.format('%s (%s)', tail, path), { { { 1, #tail }, 'Constant' } }
         end,
         layout_strategy = 'horizontal',
         layout_config = {
@@ -42,15 +42,15 @@ return {
     telescope.load_extension('live_grep_args')
 
     vim.keymap.set(
-    'n',
-    '<leader>p',
-    ":lua require('telescope.builtin').find_files({ hidden = true })<CR>",
-    {}
+      'n',
+      '<leader>p',
+      ":lua require('telescope.builtin').find_files({ hidden = true })<CR>",
+      {}
     )
     vim.keymap.set('n', '<leader>o', builtin.current_buffer_fuzzy_find, {})
     vim.keymap.set('n', '<leader>r', builtin.buffers, {})
     vim.keymap.set('n', '<leader>;', builtin.resume, {})
     vim.keymap.set('n', '\\', ':Telescope live_grep_args<CR>', {})
     vim.keymap.set('n', '|', builtin.grep_string, {})
-  end
+  end,
 }
