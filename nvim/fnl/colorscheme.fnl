@@ -13,7 +13,7 @@
 
 ;; also config
 (local colorschemes {
-       :dark ["kuroi" "kanagawa-dragon" "oxocarbon-lua"]
+       :dark ["kuroi" "kanagawa-dragon" "night-owl" "oxocarbon-lua"]
        :light ["quietlight" "catppuccin-latte"]
        })
 (local colorscheme-mode-config { :dark 2 :light 2 })

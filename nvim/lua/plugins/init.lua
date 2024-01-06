@@ -138,11 +138,16 @@ require('lazy').setup({
   },
 
   -- COLORSCHEMES
-  'aonemd/kuroi.vim',
-  'aonemd/quietlight.vim',
-  'B4mbus/oxocarbon-lua.nvim',
-  'rebelot/kanagawa.nvim',
-  { 'catppuccin/nvim', as = 'catppuccin' },
+  { 'aonemd/kuroi.vim', lazy = false, priority = 1000 },
+  { 'aonemd/quietlight.vim', lazy = false, priority = 1000 },
+  { 'B4mbus/oxocarbon-lua.nvim', lazy = false, priority = 1000 },
+  { 'rebelot/kanagawa.nvim', lazy = false, priority = 1000 },
+  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
+  {
+    'oxfist/night-owl.nvim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
+  },
 }, {
   checker = {
     enabled = true,
