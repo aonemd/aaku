@@ -4,8 +4,6 @@ return {
     'nvimdev/guard-collection',
   },
   config = function()
-    local require_safe = require('utils').require_safe
-
     local ft = require('guard.filetype')
 
     ft('typescript,javascript,javascriptreact,typescriptreact,vue'):fmt('prettier')
@@ -18,12 +16,13 @@ return {
     ft('rust'):fmt('rustfmt')
     ft('lua'):fmt('stylua')
     ft('fnl'):fmt('fnlfmt')
+    ft('prisma'):fmt('lsp')
 
     require('guard').setup({
       fmt_on_save = true,
 
       -- Use lsp if no formatter was defined for this filetype
-      lsp_as_default_formatter = false,
+      lsp_as_default_formatter = true,
     })
   end,
 }
