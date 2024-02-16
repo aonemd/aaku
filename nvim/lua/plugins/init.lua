@@ -19,6 +19,7 @@ require('lazy').setup({
   { import = 'plugins.guard' },
   { import = 'plugins.nvim-tree' },
   { import = 'plugins.gitsigns' },
+  { import = 'plugins.fold' },
   'rktjmp/hotpot.nvim',
   {
     'folke/which-key.nvim',
