@@ -51,3 +51,4 @@
   lh    = log --topo-order --pretty=format:'%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%aD (%ar)%C(reset)%n%+B' --follow -p --
   lc    = shortlog --summary --numbered --no-merges
   lcc   = rev-list --count HEAD
+	rm-merged = !git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D
