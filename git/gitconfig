@@ -52,3 +52,4 @@
   lc    = shortlog --summary --numbered --no-merges
   lcc   = rev-list --count HEAD
 	rm-merged = !git branch --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" { print $1 }' | xargs -r git branch -D
+  coo = !git checkout $(git branch --sort=-committerdate | fzf --height=20% --reverse --info=inline)
