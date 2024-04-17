@@ -98,6 +98,7 @@ return {
         fields = { 'abbr', 'menu' },
         format = function(entry, vim_item)
           vim_item.menu = ({
+            copilot = '[COPILOT]',
             nvim_lsp = '[LSP]',
             luasnip = '[Snippet]',
             buffer = '[Buffer]',
@@ -107,6 +108,7 @@ return {
         end,
       },
       sources = {
+        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'buffer' },
