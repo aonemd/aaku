@@ -12,7 +12,7 @@ Before      = hybrid-sleep.target
 User        = aonemd
 Type        = simple
 Environment = DISPLAY=:0
-ExecStart   = /home/aonemd/Workspace/aaku/bin/screenlock
+ExecStart   = /home/aonemd/workspace/aaku/bin/screenlock
 
 [Install]
 WantedBy = sleep.target

@@ -6,7 +6,7 @@ export VOLUME_DEVICE='master'
 
 # nnn
 export NNN_COLORS='4213'
-export NNN_BMS='w:~/Workspace;d:~/Documents;v:~/Videos;D:~/Downloads;n:~/Dropbox/notes'
+export NNN_BMS='w:~/workspace;d:~/Documents;v:~/Videos;D:~/Downloads;n:~/Dropbox/notes'
 export NNN_PLUG='l:-launch;'
 
 export FIN_FILE="$HOME/Dropbox/finances.yaml"

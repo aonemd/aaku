@@ -21,8 +21,8 @@ set $external_display_2 DP-2
 set $term alacritty
 set $browser firefox
 set $menu wofi
-set $lock_command ~/Workspace/aaku/wayland/bin/screen-lock.sh
-set $sys_menu_command ~/Workspace/aaku/wayland/bin/power-menu.sh
+set $lock_command ~/workspace/aaku/wayland/bin/screen-lock.sh
+set $sys_menu_command ~/workspace/aaku/wayland/bin/power-menu.sh
 
 
 ## Output configuration
@@ -97,13 +97,13 @@ bindsym $mod+Shift+q kill
 floating_modifier $mod normal
 
 # Brightness controls
-bindsym XF86MonBrightnessUp   exec ~/Workspace/aaku/wayland/bin/brightness.sh up
-bindsym XF86MonBrightnessDown exec ~/Workspace/aaku/wayland/bin/brightness.sh down
+bindsym XF86MonBrightnessUp   exec ~/workspace/aaku/wayland/bin/brightness.sh up
+bindsym XF86MonBrightnessDown exec ~/workspace/aaku/wayland/bin/brightness.sh down
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec ~/Workspace/aaku/wayland/bin/volume.sh up
-bindsym XF86AudioLowerVolume exec ~/Workspace/aaku/wayland/bin/volume.sh down
-bindsym XF86AudioMute        exec ~/Workspace/aaku/wayland/bin/volume.sh mute
-bindsym XF86AudioMicMute     exec ~/Workspace/aaku/wayland/bin/volume.sh mute-mic
+bindsym XF86AudioRaiseVolume exec ~/workspace/aaku/wayland/bin/volume.sh up
+bindsym XF86AudioLowerVolume exec ~/workspace/aaku/wayland/bin/volume.sh down
+bindsym XF86AudioMute        exec ~/workspace/aaku/wayland/bin/volume.sh mute
+bindsym XF86AudioMicMute     exec ~/workspace/aaku/wayland/bin/volume.sh mute-mic
 bindsym XF86AudioPlay        exec playerctl play-pause
 bindsym XF86AudioNext        exec playerctl next
 bindsym XF86AudioPrev        exec playerctl pre
@@ -145,7 +145,7 @@ bindsym $mod+Shift+Down   move down
 bindsym $mod+Shift+Up     move up
 bindsym $mod+Shift+Right  move right
 
-## Workspace navigation:
+## workspace navigation:
 #
 set $next_or_new       swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (max_by(.num) | .num) as $maxOutput | (.[] | select(.focused == true) | .num) as $current | if $current >= 10 then 10 else $current + 1 end'
 set $previous_or_first swaymsg -r -t get_workspaces | jq -r --arg OUTPUT $(swaymsg -t get_outputs -r | jq -r '.[] | select(.focused == true) | .name') '(. | (max_by(.num) | .num)) as $max | [.[] | select(.output == $OUTPUT)] | (min_by(.num) | .num) as $minOutput | (.[] | select(.focused == true) | .num) as $current | if $current <= 1 then 1 else $current - 1 end'
@@ -276,7 +276,7 @@ exec_always {
     gsettings set $gnome-schema font-name 'Noto Sans Regular 11'
     gsettings set org.gnome.desktop.wm.preferences button-layout '' # remove window buttons
 }
-exec_always ~/Workspace/aaku/bin/toggle-theme keep
+exec_always ~/workspace/aaku/bin/toggle-theme keep
 
 
 ## Application rules

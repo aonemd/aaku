@@ -8,7 +8,7 @@ zprof() {
   time zsh -i -c exit
 }
 
-export WK="$HOME/Workspace"
+export WK="$HOME/workspace"
 
 if [ -d $HOME/.zsh ]; then
   for file in $HOME/.zsh/**/*.zsh; do

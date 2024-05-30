@@ -63,7 +63,7 @@ cmd + alt - l : yabai -m window --insert east
 # Toggle window gaps
 cmd + alt - p : yabai -m space --toggle gap; yabai -m space --toggle padding
 
-## Workspaces
+## workspaces
 #
 # Navigation
 # Switch to spacific spaces
