@@ -1,31 +1,50 @@
 * {
-  border: none;
-  border-radius: 0;
-  font-family:  'Lato', 'Droid Sans Mono Nerd Font', sans-serif;
-  font-size: 14px;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 18px;
   min-height: 0;
 }
 
 window#waybar {
-  background-color: rgba(27, 25, 24, 0.6);  /* #1b1918 */
+  min-height: 18px;
+  font-size: 18px;
+  margin: 16px 16px;
+  /* background: @theme_base_color; */
+  /* border-bottom: 1px solid @unfocused_borders; */
+  /* color: @theme_text_color; */
   color: white;
+  background-color: rgba(27, 25, 24, 0.5);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+  transition-duration: 0.5s;
 }
 
-#window {}
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+#window {
+  color: #64727d;
+}
 
 #workspaces button {
   padding: 0 5px;
-  background: transparent;
-  color: white;
   border-radius: 0;
+  color: #7984A4;
+  /* color: white; */
+  background: transparent;
 }
-
 #workspaces button.focused {
-  color: #abb2bf;
-  background-color: #373b41;
+  color: #bf616a;
+}
+#workspaces button.active {
+  /* color: #abb2bf; */
+  color: #6a92d7;
+}
+#workspaces button.urgent {
+  background-color: #eb4d4b;
 }
 
-#custom-launcher,
+
 #tray,
 #window,
 #mode,
@@ -34,14 +53,28 @@ window#waybar {
 #battery,
 #network,
 #language,
+#pulseaudio,
+#bluetooth,
+#custom-launcher,
 #custom-prayer,
-#custom-weather,
 #custom-power,
-#pulseaudio {
-  padding: 0 5px;
-  margin-right: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+#custom-hyprPicker,
+#custom-power-menu,
+#custom-spotify,
+#custom-weather,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+  border-radius: 9.5px;
+  padding: 0 10px;
+  color: #e5e5e5;
 }
 
 #custom-launcher {
@@ -74,8 +107,4 @@ window#waybar {
 
 #network.disconnected {
   background: #f53c3c;
-}
-
-#custom-power {
-  color: #f53c3c;
 }

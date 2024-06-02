@@ -2,31 +2,27 @@
   "layer": "top",
     "position": "top",
     "height": 24,
-    "modules-left": ["custom/launcher", "sway/workspaces", "sway/window", "sway/mode"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces"],
     "modules-center": [],
-    "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "sway/language", "pulseaudio", "network", "battery", "clock", "custom/power"],
+    "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "pulseaudio#input", "pulseaudio", "network", "clock", "custom/power"],
     "custom/launcher": {
         "format":" ",
         "on-click": "exec wofi",
         "tooltip": false,
     },
-    "sway/workspaces": {
-      "all-outputs": true,
-      "disable-scroll": true,
-      "disable-click": false,
-      "persistent_workspaces": {
-        "1": [],
-        "2": [],
-        "3": [],
-        "4": []
-      }
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "disable-scroll": true,
+    "disable-click": false,
+    "on-click": "activate",
+    "format": "{icon}",
+    "format-icons": {
+      "default": "",
+      "active": "",
+      "urgent": ""
     },
-    "sway/window": {
-      "format": "{app_id}"
-    },
-    "sway/mode": {
-      "format": "{}"
-    },
+  },
     "tray": {
       "spacing": 10,
     },
@@ -40,46 +36,79 @@
     "clock": {
       "format": "{:%a %d %b %H:%M}",
       "interval": 60,
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "calendar": {
+        "mode": "month",
+        "mode-mon-col": 4,
+        "weeks-pos": "right",
+        "on-scroll": 1,
+        "on-click-right": "mode",
+        "format": {
+          "months": "<span color='#c0caf5'><b>{}</b></span>",
+          "days": "<span color='#c0caf5'><b>{}</b></span>",
+          "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
+          "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
+          "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+        }
+      }
     },
-    "battery": {
-      "bat": "BAT0",
-      "full-at": 95,
-      "states": {
-        "good": 85,
-        "warning": 30,
-        "critical": 15
-      },
-      "format": "{icon} {capacity}%",
-      "format-icons": ["", "", "", "", ""],
-      "format-charging": " {capacity}%",
-      "format-plugged": " {capacity}%",
+    "backlight": {
+      "device": "DP-1",
+      "format": "{icon} {percent}%",
+      "format-icons": [
+        "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+      ],
+      "on-click": "",
     },
     "network": {
-      "format-wifi": " {essid}",
-      "format-disconnected": "⚠ Disconnected"
+      "format-wifi": " ",
+      "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+      "format-ethernet": " ",
+      "format-disconnected": " Disconnected",
+      //"on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh"
     },
     "pulseaudio": {
-      "format": "{icon} {volume}%  {format_source}",
-			"format-bluetooth": "{icon} {volume}%  {format_source}",
-			"format-bluetooth-muted": " {icon}  {format_source}",
-			"format-muted": " {format_source}",
-			"format-source": "",
-			"format-source-muted": "",
-			"format-icons": {
-				"headphone": "",
-				"hands-free": "",
-				"headset": "",
-				"phone": "",
-				"portable": "",
-				"car": "",
-				"default": [
-					"",
-					"",
-					""
-				]
-			},
-			"on-click": "pavucontrol"
+      "format": "{icon}  {volume}%",
+      "tooltip-format": "{icon} {volume}%",
+      "format-bluetooth": "  {volume}%",
+      "tooltip-format-bluetooth": "  {volume}%",
+      "format-bluetooth-muted": " ",
+      "format-muted": " ",
+      "format-icons": {
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "portable": "",
+        "car": "",
+        "default": [
+          "",
+        "",
+        ""
+        ]
+      },
+      "on-click": "pavucontrol"
+    },
+    "pulseaudio#input": {
+      "format-source": "",
+      "tooltip-format": "{icon} {volume}%",
+      "format-source-muted": "",
+      "format": "{format_source}",
+      "scroll-step": 1,
+      "smooth-scrolling-threshold": 1,
+      "max-volume": 100,
+      "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+      "on-click-middle": "pavucontrol",
+      "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+      "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
     },
     "custom/prayer": {
       "format": "  {}",
@@ -91,9 +120,6 @@
       /* "exec": "curl -q https://wttr.in/Amsterdam?format='%c+%t' 2>/dev/null", */
       "exec": "exec ~/workspace/aaku/wayland/bin/weather.sh",
       "interval": 600
-    },
-    "sway/language": {
-      "format": "{short}"
     },
     "custom/power": {
       "format": "",
