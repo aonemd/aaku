@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 parse_prayer_times () {
-  local api_url="https://api.aladhan.com/v1/timingsByCity?${PRAYER_API_PARAMS}"
+	local api_url="https://api.aladhan.com/v1/timingsByCity/$(date '+%d-%m-%Y')?${PRAYER_API_PARAMS}"
 
   local response=$(curl -s "${api_url}")
   [[ -z $response ]] && exit 0
