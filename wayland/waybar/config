@@ -3,27 +3,41 @@
   "position": "top",
   "reload_style_on_change": true,
   "height": 28,
-  "modules-left": ["custom/launcher", "hyprland/workspaces"],
-  "modules-center": ["custom/spotify"],
-  "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "pulseaudio#input", "pulseaudio", "network", "clock", "custom/power"],
-
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "custom/spotify"
+  ],
+  "modules-right": [
+    "tray",
+    "idle_inhibitor",
+    "custom/prayer",
+    "custom/weather",
+    "pulseaudio#input",
+    "pulseaudio",
+    "network",
+    "clock",
+    "custom/power"
+  ],
   "custom/launcher": {
-    "format":" ",
+    "format": " ",
     "on-click": "exec wofi",
-    "tooltip": false,
+    "tooltip": false
   },
   "hyprland/workspaces": {
     "all-outputs": false,
     "disable-scroll": true,
     "disable-click": false,
-    "on-click": "activate",
+    "on-click": "activate"
   },
   "tray": {
-    "spacing": 18,
+    "spacing": 18
   },
   "idle_inhibitor": {
     "format": "{icon} ",
-    "format-icons":{
+    "format-icons": {
       "activated": "",
       "deactivated": ""
     }
@@ -61,7 +75,7 @@
       "",
       ""
     ],
-    "on-click": "",
+    "on-click": ""
   },
   "network": {
     "format-wifi": " ",
