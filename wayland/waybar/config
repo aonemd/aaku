@@ -12,10 +12,8 @@
   ],
   "modules-right": [
     "tray",
-    "idle_inhibitor",
     "custom/prayer",
     "custom/weather",
-    "pulseaudio#input",
     "pulseaudio",
     "network",
     "clock",
@@ -23,7 +21,7 @@
   ],
   "custom/launcher": {
     "format": " ",
-    "on-click": "exec wofi",
+    "on-click": "exec nwg-drawer",
     "tooltip": false
   },
   "hyprland/workspaces": {
@@ -80,9 +78,9 @@
   "network": {
     "format-wifi": " ",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
-    "format-ethernet": " ",
+    "format-ethernet": "󰈀",
     "format-disconnected": " Disconnected",
-    //"on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh"
+    "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
