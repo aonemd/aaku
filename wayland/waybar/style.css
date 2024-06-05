@@ -22,29 +22,6 @@ window#waybar.hidden {
   opacity: 0.2;
 }
 
-#window {
-  color: #64727d;
-}
-
-#workspaces button {
-  padding: 0 5px;
-  border-radius: 0;
-  color: #7984A4;
-  /* color: white; */
-  background: transparent;
-}
-#workspaces button.focused {
-  color: #bf616a;
-}
-#workspaces button.active {
-  /* color: #abb2bf; */
-  color: #6a92d7;
-}
-#workspaces button.urgent {
-  background-color: #eb4d4b;
-}
-
-
 #tray,
 #window,
 #mode,
@@ -54,6 +31,7 @@ window#waybar.hidden {
 #network,
 #language,
 #pulseaudio,
+#pulseaudio-input,
 #bluetooth,
 #custom-launcher,
 #custom-prayer,
@@ -73,12 +51,42 @@ window#waybar.hidden {
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
   border-radius: 9.5px;
-  padding: 0 10px;
+  padding: 0 12px;
   color: #e5e5e5;
 }
 
 #custom-launcher {
   margin-left: 5px;
+}
+
+#window {
+  color: #64727d;
+}
+
+#workspaces button {
+  padding: 1px 1px;
+  margin: 3px 3px;
+  min-width: 20px;
+  border-radius: 15px;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  opacity: 1;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+  min-width: 40px;
+  color: #000;
+  background: #fff;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#custom-power {
+  margin-right: 5px;
 }
 
 #mode {
@@ -89,13 +97,6 @@ window#waybar.hidden {
   color: #d5911a;
 }
 
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
-}
-
 #battery.warning:not(.charging) {
   color: #f22c40;
   animation-name: blink;
@@ -103,6 +104,13 @@ window#waybar.hidden {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
 }
 
 #network.disconnected {

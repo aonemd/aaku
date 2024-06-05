@@ -1,62 +1,57 @@
 {
-  "layer": "top",
-    "position": "top",
-    "height": 24,
-    "modules-left": ["custom/launcher", "hyprland/workspaces"],
-    "modules-center": [],
-    "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "pulseaudio#input", "pulseaudio", "network", "clock", "custom/power"],
-    "custom/launcher": {
-        "format":" ",
-        "on-click": "exec wofi",
-        "tooltip": false,
-    },
+  "layer": "bottom",
+  "position": "top",
+  "reload_style_on_change": true,
+  "height": 28,
+  "modules-left": ["custom/launcher", "hyprland/workspaces"],
+  "modules-center": ["custom/spotify"],
+  "modules-right": ["tray", "idle_inhibitor", "custom/prayer", "custom/weather", "pulseaudio#input", "pulseaudio", "network", "clock", "custom/power"],
 
+  "custom/launcher": {
+    "format":" ",
+    "on-click": "exec wofi",
+    "tooltip": false,
+  },
   "hyprland/workspaces": {
     "all-outputs": false,
     "disable-scroll": true,
     "disable-click": false,
     "on-click": "activate",
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "active": "",
-      "urgent": ""
-    },
   },
-    "tray": {
-      "spacing": 10,
-    },
-    "idle_inhibitor": {
-      "format": "{icon} ",
-      "format-icons":{
-        "activated": "",
-        "deactivated": ""
+  "tray": {
+    "spacing": 18,
+  },
+  "idle_inhibitor": {
+    "format": "{icon} ",
+    "format-icons":{
+      "activated": "",
+      "deactivated": ""
+    }
+  },
+  "clock": {
+    "format": "{:%a %d %b %H:%M}",
+    "interval": 60,
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 4,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#c0caf5'><b>{}</b></span>",
+        "days": "<span color='#c0caf5'><b>{}</b></span>",
+        "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
+        "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
+        "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
       }
-    },
-    "clock": {
-      "format": "{:%a %d %b %H:%M}",
-      "interval": 60,
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-      "calendar": {
-        "mode": "month",
-        "mode-mon-col": 4,
-        "weeks-pos": "right",
-        "on-scroll": 1,
-        "on-click-right": "mode",
-        "format": {
-          "months": "<span color='#c0caf5'><b>{}</b></span>",
-          "days": "<span color='#c0caf5'><b>{}</b></span>",
-          "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
-          "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
-          "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
-        }
-      }
-    },
-    "backlight": {
-      "device": "DP-1",
-      "format": "{icon} {percent}%",
-      "format-icons": [
-        "",
+    }
+  },
+  "backlight": {
+    "device": "DP-1",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
       "",
       "",
       "",
@@ -65,65 +60,80 @@
       "",
       "",
       ""
-      ],
-      "on-click": "",
-    },
-    "network": {
-      "format-wifi": " ",
-      "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
-      "format-ethernet": " ",
-      "format-disconnected": " Disconnected",
-      //"on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh"
-    },
-    "pulseaudio": {
-      "format": "{icon}  {volume}%",
-      "tooltip-format": "{icon} {volume}%",
-      "format-bluetooth": "  {volume}%",
-      "tooltip-format-bluetooth": "  {volume}%",
-      "format-bluetooth-muted": " ",
-      "format-muted": " ",
-      "format-icons": {
-        "headphone": "",
-        "hands-free": "",
-        "headset": "",
-        "phone": "",
-        "portable": "",
-        "car": "",
-        "default": [
-          "",
+    ],
+    "on-click": "",
+  },
+  "network": {
+    "format-wifi": " ",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": " ",
+    "format-disconnected": " Disconnected",
+    //"on-click": "bash ~/.config/waybar/scripts/rofi-wifi-menu.sh"
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "tooltip-format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
         "",
         ""
-        ]
-      },
-      "on-click": "pavucontrol"
+      ]
     },
-    "pulseaudio#input": {
-      "format-source": "",
-      "tooltip-format": "{icon} {volume}%",
-      "format-source-muted": "",
-      "format": "{format_source}",
-      "scroll-step": 1,
-      "smooth-scrolling-threshold": 1,
-      "max-volume": 100,
-      "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-      "on-click-middle": "pavucontrol",
-      "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
-      "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
-    },
-    "custom/prayer": {
-      "format": "  {}",
-      "exec": "exec ~/workspace/aaku/wayland/bin/prayer.sh",
-      "interval": 600
-    },
-    "custom/weather": {
-      "format": "{}",
-      /* "exec": "curl -q https://wttr.in/Amsterdam?format='%c+%t' 2>/dev/null", */
-      "exec": "exec ~/workspace/aaku/wayland/bin/weather.sh",
-      "interval": 600
-    },
-    "custom/power": {
-      "format": "",
-      "tooltip": false,
-      "on-click": "exec ~/workspace/aaku/wayland/bin/power-menu.sh"
-    }
+    "on-click": "pavucontrol"
+  },
+  "pulseaudio#input": {
+    "format-source": "",
+    "tooltip-format": "{icon} {volume}%",
+    "format-source-muted": "",
+    "format": "{format_source}",
+    "scroll-step": 1,
+    "smooth-scrolling-threshold": 1,
+    "max-volume": 100,
+    "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pavucontrol",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%"
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱 {device_alias}",
+    "format-connected-battery": "󰂱 {device_alias} ({device_battery_percentage}%)",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "blueman-manager"
+  },
+  "custom/prayer": {
+    "format": "  {}",
+    "exec": "exec ~/workspace/aaku/wayland/bin/prayer.sh",
+    "interval": 600
+  },
+  "custom/spotify": {
+    "exec": "python3 ~/.config/waybar/scripts/mediaplayer.py --player spotify",
+    "format": "{}  ",
+    "return-type": "json",
+    "on-click": "playerctl play-pause",
+    "on-double-click-right": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+  "custom/weather": {
+    "exec": "python3 ~/.config/waybar/scripts/weather.py",
+    "restart-interval": 600,
+    "return-type": "json",
+    "on-click": "xdg-open https://wttr.in/"
+  },
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "exec ~/workspace/aaku/wayland/bin/power-menu.sh"
+  }
 }
