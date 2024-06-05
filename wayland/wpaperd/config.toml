@@ -1,0 +1,8 @@
+[default]
+duration = "30m"
+mode = "center"
+sorting = "random"
+transition_time = 500
+
+[any]
+path = "/home/aonemd/Pictures/wallpapers/"
