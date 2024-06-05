@@ -1,17 +1,26 @@
 term=alacritty
 location=top
 yoffset=180
-width=420
-lines=7
+width=600
+lines=10
 
-prompt=Type...
+prompt=Search
 show=drun
 insensitive=true
 allow_images=true
-hide_scroll=true
+image_size=28
+hide_scroll=false
 
 aways_parse_args=true
 show_all=true
 
 key_up=Control_L-k
 key_down=Control_L-j
+
+gtk_dark=true
+halign=fill
+content_halign=fill
+orientation=vertical
+allow_markup=true
+filter_rate=100
+no_actions=true

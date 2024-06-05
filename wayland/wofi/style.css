@@ -1,40 +1,66 @@
 * {
-  font-family:  'Lato', 'Droid Sans Mono Nerd Font', sans-serif;
+  font-family:  'Noto', 'JetBrainsMono Nerd Font;', sans-serif;
+  font-size: 14px;
 }
 
-#window {
+window {
   margin: 0px;
-  border: 7px solid;
-  border-color: #100f0e;
-  background-color: #1b1918;
-  color: #abb2bf;
+  border: 5px solid #111019;
+  border-radius: 15px;
+  background-color: rgba(11, 10, 16, 0.93);
 }
 
 #input {
-  margin: 15px;
-  background-color: #100f0e;
-  color: #abb2bf;
+  all: unset;
+  min-height: 36px;
+  padding: 4px 10px;
+  margin: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 15px;
+  outline: none;
+  color: white;
+  background-color: #161420;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#inner-box {
+  padding: 10px;
+  margin: 4px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+#outer-box {
+  margin: 0px;
+  padding: 3px;
+  border: 5px solid #111019;
+  border-radius: 15px;
 }
 
 #scroll {
-  margin-bottom: 15px;
+  margin-top: 5px;
+  border: none;
+  margin-bottom: 5px;
 }
 
 #entry {
-  margin: 0px 15px;
+  margin: 0px 0px;
+  /* padding: 5px 2px; */
+  border: none;
+  border-radius: 8px;
+  background-color: transparent;
 }
 
 #entry:selected {
-  background-color: #100f0e;
-  color: #abb2bf;
   border: none;
-  outline: none;
+  color: white;
+  border-radius: 8px;
+  /* background: linear-gradient(90deg, #33ccff 0%, #f09db5 100%); */
+  background: #33ccff;
 }
 
-#entry > box {
-  margin-left: 16px;
-}
-
-#entry image {
-  padding-right: 10px;
+#text {
+  margin-left: 4px;
 }

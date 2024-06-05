@@ -79,10 +79,11 @@ link_linux_shared() {
 link_linux_wayland() {
   echo "Installing Linux Wayland config..."
 
-  link_config wayland/hypr .config/hypr
-  link_config wayland/sway     .config/sway
-  link_config wayland/waybar   .config/waybar
-  link_config wayland/wofi     .config/wofi
+  link_config wayland/hypr       .config/hypr
+  link_config wayland/sway       .config/sway
+  link_config wayland/waybar     .config/waybar
+  link_config wayland/wofi       .config/wofi
+  link_config wayland/nwg-drawer .config/nwg-drawer
   # link_config wayland/mako     .config/mako
 
   link_linux_shared
