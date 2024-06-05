@@ -31,7 +31,7 @@
     "on-click": "activate"
   },
   "tray": {
-    "spacing": 18
+    "spacing": 20
   },
   "idle_inhibitor": {
     "format": "{icon} ",
