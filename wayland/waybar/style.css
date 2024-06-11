@@ -6,13 +6,13 @@
 
 window#waybar {
   min-height: 18px;
-  font-size: 18px;
+  /* font-size: 18px; */
   margin: 16px 16px;
   /* background: @theme_base_color; */
   /* border-bottom: 1px solid @unfocused_borders; */
   /* color: @theme_text_color; */
   color: white;
-  background-color: rgba(27, 25, 24, 0.5);
+  background-color: rgba(27, 25, 24, 0.70);
   transition-property: background-color;
   transition-duration: 0.5s;
   transition-duration: 0.5s;
@@ -73,6 +73,7 @@ window#waybar.hidden {
   background: transparent;
   opacity: 1;
   transition: all 0.2s ease-in-out;
+  font-size: 8px;
 }
 
 #workspaces button.active {

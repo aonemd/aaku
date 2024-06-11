@@ -16,8 +16,7 @@
     "custom/weather",
     "pulseaudio",
     "network",
-    "clock",
-    "custom/power"
+    "clock"
   ],
   "custom/launcher": {
     "format": " ",
@@ -96,7 +95,7 @@
       "default": [
         "",
         "",
-        ""
+        " "
       ]
     },
     "on-click": "pavucontrol"
