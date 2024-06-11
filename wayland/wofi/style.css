@@ -5,6 +5,8 @@
 
 window {
   margin: 0px;
+  border: 1px solid #111019;
+  border-radius: 15px;
   background-color: rgba(11, 10, 16, 0.93);
 }
 
@@ -31,8 +33,7 @@ window {
 #outer-box {
   margin: 0px;
   padding: 3px;
-  /* border: 5px solid #111019; */
-  border: 1px solid #fff;
+  border: 1px solid #111019;
   border-radius: 15px;
 }
 
