@@ -51,8 +51,8 @@ link_dev() {
 link_linux_shared() {
   echo "Installing Linux shared config..."
 
-  # link_config linux_shared/dunst   .config/dunst
-  # link_config linux_shared/zathura .config/zathura
+  link_config linux_shared/zathura .config/zathura
+  link_config linux_shared/gtk-3.0 .config/gtk-3.0
 
   echo "I'd just like to interject for a moment. What you’re referring to as
   Linux, is in fact, GNU/Linux, or as I’ve recently taken to calling it,
@@ -85,7 +85,7 @@ link_linux_wayland() {
   link_config wayland/wofi       .config/wofi
   link_config wayland/nwg-drawer .config/nwg-drawer
   link_config wayland/wpaperd    .config/wpaperd
-  # link_config wayland/mako     .config/mako
+  link_config wayland/mako     .config/mako
 
   link_linux_shared
 }
