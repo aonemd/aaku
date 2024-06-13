@@ -1,18 +1,3 @@
-/** Some apps use titlebar class and some window */
-.titlebar, window {
-	border-radius: 0;
-	box-shadow: none;
+window#vim-main-window {
+  background-color: #1b1918;
 }
-
-/** also remove shadows */
-decoration {
-	box-shadow: none;
-}
-
-decoration:backdrop {
-	box-shadow: none;
-}
-
-/* window#vim-main-window { */
-/*     background-color: #1b1918; */
-/* } */
