@@ -80,7 +80,7 @@ key = "Minus"
 mods = "Alt"
 
 [window]
-opacity = 0.92
+opacity = 0.96
 
 [window.dimensions]
 columns = 80
