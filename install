@@ -113,9 +113,10 @@ link_macos() {
 link_cli_tools() {
   echo "Installing CLI tools..."
 
-  link_config nnn      .config/nnn
-  link_config newsboat .newsboat
-  link_config cmus     .config/cmus
+  link_config fastfetch .config/fastfetch
+  link_config newsboat  .newsboat
+  # link_config nnn       .config/nnn
+  # link_config cmus      .config/cmus
 }
 
 link_fonts() {
