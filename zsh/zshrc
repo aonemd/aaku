@@ -20,11 +20,11 @@ export AAKU="$WK/aaku"
 export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
 export PATH="$PATH:$WK/onpar/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-include ~/.fzf.zsh
 
 # K8S
 kubectl() {
@@ -33,7 +33,7 @@ kubectl() {
   kubectl $@
 }
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # Rust
 include $HOME/.cargo/env
@@ -58,7 +58,7 @@ export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
 
 # Android
-export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
+# export JAVA_HOME="$(brew --prefix openjdk)/libexec/openjdk.jdk/Contents/Home"
 export ANDROID_HOME=/opt/android-sdk
 export PATH="$ANDROID_HOME/tools:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
@@ -66,3 +66,5 @@ export PATH="$ANDROID_HOME/platform-tools:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+source /usr/share/nvm/init-nvm.sh
