@@ -63,23 +63,40 @@ window#waybar.hidden {
   color: #64727d;
 }
 
+/* #workspaces { */
+/*   background: #1e1e1e; */
+/*   margin: 2px 1px 3px 1px; */
+/*   padding: 0px 0px; */
+/*   margin: 5px 5px; */
+/*   border-radius: 15px; */
+/*   border: 0px; */
+/*   font-style: normal; */
+/*   opacity: 0.8; */
+/*   font-size: 16px; */
+/*   font-family: */
+/*     JetBrains Mono NL, */
+/*     JetBrainsMonoNerd Font; */
+/*   color: #ffffff; */
+/* } */
+
 #workspaces button {
   padding: 1px 1px;
   margin: 3px 3px;
-  min-width: 20px;
   border-radius: 15px;
-  border: 0;
+  border: 0px;
   color: #fff;
-  background: transparent;
-  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
-  font-size: 8px;
+  opacity: 1;
 }
 
 #workspaces button.active {
-  min-width: 40px;
   color: #000;
   background: #fff;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
 }
 
 #workspaces button.urgent {
