@@ -50,7 +50,6 @@
     },
     {
       "type": "packages",
-      "format": "{} (pacman), {} (cargo)",
       "key": "PKG ",
       "keyColor": "34",
     },
