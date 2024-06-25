@@ -25,11 +25,10 @@ keep() {
 }
 
 toggle_alacritty() {
-  local config_path="$AAKU/alacritty/colors.yml"
-  local alacritty_file="$AAKU/alacritty/alacritty.yml"
+  local config_path="$AAKU/alacritty/colors.toml"
+  local alacritty_file="$AAKU/alacritty/alacritty.toml"
 
-  # sed -i -e "s/^colors: \*.*/colors: *${theme}/g" $config_path
-  perl -pi -e "s/^colors: \*.*/colors: *${theme}/g" $config_path
+  perl -i -pe "s/\w+\.toml/${theme}.toml/g" $config_path
 
   touch $alacritty_file
 }
