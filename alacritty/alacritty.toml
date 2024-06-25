@@ -1,4 +1,5 @@
-import = ["/home/aonemd/.config/alacritty/colors.toml"]
+import = ["~/.config/alacritty/colors.toml"]
+
 live_config_reload = true
 
 [font]
