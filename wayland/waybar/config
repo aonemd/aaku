@@ -24,10 +24,22 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
-    "all-outputs": false,
-    "disable-scroll": true,
-    "disable-click": false,
-    "on-click": "activate"
+		"on-scroll-up": "hyprctl dispatch workspace r-1",
+		"on-scroll-down": "hyprctl dispatch workspace r+1",
+		"on-click": "activate",
+		"active-only": false,
+		"all-outputs": true,
+		//"format":"{icon}",
+		//"format-icons": {
+		//	// "urgent": " ",
+		//	// "active": " ",
+		//	//"default": " "
+		//	"urgent": " ",
+		//	"active": " ",
+		//},
+		"persistent-workspaces": {
+			"*": 3
+		}
   },
   "tray": {
     "spacing": 20

@@ -64,29 +64,24 @@ window#waybar.hidden {
   color: #64727d;
 }
 
-/* #workspaces { */
-/*   background: #1e1e1e; */
-/*   margin: 2px 1px 3px 1px; */
-/*   padding: 0px 0px; */
-/*   margin: 5px 5px; */
-/*   border-radius: 15px; */
-/*   border: 0px; */
-/*   font-style: normal; */
-/*   opacity: 0.8; */
-/*   font-size: 16px; */
-/*   font-family: */
-/*     JetBrains Mono NL, */
-/*     JetBrainsMonoNerd Font; */
-/*   color: #ffffff; */
-/* } */
+#workspaces {
+  background: transparent;
+  margin-left: 20px;
+	padding: 0px 0px;
+  border-radius: 15px;
+  border: 0px;
+  opacity: 0.8;
+  font-style: normal;
+  font-size: 12px;
+}
 
 #workspaces button {
-  padding: 1px 1px;
+  padding: 0px 7px;
   margin: 3px 3px;
   border-radius: 15px;
   border: 0px;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: transparent;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
@@ -100,8 +95,40 @@ window#waybar.hidden {
   opacity: 1;
 }
 
+/* dots workspaces */
+/* #workspaces { */
+/* 	margin: 5px 5px 5px 5px; */
+/* 	padding: 4px 1px; */
+/* 	border-radius: 15px; */
+/* 	font-weight: normal; */
+/* 	font-style: normal; */
+/*   font-size: 12px; */
+/* } */
+/**/
+/* #workspaces button { */
+/*     padding: 0 5px; */
+/*     margin: 0px 3px; */
+/*     border-radius: 15px; */
+/*     background-color: transparent; */
+/*     color: white; */
+/* } */
+/**/
+/* #workspaces button.active { */
+/*   color: white; */
+/*   transition: all 0.2s ease-in-out; */
+/*   opacity: 1; */
+/* } */
+
+#workspaces button:hover {
+  /* default */
+}
+
+#workspaces button.active:hover {
+  /* background-color: transparent; */
+}
+
 #workspaces button.urgent {
-  background-color: #eb4d4b;
+  color: #eb4d4b;
 }
 
 #custom-power {
