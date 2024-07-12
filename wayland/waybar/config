@@ -81,22 +81,6 @@
       }
     }
   },
-  "backlight": {
-    "device": "DP-1",
-    "format": "{icon} {percent}%",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "on-click": ""
-  },
   "network": {
     "format-wifi": " ",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
@@ -189,5 +173,41 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "battery": {
+    "bat": "BAT0",
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "max-length": 20,
+    "format": "{icon}",
+    "format-alt": "{icon} {capacity}%",
+    "tooltip-format": "{capacity}% ({time})",
+    "format-charging": "",
+    "format-plugged": "",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "backlight": {
+    "device": "DP-1",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "on-click": ""
   },
 }
