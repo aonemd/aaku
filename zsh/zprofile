@@ -5,33 +5,37 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
   export MOZ_WEBRENDER=1
 
   # Hyprland Environment Variables
-  HYPRLAND_LOG_WLR=1      # Enables more verbose logging of wlroots.
-  HYPRLAND_NO_RT=1        # Disables realtime priority setting by Hyprland.
-  HYPRLAND_NO_SD_NOTIFY=1 # If systemd, disables the sd_notify calls.
+  export HYPRLAND_LOG_WLR=1      # Enables more verbose logging of wlroots.
+  export HYPRLAND_NO_RT=1        # Disables realtime priority setting by Hyprland.
+  export HYPRLAND_NO_SD_NOTIFY=1 # If systemd, disables the sd_notify calls.
 
   # Toolkit Backend Variables
-  GDK_BACKEND=wayland,x11       # GTK: Use wayland if available, fall back to x11 if not.
-  SDL_VIDEODRIVER=wayland       # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
-  CLUTTER_BACKEND=wayland       # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
+  export GDK_BACKEND=wayland,x11       # GTK: Use wayland if available, fall back to x11 if not.
+  export SDL_VIDEODRIVER=wayland       # Run SDL2 applications on Wayland. Remove or set to x11 if games that provide older versions of SDL cause compatibility issues
+  export CLUTTER_BACKEND=wayland       # Clutter package already has wayland enabled, this variable will force Clutter applications to try and use the Wayland backend
 
   # XDG Specifications
   # XDG specific environment variables are often detected through portals and
   # applications that may set those for you, however it is not a bad idea to
   # set them explicitly.
-  XDG_CURRENT_DESKTOP=Hyprland
-  XDG_SESSION_TYPE=wayland
-  XDG_SESSION_DESKTOP=Hyprland
+  export XDG_CURRENT_DESKTOP=Hyprland
+  export XDG_SESSION_TYPE=wayland
+  export XDG_SESSION_DESKTOP=Hyprland
 
   # Qt Variables
-  QT_AUTO_SCREEN_SCALE_FACTOR=1         # (From the Qt documentation) enables automatic scaling, based on the monitor’s pixel density
-  QT_QPA_PLATFORM="wayland;xcb"         # Qt: Use wayland if available, fall back to x11 if not.
-  QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
-  QT_QPA_PLATFORMTHEME=qt5ct            # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
+  export QT_AUTO_SCREEN_SCALE_FACTOR=1         # (From the Qt documentation) enables automatic scaling, based on the monitor’s pixel density
+  export QT_QPA_PLATFORM="wayland;xcb"         # Qt: Use wayland if available, fall back to x11 if not.
+  export QT_WAYLAND_DISABLE_WINDOWDECORATION=1 # Disables window decorations on Qt applications
+  export QT_QPA_PLATFORMTHEME=qt5ct            # Tells Qt based applications to pick your theme from qt5ct, use with Kvantum.
 
   # Theming Related Variables
   # GTK_THEME      # Set a GTK theme manually, for those who want to avoid appearance tools such as lxappearance or nwg-look
   # XCURSOR_THEME  # Set your cursor theme. The theme needs to be installed and readable by your user.
-  XCURSOR_SIZE=24  # Set cursor size. See here for why you might want this variable set.
+  export XCURSOR_SIZE=24  # Set cursor size. See here for why you might want this variable set.
+
+  export XMODIFIERS=@im=fcitx
+  export GTK_IM_MODULE=fcitx
+  export QT_IM_MODULE=fcitx
 
   # exec startx
   # exec sway
