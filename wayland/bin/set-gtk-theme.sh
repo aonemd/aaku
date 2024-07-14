@@ -2,10 +2,10 @@
 
 GTK_THEME='Colloid-dark'
 ICON_THEME='Colloid'
-CURSOR_THEME='Capitaine Cursors'
+CURSOR_THEME='Capitaine Cursors' # 'Catppuccin-Mocha-Dark'
 XCURSOR_SIZE=24
-HYPRCURSOR_SIZE=24
-GTK_FONT_NAME='Noto Sans Regular 11'
+HYPRCURSOR_SIZE=30
+GTK_FONT_NAME='SF Pro Regular 11'
 
 config="${XDG_CONFIG_HOME:-$HOME/.config}/gtk-3.0/settings.ini"
 
@@ -20,6 +20,8 @@ gsettings set "$gnome_schema" icon-theme "${icon_theme:=$ICON_THEME}"
 gsettings set "$gnome_schema" cursor-theme "${cursor_theme:=$CURSOR_THEME}"
 gsettings set "$gnome_schema" font-name "${font_name:=$GTK_FONT_NAME}"
 # gsettings set org.gnome.desktop.wm.preferences button-layout '' && # remove window buttons
+
+hyprctl setcursor 'Catppuccin-Mocha-Dark' $HYPRCURSOR_SIZE
 
 # hyprctl setcursor $CURSOR_THEME $HYPRCURSOR_SIZE &&
 # export XCURSOR_THEME=$CURSOR_THEME

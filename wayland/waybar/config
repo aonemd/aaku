@@ -88,8 +88,8 @@
     "on-click": "nm-connection-editor"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "tooltip-format": "{icon} {volume}%",
+    "format": "{icon}  {volume}%",
+    "tooltip-format": "{icon}  {volume}%",
     "format-muted": "",
     "format-icons": {
       "headphone": "",
