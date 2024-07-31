@@ -9,6 +9,7 @@ alias llcap='df -h --total'
 alias grep='grep --colour --devices=skip'
 alias less='less -r'
 alias rm='rm -v'
+alias time='/usr/bin/time'
 alias tree='tree -C'
 alias feh='feh -F'
 
