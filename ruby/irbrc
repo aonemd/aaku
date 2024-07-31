@@ -1,5 +1,5 @@
 require 'irb/completion'
-require 'irb/ext/save-history'
+require 'irb/ext/eval_history'
 require 'pp'
 require 'rubygems'
 
