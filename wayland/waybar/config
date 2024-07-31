@@ -181,8 +181,8 @@
       "critical": 15
     },
     "max-length": 20,
-    "format": "{icon}",
-    "format-alt": "{icon} {capacity}%",
+    "format": "{icon} {capacity}%",
+    "format-alt": "{icon}",
     "tooltip-format": "{capacity}% ({time})",
     "format-charging": "",
     "format-plugged": "",
