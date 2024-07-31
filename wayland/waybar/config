@@ -82,7 +82,7 @@
     }
   },
   "network": {
-    "format-wifi": " ",
+    "format-wifi": "",
     "tooltip-format-wifi": "  {essid} ({signalStrength}%)",
     "format-ethernet": "󰈀",
     "format-disconnected": " Disconnected",
@@ -131,7 +131,7 @@
     "on-click": "blueman-manager"
   },
   "custom/prayer": {
-    "format": "  {}",
+    "format": "  {}",
     "exec": "exec ~/workspace/aaku/wayland/bin/prayer.sh",
     "interval": 600
   },
@@ -158,14 +158,14 @@
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec-if": "which swaync-client",
