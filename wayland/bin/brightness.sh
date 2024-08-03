@@ -2,7 +2,7 @@
 
 send_notification() {
   val=$(($(brightnessctl g) * 100/$(brightnessctl m)))
-  notify-send -u low -h int:value:$val string:x-canonical-private-synchronous:brightness "Brightness" "$val%" -i notification-display-brightness
+  notify-send -u low -h int:value:$val -h string:x-canonical-private-synchronous:brightness "Brightness" "$val%" -i notification-display-brightness
 }
 
 case "$1" in
