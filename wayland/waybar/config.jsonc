@@ -33,15 +33,14 @@
     "active-only": false,
     "all-outputs": true,
     "format": "{icon}",
+    "tooltip-format": "{name}",
     "format-icons": {
-      // "urgent": " ",
-      // "active": " ",
-      // "default": " "
-      //"urgent": " ",
-      //"active": " "
+      "default": "",
+      "urgent": " "
+      //"active": "{name}"
     },
     "persistent-workspaces": {
-      "*": 3
+      "*": 4
     }
   },
   "tray": {
