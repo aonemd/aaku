@@ -52,8 +52,8 @@ window#waybar.hidden {
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
 #custom-weather.default {
-  border-radius: 9.5px;
-  padding: 0 12px;
+  border-radius: 7px;
+  padding: 0 10px;
   color: #e5e5e5;
 }
 
