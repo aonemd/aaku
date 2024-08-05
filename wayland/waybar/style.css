@@ -79,14 +79,29 @@ window#waybar.hidden {
 #workspaces button {
   padding: 0px 7px;
   margin: 3px 3px;
-  min-width: 10px;
   border: 0px;
   border-radius: 5px;
-  color: black;
-  color: #fff;
-  background: #fff;
-  /* background-color: transparent; */
+  color: #7ABD91;
+  background-color: transparent;
   opacity: 1;
+}
+#workspaces button:nth-child(1) {
+    color: #FF6962;
+}
+#workspaces button:nth-child(2) {
+    color: #FF8989;
+}
+#workspaces button:nth-child(3) {
+    color: #FFB3A5;
+}
+#workspaces button:nth-child(4) {
+    color: #BDDEC8;
+}
+#workspaces button:nth-child(4) {
+    color: #7ABD91;
+}
+#workspaces button:nth-child(4) {
+    color: #5FA777;
 }
 
 #workspaces button.active {
@@ -94,7 +109,6 @@ window#waybar.hidden {
   border-radius: 5px;
   color: #000;
   background: #fff;
-  opacity: 1;
 }
 
 #workspaces button:hover {
@@ -106,7 +120,6 @@ window#waybar.hidden {
 }
 
 #workspaces button.urgent {
-  color: #eb4d4b;
 }
 
 #custom-power {
