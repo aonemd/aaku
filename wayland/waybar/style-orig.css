@@ -69,7 +69,7 @@ window#waybar.hidden {
   background: transparent;
   margin-left: 20px;
 	padding: 0px 0px;
-  border-radius: 5px;
+  border-radius: 15px;
   border: 0px;
   opacity: 0.8;
   font-style: normal;
@@ -79,23 +79,46 @@ window#waybar.hidden {
 #workspaces button {
   padding: 0px 7px;
   margin: 3px 3px;
-  min-width: 10px;
+  border-radius: 15px;
   border: 0px;
-  border-radius: 5px;
-  color: black;
   color: #fff;
-  background: #fff;
-  /* background-color: transparent; */
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 #workspaces button.active {
-  min-width: 10px;
-  border-radius: 5px;
   color: #000;
   background: #fff;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.2s ease-in-out;
   opacity: 1;
 }
+
+/* dots workspaces */
+/* #workspaces { */
+/* 	margin: 5px 5px 5px 5px; */
+/* 	padding: 4px 1px; */
+/* 	border-radius: 15px; */
+/* 	font-weight: normal; */
+/* 	font-style: normal; */
+/*   font-size: 12px; */
+/* } */
+/**/
+/* #workspaces button { */
+/*     padding: 0 5px; */
+/*     margin: 0px 3px; */
+/*     border-radius: 15px; */
+/*     background-color: transparent; */
+/*     color: white; */
+/* } */
+/**/
+/* #workspaces button.active { */
+/*   color: white; */
+/*   transition: all 0.2s ease-in-out; */
+/*   opacity: 1; */
+/* } */
 
 #workspaces button:hover {
   /* default */

@@ -7,7 +7,9 @@
     "custom/launcher",
     "hyprland/workspaces"
   ],
-  "modules-center": ["hyprland/submap"],
+  "modules-center": [
+    "hyprland/submap"
+  ],
   "modules-right": [
     "tray",
     "custom/prayer",
@@ -25,22 +27,22 @@
     "tooltip": false
   },
   "hyprland/workspaces": {
-		"on-scroll-up": "hyprctl dispatch workspace r-1",
-		"on-scroll-down": "hyprctl dispatch workspace r+1",
-		"on-click": "activate",
-		"active-only": false,
-		"all-outputs": true,
-		//"format":"{icon}",
-		//"format-icons": {
-		//	// "urgent": " ",
-		//	// "active": " ",
-		//	//"default": " "
-		//	"urgent": " ",
-		//	"active": " ",
-		//},
-		"persistent-workspaces": {
-			"*": 3
-		}
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      // "urgent": " ",
+      // "active": " ",
+      // "default": " "
+      //"urgent": " ",
+      //"active": " "
+    },
+    "persistent-workspaces": {
+      "*": 3
+    }
   },
   "tray": {
     "spacing": 20
@@ -63,12 +65,12 @@
     "keyboard-name": "keychron-k1-keycool-keyboard"
   },
   "clock": {
-    "format": "{:%a %d %b %H:%M}",
+    "format": "{:%a %d %b  %H:%M}",
     "interval": 60,
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
-      "mode-mon-col": 4,
+      "mode-mon-col": 3,
       "weeks-pos": "right",
       "on-scroll": 1,
       "on-click-right": "mode",
@@ -79,6 +81,13 @@
         "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
         "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
       }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
     }
   },
   "network": {
