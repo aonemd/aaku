@@ -18,3 +18,5 @@ cmus/
 
 # Ignore `toggle-theme` changes
 alacritty/colors.yml
+
+linux_shared/gtk-3.0/settings.ini
