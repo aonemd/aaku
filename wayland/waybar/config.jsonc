@@ -69,12 +69,12 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
-      "mode-mon-col": 3,
+      "mode-mon-col": 2,
       "weeks-pos": "right",
       "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-        "months": "<span color='#7ABD91'><b>{}</b></span>",
+        "months": "<span color='#ffffff'><b>{}</b></span>",
         "days": "<span color='#ffffff'><b>{}</b></span>",
         "weeks": "<span color='#5FA777'><b>W{}</b></span>",
         "weekdays": "<span color='#FF8989'><b>{}</b></span>",
