@@ -69,8 +69,8 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "month",
-      "mode-mon-col": 2,
-      "weeks-pos": "right",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
       "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
