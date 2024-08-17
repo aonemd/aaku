@@ -14,11 +14,8 @@
     "tray",
     "custom/prayer",
     "custom/weather",
-    "pulseaudio#input",
-    "pulseaudio",
     "battery",
-    "network",
-    "custom/notification",
+    "group/trayer",
     "clock"
   ],
   "custom/launcher": {
@@ -88,6 +85,22 @@
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
     }
+  },
+  "group/trayer": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "not-power",
+      "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/notification",
+      "backlight",
+      "custom/toggle_light_dark",
+      "pulseaudio#input",
+      "pulseaudio",
+      "network"
+    ]
   },
   "network": {
     "format-wifi": "",
@@ -181,6 +194,11 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "custom/toggle_light_dark": {
+    "format": "󰽥",
+    "on-click": "exec ~/workspace/aaku/bin/toggle-theme toggle",
+    "tooltip": false
   },
   "battery": {
     "bat": "BAT0",
