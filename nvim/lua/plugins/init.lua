@@ -72,6 +72,7 @@ require('lazy').setup({
   },
   {
     'tpope/vim-fugitive',
+    event = 'VeryLazy',
     config = function()
       require('plugins.git')
     end,
@@ -136,8 +137,7 @@ require('lazy').setup({
   },
   {
     'jackMort/ChatGPT.nvim',
-    branch = 'main',
-    commit = 'd4aa4d9',
+    event = "VeryLazy",
     dependencies = {
       'MunifTanjim/nui.nvim',
       'nvim-lua/plenary.nvim',
@@ -204,16 +204,15 @@ require('lazy').setup({
   },
 
   -- COLORSCHEMES
-  { 'aonemd/kuroi.vim', lazy = false, priority = 1000 },
-  { 'aonemd/quietlight.vim', lazy = false, priority = 1000 },
-  { 'B4mbus/oxocarbon-lua.nvim', lazy = false, priority = 1000 },
-  { 'rebelot/kanagawa.nvim', lazy = false, priority = 1000 },
-  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
-  {
-    'oxfist/night-owl.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000, -- make sure to load this before all the other start plugins
+  { 'rebelot/kanagawa.nvim',
+    lazy = false,   -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000 -- make sure to load this before all the other start plugins
   },
+  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
+  { 'aonemd/kuroi.vim', lazy = true },
+  { 'aonemd/quietlight.vim', lazy = true },
+  { 'B4mbus/oxocarbon-lua.nvim', lazy = true },
+  { 'oxfist/night-owl.nvim', lazy = true },
 }, {
   checker = {
     enabled = true,
