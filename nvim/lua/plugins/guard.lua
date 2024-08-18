@@ -14,9 +14,9 @@ return {
     -- })
     ft('go'):fmt('gofmt')
     ft('rust'):fmt('rustfmt')
+    ft('prisma'):fmt('lsp')
     ft('lua'):fmt('stylua')
     ft('fnl'):fmt('fnlfmt')
-    ft('prisma'):fmt('lsp')
 
     require('guard').setup({
       fmt_on_save = true,

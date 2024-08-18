@@ -16,7 +16,7 @@ require('lazy').setup({
   { import = 'plugins.cmp' },
   { import = 'plugins.lsp' },
   { import = 'plugins.telescope' },
-  { import = 'plugins.guard' },
+  { import = 'plugins.conform' },
   { import = 'plugins.nvim-tree' },
   { import = 'plugins.gitsigns' },
   { import = 'plugins.fold' },
