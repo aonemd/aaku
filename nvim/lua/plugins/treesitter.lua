@@ -6,22 +6,30 @@ return {
       'nvim-treesitter/nvim-treesitter-context',
       "windwp/nvim-ts-autotag",
     },
+    event = { "BufReadPre", "BufNewFile" },
     build = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup({
         ensure_installed = {
           'lua',
+          'fennel',
           'scheme',
+          'go',
           'rust',
           'c',
           'java',
           'kotlin',
+          'ruby',
           'typescript',
           'javascript',
           'tsx',
           'html',
-          'ruby',
+          'json',
+          'yaml',
+          'toml',
+          'markdown'
         },
+        auto_install = true,
 
         highlight = {
           enable = true, -- false will disable the whole extension.
