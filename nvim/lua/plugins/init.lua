@@ -137,7 +137,7 @@ require('lazy').setup({
   },
   {
     'jackMort/ChatGPT.nvim',
-    event = "VeryLazy",
+    event = 'VeryLazy',
     dependencies = {
       'MunifTanjim/nui.nvim',
       'nvim-lua/plenary.nvim',
@@ -202,11 +202,21 @@ require('lazy').setup({
       vim.fn['mkdp#util#install']()
     end,
   },
+  {
+    'OXY2DEV/markview.nvim',
+    -- lazy = false, -- Recommended
+    ft = 'markdown', -- If you decide to lazy-load anyway
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons',
+    },
+  },
 
   -- COLORSCHEMES
-  { 'rebelot/kanagawa.nvim',
-    lazy = false,   -- make sure we load this during startup if it is your main colorscheme
-    priority = 1000 -- make sure to load this before all the other start plugins
+  {
+    'rebelot/kanagawa.nvim',
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
   },
   { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
   { 'aonemd/kuroi.vim', lazy = true },
