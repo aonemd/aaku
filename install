@@ -42,7 +42,7 @@ link_dev() {
   vim -c PlugInstall -c qall
 
   echo "fetching nvim plugins..."
-  nvim -c PackerSync -c qall
+  nvim -c Lazy install -c qall
 
   source $HOME/.zshrc
   echo "zshrc sourced."
