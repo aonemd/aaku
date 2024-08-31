@@ -34,7 +34,7 @@ toggle_alacritty() {
 }
 
 toggle_nvims_linux() {
-  ls $XDG_RUNTIME_DIR/nvim.*.0 \
+  ls $XDG_RUNTIME_DIR/nvim.*.0 2>/dev/null \
     | xargs -I {} nvim --server {} --remote-send ":SetColorschemeMode $theme<CR>"
 }
 
@@ -44,6 +44,7 @@ toggle_nvims_macos() {
 
 toggle_gtk() {
   gsettings set org.gnome.desktop.interface gtk-theme "Colloid-$theme"
+  gsettings set org.gnome.desktop.interface color-scheme "prefer-$theme"
 }
 
 toggle_macos() {
