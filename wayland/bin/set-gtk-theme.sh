@@ -2,6 +2,7 @@
 
 GTK_THEME='Colloid-dark'
 ICON_THEME='Colloid'
+DARK_MODE='prefer-dark'
 CURSOR_THEME='Capitaine Cursors' # 'Catppuccin-Mocha-Dark'
 XCURSOR_SIZE=24
 HYPRCURSOR_SIZE=30
@@ -14,11 +15,13 @@ gtk_theme="$(grep -s 'gtk-theme-name' "$config" | sed 's/.*\s*=\s*//')"
 icon_theme="$(grep -s 'gtk-icon-theme-name' "$config" | sed 's/.*\s*=\s*//')"
 cursor_theme="$(grep -s 'gtk-cursor-theme-name' "$config" | sed 's/.*\s*=\s*//')"
 font_name="$(grep -s 'gtk-font-name' "$config" | sed 's/.*\s*=\s*//')"
+dark_mode="$(grep -s 'gtk-application-prefer-dark-theme' "$config" | sed 's/.*\s*=\s*//')"
 
 gsettings set "$gnome_schema" gtk-theme "${gtk_theme:=$GTK_THEME}"
 gsettings set "$gnome_schema" icon-theme "${icon_theme:=$ICON_THEME}"
 gsettings set "$gnome_schema" cursor-theme "${cursor_theme:=$CURSOR_THEME}"
 gsettings set "$gnome_schema" font-name "${font_name:=$GTK_FONT_NAME}"
+gsettings set "$gnome_schema" color-scheme "${dark_mode:=$DARK_MODE}"
 # gsettings set org.gnome.desktop.wm.preferences button-layout '' && # remove window buttons
 
 # hyprctl setcursor 'Catppuccin-Mocha-Dark' $HYPRCURSOR_SIZE
