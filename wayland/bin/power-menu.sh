@@ -20,10 +20,10 @@ EOF
     systemctl reboot
     ;;
   "Suspend")
-    $lock && systemctl suspend
+    systemctl suspend
     ;;
   "Hibernate")
-    $lock && systemctl hibernate
+    systemctl hibernate
     ;;
   "Logout")
     hyprctl dispatch exit 1
