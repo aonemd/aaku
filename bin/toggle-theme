@@ -35,7 +35,7 @@ toggle_alacritty() {
 
 toggle_nvims_linux() {
   ls $XDG_RUNTIME_DIR/nvim.*.0 2>/dev/null \
-    | xargs -I {} nvim --server {} --remote-send ":SetColorschemeMode $theme<CR>"
+    | xargs -I {} nvim --server {} --remote-send ":SetColorschemeMode $theme<CR>" >/dev/null 2>&1
 }
 
 toggle_nvims_macos() {
