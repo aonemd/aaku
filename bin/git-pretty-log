@@ -1,0 +1,5 @@
+#!/bin/sh
+
+git log --graph --pretty="tformat:%C(always,yellow)%h%C(always,reset) %C(always,green)%ar%C(always,reset) %C(always,bold blue)%an%C(always,reset) %C(always,red)%d%C(always,reset) %s" $* |
+  column -t -s '{' |
+  less -XRS --quit-if-one-screen
