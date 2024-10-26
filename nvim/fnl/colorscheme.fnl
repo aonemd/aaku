@@ -38,4 +38,4 @@
 (vim.api.nvim_create_user_command "SetColorschemeMode" (fn [opts] (set-colorscheme-mode opts.args)) {:nargs "?"})
 
 ;; config
-(set-colorscheme-by-mode 2)
+(set-colorscheme-by-mode 1)
