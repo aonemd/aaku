@@ -3,7 +3,7 @@
 if [ $1 ]; then
   lockbg="$1"
 else
-  lockbg=$(find $HOME/Pictures/Wallpapers/. -type f | shuf -n 1)
+  lockbg=$(find $HOME/Pictures/wallpapers/. -type f | shuf -n 1)
 fi
 
 swaylock --daemonize -k -l \

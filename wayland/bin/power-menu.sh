@@ -2,15 +2,17 @@
 
 lock=~/workspace/aaku/wayland/bin/screen-lock.sh
 
-case $(wofi -d \
+case $(fuzzel -d \
+              --prompt="⏻   " \
+              --placeholder="" \
     << EOF | sed 's/^ *//'
-    Shutdown
-    Reboot
-    Suspend
-    Hibernate
-    Logout
-    Lock
-    Cancel
+Shutdown
+Reboot
+Suspend
+Hibernate
+Logout
+Lock
+Cancel
 EOF
 ) in
   "Shutdown")

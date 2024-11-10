@@ -15,7 +15,7 @@ while :
 do
   qalc_hist=`tac $result_file | head -1000`
 
-  query=`echo "" | fuzzel --dmenu --cache=/dev/null --placeholder="" --prompt="🔢 " --lines=10 <<< "$qalc_hist"`
+  query=`echo "" | fuzzel --dmenu --cache=/dev/null --placeholder="" --prompt="🔢   " --lines=10 <<< "$qalc_hist"`
 
   return_code=$?
 
