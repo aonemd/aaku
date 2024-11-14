@@ -6,6 +6,9 @@
 - xsel
 - ctags
 - curl
+- fzf
+- fd
+- rg
 
 - pacaur
 - alacritty
