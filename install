@@ -133,6 +133,7 @@ link_fonts() {
 
 echo "Creating workspace folder..."
 mkdir -p $HOME/workspace
+mkdir -p $HOME/.config
 
 echo "Updating Git submodules..."
 git submodule update --init --recursive --remote
