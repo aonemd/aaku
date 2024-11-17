@@ -20,3 +20,4 @@ cmus/
 alacritty/colors.yml
 
 linux_shared/gtk-3.0/settings.ini
+linux_shared/gtk-3.0/bookmarks
