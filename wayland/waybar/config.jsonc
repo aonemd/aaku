@@ -35,8 +35,8 @@
     "tooltip-format": "{name}",
     "format-icons": {
       "default": "",
-      "urgent": " "
-      //"active": "{name}"
+      "active": "󰀘",
+      "urgent": "󰺕"
     },
     "persistent-workspaces": {
       "*": 4

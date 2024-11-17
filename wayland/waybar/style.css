@@ -109,8 +109,8 @@ window#waybar.hidden {
 #workspaces button.active {
   min-width: 10px;
   border-radius: 5px;
-  color: #000;
-  background: #fff;
+  /* color: #000; */
+  /* background: #fff; */
 }
 
 #workspaces button:hover {
