@@ -20,6 +20,7 @@ require('lazy').setup({
   { import = 'plugins.nvim-tree' },
   { import = 'plugins.gitsigns' },
   { import = 'plugins.fold' },
+  { import = 'plugins.avante' },
   'rktjmp/hotpot.nvim',
   {
     'zbirenbaum/copilot-cmp',
@@ -118,7 +119,7 @@ require('lazy').setup({
   {
     'jinh0/eyeliner.nvim',
     config = function()
-      require 'eyeliner'.setup {
+      require('eyeliner').setup({
         -- show highlights only after keypress
         highlight_on_key = true,
         -- dim all other characters if set to true (recommended!)
@@ -137,8 +138,8 @@ require('lazy').setup({
         -- add eyeliner to f/F/t/T keymaps;
         -- see section on advanced configuration for more information
         default_keymaps = true,
-      }
-    end
+      })
+    end,
   },
   {
     'norcalli/nvim-colorizer.lua',
@@ -240,14 +241,14 @@ require('lazy').setup({
   -- COLORSCHEMES
   {
     'rebelot/kanagawa.nvim',
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
   },
-  { 'catppuccin/nvim',           as = 'catppuccin', lazy = false, priority = 1000 },
-  { 'aonemd/kuroi.vim',          lazy = false },
-  { 'aonemd/quietlight.vim',     lazy = false },
+  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
+  { 'aonemd/kuroi.vim', lazy = false },
+  { 'aonemd/quietlight.vim', lazy = false },
   { 'B4mbus/oxocarbon-lua.nvim', lazy = false },
-  { 'oxfist/night-owl.nvim',     lazy = false },
+  { 'oxfist/night-owl.nvim', lazy = false },
 }, {
   checker = {
     enabled = true,
