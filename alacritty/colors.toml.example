@@ -1,0 +1,4 @@
+[general]
+import = [
+"~/.config/alacritty/themes/light.toml",
+]

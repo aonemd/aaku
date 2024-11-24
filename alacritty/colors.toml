@@ -1,4 +1,0 @@
-[general]
-import = [
-"~/.config/alacritty/themes/dark.toml",
-]
