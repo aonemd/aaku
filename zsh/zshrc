@@ -53,14 +53,10 @@ include $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
 include $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
 export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
 
-# # Go
+# Go
 export GOPATH="$WK/go"
 export PATH=$PATH:$GOPATH/bin
 
-# # Javascript
-# pnpm
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
+# NodeJS
 export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
 export PUPPETEER_EXECUTABLE_PATH=`which chromium`
