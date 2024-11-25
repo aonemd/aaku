@@ -46,13 +46,6 @@ fi
 # Rust
 include $HOME/.cargo/env
 
-# Ruby
-include /usr/share/chruby/chruby.sh
-include /usr/share/chruby/auto.sh
-include $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
-include $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
-export PATH="$HOMEBREW_PREFIX/opt/libpq/bin:$PATH"
-
 # Go
 export GOPATH="$WK/go"
 export PATH=$PATH:$GOPATH/bin
