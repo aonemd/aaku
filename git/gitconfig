@@ -16,6 +16,10 @@
   rebase = merges
 [init]
   defaultBranch = master
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[url "git@github.com:"]
+	insteadOf = github.com/
 [alias]
   cl    = clone
   s     = status --short
