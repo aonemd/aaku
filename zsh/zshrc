@@ -38,6 +38,11 @@ if command -v /opt/homebrew/bin/brew &> /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
+# Mise
+if command -v $HOME/.local/bin/mise &> /dev/null; then
+  eval "$($HOME/.local/bin/mise activate zsh)"
+fi
+
 # Rust
 include $HOME/.cargo/env
 
