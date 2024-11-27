@@ -108,8 +108,10 @@ link_linux_x11() {
 link_macos() {
   echo "Installing MacOS config..."
 
-  link_config macos/yabai .config/yabai
-  link_config macos/skhd  .config/skhd
+  link_config macos/yabai      .config/yabai
+  link_config macos/skhd       .config/skhd
+  link_config macos/aerospace  .config/aerospace
+  link_config macos/sketchybar .config/sketchybar
 }
 
 link_cli_tools() {
