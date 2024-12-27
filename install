@@ -36,6 +36,7 @@ link_dev() {
   link_config rg/rgignore    .rgignore
   link_config ctags/ctags    .ctags
 
+  link_config ghostty .config/ghostty
   link_config alacritty .config/alacritty
 
   echo "fetching vim plugins..."
