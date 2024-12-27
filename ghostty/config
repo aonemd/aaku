@@ -5,3 +5,5 @@ theme = light:quietlight,dark:kuroi
 
 font-family = "Maple Mono NF"
 font-size = 16
+
+gtk-titlebar = false
