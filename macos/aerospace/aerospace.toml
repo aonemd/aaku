@@ -72,7 +72,7 @@ outer.right =      15
 # All possible modifiers: cmd, alt, ctrl, shift
 
 ## apps
-cmd-enter = 'exec-and-forget open -a /Applications/Alacritty.app'
+cmd-enter = 'exec-and-forget open -a /Applications/Ghostty.app'
 
 ## layouts
 # See: https://nikitabobko.github.io/AeroSpace/commands#layout

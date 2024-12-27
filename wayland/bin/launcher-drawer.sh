@@ -7,4 +7,4 @@ nwg-drawer \
   -pbsleep "systemctl suspend" \
   -pbsize 46 \
   -wm "hyprland" \
-  -term "alacritty"
+  -term "ghostty"

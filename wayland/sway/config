@@ -18,7 +18,7 @@ set $primary_display  eDP-1
 set $external_display_1 DP-1
 set $external_display_2 DP-2
 
-set $term alacritty
+set $term ghostty
 set $browser firefox
 set $menu wofi
 set $lock_command ~/workspace/aaku/wayland/bin/screen-lock.sh
