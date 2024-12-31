@@ -23,49 +23,6 @@ require('lazy').setup({
   { import = 'plugins.avante' },
   'rktjmp/hotpot.nvim',
   {
-    'zbirenbaum/copilot-cmp',
-    config = function()
-      require('copilot_cmp').setup()
-    end,
-  },
-  {
-    'zbirenbaum/copilot.lua',
-    cmd = 'Copilot',
-    event = 'InsertEnter',
-    config = function()
-      require('copilot').setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end,
-  },
-  {
-    'CopilotC-Nvim/CopilotChat.nvim',
-    branch = 'canary',
-    dependencies = {
-      { 'zbirenbaum/copilot.lua' }, -- or github/copilot.vim
-      { 'nvim-lua/plenary.nvim' }, -- for curl, log wrapper
-    },
-    opts = {
-      debug = false, -- Enable debugging
-      -- See Configuration section for rest
-    },
-    -- See Commands section for default commands if you want to lazy load on them
-  },
-  {
-    'folke/which-key.nvim',
-    event = 'VeryLazy',
-    init = function()
-      vim.o.timeout = true
-      vim.o.timeoutlen = 300
-    end,
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
-  },
-  {
     'nvim-tree/nvim-web-devicons',
     config = function()
       require('nvim-web-devicons').setup()
@@ -241,14 +198,14 @@ require('lazy').setup({
   -- COLORSCHEMES
   {
     'rebelot/kanagawa.nvim',
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
   },
-  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
-  { 'aonemd/kuroi.vim', lazy = false },
-  { 'aonemd/quietlight.vim', lazy = false },
+  { 'catppuccin/nvim',           as = 'catppuccin', lazy = false, priority = 1000 },
+  { 'aonemd/kuroi.vim',          lazy = false },
+  { 'aonemd/quietlight.vim',     lazy = false },
   { 'B4mbus/oxocarbon-lua.nvim', lazy = false },
-  { 'oxfist/night-owl.nvim', lazy = false },
+  { 'oxfist/night-owl.nvim',     lazy = false },
 }, {
   checker = {
     enabled = true,
