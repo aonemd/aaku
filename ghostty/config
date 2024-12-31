@@ -7,3 +7,4 @@ font-family = "Maple Mono NF"
 font-size = 16
 
 gtk-titlebar = false
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
