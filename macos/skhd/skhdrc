@@ -6,10 +6,12 @@
 # sudo yabai --install-sa
 # sudo yabai --load-sa
 
-alt - t : /Applications/Alacritty.app/Contents/MacOS/alacritty
+alt - t : open -n /Applications/Ghostty.app
 
 # Restart yabai
-alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service
 
 ## Windows
 #
@@ -38,10 +40,16 @@ lctrl + alt - k : \
     yabai -m window --resize bottom:0:-20
 
 # Float
-alt - f : yabai -m window --toggle float
+alt - f : yabai -m window --toggle float --grid 4:4:1:1:2:2
+# Switch layout to bsp on space
+shift + alt + ctrl - b : yabai -m space --layout bsp
+# Switch layout to stack on space
+shift + alt + ctrl - s : yabai -m space --layout stack
 
 # Fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen
+# balance out tree of windows (resize to occupy same area)
+shift + alt - e : yabai -m space --balance
 
 # Rotate windows clockwise and anticlockwise
 alt - r         : yabai -m space --rotate 270
@@ -67,14 +75,14 @@ cmd + alt - p : yabai -m space --toggle gap; yabai -m space --toggle padding
 #
 # Navigation
 # Switch to spacific spaces
-lctrl - 1 : yabai -m space --focus 1
-lctrl - 2 : yabai -m space --focus 2
-lctrl - 3 : yabai -m space --focus 3
-lctrl - 4 : yabai -m space --focus 4
-lctrl - 5 : yabai -m space --focus 5
-lctrl - 6 : yabai -m space --focus 6
-lctrl - 7 : yabai -m space --focus 7
-lctrl - 8 : yabai -m space --focus 8
+# lctrl - 1 : yabai -m space --focus 1
+# lctrl - 2 : yabai -m space --focus 2
+# lctrl - 3 : yabai -m space --focus 3
+# lctrl - 4 : yabai -m space --focus 4
+# lctrl - 5 : yabai -m space --focus 5
+# lctrl - 6 : yabai -m space --focus 6
+# lctrl - 7 : yabai -m space --focus 7
+# lctrl - 8 : yabai -m space --focus 8
 
 # Move windows to workspaces
 shift + lctrl - left : yabai -m window --space prev && yabai -m space --focus prev

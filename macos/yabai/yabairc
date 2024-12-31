@@ -17,6 +17,8 @@ yabai -m config insert_feedback_color        0xffd75f5f
 yabai -m config split_ratio                  0.50
 # don't automatically rebalance windows
 yabai -m config auto_balance                 off
+# modifier for clicking and dragging with mouse
+yabai -m config mouse_modifier               alt
 # swap windows if moved with mouse
 yabai -m config mouse_action1                move
 # resize windows if resized with mouse
