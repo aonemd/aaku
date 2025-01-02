@@ -47,11 +47,6 @@
       "keyColor": "34",
     },
     {
-      "type": "theme",
-      "key": "SCH ",
-      "keyColor": "34",
-    },
-    {
       "type": "terminal",
       "key": "TER ",
       "keyColor": "34",
