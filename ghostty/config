@@ -1,11 +1,33 @@
-background = 1b1918
-foreground = f1efee
-background-opacity = 0.98
-theme = light:rose-pine-dawn,dark:rose-pine
-theme = light:quietlight,dark:kuroi
-
 font-family = "Maple Mono NF"
 font-size = 16
 
+theme = light:rose-pine-dawn,dark:rose-pine
+theme = light:quietlight,dark:kuroi
+
+window-padding-balance = true
+background-opacity     = 0.96
+window-colorspace      = "display-p3"
+
 gtk-titlebar = false
+
+macos-titlebar-style = transparent
+
+copy-on-select = clipboard
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+keybind = ctrl+s>r=reload_config
+keybind = ctrl+s>q=close_surface
+keybind = ctrl+s>n=new_window
+keybind = ctrl+s>t=new_tab
+
+keybind = ctrl+s>\=new_split:right
+keybind = ctrl+s>-=new_split:down
+keybind = ctrl+s>j=goto_split:bottom
+keybind = ctrl+s>k=goto_split:top
+keybind = ctrl+s>h=goto_split:left
+keybind = ctrl+s>l=goto_split:right
+keybind = ctrl+s>z=toggle_split_zoom
+keybind = ctrl+s>equal=equalize_splits
+
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
