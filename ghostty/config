@@ -12,6 +12,7 @@ gtk-titlebar = false
 
 macos-titlebar-style = transparent
 
+confirm-close-surface = false
 copy-on-select = clipboard
 mouse-hide-while-typing = true
 mouse-scroll-multiplier = 2
