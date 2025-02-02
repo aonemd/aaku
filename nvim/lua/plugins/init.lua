@@ -187,11 +187,15 @@ require('lazy').setup({
   },
   {
     'OXY2DEV/markview.nvim',
-    -- lazy = false, -- Recommended
-    ft = 'markdown', -- If you decide to lazy-load anyway
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter',
-      'nvim-tree/nvim-web-devicons',
+    lazy = false,
+    ft = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
+    opts = {
+      preview = {
+        filetypes = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
+        icon_provider = "devicons",
+        ignore_buftypes = {},
+        max_buf_lines = 9999,
+      }
     },
   },
 
