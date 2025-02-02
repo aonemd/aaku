@@ -6,7 +6,7 @@ theme = light:quietlight,dark:kuroi
 
 window-padding-balance = true
 background-opacity     = 0.96
-window-decoration      = false
+window-decoration      = auto
 window-colorspace      = "display-p3"
 window-theme           = "ghostty"
 adw-toolbar-style      = "flat"
