@@ -40,4 +40,5 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
   # exec startx
   # exec sway
   # exec Hyprland
+  exec dbus-run-session -- Hyprland
   fi
