@@ -190,6 +190,7 @@ require('lazy').setup({
     lazy = false,
     ft = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
     opts = {
+      experimental = { check_rtp_message = false },
       preview = {
         filetypes = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
         icon_provider = "devicons",
