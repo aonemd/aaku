@@ -164,3 +164,18 @@ inoremap ? ?<c-g>u
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") .'k'
 nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") .'j'
 ]])
+
+-- toggle location list
+keymap('n', '=l', function()
+  local win = vim.api.nvim_get_current_win()
+  local qf_winid = vim.fn.getloclist(win, { winid = 0 }).winid
+  local action = qf_winid > 0 and 'lclose' or 'lopen'
+  vim.cmd(action)
+end, { noremap = true, silent = true })
+
+-- toggle quick list
+keymap('n', '=q', function()
+  local qf_winid = vim.fn.getqflist({ winid = 0 }).winid
+  local action = qf_winid > 0 and 'cclose' or 'copen'
+  vim.cmd('botright ' .. action)
+end, { noremap = true, silent = true })
