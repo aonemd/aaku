@@ -21,7 +21,8 @@ require('lazy').setup({
   { import = 'plugins.nvim-tree' },
   { import = 'plugins.gitsigns' },
   { import = 'plugins.fold' },
-  { import = 'plugins.avante' },
+  -- { import = 'plugins.avante' },
+  { import = 'plugins.codecompanion' },
   'rktjmp/hotpot.nvim',
   {
     'nvim-tree/nvim-web-devicons',
@@ -119,24 +120,6 @@ require('lazy').setup({
       require('true-zen').setup()
     end,
   },
-  {
-    'jackMort/ChatGPT.nvim',
-    event = 'VeryLazy',
-    dependencies = {
-      'MunifTanjim/nui.nvim',
-      'nvim-lua/plenary.nvim',
-      'nvim-telescope/telescope.nvim',
-    },
-    config = function()
-      require('chatgpt').setup({
-        openai_params = {
-          model = 'gpt-4',
-          max_tokens = 1000,
-        },
-      })
-    end,
-  },
-
   -- LANGUAGE SUPPORT
   'mfussenegger/nvim-jdtls',
   {
