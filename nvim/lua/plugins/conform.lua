@@ -7,8 +7,8 @@ return {
       formatters_by_ft = {
         lua = { 'stylua' },
         go = { 'goimports', 'gofmt' },
-        rust = { 'rustfmt', lsp_format = 'fallback' },
-        ruby = { 'rubocop' },
+        rust = { 'rustfmt' },
+        ruby = { 'rubocop' }, -- rubyfmt
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
@@ -20,11 +20,19 @@ return {
         ['_'] = { 'trim_whitespace' },
       },
       format_on_save = {
-        lsp_format = 'fallback',
-        timeout_ms = 500,
+        lsp_fallback = true,
         async = false,
+        timeout_ms = 3000,
       },
     })
+
+    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+      conform.format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 1000,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
 
     vim.api.nvim_create_user_command('Format', function(args)
       local range = nil
