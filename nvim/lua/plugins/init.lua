@@ -13,8 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { import = 'plugins.treesitter' },
-  { import = 'plugins.cmp' },
   { import = 'plugins.lsp' },
+  { import = 'plugins.mason' },
+  { import = 'plugins.cmp' },
   { import = 'plugins.telescope' },
   { import = 'plugins.conform' },
   { import = 'plugins.nvim-tree' },

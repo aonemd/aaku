@@ -12,6 +12,7 @@ local options = {
   ttimeout = true,
   ttimeoutlen = 50,
   signcolumn = 'yes',
+  laststatus = 2,
   cursorline = true,
   colorcolumn = '81',
   splitbelow = true,
@@ -21,10 +22,10 @@ local options = {
   completeopt = { 'menuone', 'noselect' },
   shortmess = vim.opt.shortmess + 'c',
 
-  undofile = true, -- Save undo history
+  undofile = true,     -- Save undo history
   writebackup = false, -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  swapfile = false, -- creates a swapfile
-  backup = false, -- creates a backup file
+  swapfile = false,    -- creates a swapfile
+  backup = false,      -- creates a backup file
 
   scrolloff = 8,
   sidescrolloff = 8,
@@ -53,6 +54,7 @@ vim.cmd([[packadd! cfilter]])
 require('keybindings')
 require('plugins')
 
+require('lsp')
 require('terminal')
 require('statusline')
 
