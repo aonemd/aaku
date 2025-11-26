@@ -14,6 +14,10 @@ adw-toolbar-style      = "flat"
 gtk-titlebar = false
 
 macos-titlebar-style = transparent
+macos-icon = custom-style
+macos-icon-frame = beige
+macos-icon-ghost-color = 1b1918
+macos-icon-screen-color = 1b1918
 
 confirm-close-surface   = false
 copy-on-select          = clipboard
