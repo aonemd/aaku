@@ -18,10 +18,9 @@ require('lazy').setup({
   { import = 'plugins.cmp' },
   { import = 'plugins.telescope' },
   { import = 'plugins.conform' },
-  { import = 'plugins.nvim-tree' },
+  { import = 'plugins.oil' },
   { import = 'plugins.gitsigns' },
   { import = 'plugins.fold' },
-  -- { import = 'plugins.avante' },
   { import = 'plugins.codecompanion' },
   'rktjmp/hotpot.nvim',
   {
@@ -172,29 +171,53 @@ require('lazy').setup({
   {
     'OXY2DEV/markview.nvim',
     lazy = false,
-    ft = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
+    ft = {
+      'md',
+      'markdown',
+      'norg',
+      'rmd',
+      'org',
+      'vimwiki',
+      'typst',
+      'latex',
+      'quarto',
+      'Avante',
+      'codecompanion',
+    },
     opts = {
       experimental = { check_rtp_message = false },
       preview = {
-        filetypes = { 'md', 'markdown', 'norg', 'rmd', 'org', 'vimwiki', 'typst', 'latex', 'quarto', 'Avante', 'codecompanion' },
-        icon_provider = "devicons",
+        filetypes = {
+          'md',
+          'markdown',
+          'norg',
+          'rmd',
+          'org',
+          'vimwiki',
+          'typst',
+          'latex',
+          'quarto',
+          'Avante',
+          'codecompanion',
+        },
+        icon_provider = 'devicons',
         ignore_buftypes = {},
         max_buf_lines = 9999,
-      }
+      },
     },
   },
 
   -- COLORSCHEMES
   {
     'rebelot/kanagawa.nvim',
-    lazy = false,    -- make sure we load this during startup if it is your main colorscheme
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
     priority = 1000, -- make sure to load this before all the other start plugins
   },
-  { 'catppuccin/nvim',           as = 'catppuccin', lazy = false, priority = 1000 },
-  { 'aonemd/kuroi.vim',          lazy = false },
-  { 'aonemd/quietlight.vim',     lazy = false },
+  { 'catppuccin/nvim', as = 'catppuccin', lazy = false, priority = 1000 },
+  { 'aonemd/kuroi.vim', lazy = false },
+  { 'aonemd/quietlight.vim', lazy = false },
   { 'B4mbus/oxocarbon-lua.nvim', lazy = false },
-  { 'oxfist/night-owl.nvim',     lazy = false },
+  { 'oxfist/night-owl.nvim', lazy = false },
 }, {
   checker = {
     enabled = true,
