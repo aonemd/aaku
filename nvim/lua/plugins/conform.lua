@@ -13,6 +13,7 @@ return {
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
         typescriptreact = { 'prettier' },
+        html = { 'superhtml' },
         yaml = { 'yamlfmt' },
         ['*'] = { 'codespell' },
         -- Use the "_" filetype to run formatters on filetypes that don't
