@@ -42,6 +42,7 @@ alias dsta='docker stop $(docker ps -q)'
 alias drac='docker rm -f `docker ps --no-trunc -aq`'
 alias dc='docker-compose'
 alias k='kubectl'
+alias kdrain='k drain --ignore-daemonsets --delete-emptydir-data'
 
 # Arch Linux
 alias journalctl='sudo journalctl'
