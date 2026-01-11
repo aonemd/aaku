@@ -152,7 +152,7 @@
     "on-click": "blueman-manager"
   },
   "custom/prayer": {
-    "format": "  {}",
+    "format": "  {}",
     "exec": "exec ~/workspace/aaku/wayland/bin/prayer.sh",
     "interval": 600
   },
@@ -168,7 +168,7 @@
     "exec": "python3 ~/.config/waybar/scripts/weather.py",
     "restart-interval": 600,
     "return-type": "json",
-    "on-click": "xdg-open https://wttr.in/"
+    "on-click": "xdg-open https://wttr.in/'s-Hertogenbosch"
   },
   "custom/power": {
     "format": "",
