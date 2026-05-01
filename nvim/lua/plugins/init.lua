@@ -23,7 +23,15 @@ require('lazy').setup({
   { import = 'plugins.gitsigns' },
   { import = 'plugins.fold' },
   { import = 'plugins.codecompanion' },
-  'rktjmp/hotpot.nvim',
+  {
+    'rktjmp/hotpot.nvim',
+    init = function()
+      -- lazy.nvim strips packpath to VIMRUNTIME; neovim 0.12 made packadd throw
+      -- E919 (previously silent) when the dir isn't in packpath, which breaks
+      -- hotpot's cache dirs. Re-add the site dir so packadd can find them.
+      vim.opt.packpath:append(vim.fn.stdpath('data') .. '/site')
+    end,
+  },
   {
     'folke/which-key.nvim',
     event = 'VeryLazy',
@@ -113,12 +121,12 @@ require('lazy').setup({
       })
     end,
   },
-  {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end,
-  },
+  -- {
+  --   'norcalli/nvim-colorizer.lua',
+  --   config = function()
+  --     require('colorizer').setup()
+  --   end,
+  -- },
   {
     'chrisgrieser/nvim-genghis',
     dependencies = {

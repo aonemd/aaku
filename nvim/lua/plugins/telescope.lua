@@ -15,6 +15,9 @@ return {
 
     telescope.setup({
       defaults = {
+        preview = {
+          treesitter = false,
+        },
         path_display = function(opts, path)
           local tail = require('telescope.utils').path_tail(path)
           return string.format('%s (%s)', tail, path), { { { 1, #tail }, 'Constant' } }

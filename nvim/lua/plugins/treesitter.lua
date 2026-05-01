@@ -1,110 +1,75 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
+    branch = 'main',
     dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
+      { 'nvim-treesitter/nvim-treesitter-textobjects', branch = 'main' },
       'nvim-treesitter/nvim-treesitter-context',
       "windwp/nvim-ts-autotag",
     },
     event = { "BufReadPre", "BufNewFile" },
     build = ':TSUpdate',
     config = function()
-      require('nvim-treesitter.configs').setup({
-        ensure_installed = {
-          'lua',
-          'fennel',
-          'scheme',
-          'go',
-          'rust',
-          'c',
-          'java',
-          'kotlin',
-          'ruby',
-          'typescript',
-          'javascript',
-          'tsx',
-          'html',
-          'json',
-          'yaml',
-          'toml',
-          'markdown',
-          'helm',
-          'gotmpl'
-        },
-        auto_install = true,
+      require('nvim-treesitter').setup()
 
-        highlight = {
-          enable = true, -- false will disable the whole extension.
+      local parsers = {
+        'lua', 'fennel', 'scheme', 'go', 'rust', 'c', 'java', 'kotlin', 'ruby',
+        'typescript', 'javascript', 'tsx', 'html', 'json', 'yaml', 'toml', 'markdown',
+        'helm', 'gotmpl',
+      }
+      local installed = require('nvim-treesitter.config').get_installed()
+      local to_install = vim.tbl_filter(function(p)
+        return not vim.tbl_contains(installed, p)
+      end, parsers)
+      if #to_install > 0 then
+        require('nvim-treesitter').install(to_install)
+      end
 
-          additional_vim_regex_highlighting = false,
-
-          disable = { 'ruby' },
-        },
-        incremental_selection = {
-          enable = true,
-          keymaps = {
-            init_selection = 'gtt',
-            node_incremental = 'gtn',
-            scope_incremental = 'gtc',
-            node_decremental = 'gtm',
-          },
-        },
-        indent = {
-          enable = false,
-        },
-        autotag = {
-          enable = true,
-        },
-        textobjects = {
-          select = {
-            enable = true,
-            lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim.
-            keymaps = {
-              -- You can use the capture groups defined in textobjects.scm.
-              ['af'] = '@function.outer',
-              ['if'] = '@function.inner',
-              ['ac'] = '@class.outer',
-              ['ic'] = '@class.inner',
-            },
-          },
-          move = {
-            enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-              [']m'] = '@function.outer',
-              [']]'] = '@class.outer',
-            },
-            goto_next_end = {
-              [']M'] = '@function.outer',
-              [']['] = '@class.outer',
-            },
-            goto_previous_start = {
-              ['[m'] = '@function.outer',
-              ['[['] = '@class.outer',
-            },
-            goto_previous_end = {
-              ['[M'] = '@function.outer',
-              ['[]'] = '@class.outer',
-            },
-          },
-        },
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          if vim.bo[args.buf].filetype ~= 'ruby' then
+            pcall(vim.treesitter.start)
+          end
+        end,
       })
 
-      require 'treesitter-context'.setup {
-        enable = false,           -- Enable this plugin (Can be enabled/disabled later via commands)
-        multiwindow = false,      -- Enable multiwindow support.
-        max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
-        min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+      require('nvim-ts-autotag').setup()
+
+      require('nvim-treesitter-textobjects').setup({
+        select = { lookahead = true },
+        move = { set_jumps = true },
+      })
+
+      local select = require('nvim-treesitter-textobjects.select')
+      local move = require('nvim-treesitter-textobjects.move')
+
+      vim.keymap.set({ 'x', 'o' }, 'af', function() select.select_textobject('@function.outer', 'textobjects') end)
+      vim.keymap.set({ 'x', 'o' }, 'if', function() select.select_textobject('@function.inner', 'textobjects') end)
+      vim.keymap.set({ 'x', 'o' }, 'ac', function() select.select_textobject('@class.outer', 'textobjects') end)
+      vim.keymap.set({ 'x', 'o' }, 'ic', function() select.select_textobject('@class.inner', 'textobjects') end)
+
+      vim.keymap.set({ 'n', 'x', 'o' }, ']m', function() move.goto_next_start('@function.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, ']]', function() move.goto_next_start('@class.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, ']M', function() move.goto_next_end('@function.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '][', function() move.goto_next_end('@class.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[m', function() move.goto_previous_start('@function.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[[', function() move.goto_previous_start('@class.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[M', function() move.goto_previous_end('@function.outer', 'textobjects') end)
+      vim.keymap.set({ 'n', 'x', 'o' }, '[]', function() move.goto_previous_end('@class.outer', 'textobjects') end)
+
+      require('treesitter-context').setup({
+        enable = false,
+        multiwindow = false,
+        max_lines = 0,
+        min_window_height = 0,
         line_numbers = true,
-        multiline_threshold = 20, -- Maximum number of lines to show for a single context
-        trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-        mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
-        -- Separator between context and content. Should be a single character string, like '-'.
-        -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+        multiline_threshold = 20,
+        trim_scope = 'outer',
+        mode = 'cursor',
         separator = '-',
-        zindex = 20,     -- The Z-index of the context window
-        on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-      }
+        zindex = 20,
+        on_attach = nil,
+      })
 
       vim.filetype.add({
         extension = {
