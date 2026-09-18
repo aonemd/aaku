@@ -21,6 +21,7 @@ export PATH="$PATH:$AAKU/bin"
 export PATH="$PATH:$WK/bin"
 export PATH="$PATH:$WK/onpar/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # FZF
 export FZF_DEFAULT_COMMAND='rg --files --hidden --color never'
