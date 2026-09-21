@@ -13,7 +13,7 @@ return {
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
         typescriptreact = { 'prettier' },
-        html = { 'superhtml' },
+        -- html = { 'superhtml' },
         yaml = { 'yamlfmt' },
         ['*'] = { 'codespell' },
         -- Use the "_" filetype to run formatters on filetypes that don't
@@ -27,13 +27,13 @@ return {
       },
     })
 
-    vim.keymap.set({ "n", "v" }, "<leader>mp", function()
+    vim.keymap.set({ 'n', 'v' }, '<leader>mp', function()
       conform.format({
         lsp_fallback = true,
         async = false,
         timeout_ms = 1000,
       })
-    end, { desc = "Format file or range (in visual mode)" })
+    end, { desc = 'Format file or range (in visual mode)' })
 
     vim.api.nvim_create_user_command('Format', function(args)
       local range = nil
