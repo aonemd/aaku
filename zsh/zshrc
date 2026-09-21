@@ -40,9 +40,10 @@ if command -v /opt/homebrew/bin/brew &> /dev/null; then
 fi
 
 # Mise
-if command -v $HOME/.local/bin/mise &> /dev/null; then
-  eval "$($HOME/.local/bin/mise activate zsh)"
-fi
+# if command -v $HOME/.local/bin/mise &> /dev/null; then
+#   eval "$($HOME/.local/bin/mise activate zsh)"
+# fi
+eval "$(mise activate zsh)"
 
 # Rust
 include $HOME/.cargo/env
