@@ -44,10 +44,6 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
 --
 
-
-
-
-
 -- exec-once = dropbox & nextcloud --background & blueman-applet & fcitx5 -D
 
 -- For lockscreen
@@ -78,13 +74,14 @@ local fileManager = "nautilus"
 
 local menu = "fuzzel"
 
-local menu-power = "~/workspace/aaku/wayland/bin/power-menu.sh"
+local menuPower = "~/workspace/aaku/wayland/bin/power-menu.sh"
 
-local menu-calc = "~/workspace/aaku/wayland/bin/calc.sh"
+local menuCalc = "~/workspace/aaku/wayland/bin/calc.sh"
 
-local menu-clipboard = "cliphist list | fuzzel --dmenu --placeholder=\"\" --prompt=\"📋   \" --lines=10 | cliphist decode | wl-copy"
+local menuClipboard =
+	'cliphist list | fuzzel --dmenu --placeholder="" --prompt="📋   " --lines=10 | cliphist decode | wl-copy'
 
-local lock_command = "~/workspace/aaku/wayland/bin/screen-lock.sh"
+local lockCommand = "~/workspace/aaku/wayland/bin/screen-lock.sh"
 
 -- For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 
@@ -93,19 +90,19 @@ local lock_command = "~/workspace/aaku/wayland/bin/screen-lock.sh"
 -- See https://wiki.hyprland.org/Configuring/Monitors/
 
 hl.monitor({
-    output   = "eDP-1",
-    mode     = "highrr",
-    position = "auto",
-    scale    = 1,
+	output = "eDP-1",
+	mode = "highrr",
+	position = "auto",
+	scale = 1,
 })
 
 -- prefer high refresh rate for all monitors
 
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = 1.5,
+	output = "",
+	mode = "preferred",
+	position = "auto",
+	scale = 1.5,
 })
 
 -- for pluggin in random monitors
@@ -117,37 +114,37 @@ hl.monitor({
 -- See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
 
 hl.device({
-    name = "",
+	name = "",
 })
 
 hl.config({
-    input = {
-        -- grep -i 'persian' /usr/share/X11/xkb/rules/base.lst
-        kb_layout = { "us", "ara" },
-        kb_options = "compose:ralt",
-        --kb_options = grp:alt_shift_toggle
-        follow_mouse = 1,
-        touchpad = {
-            natural_scroll = true,
-            disable_while_typing = true,
-            scroll_factor = 1,
-        },
-        natural_scroll = true,
-        sensitivity = 0,
-        -- -1.0 - 1.0, 0 means no modification.
-    },
+	input = {
+		-- grep -i 'persian' /usr/share/X11/xkb/rules/base.lst
+		-- kb_layout = { "us", "ara" },
+		kb_options = "compose:ralt",
+		--kb_options = grp:alt_shift_toggle
+		follow_mouse = 1,
+		touchpad = {
+			natural_scroll = true,
+			disable_while_typing = true,
+			scroll_factor = 1,
+		},
+		natural_scroll = true,
+		sensitivity = 0,
+		-- -1.0 - 1.0, 0 means no modification.
+	},
 })
 
 hl.config({
-    gestures = {
-        -- workspace_swipe                    = true
-        -- workspace_swipe_fingers            = 3
-        workspace_swipe_distance = 400,
-        workspace_swipe_min_speed_to_force = 30,
-        workspace_swipe_create_new = true,
-        workspace_swipe_cancel_ratio = 0.5,
-        workspace_swipe_forever = true,
-    },
+	gestures = {
+		-- workspace_swipe                    = true
+		-- workspace_swipe_fingers            = 3
+		workspace_swipe_distance = 400,
+		workspace_swipe_min_speed_to_force = 30,
+		workspace_swipe_create_new = true,
+		workspace_swipe_cancel_ratio = 0.5,
+		workspace_swipe_forever = true,
+	},
 })
 
 -- TODO: manual review (plugin config)
@@ -157,90 +154,90 @@ hl.config({
 --
 
 hl.config({
-    general = {
-        -- See https://wiki.hyprland.org/Configuring/Variables/ for more
-        gaps_in = 5,
-        gaps_out = 10,
-        border_size = 0,
-        -- no_border_on_floating = true
-        layout = "dwindle",
-        -- apply_sens_to_raw = 0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
-        -- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
-        allow_tearing = false,
-        col = {
-            active_border = "0xff313244",
-            inactive_border = "rgba(595959aa)",
-        },
-    },
+	general = {
+		-- See https://wiki.hyprland.org/Configuring/Variables/ for more
+		gaps_in = 5,
+		gaps_out = 10,
+		border_size = 0,
+		-- no_border_on_floating = true
+		layout = "dwindle",
+		-- apply_sens_to_raw = 0 # whether to apply the sensitivity to raw input (e.g. used by games where you aim using your mouse)
+		-- Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+		allow_tearing = false,
+		col = {
+			active_border = "0xff313244",
+			inactive_border = "rgba(595959aa)",
+		},
+	},
 })
 
 hl.config({
-    decoration = {
-        -- See https://wiki.hyprland.org/Configuring/Variables/ for more
-        rounding = 7,
-        active_opacity = 1.00,
-        inactive_opacity = 1.00,
-        fullscreen_opacity = 1.00,
-        -- dim_inactive        = true
-        -- dim_strength        = 0.07
-        shadow = {
-            enabled = false,
-            range = 5,
-            render_power = 2,
-            color = "0xff74c7ec",
-            color_inactive = "0xff313244",
-        },
-        blur = {
-            enabled = true,
-            -- Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
-            -- if you want heavy blur, you need to up the blur_passes.
-            -- the more passes, the more you can up the blur_size without noticing artifacts.
-            size = 4,
-            passes = 3,
-            new_optimizations = true,
-            ignore_opacity = true,
-            brightness = 1.0,
-            xray = false,
-            vibrancy = 0.50,
-            vibrancy_darkness = 0.50,
-            contrast = 1.0,
-            popups = false,
-        },
-        -- blurls = gtk-layer-shell
-        -- blurls = nwg-drawer
-        -- blurls = swaync
-    },
+	decoration = {
+		-- See https://wiki.hyprland.org/Configuring/Variables/ for more
+		rounding = 7,
+		active_opacity = 1.00,
+		inactive_opacity = 1.00,
+		fullscreen_opacity = 1.00,
+		-- dim_inactive        = true
+		-- dim_strength        = 0.07
+		shadow = {
+			enabled = false,
+			range = 5,
+			render_power = 2,
+			color = "0xff74c7ec",
+			color_inactive = "0xff313244",
+		},
+		blur = {
+			enabled = true,
+			-- Your blur "amount" is blur_size * blur_passes, but high blur_size (over around 5-ish) will produce artifacts.
+			-- if you want heavy blur, you need to up the blur_passes.
+			-- the more passes, the more you can up the blur_size without noticing artifacts.
+			size = 4,
+			passes = 3,
+			new_optimizations = true,
+			ignore_opacity = true,
+			brightness = 1.0,
+			xray = false,
+			vibrancy = 0.50,
+			vibrancy_darkness = 0.50,
+			contrast = 1.0,
+			popups = false,
+		},
+		-- blurls = gtk-layer-shell
+		-- blurls = nwg-drawer
+		-- blurls = swaync
+	},
 })
 
 hl.config({
-    animations = {
-        enabled = true,
-        -- first_launch_animation = true
-        -- Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
-        -- # Exploding animations
-        -- bezier = wind, 0.5, 0.9, 0.5, 1.05
-        -- bezier = winIn, 0.5, 1.6, 0.7, 1
-        -- bezier = winOut, 0.5, 1.6, 0.6, 1
-        -- bezier = bounce, 0.7, 1.9, 0.5, 1
-        -- animation = windowsIn, 1, 3, winIn, popin
-        -- animation = windowsOut, 1, 3, winOut, popin
-        -- animation = windowsMove, 1, 3, wind, slide
-        -- animation = fade, 1, 3, wind
-        -- animation = workspaces, 1, 3, wind
-        -- animation = windows, 1, 3, bounce, popin
-    },
+	animations = {
+		enabled = true,
+		-- first_launch_animation = true
+		-- Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
+		-- # Exploding animations
+		-- bezier = wind, 0.5, 0.9, 0.5, 1.05
+		-- bezier = winIn, 0.5, 1.6, 0.7, 1
+		-- bezier = winOut, 0.5, 1.6, 0.6, 1
+		-- bezier = bounce, 0.7, 1.9, 0.5, 1
+		-- animation = windowsIn, 1, 3, winIn, popin
+		-- animation = windowsOut, 1, 3, winOut, popin
+		-- animation = windowsMove, 1, 3, wind, slide
+		-- animation = fade, 1, 3, wind
+		-- animation = workspaces, 1, 3, wind
+		-- animation = windows, 1, 3, bounce, popin
+	},
 })
 hl.curve("overshot", {
-    type = "bezier",
-    points = { { 0.05, 0.9 }, { 0.1, 1.05 } },
+	type = "bezier",
+	points = { { 0.05, 0.9 }, { 0.1, 1.05 } },
 })
 hl.curve("smoothOut", {
-    type = "bezier",
-    points = { { 0.36, 0 }, { 0.66, -0.56 } },
+	type = "bezier",
+	points = { { 0.36, 0 }, { 0.66, -0.56 } },
 })
 hl.curve("smoothIn", {
-    type = "bezier",
-    points = { { 0.25, 1 }, { 0.5, 1 } },
+	type = "bezier",
+	points = { { 0.25, 1 }, { 0.5, 1 } },
 })
 hl.animation({ leaf = "windows", enabled = true, speed = 3, bezier = "overshot", style = "slide" })
 hl.animation({ leaf = "windowsOut", enabled = true, speed = 3, bezier = "smoothOut", style = "slide" })
@@ -251,41 +248,41 @@ hl.animation({ leaf = "fadeDim", enabled = true, speed = 3, bezier = "smoothIn" 
 hl.animation({ leaf = "workspaces", enabled = true, speed = 3, bezier = "default" })
 
 hl.config({
-    misc = {
-        disable_hyprland_logo = true,
-        disable_splash_rendering = true,
-        animate_mouse_windowdragging = false,
-        -- this fixes the laggy window movement (source: https://github.com/hyprwm/Hyprland/issues/1753)
-        animate_manual_resizes = false,
-        -- fixes slow resizes
-    },
+	misc = {
+		disable_hyprland_logo = true,
+		disable_splash_rendering = true,
+		animate_mouse_windowdragging = false,
+		-- this fixes the laggy window movement (source: https://github.com/hyprwm/Hyprland/issues/1753)
+		animate_manual_resizes = false,
+		-- fixes slow resizes
+	},
 })
 
 hl.config({
-    xwayland = {
-        -- fix blurry xwayland apps
-        force_zero_scaling = true,
-    },
+	xwayland = {
+		-- fix blurry xwayland apps
+		force_zero_scaling = true,
+	},
 })
 
 hl.config({
-    dwindle = {
-        -- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
-        -- pseudotile        = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-        preserve_split = true,
-        -- you probably want this
-        force_split = 2,
-    },
+	dwindle = {
+		-- See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+		-- pseudotile        = true # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
+		preserve_split = true,
+		-- you probably want this
+		force_split = 2,
+	},
 })
 
 hl.config({
-    master = {
-        -- See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-        -- always_center_master = true
-        orientation = "center",
-        mfact = 0.5,
-        new_on_top = false,
-    },
+	master = {
+		-- See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+		-- always_center_master = true
+		orientation = "center",
+		mfact = 0.5,
+		new_on_top = false,
+	},
 })
 
 --# KEY BINDINGS
@@ -342,17 +339,41 @@ hl.bind(mainMod .. " + " .. "E", hl.dsp.exec_cmd("nautilus"))
 
 -- function controls
 
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/brightness.sh up"), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/brightness.sh up"),
+	{ locked = true, repeating = true }
+)
 
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/brightness.sh down"), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/brightness.sh down"),
+	{ locked = true, repeating = true }
+)
 
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh up"), { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioRaiseVolume",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh up"),
+	{ locked = true, repeating = true }
+)
 
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh down"), { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioLowerVolume",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh down"),
+	{ locked = true, repeating = true }
+)
 
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh mute"), { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioMute",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh mute"),
+	{ locked = true, repeating = true }
+)
 
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh mute-mic"), { locked = true, repeating = true })
+hl.bind(
+	"XF86AudioMicMute",
+	hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/volume.sh mute-mic"),
+	{ locked = true, repeating = true }
+)
 
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true, repeating = true })
 
@@ -363,18 +384,17 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl pre"), { locked = true, repe
 hl.bind("Print", hl.dsp.submap("screenshot"))
 
 hl.define_submap("screenshot", function()
-    hl.bind("f", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh all"), { repeating = true })
-    hl.bind("f", hl.dsp.submap("reset"), { repeating = true })
-    hl.bind("w", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh window"), { repeating = true })
-    hl.bind("w", hl.dsp.submap("reset"), { repeating = true })
-    hl.bind("s", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh selection"), { repeating = true })
-    hl.bind("s", hl.dsp.submap("reset"), { repeating = true })
-    hl.bind("d", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh all 5"), { repeating = true })
-    hl.bind("d", hl.dsp.submap("reset"), { repeating = true })
-    hl.bind("escape", hl.dsp.submap("reset"))
-    hl.bind("enter", hl.dsp.submap("reset"))
+	hl.bind("f", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh all"), { repeating = true })
+	hl.bind("f", hl.dsp.submap("reset"), { repeating = true })
+	hl.bind("w", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh window"), { repeating = true })
+	hl.bind("w", hl.dsp.submap("reset"), { repeating = true })
+	hl.bind("s", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh selection"), { repeating = true })
+	hl.bind("s", hl.dsp.submap("reset"), { repeating = true })
+	hl.bind("d", hl.dsp.exec_cmd("~/workspace/aaku/wayland/bin/screenshot.sh all 5"), { repeating = true })
+	hl.bind("d", hl.dsp.submap("reset"), { repeating = true })
+	hl.bind("escape", hl.dsp.submap("reset"))
+	-- hl.bind("enter", hl.dsp.submap("reset"))
 end)
-
 
 -- # Notitifications
 
@@ -403,29 +423,29 @@ hl.bind("ALT + Tab", hl.dsp.window.cycle_next())
 -- TODO: manual review (unknown dispatcher: bringactivetotop)
 -- hl.bind("ALT + Tab", hl.dsp.bringactivetotop())
 
-hl.bind("Alt_L + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
+-- hl.bind("ALT + ALT_L + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
 
 -- change focus to previous window
 
 -- moving windows
 
-hl.bind("SUPERSHIFT + left", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + left", hl.dsp.window.move({ direction = "left" }))
 
-hl.bind("SUPERSHIFT + right", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + right", hl.dsp.window.move({ direction = "right" }))
 
-hl.bind("SUPERSHIFT + up", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + up", hl.dsp.window.move({ direction = "up" }))
 
-hl.bind("SUPERSHIFT + down", hl.dsp.window.move({ direction = "down" }))
+hl.bind("SUPER + down", hl.dsp.window.move({ direction = "down" }))
 
 -- vim-keybinds
 
-hl.bind("SUPERSHIFT + h", hl.dsp.window.move({ direction = "left" }))
+hl.bind("SUPER + h", hl.dsp.window.move({ direction = "left" }))
 
-hl.bind("SUPERSHIFT + l", hl.dsp.window.move({ direction = "right" }))
+hl.bind("SUPER + l", hl.dsp.window.move({ direction = "right" }))
 
-hl.bind("SUPERSHIFT + k", hl.dsp.window.move({ direction = "up" }))
+hl.bind("SUPER + k", hl.dsp.window.move({ direction = "up" }))
 
-hl.bind("SUPERSHIFT + j", hl.dsp.window.move({ direction = "down" }))
+hl.bind("SUPER + j", hl.dsp.window.move({ direction = "down" }))
 
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 
@@ -436,14 +456,13 @@ hl.bind(mainMod .. " + " .. "mouse:273", hl.dsp.window.resize(), { mouse = true 
 hl.bind(mainMod .. " + " .. "R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
-    hl.bind("l", hl.dsp.window.resize({ x = 40, y = 0, relative = true }), { repeating = true })
-    hl.bind("h", hl.dsp.window.resize({ x = -40, y = 0, relative = true }), { repeating = true })
-    hl.bind("k", hl.dsp.window.resize({ x = 0, y = -40, relative = true }), { repeating = true })
-    hl.bind("j", hl.dsp.window.resize({ x = 0, y = 40, relative = true }), { repeating = true })
-    hl.bind("escape", hl.dsp.submap("reset"))
-    hl.bind("enter", hl.dsp.submap("reset"))
+	hl.bind("l", hl.dsp.window.resize({ x = 40, y = 0, relative = true }), { repeating = true })
+	hl.bind("h", hl.dsp.window.resize({ x = -40, y = 0, relative = true }), { repeating = true })
+	hl.bind("k", hl.dsp.window.resize({ x = 0, y = -40, relative = true }), { repeating = true })
+	hl.bind("j", hl.dsp.window.resize({ x = 0, y = 40, relative = true }), { repeating = true })
+	hl.bind("escape", hl.dsp.submap("reset"))
+	-- hl.bind("enter", hl.dsp.submap("reset"))
 end)
-
 
 -- Switch workspaces with mainMod + [0-9]
 
@@ -506,9 +525,9 @@ hl.bind(mainMod .. " + " .. "right", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + " .. "left", hl.dsp.focus({ workspace = "e-1" }))
 
 hl.config({
-    binds = {
-        allow_workspace_cycles = true,
-    },
+	binds = {
+		allow_workspace_cycles = true,
+	},
 })
 
 hl.bind(mainMod .. " + " .. "tab", hl.dsp.focus({ workspace = "previous" }))
@@ -522,248 +541,250 @@ hl.bind(mainMod .. " + " .. "tab", hl.dsp.focus({ workspace = "previous" }))
 -- Suppress maximize requests from all apps
 
 hl.window_rule({
-    name  = "suppress-maximize",
-    match = {
-        class = ".*",
-    },
-    suppress_event = "maximize",
+	name = "suppress-maximize",
+	match = {
+		class = ".*",
+	},
+	suppress_event = "maximize",
 })
 
 -- Opacity for productivity/media apps
 
-hl.window_rule({
-    name  = "opacity-productivity-apps",
-    match = {
-        class = "^(Code|Slack|WebCord|Spotify)$",
-    },
-    opacity = { 0.74, 0.74 },
-})
+-- hl.window_rule({
+-- 	name = "opacity-productivity-apps",
+-- 	match = {
+-- 		class = "^(Code|Slack|WebCord|Spotify)$",
+-- 	},
+-- 	opacity = { 0.74, 0.74 },
+-- })
 
 -- Fuzzel launcher
 
 hl.window_rule({
-    name  = "stayfocused-fuzzel",
-    match = {
-        class = "fuzzel",
-    },
-    stay_focused = true,
+	name = "stayfocused-fuzzel",
+	match = {
+		class = "fuzzel",
+	},
+	stay_focused = true,
 })
 
 hl.layer_rule({
-    match = {
-        namespace = "fuzzel",
-    },
-    no_anim = true,
+	match = {
+		namespace = "fuzzel",
+	},
+	no_anim = true,
 })
 
 -- nwg-drawer
 
 hl.window_rule({
-    name  = "stayfocused-nwg-drawer",
-    match = {
-        class = "nwg-drawer",
-    },
-    stay_focused = true,
+	name = "stayfocused-nwg-drawer",
+	match = {
+		class = "nwg-drawer",
+	},
+	stay_focused = true,
 })
 
 hl.layer_rule({
-    match = {
-        namespace = "nwg-drawer",
-    },
-    no_anim = true,
+	match = {
+		namespace = "nwg-drawer",
+	},
+	no_anim = true,
 })
 
 -- wlogout
 
 hl.window_rule({
-    name  = "fullscreen-wlogout",
-    match = {
-        class = "wlogout",
-    },
-    fullscreen = true,
+	name = "fullscreen-wlogout",
+	match = {
+		class = "wlogout",
+	},
+	fullscreen = true,
 })
 
 -- Nautilus file manager
 
 hl.window_rule({
-    name  = "float-center-nautilus",
-    match = {
-        class = "Nautilus",
-    },
-    float = true,
-    center = true,
+	name = "float-center-nautilus",
+	match = {
+		class = "Nautilus",
+	},
+	float = true,
+	center = true,
 })
 
 -- Layer blur
 
 hl.layer_rule({
-    match = {
-        namespace = "logout_dialog",
-    },
-    blur = true,
+	match = {
+		namespace = "logout_dialog",
+	},
+	blur = true,
 })
 
 hl.layer_rule({
-    match = {
-        namespace = "notifications",
-    },
-    blur = true,
+	match = {
+		namespace = "notifications",
+	},
+	blur = true,
 })
 
 -- KDE auth / connect dialogs
 
 hl.window_rule({
-    name  = "float-polkit",
-    match = {
-        class = "org.kde.polkit-kde-authentication-agent-1",
-    },
-    float = true,
+	name = "float-polkit",
+	match = {
+		class = "org.kde.polkit-kde-authentication-agent-1",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-kdeconnect",
-    match = {
-        class = "org.kde.kdeconnect.app",
-    },
-    float = true,
+	name = "float-kdeconnect",
+	match = {
+		class = "org.kde.kdeconnect.app",
+	},
+	float = true,
 })
 
 -- System utilities
 
 hl.window_rule({
-    name  = "float-blueman",
-    match = {
-        class = "blueman-manager",
-    },
-    float = true,
+	name = "float-blueman",
+	match = {
+		class = "blueman-manager",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-file-progress",
-    match = {
-        class = "file_progress",
-    },
-    float = true,
+	name = "float-file-progress",
+	match = {
+		class = "file_progress",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-appearance-tools",
-    match = {
-        class = "^(Lxappearance|nwg-look)$",
-    },
-    float = true,
+	name = "float-appearance-tools",
+	match = {
+		class = "^(Lxappearance|nwg-look)$",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-viewnior",
-    match = {
-        class = "^(viewnior|Viewnior)$",
-    },
-    float = true,
+	name = "float-viewnior",
+	match = {
+		class = "^(viewnior|Viewnior)$",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-audio-controls",
-    match = {
-        class = "^(pavucontrol-qt|pavucontrol)$",
-    },
-    float = true,
+	name = "float-audio-controls",
+	match = {
+		class = "^(pavucontrol-qt|pavucontrol)$",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-file-roller",
-    match = {
-        class = "file-roller",
-    },
-    float = true,
+	name = "float-file-roller",
+	match = {
+		class = "file-roller",
+	},
+	float = true,
 })
 
 hl.window_rule({
-    name  = "float-generic-dialogs",
-    match = {
-        class = "^(confirm|dialog|download|notification|error|splash|confirmreset)$",
-    },
-    float = true,
+	name = "float-generic-dialogs",
+	match = {
+		class = "^(confirm|dialog|download|notification|error|splash|confirmreset)$",
+	},
+	float = true,
 })
 
 -- Float by title
 
 hl.window_rule({
-    name  = "float-by-title",
-    match = {
-        title = "^(Auto-Configuration Wizard|Confirm to replace files|Firewall Configuration|File Operation Progress|Open File|branchdialog|Media viewer|Picture-in-Picture|note)$",
-    },
-    float = true,
+	name = "float-by-title",
+	match = {
+		title = "^(Auto-Configuration Wizard|Confirm to replace files|Firewall Configuration|File Operation Progress|Open File|branchdialog|Media viewer|Picture-in-Picture|note)$",
+	},
+	float = true,
 })
 
 -- KeePassXC
 
 hl.window_rule({
-    name  = "float-keepassxc",
-    match = {
-        title = "KeePassXC",
-    },
-    float = true,
-    size = { 1000, 1000 },
-    center = true,
+	name = "float-keepassxc",
+	match = {
+		title = "KeePassXC",
+	},
+	float = true,
+	size = { 1000, 1000 },
+	center = true,
 })
 
 -- G4Music
 
 hl.window_rule({
-    name  = "float-g4music",
-    match = {
-        title = "G4Music",
-    },
-    float = true,
-    size = { 1000, 1000 },
-    center = true,
+	name = "float-g4music",
+	match = {
+		title = "G4Music",
+	},
+	float = true,
+	size = { 1000, 1000 },
+	center = true,
 })
 
 -- Preferences dialogs
 
 hl.window_rule({
-    name  = "float-center-preferences",
-    match = {
-        title = "Preferences",
-    },
-    float = true,
-    center = true,
+	name = "float-center-preferences",
+	match = {
+		title = "Preferences",
+	},
+	float = true,
+	center = true,
 })
 
 -- Volume Control
 
 hl.window_rule({
-    name  = "float-volume-control",
-    match = {
-        title = "^Volume Control$",
-    },
-    float = true,
-    size = { 600, 400 },
+	name = "float-volume-control",
+	match = {
+		title = "^Volume Control$",
+	},
+	float = true,
+	size = { 600, 400 },
 })
 
 -- Idle inhibit
 
 hl.window_rule({
-    name  = "idle-inhibit-vlc",
-    match = {
-        class = "vlc",
-    },
-    idle_inhibit = "focus",
+	name = "idle-inhibit-vlc",
+	match = {
+		class = "vlc",
+	},
+	idle_inhibit = "focus",
 })
 
 hl.window_rule({
-    name  = "idle-inhibit-firefox",
-    match = {
-        class = "firefox",
-    },
-    idle_inhibit = "fullscreen",
+	name = "idle-inhibit-firefox",
+	match = {
+		class = "firefox",
+	},
+	idle_inhibit = "fullscreen",
 })
 
 -- Autostart
 hl.on("hyprland.start", function()
-    hl.exec_cmd("~/workspace/aaku/wayland/bin/import-env.sh & ~/workspace/aaku/wayland/bin/set-gtk-theme.sh")
-    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1 & swaync & wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("waybar & ~/workspace/aaku/wayland/bin/launcher-drawer.sh & wpaperd -d")
-    hl.exec_cmd("dropbox & blueman-applet & fcitx5 -D")
+	hl.exec_cmd("~/workspace/aaku/wayland/bin/import-env.sh & ~/workspace/aaku/wayland/bin/set-gtk-theme.sh")
+	hl.exec_cmd(
+		"/usr/lib/polkit-kde-authentication-agent-1 & swaync & wl-paste --type text --watch cliphist store & wl-paste --type image --watch cliphist store"
+	)
+	hl.exec_cmd("waybar & ~/workspace/aaku/wayland/bin/launcher-drawer.sh & wpaperd -d")
+	hl.exec_cmd("dropbox & blueman-applet & fcitx5 -D")
 end)
